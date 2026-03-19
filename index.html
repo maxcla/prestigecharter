@@ -34,7 +34,7 @@
       top: 0;
       width: 100%;
       z-index: 100;
-      padding: 20px 40px;
+      padding: 16px 40px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -44,16 +44,25 @@
       transition: all 0.3s ease;
     }
 
-    .logo {
+    /* LOGO SVG inline */
+    .logo-wrap {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+    .logo-wrap svg { height: 36px; width: auto; }
+    .logo-text {
       font-family: 'Playfair Display', serif;
-      font-size: 1.4rem;
+      font-size: 1.3rem;
       font-weight: 700;
       color: var(--gold);
       letter-spacing: 2px;
       text-transform: uppercase;
+      line-height: 1.1;
     }
+    .logo-text span { color: var(--white); font-weight: 400; }
 
-    .logo span { color: var(--white); font-weight: 400; }
     .nav-links { display: flex; gap: 32px; list-style: none; }
 
     .nav-links a {
@@ -83,7 +92,6 @@
 
     .nav-cta:hover { background: var(--gold-light); }
 
-    /* ========== HAMBURGER MOBILE ========== */
     .hamburger {
       display: none;
       flex-direction: column;
@@ -276,10 +284,7 @@
       text-transform: uppercase;
     }
 
-    .formule-icon {
-      font-size: 2rem;
-      margin-bottom: 16px;
-    }
+    .formule-icon { font-size: 2rem; margin-bottom: 16px; }
 
     .formule-name {
       font-family: 'Playfair Display', serif;
@@ -302,10 +307,7 @@
       margin-bottom: 20px;
     }
 
-    .formule-includes {
-      list-style: none;
-      margin-bottom: 24px;
-    }
+    .formule-includes { list-style: none; margin-bottom: 24px; }
 
     .formule-includes li {
       color: var(--gray);
@@ -338,16 +340,8 @@
       color: var(--white);
     }
 
-    .formule-prix .unite {
-      color: var(--gray);
-      font-size: 0.85rem;
-    }
-
-    .formule-prix .capacite {
-      color: var(--gray);
-      font-size: 0.75rem;
-      margin-left: 8px;
-    }
+    .formule-prix .unite { color: var(--gray); font-size: 0.85rem; }
+    .formule-prix .capacite { color: var(--gray); font-size: 0.75rem; margin-left: 8px; }
 
     /* ========== OPTIONS ========== */
     .options-grid { display: flex; flex-direction: column; gap: 12px; }
@@ -369,17 +363,8 @@
     }
 
     .option-icon { font-size: 1.6rem; flex-shrink: 0; }
-
-    .option-name {
-      font-weight: 600;
-      font-size: 0.9rem;
-      margin-bottom: 2px;
-    }
-
-    .option-desc {
-      color: var(--gray);
-      font-size: 0.8rem;
-    }
+    .option-name { font-weight: 600; font-size: 0.9rem; margin-bottom: 2px; }
+    .option-desc { color: var(--gray); font-size: 0.8rem; }
 
     .option-prix {
       margin-left: auto;
@@ -492,15 +477,11 @@
       .galerie-grid .photo:nth-child(4) { grid-column: span 1; }
       .galerie-grid .photo:nth-child(5) { grid-column: span 1; }
 
-      .option-card {
-        flex-wrap: wrap;
-      }
-      .option-prix {
-        margin-left: 0;
-        width: 100%;
-        text-align: right;
-        margin-top: 8px;
-      }
+      .option-card { flex-wrap: wrap; }
+      .option-prix { margin-left: 0; width: 100%; text-align: right; margin-top: 8px; }
+
+      .logo-text { font-size: 1rem; }
+      .logo-wrap svg { height: 28px; }
     }
   </style>
 </head>
@@ -508,7 +489,36 @@
 
   <!-- ========== NAV ========== -->
   <nav>
-    <div class="logo">PRESTIGE <span>CHARTER</span></div>
+    <a href="#" class="logo-wrap">
+      <!-- LOGO SVG — Ancre dorée intégrée -->
+      <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Cercle extérieur -->
+        <circle cx="30" cy="30" r="28" stroke="#C9A84C" stroke-width="1.5" fill="none"/>
+        <!-- Ancre -->
+        <g stroke="#C9A84C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none">
+          <!-- Barre verticale -->
+          <line x1="30" y1="16" x2="30" y2="44"/>
+          <!-- Barre horizontale -->
+          <line x1="22" y1="24" x2="38" y2="24"/>
+          <!-- Anneau en haut -->
+          <circle cx="30" cy="14" r="3" stroke-width="1.8"/>
+          <!-- Bras gauche courbe -->
+          <path d="M18 42 C18 36, 24 32, 30 32"/>
+          <!-- Bras droit courbe -->
+          <path d="M42 42 C42 36, 36 32, 30 32"/>
+          <!-- Pointe bras gauche -->
+          <line x1="16" y1="40" x2="20" y2="44"/>
+          <line x1="16" y1="44" x2="20" y2="44"/>
+          <!-- Pointe bras droit -->
+          <line x1="44" y1="40" x2="40" y2="44"/>
+          <line x1="44" y1="44" x2="40" y2="44"/>
+        </g>
+        <!-- Vague sous l'ancre -->
+        <path d="M20 48 Q25 45, 30 48 Q35 51, 40 48" stroke="#C9A84C" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+      </svg>
+      <div class="logo-text">PRESTIGE <span>CHARTER</span></div>
+    </a>
+
     <button class="hamburger" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">
       <div></div><div></div><div></div>
     </button>
@@ -610,7 +620,6 @@
     <p class="section-subtitle">Ajoutez une touche unique à votre croisière.</p>
 
     <div class="options-grid">
-
       <div class="option-card">
         <div class="option-icon">🍾</div>
         <div>
@@ -664,7 +673,6 @@
         </div>
         <div class="option-prix">+950€</div>
       </div>
-
     </div>
   </section>
 
@@ -675,22 +683,31 @@
     <p class="section-subtitle">Découvrez l'univers Prestige Charter.</p>
 
     <div class="galerie-grid">
+      <!-- PHOTO 1 : Grande image gauche -->
       <div class="photo">
         <img src="images/yacht-1.jpg" alt="Prestige 42S — vue latérale" loading="lazy">
         <div class="photo-label">Prestige 42S</div>
       </div>
-      <div class="photo">
-        <img src="images/yacht-2.webp" alt="Cockpit intérieur teck" loading="lazy">
-        <div class="photo-label">Cockpit</div>
-      </div>
+
+      <!-- PHOTO 2 : Sunset (était cockpit, INVERSÉ) -->
       <div class="photo">
         <img src="images/yacht-3.webp" alt="Sunset en mer" loading="lazy">
         <div class="photo-label">Sunset</div>
       </div>
+
+      <!-- PHOTO 3 : Cockpit (était sunset, INVERSÉ) -->
       <div class="photo">
-        <img src="images/yacht-4.png" alt="Vue arrière au port" loading="lazy">
+        <img src="images/yacht-2.webp" alt="Cockpit intérieur teck" loading="lazy">
+        <div class="photo-label">Cockpit</div>
+      </div>
+
+      <!-- PHOTO 4 : Plateforme — NOUVEAU FICHIER -->
+      <div class="photo">
+        <img src="images/Arri%C3%A8re%20V2.jpeg" alt="Vue arrière — plateforme" loading="lazy">
         <div class="photo-label">Plateforme</div>
       </div>
+
+      <!-- PHOTO 5 : Cap-Ferrat -->
       <div class="photo">
         <img src="images/hero.jpg" alt="Croisière Côte d'Azur" loading="lazy">
         <div class="photo-label">Cap-Ferrat</div>
@@ -711,8 +728,23 @@
 
   <!-- ========== FOOTER ========== -->
   <footer>
-    <div class="logo">PRESTIGE <span>CHARTER</span></div>
-    <p style="margin-top:12px;">Saint-Jean-Cap-Ferrat — Côte d'Azur<br>© 2026 Prestige Charter AT. Tous droits réservés.</p>
+    <a href="#" class="logo-wrap" style="justify-content:center; margin-bottom: 8px;">
+      <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" style="height:28px;">
+        <circle cx="30" cy="30" r="28" stroke="#C9A84C" stroke-width="1.5" fill="none"/>
+        <g stroke="#C9A84C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none">
+          <line x1="30" y1="16" x2="30" y2="44"/>
+          <line x1="22" y1="24" x2="38" y2="24"/>
+          <circle cx="30" cy="14" r="3" stroke-width="1.8"/>
+          <path d="M18 42 C18 36, 24 32, 30 32"/>
+          <path d="M42 42 C42 36, 36 32, 30 32"/>
+          <line x1="16" y1="40" x2="20" y2="44"/><line x1="16" y1="44" x2="20" y2="44"/>
+          <line x1="44" y1="40" x2="40" y2="44"/><line x1="44" y1="44" x2="40" y2="44"/>
+        </g>
+        <path d="M20 48 Q25 45, 30 48 Q35 51, 40 48" stroke="#C9A84C" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+      </svg>
+      <div class="logo-text">PRESTIGE <span>CHARTER</span></div>
+    </a>
+    <p>Saint-Jean-Cap-Ferrat — Côte d'Azur<br>© 2026 Prestige Charter AT. Tous droits réservés.</p>
   </footer>
 
 </body>
