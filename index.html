@@ -28,13 +28,14 @@
       overflow-x: hidden;
     }
 
+    /* NAV */
     nav {
       position: fixed; top: 0; width: 100%; z-index: 100;
       padding: 16px 40px; display: flex; justify-content: space-between; align-items: center;
       background: rgba(11, 29, 58, 0.95); backdrop-filter: blur(20px);
       border-bottom: 1px solid rgba(201, 168, 76, 0.15);
     }
-
+    .nav-left { display: flex; align-items: center; gap: 20px; }
     .logo-wrap { display: flex; align-items: center; gap: 10px; text-decoration: none; }
     .logo-wrap svg { height: 36px; width: auto; }
     .logo-text {
@@ -43,12 +44,26 @@
     }
     .logo-text span { color: var(--white); font-weight: 400; }
 
+    /* LANG SWITCH */
+    .lang-switch {
+      display: flex; border: 1px solid rgba(201,168,76,0.25); border-radius: 6px; overflow: hidden;
+    }
+    .lang-btn {
+      background: none; border: none; color: var(--gray); font-size: 0.72rem; font-weight: 600;
+      padding: 5px 10px; cursor: pointer; letter-spacing: 1px; transition: all 0.3s;
+      font-family: 'Inter', sans-serif;
+    }
+    .lang-btn.active { background: var(--gold); color: var(--navy); }
+    .lang-btn:hover:not(.active) { color: var(--gold); }
+
     .nav-links { display: flex; gap: 32px; list-style: none; }
     .nav-links a {
       color: var(--gray); text-decoration: none; font-size: 0.85rem; font-weight: 500;
       letter-spacing: 1px; text-transform: uppercase; transition: color 0.3s;
     }
     .nav-links a:hover { color: var(--gold); }
+
+    .nav-right { display: flex; align-items: center; gap: 20px; }
 
     .nav-cta {
       background: var(--gold); color: var(--navy); padding: 10px 24px; border-radius: 4px;
@@ -84,7 +99,7 @@
     .btn-gold {
       background: var(--gold); color: var(--navy); padding: 14px 36px; border-radius: 4px;
       font-weight: 600; font-size: 0.85rem; text-decoration: none; letter-spacing: 1px;
-      text-transform: uppercase; transition: all 0.3s;
+      text-transform: uppercase; transition: all 0.3s; display: inline-block;
     }
     .btn-gold:hover { background: var(--gold-light); transform: translateY(-2px); }
 
@@ -139,7 +154,7 @@
     .formule-prix .unite { color: var(--gray); font-size: 0.85rem; }
     .formule-prix .capacite { color: var(--gray); font-size: 0.75rem; margin-left: 8px; }
 
-    /* INCLUS BADGES */
+    /* INCLUS */
     .inclus-section { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 48px; padding-top: 32px; border-top: 1px solid rgba(201, 168, 76, 0.1); }
     .inclus-badge {
       display: inline-flex; align-items: center; gap: 6px;
@@ -149,73 +164,52 @@
     .inclus-badge .badge-icon { font-size: 1rem; }
     .inclus-badge strong { color: var(--gold); font-weight: 600; }
 
-    /* ========== OPTIONS ACCORDION ========== */
+    /* OPTIONS ACCORDION */
     .options-grid { display: flex; flex-direction: column; gap: 8px; }
-
     .option-card {
-      background: var(--navy-light);
-      border: 1px solid rgba(201, 168, 76, 0.08);
-      border-radius: 12px;
-      overflow: hidden;
-      transition: all 0.3s;
+      background: var(--navy-light); border: 1px solid rgba(201, 168, 76, 0.08);
+      border-radius: 12px; overflow: hidden; transition: all 0.3s;
     }
     .option-card:hover { border-color: rgba(201, 168, 76, 0.25); }
     .option-card.open { border-color: rgba(201, 168, 76, 0.35); }
-
     .option-header {
-      display: flex; align-items: center; gap: 16px;
-      padding: 20px 24px; cursor: pointer;
-      transition: background 0.3s;
-      user-select: none;
+      display: flex; align-items: center; gap: 16px; padding: 20px 24px;
+      cursor: pointer; transition: background 0.3s; user-select: none;
     }
     .option-header:hover { background: rgba(19, 43, 80, 0.8); }
-
     .option-icon-wrap {
       width: 52px; height: 52px; border-radius: 12px;
       display: flex; align-items: center; justify-content: center;
       font-size: 1.5rem; flex-shrink: 0;
-      background: rgba(201, 168, 76, 0.08);
-      border: 1px solid rgba(201, 168, 76, 0.12);
+      background: rgba(201, 168, 76, 0.08); border: 1px solid rgba(201, 168, 76, 0.12);
     }
-
     .option-info { flex: 1; }
     .option-name { font-weight: 600; font-size: 0.95rem; margin-bottom: 2px; }
     .option-tagline { color: var(--gray); font-size: 0.78rem; }
-
     .option-right { display: flex; align-items: center; gap: 16px; margin-left: auto; }
     .option-prix {
       font-family: 'Playfair Display', serif; font-size: 1.15rem;
       font-weight: 700; color: var(--gold); white-space: nowrap;
     }
-
     .option-chevron {
       width: 20px; height: 20px; flex-shrink: 0;
       transition: transform 0.3s ease; color: var(--gray);
     }
     .option-card.open .option-chevron { transform: rotate(180deg); color: var(--gold); }
-
     .option-details {
       max-height: 0; overflow: hidden;
-      transition: max-height 0.4s ease, padding 0.3s ease;
-      padding: 0 24px;
+      transition: max-height 0.4s ease, padding 0.3s ease; padding: 0 24px;
     }
-    .option-card.open .option-details {
-      max-height: 600px;
-      padding: 0 24px 24px 24px;
-    }
-
+    .option-card.open .option-details { max-height: 600px; padding: 0 24px 24px 24px; }
     .option-details-inner {
       display: flex; gap: 24px; align-items: flex-start;
       padding-top: 16px; border-top: 1px solid rgba(201, 168, 76, 0.08);
     }
-
     .option-illustration {
       width: 160px; height: 110px; border-radius: 10px; flex-shrink: 0;
-      overflow: hidden; position: relative;
-      background: var(--navy);
+      overflow: hidden; background: var(--navy);
     }
     .option-illustration svg { width: 100%; height: 100%; }
-
     .option-detail-text { flex: 1; }
     .option-detail-text p { color: var(--gray); font-size: 0.83rem; line-height: 1.7; margin-bottom: 10px; }
     .option-detail-text ul { list-style: none; }
@@ -234,7 +228,6 @@
     .galerie-grid .photo:nth-child(3) { grid-column: span 3; }
     .galerie-grid .photo:nth-child(4) { grid-column: span 4; }
     .galerie-grid .photo:nth-child(5) { grid-column: span 3; }
-
     .photo { border-radius: 10px; overflow: hidden; position: relative; }
     .photo img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
     .photo:hover img { transform: scale(1.05); }
@@ -254,6 +247,14 @@
       text-align: center; padding: 48px 40px;
       border-top: 1px solid rgba(201, 168, 76, 0.1); color: var(--gray); font-size: 0.8rem;
     }
+
+    /* LANG HIDE */
+    [data-lang-en] { display: none; }
+    body.en [data-lang-fr] { display: none; }
+    body.en [data-lang-en] { display: unset; }
+    /* For block elements */
+    body.en [data-lang-fr].block-el { display: none; }
+    body.en [data-lang-en].block-el { display: block; }
 
     /* MOBILE */
     @media (max-width: 768px) {
@@ -275,130 +276,166 @@
       .option-right { gap: 10px; }
       .logo-text { font-size: 1rem; }
       .logo-wrap svg { height: 28px; }
+      .nav-left { gap: 12px; }
+      .lang-switch { order: 3; }
     }
   </style>
 </head>
 <body>
 
-  <!-- NAV -->
   <nav>
-    <a href="#" class="logo-wrap">
-      <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="30" cy="30" r="28" stroke="#C9A84C" stroke-width="1.5" fill="none"/>
-        <g stroke="#C9A84C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none">
-          <line x1="30" y1="16" x2="30" y2="44"/>
-          <line x1="22" y1="24" x2="38" y2="24"/>
-          <circle cx="30" cy="14" r="3" stroke-width="1.8"/>
-          <path d="M18 42 C18 36, 24 32, 30 32"/>
-          <path d="M42 42 C42 36, 36 32, 30 32"/>
-        </g>
-        <path d="M20 48 Q25 45, 30 48 Q35 51, 40 48" stroke="#C9A84C" stroke-width="1.2" fill="none" stroke-linecap="round"/>
-      </svg>
-      <div class="logo-text">PRESTIGE <span>CHARTER</span></div>
-    </a>
+    <div class="nav-left">
+      <a href="#" class="logo-wrap">
+        <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="30" cy="30" r="28" stroke="#C9A84C" stroke-width="1.5" fill="none"/>
+          <g stroke="#C9A84C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none">
+            <line x1="30" y1="16" x2="30" y2="44"/>
+            <line x1="22" y1="24" x2="38" y2="24"/>
+            <circle cx="30" cy="14" r="3" stroke-width="1.8"/>
+            <path d="M18 42 C18 36, 24 32, 30 32"/>
+            <path d="M42 42 C42 36, 36 32, 30 32"/>
+          </g>
+          <path d="M20 48 Q25 45, 30 48 Q35 51, 40 48" stroke="#C9A84C" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+        </svg>
+        <div class="logo-text">PRESTIGE <span>CHARTER</span></div>
+      </a>
+      <div class="lang-switch">
+        <button class="lang-btn active" id="btn-fr" onclick="setLang('fr')">FR</button>
+        <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+      </div>
+    </div>
     <button class="hamburger" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">
       <div></div><div></div><div></div>
     </button>
     <ul class="nav-links">
-      <li><a href="#formules">Formules</a></li>
+      <li><a href="#formules"><span data-lang-fr>Formules</span><span data-lang-en>Packages</span></a></li>
       <li><a href="#options">Options</a></li>
-      <li><a href="#galerie">Galerie</a></li>
+      <li><a href="#galerie"><span data-lang-fr>Galerie</span><span data-lang-en>Gallery</span></a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-    <a href="#contact" class="nav-cta">Réserver</a>
+    <div class="nav-right">
+      <a href="#contact" class="nav-cta"><span data-lang-fr>Réserver</span><span data-lang-en>Book Now</span></a>
+    </div>
   </nav>
 
   <!-- HERO -->
   <section class="hero">
     <div class="hero-badge">⚓ Saint-Jean-Cap-Ferrat</div>
-    <h1>L'excellence <em>maritime</em><br>à votre portée</h1>
-    <p>Embarquez pour une expérience unique sur la Côte d'Azur à bord de notre Prestige 42S. Journée, sunset ou événement privé.</p>
+    <h1>
+      <span data-lang-fr>L'excellence <em>maritime</em><br>à votre portée</span>
+      <span data-lang-en>Maritime <em>excellence</em><br>within your reach</span>
+    </h1>
+    <p>
+      <span data-lang-fr>Embarquez pour une expérience unique sur la Côte d'Azur à bord de notre Prestige 42S. Journée, sunset ou événement privé.</span>
+      <span data-lang-en>Embark on a unique experience on the French Riviera aboard our Prestige 42S. Full day, sunset or private event.</span>
+    </p>
     <div class="hero-buttons">
-      <a href="#formules" class="btn-gold">Découvrir nos formules</a>
-      <a href="#contact" class="btn-outline">Réserver</a>
+      <a href="#formules" class="btn-gold"><span data-lang-fr>Découvrir nos formules</span><span data-lang-en>Discover our packages</span></a>
+      <a href="#contact" class="btn-outline"><span data-lang-fr>Réserver</span><span data-lang-en>Book Now</span></a>
     </div>
-    <div class="scroll-hint"><span>Explorer</span><span>↓</span></div>
+    <div class="scroll-hint">
+      <span><span data-lang-fr>Explorer</span><span data-lang-en>Explore</span></span>
+      <span>↓</span>
+    </div>
   </section>
 
   <!-- FORMULES -->
   <section id="formules">
-    <div class="section-label">Nos Formules</div>
-    <h2 class="section-title">Choisissez votre escapade</h2>
-    <p class="section-subtitle">Chaque sortie est privatisée. Skipper professionnel, équipements premium, service sur-mesure.</p>
+    <div class="section-label"><span data-lang-fr>Nos Formules</span><span data-lang-en>Our Packages</span></div>
+    <h2 class="section-title"><span data-lang-fr>Choisissez votre escapade</span><span data-lang-en>Choose your escape</span></h2>
+    <p class="section-subtitle">
+      <span data-lang-fr>Chaque sortie est privatisée. Skipper professionnel, équipements premium, service sur-mesure.</span>
+      <span data-lang-en>Every trip is fully private. Professional skipper, premium equipment, bespoke service.</span>
+    </p>
 
     <div class="formules-grid">
+      <!-- SUNSET -->
       <div class="formule-card">
         <div class="formule-icon">🌅</div>
         <div class="formule-name">Sunset Prestige</div>
         <div class="formule-duration">3h · 18h00 – 21h00</div>
-        <div class="formule-desc">Le coucher de soleil depuis la mer, champagne à la main. L'expérience signature de la Riviera.</div>
+        <div class="formule-desc">
+          <span data-lang-fr>Le coucher de soleil depuis la mer, champagne à la main. L'expérience signature de la Riviera.</span>
+          <span data-lang-en>Sunset from the sea, champagne in hand. The signature Riviera experience.</span>
+        </div>
         <ul class="formule-includes">
-          <li>Champagne & planches apéritives</li>
-          <li>Croisière Beaulieu → Cap-Ferrat</li>
-          <li>Mouillage baie secrète</li>
-          <li>Enceinte Bluetooth intégrée</li>
-          <li>Paddle inclus</li>
+          <li><span data-lang-fr>Champagne & planches apéritives</span><span data-lang-en>Champagne & appetizer boards</span></li>
+          <li><span data-lang-fr>Croisière Beaulieu → Cap-Ferrat</span><span data-lang-en>Cruise Beaulieu → Cap-Ferrat</span></li>
+          <li><span data-lang-fr>Mouillage baie secrète</span><span data-lang-en>Anchoring in a hidden bay</span></li>
+          <li><span data-lang-fr>Enceinte Bluetooth intégrée</span><span data-lang-en>Built-in Bluetooth speaker</span></li>
+          <li><span data-lang-fr>Paddle inclus</span><span data-lang-en>Paddle board included</span></li>
         </ul>
         <div class="formule-prix">
           <span class="montant">1 300€</span>
-          <span class="unite">/ sortie</span>
-          <span class="capacite">jusqu'à 8 pers.</span>
+          <span class="unite"><span data-lang-fr>/ sortie</span><span data-lang-en>/ trip</span></span>
+          <span class="capacite"><span data-lang-fr>jusqu'à 8 pers.</span><span data-lang-en>up to 8 guests</span></span>
         </div>
       </div>
 
+      <!-- JOURNEE -->
       <div class="formule-card featured">
-        <div class="formule-badge">Populaire</div>
+        <div class="formule-badge"><span data-lang-fr>Populaire</span><span data-lang-en>Popular</span></div>
         <div class="formule-icon">⛵</div>
-        <div class="formule-name">Journée Prestige</div>
+        <div class="formule-name"><span data-lang-fr>Journée Prestige</span><span data-lang-en>Prestige Full Day</span></div>
         <div class="formule-duration">8h · 09h00 – 17h00</div>
-        <div class="formule-desc">La journée complète : criques secrètes, baignade, déjeuner au mouillage. Le luxe sans compromis.</div>
+        <div class="formule-desc">
+          <span data-lang-fr>La journée complète : criques secrètes, baignade, déjeuner au mouillage. Le luxe sans compromis.</span>
+          <span data-lang-en>The full day experience: secret coves, swimming, lunch at anchor. Uncompromised luxury.</span>
+        </div>
         <ul class="formule-includes">
-          <li>Croisière Cap-Ferrat & environs</li>
-          <li>Arrêts baignade & snorkeling</li>
-          <li>Paddle inclus</li>
-          <li>Enceinte Bluetooth intégrée</li>
-          <li>Boissons & traiteur sur demande</li>
+          <li><span data-lang-fr>Croisière Cap-Ferrat & environs</span><span data-lang-en>Cruise Cap-Ferrat & surroundings</span></li>
+          <li><span data-lang-fr>Arrêts baignade & snorkeling</span><span data-lang-en>Swimming & snorkeling stops</span></li>
+          <li><span data-lang-fr>Paddle inclus</span><span data-lang-en>Paddle board included</span></li>
+          <li><span data-lang-fr>Enceinte Bluetooth intégrée</span><span data-lang-en>Built-in Bluetooth speaker</span></li>
+          <li><span data-lang-fr>Boissons & traiteur sur demande</span><span data-lang-en>Drinks & catering on request</span></li>
         </ul>
         <div class="formule-prix">
           <span class="montant">2 700€</span>
-          <span class="unite">/ journée</span>
-          <span class="capacite">jusqu'à 10 pers.</span>
+          <span class="unite"><span data-lang-fr>/ journée</span><span data-lang-en>/ day</span></span>
+          <span class="capacite"><span data-lang-fr>jusqu'à 10 pers.</span><span data-lang-en>up to 10 guests</span></span>
         </div>
       </div>
 
+      <!-- PECHE -->
       <div class="formule-card">
         <div class="formule-icon">🎣</div>
-        <div class="formule-name">Pêche de Nuit</div>
+        <div class="formule-name"><span data-lang-fr>Pêche de Nuit</span><span data-lang-en>Night Fishing</span></div>
         <div class="formule-duration">5h · 20h00 – 01h00</div>
-        <div class="formule-desc">Session de pêche nocturne au large, sous les étoiles. Une aventure authentique pour passionnés.</div>
+        <div class="formule-desc">
+          <span data-lang-fr>Session de pêche nocturne au large, sous les étoiles. Une aventure authentique pour passionnés.</span>
+          <span data-lang-en>Night fishing offshore, under the stars. An authentic adventure for enthusiasts.</span>
+        </div>
         <ul class="formule-includes">
-          <li>Matériel de pêche professionnel</li>
-          <li>Guidance par le skipper</li>
-          <li>Boissons & dîner sur demande</li>
-          <li>Croisière retour sous les étoiles</li>
+          <li><span data-lang-fr>Matériel de pêche professionnel</span><span data-lang-en>Professional fishing equipment</span></li>
+          <li><span data-lang-fr>Guidance par le skipper</span><span data-lang-en>Skipper guidance</span></li>
+          <li><span data-lang-fr>Boissons & dîner sur demande</span><span data-lang-en>Drinks & dinner on request</span></li>
+          <li><span data-lang-fr>Croisière retour sous les étoiles</span><span data-lang-en>Return cruise under the stars</span></li>
         </ul>
         <div class="formule-prix">
           <span class="montant">1 800€</span>
-          <span class="unite">/ sortie</span>
-          <span class="capacite">jusqu'à 6 pers.</span>
+          <span class="unite"><span data-lang-fr>/ sortie</span><span data-lang-en>/ trip</span></span>
+          <span class="capacite"><span data-lang-fr>jusqu'à 6 pers.</span><span data-lang-en>up to 6 guests</span></span>
         </div>
       </div>
     </div>
 
     <div class="inclus-section">
-      <div class="inclus-badge"><span class="badge-icon">🏄</span> <strong>Paddle</strong> inclus</div>
-      <div class="inclus-badge"><span class="badge-icon">🔊</span> <strong>Enceinte Bluetooth</strong> intégrée</div>
-      <div class="inclus-badge"><span class="badge-icon">⛽</span> <strong>Carburant</strong> inclus</div>
-      <div class="inclus-badge"><span class="badge-icon">👨‍✈️</span> <strong>Skipper</strong> professionnel</div>
-      <div class="inclus-badge"><span class="badge-icon">🤿</span> <strong>Snorkeling</strong> équipement</div>
+      <div class="inclus-badge"><span class="badge-icon">🏄</span> <strong>Paddle</strong> <span data-lang-fr>inclus</span><span data-lang-en>included</span></div>
+      <div class="inclus-badge"><span class="badge-icon">🔊</span> <strong>Bluetooth</strong> <span data-lang-fr>intégré</span><span data-lang-en>built-in</span></div>
+      <div class="inclus-badge"><span class="badge-icon">⛽</span> <strong><span data-lang-fr>Carburant</span><span data-lang-en>Fuel</span></strong> <span data-lang-fr>inclus</span><span data-lang-en>included</span></div>
+      <div class="inclus-badge"><span class="badge-icon">👨‍✈️</span> <strong>Skipper</strong> <span data-lang-fr>professionnel</span><span data-lang-en>professional</span></div>
+      <div class="inclus-badge"><span class="badge-icon">🤿</span> <strong>Snorkeling</strong> <span data-lang-fr>équipement</span><span data-lang-en>gear</span></div>
     </div>
   </section>
 
-  <!-- OPTIONS ACCORDION -->
+  <!-- OPTIONS -->
   <section id="options">
-    <div class="section-label">Personnalisez</div>
+    <div class="section-label"><span data-lang-fr>Personnalisez</span><span data-lang-en>Customize</span></div>
     <h2 class="section-title">Options & Extras</h2>
-    <p class="section-subtitle">Cliquez pour découvrir les détails de chaque option.</p>
+    <p class="section-subtitle">
+      <span data-lang-fr>Cliquez pour découvrir les détails de chaque option.</span>
+      <span data-lang-en>Click to discover the details of each option.</span>
+    </p>
 
     <div class="options-grid">
 
@@ -407,8 +444,8 @@
         <div class="option-header">
           <div class="option-icon-wrap">🍾</div>
           <div class="option-info">
-            <div class="option-name">Upgrade Champagne Dom Pérignon</div>
-            <div class="option-tagline">Remplace le champagne inclus par une cuvée d'exception</div>
+            <div class="option-name"><span data-lang-fr>Upgrade Champagne Dom Pérignon</span><span data-lang-en>Dom Pérignon Champagne Upgrade</span></div>
+            <div class="option-tagline"><span data-lang-fr>Remplace le champagne inclus par une cuvée d'exception</span><span data-lang-en>Replace the included champagne with an exceptional vintage</span></div>
           </div>
           <div class="option-right">
             <div class="option-prix">+180€</div>
@@ -432,12 +469,12 @@
               </svg>
             </div>
             <div class="option-detail-text">
-              <p>Élevez votre expérience avec une bouteille de <strong style="color:var(--gold);">Dom Pérignon Vintage</strong>, servie fraîche au mouillage.</p>
+              <p><span data-lang-fr>Élevez votre expérience avec une bouteille de <strong style="color:var(--gold);">Dom Pérignon Vintage</strong>, servie fraîche au mouillage.</span><span data-lang-en>Elevate your experience with a bottle of <strong style="color:var(--gold);">Dom Pérignon Vintage</strong>, served chilled at anchor.</span></p>
               <ul>
-                <li>Bouteille de 75cl Dom Pérignon</li>
-                <li>Service dans des flûtes en cristal</li>
-                <li>Glacière premium dédiée</li>
-                <li>Disponible sur toutes les formules</li>
+                <li><span data-lang-fr>Bouteille de 75cl Dom Pérignon</span><span data-lang-en>75cl bottle of Dom Pérignon</span></li>
+                <li><span data-lang-fr>Service dans des flûtes en cristal</span><span data-lang-en>Served in crystal flutes</span></li>
+                <li><span data-lang-fr>Glacière premium dédiée</span><span data-lang-en>Dedicated premium cooler</span></li>
+                <li><span data-lang-fr>Disponible sur toutes les formules</span><span data-lang-en>Available on all packages</span></li>
               </ul>
             </div>
           </div>
@@ -449,8 +486,8 @@
         <div class="option-header">
           <div class="option-icon-wrap">🎂</div>
           <div class="option-info">
-            <div class="option-name">Pack Anniversaire</div>
-            <div class="option-tagline">Décoration, gâteau personnalisé & service dédié</div>
+            <div class="option-name"><span data-lang-fr>Pack Anniversaire</span><span data-lang-en>Birthday Package</span></div>
+            <div class="option-tagline"><span data-lang-fr>Décoration, gâteau personnalisé & service dédié</span><span data-lang-en>Decoration, custom cake & dedicated service</span></div>
           </div>
           <div class="option-right">
             <div class="option-prix">+250€</div>
@@ -471,18 +508,17 @@
                   <circle cx="30" cy="15" r="3" fill="#C9A84C" opacity="0.5"/>
                   <circle cx="40" cy="11" r="3" fill="#C9A84C" opacity="0.6"/>
                   <circle cx="50" cy="15" r="3" fill="#C9A84C" opacity="0.5"/>
-                  <path d="M5 80 Q20 75, 35 80 Q50 85, 65 80 Q75 77, 80 80" stroke="#C9A84C" stroke-width="1" fill="none" opacity="0.4"/>
-                  <text x="40" y="100" text-anchor="middle" fill="#C9A84C" font-family="Playfair Display,serif" font-size="8" opacity="0.7">Happy Birthday</text>
+                  <text x="40" y="95" text-anchor="middle" fill="#C9A84C" font-family="Playfair Display,serif" font-size="8" opacity="0.7">Happy Birthday</text>
                 </g>
               </svg>
             </div>
             <div class="option-detail-text">
-              <p>Célébrez un moment inoubliable en mer avec un <strong style="color:var(--gold);">pack anniversaire complet</strong>.</p>
+              <p><span data-lang-fr>Célébrez un moment inoubliable en mer avec un <strong style="color:var(--gold);">pack anniversaire complet</strong>.</span><span data-lang-en>Celebrate an unforgettable moment at sea with a <strong style="color:var(--gold);">complete birthday package</strong>.</span></p>
               <ul>
-                <li>Gâteau personnalisé (pâtissier local)</li>
-                <li>Décoration ballons & guirlandes dorées</li>
-                <li>Bougie & mise en scène au coucher de soleil</li>
-                <li>Message personnalisé sur commande</li>
+                <li><span data-lang-fr>Gâteau personnalisé (pâtissier local)</span><span data-lang-en>Custom cake (local pastry chef)</span></li>
+                <li><span data-lang-fr>Décoration ballons & guirlandes dorées</span><span data-lang-en>Gold balloons & garland decoration</span></li>
+                <li><span data-lang-fr>Bougie & mise en scène au coucher de soleil</span><span data-lang-en>Candle & sunset staging</span></li>
+                <li><span data-lang-fr>Message personnalisé sur commande</span><span data-lang-en>Custom message on request</span></li>
               </ul>
             </div>
           </div>
@@ -494,8 +530,8 @@
         <div class="option-header">
           <div class="option-icon-wrap">📸</div>
           <div class="option-info">
-            <div class="option-name">Shooting Photo & Drone</div>
-            <div class="option-tagline">Photographe professionnel + vidéo drone aérienne</div>
+            <div class="option-name"><span data-lang-fr>Shooting Photo & Drone</span><span data-lang-en>Photo & Drone Shooting</span></div>
+            <div class="option-tagline"><span data-lang-fr>Photographe professionnel + vidéo drone aérienne</span><span data-lang-en>Professional photographer + aerial drone footage</span></div>
           </div>
           <div class="option-right">
             <div class="option-prix">+450€</div>
@@ -508,31 +544,28 @@
               <svg viewBox="0 0 160 110" xmlns="http://www.w3.org/2000/svg">
                 <rect width="160" height="110" fill="#0B1D3A"/>
                 <g transform="translate(30,10)">
-                  <!-- Camera -->
                   <rect x="5" y="40" width="40" height="28" rx="5" fill="none" stroke="#C9A84C" stroke-width="1.5"/>
                   <circle cx="25" cy="54" r="9" fill="none" stroke="#C9A84C" stroke-width="1.5"/>
                   <circle cx="25" cy="54" r="4" fill="#C9A84C" opacity="0.3"/>
                   <rect x="15" y="34" width="20" height="8" rx="3" fill="none" stroke="#C9A84C" stroke-width="1"/>
-                  <!-- Drone -->
                   <rect x="65" y="25" width="20" height="10" rx="3" fill="none" stroke="#C9A84C" stroke-width="1.5"/>
                   <line x1="60" y1="25" x2="68" y2="25" stroke="#C9A84C" stroke-width="1.5"/>
                   <line x1="82" y1="25" x2="90" y2="25" stroke="#C9A84C" stroke-width="1.5"/>
                   <ellipse cx="58" cy="22" rx="8" ry="2" fill="none" stroke="#C9A84C" stroke-width="1" opacity="0.6"/>
                   <ellipse cx="92" cy="22" rx="8" ry="2" fill="none" stroke="#C9A84C" stroke-width="1" opacity="0.6"/>
                   <circle cx="75" cy="38" r="4" fill="none" stroke="#C9A84C" stroke-width="1"/>
-                  <circle cx="75" cy="38" r="1.5" fill="#C9A84C" opacity="0.4"/>
                   <text x="50" y="90" text-anchor="middle" fill="#C9A84C" font-family="Playfair Display,serif" font-size="8" opacity="0.7">Photo &amp; Drone</text>
                 </g>
               </svg>
             </div>
             <div class="option-detail-text">
-              <p>Immortalisez votre journée avec des <strong style="color:var(--gold);">prises de vue professionnelles</strong> et des plans aériens par drone.</p>
+              <p><span data-lang-fr>Immortalisez votre journée avec des <strong style="color:var(--gold);">prises de vue professionnelles</strong> et des plans aériens par drone.</span><span data-lang-en>Capture your day with <strong style="color:var(--gold);">professional photography</strong> and aerial drone footage.</span></p>
               <ul>
-                <li>Photographe professionnel à bord (2h)</li>
-                <li>Pilote drone certifié DGAC</li>
-                <li>50+ photos HD retouchées</li>
-                <li>Vidéo drone montée (1-2 min)</li>
-                <li>Livraison galerie privée sous 48h</li>
+                <li><span data-lang-fr>Photographe professionnel à bord (2h)</span><span data-lang-en>Professional photographer on board (2h)</span></li>
+                <li><span data-lang-fr>Pilote drone certifié DGAC</span><span data-lang-en>DGAC-certified drone pilot</span></li>
+                <li><span data-lang-fr>50+ photos HD retouchées</span><span data-lang-en>50+ retouched HD photos</span></li>
+                <li><span data-lang-fr>Vidéo drone montée (1-2 min)</span><span data-lang-en>Edited drone video (1-2 min)</span></li>
+                <li><span data-lang-fr>Livraison galerie privée sous 48h</span><span data-lang-en>Private gallery delivered within 48h</span></li>
               </ul>
             </div>
           </div>
@@ -545,7 +578,7 @@
           <div class="option-icon-wrap">🌊</div>
           <div class="option-info">
             <div class="option-name">Seabob</div>
-            <div class="option-tagline">Scooter sous-marin électrique — sensations aquatiques</div>
+            <div class="option-tagline"><span data-lang-fr>Scooter sous-marin électrique — sensations aquatiques</span><span data-lang-en>Electric underwater scooter — aquatic thrills</span></div>
           </div>
           <div class="option-right">
             <div class="option-prix">+350€</div>
@@ -558,30 +591,26 @@
               <svg viewBox="0 0 160 110" xmlns="http://www.w3.org/2000/svg">
                 <rect width="160" height="110" fill="#0B1D3A"/>
                 <g transform="translate(20,20)">
-                  <!-- Seabob shape -->
                   <path d="M20 45 Q10 42, 8 38 Q6 34, 15 30 L100 25 Q115 23, 118 30 Q120 36, 110 40 L25 48 Q20 48, 20 45Z" fill="none" stroke="#C9A84C" stroke-width="1.5"/>
                   <ellipse cx="110" cy="32" rx="6" ry="3" fill="#C9A84C" opacity="0.2"/>
                   <line x1="22" y1="38" x2="40" y2="36" stroke="#C9A84C" stroke-width="1" opacity="0.5"/>
                   <line x1="22" y1="42" x2="40" y2="40" stroke="#C9A84C" stroke-width="1" opacity="0.5"/>
-                  <!-- Water bubbles -->
                   <circle cx="125" cy="30" r="2" fill="#C9A84C" opacity="0.3"/>
                   <circle cx="128" cy="35" r="1.5" fill="#C9A84C" opacity="0.2"/>
                   <circle cx="132" cy="28" r="1" fill="#C9A84C" opacity="0.2"/>
-                  <!-- Waves -->
                   <path d="M5 60 Q20 55, 40 60 Q60 65, 80 60 Q100 55, 120 60" stroke="#C9A84C" stroke-width="1" fill="none" opacity="0.3"/>
-                  <path d="M10 68 Q30 63, 50 68 Q70 73, 90 68 Q110 63, 125 68" stroke="#C9A84C" stroke-width="0.8" fill="none" opacity="0.2"/>
                   <text x="65" y="85" text-anchor="middle" fill="#C9A84C" font-family="Playfair Display,serif" font-size="8" opacity="0.7">Seabob F5</text>
                 </g>
               </svg>
             </div>
             <div class="option-detail-text">
-              <p>Vivez des <strong style="color:var(--gold);">sensations uniques</strong> sous l'eau avec le Seabob F5, propulsion électrique jusqu'à 20 km/h.</p>
+              <p><span data-lang-fr>Vivez des <strong style="color:var(--gold);">sensations uniques</strong> sous l'eau avec le Seabob F5, propulsion électrique jusqu'à 20 km/h.</span><span data-lang-en>Experience <strong style="color:var(--gold);">unique sensations</strong> underwater with the Seabob F5, electric propulsion up to 20 km/h.</span></p>
               <ul>
-                <li>Seabob F5 (propulsion électrique)</li>
-                <li>Briefing sécurité & prise en main</li>
-                <li>Utilisable en surface ou en immersion</li>
-                <li>Autonomie ~1h par charge</li>
-                <li>Accessible dès 16 ans</li>
+                <li><span data-lang-fr>Seabob F5 (propulsion électrique)</span><span data-lang-en>Seabob F5 (electric propulsion)</span></li>
+                <li><span data-lang-fr>Briefing sécurité & prise en main</span><span data-lang-en>Safety briefing & hands-on tutorial</span></li>
+                <li><span data-lang-fr>Utilisable en surface ou en immersion</span><span data-lang-en>Usable on surface or underwater</span></li>
+                <li><span data-lang-fr>Autonomie ~1h par charge</span><span data-lang-en>~1h battery life per charge</span></li>
+                <li><span data-lang-fr>Accessible dès 16 ans</span><span data-lang-en>Available from age 16</span></li>
               </ul>
             </div>
           </div>
@@ -593,11 +622,11 @@
         <div class="option-header">
           <div class="option-icon-wrap">🍽️</div>
           <div class="option-info">
-            <div class="option-name">Boissons & Traiteur</div>
-            <div class="option-tagline">Offres personnalisées — vin, champagne, caviar, planches, repas</div>
+            <div class="option-name"><span data-lang-fr>Boissons & Traiteur</span><span data-lang-en>Drinks & Catering</span></div>
+            <div class="option-tagline"><span data-lang-fr>Offres personnalisées — vin, champagne, caviar, planches, repas</span><span data-lang-en>Custom offers — wine, champagne, caviar, platters, meals</span></div>
           </div>
           <div class="option-right">
-            <div class="option-prix">Sur devis</div>
+            <div class="option-prix"><span data-lang-fr>Sur devis</span><span data-lang-en>On quote</span></div>
             <svg class="option-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
           </div>
         </div>
@@ -607,32 +636,29 @@
               <svg viewBox="0 0 160 110" xmlns="http://www.w3.org/2000/svg">
                 <rect width="160" height="110" fill="#0B1D3A"/>
                 <g transform="translate(20,12)">
-                  <!-- Wine glass -->
                   <path d="M25 30 Q25 15, 32 10 L32 5 L38 5 L38 10 Q45 15, 45 30 Q45 40, 35 42 L35 60 L28 60 L35 60 L42 65 L28 65 Z" fill="none" stroke="#C9A84C" stroke-width="1.2"/>
-                  <!-- Platter -->
                   <ellipse cx="85" cy="50" rx="30" ry="8" fill="none" stroke="#C9A84C" stroke-width="1.2"/>
                   <ellipse cx="75" cy="46" rx="4" ry="3" fill="#C9A84C" opacity="0.2"/>
                   <ellipse cx="85" cy="44" rx="5" ry="3" fill="#C9A84C" opacity="0.25"/>
                   <ellipse cx="95" cy="46" rx="4" ry="3" fill="#C9A84C" opacity="0.2"/>
                   <rect x="80" y="58" width="10" height="12" rx="2" fill="none" stroke="#C9A84C" stroke-width="1"/>
-                  <!-- Caviar tin -->
                   <ellipse cx="35" cy="78" rx="12" ry="5" fill="none" stroke="#C9A84C" stroke-width="1"/>
                   <rect x="23" y="78" width="24" height="8" rx="2" fill="none" stroke="#C9A84C" stroke-width="1"/>
-                  <text x="70" y="95" text-anchor="middle" fill="#C9A84C" font-family="Playfair Display,serif" font-size="7" opacity="0.7">Conciergerie Saveurs</text>
+                  <text x="70" y="100" text-anchor="middle" fill="#C9A84C" font-family="Playfair Display,serif" font-size="7" opacity="0.7">Conciergerie</text>
                 </g>
               </svg>
             </div>
             <div class="option-detail-text">
-              <p>Composez votre expérience gastronomique <strong style="color:var(--gold);">100% sur-mesure</strong>. Envoyez-nous vos envies par mail ou téléphone.</p>
+              <p><span data-lang-fr>Composez votre expérience gastronomique <strong style="color:var(--gold);">100% sur-mesure</strong>. Envoyez-nous vos envies par mail ou téléphone.</span><span data-lang-en>Create your <strong style="color:var(--gold);">fully bespoke</strong> gastronomic experience. Send us your wishes by email or phone.</span></p>
               <ul>
-                <li>Champagne Blanc de Blancs, Rosé, Dom Pérignon</li>
-                <li>Sélection de vins (Provence, Bourgogne, Italie)</li>
-                <li>Caviar d'Aquitaine — cuillère nacre</li>
-                <li>Planches charcuterie & fromages artisanaux</li>
-                <li>Plateau fruits de mer & sushi</li>
-                <li>Traiteur repas complet (chef sur demande)</li>
+                <li><span data-lang-fr>Champagne Blanc de Blancs, Rosé, Dom Pérignon</span><span data-lang-en>Champagne Blanc de Blancs, Rosé, Dom Pérignon</span></li>
+                <li><span data-lang-fr>Sélection de vins (Provence, Bourgogne, Italie)</span><span data-lang-en>Wine selection (Provence, Burgundy, Italy)</span></li>
+                <li><span data-lang-fr>Caviar d'Aquitaine — cuillère nacre</span><span data-lang-en>Aquitaine caviar — mother-of-pearl spoon</span></li>
+                <li><span data-lang-fr>Planches charcuterie & fromages artisanaux</span><span data-lang-en>Charcuterie & artisan cheese boards</span></li>
+                <li><span data-lang-fr>Plateau fruits de mer & sushi</span><span data-lang-en>Seafood platter & sushi</span></li>
+                <li><span data-lang-fr>Traiteur repas complet (chef sur demande)</span><span data-lang-en>Full meal catering (chef on request)</span></li>
               </ul>
-              <p style="margin-top:12px;"><a href="#contact" style="color:var(--gold);font-weight:600;text-decoration:none;">→ Contactez-nous pour un devis personnalisé</a></p>
+              <p style="margin-top:12px;"><a href="#contact" style="color:var(--gold);font-weight:600;text-decoration:none;"><span data-lang-fr>→ Contactez-nous pour un devis personnalisé</span><span data-lang-en>→ Contact us for a custom quote</span></a></p>
             </div>
           </div>
         </div>
@@ -643,9 +669,9 @@
 
   <!-- GALERIE -->
   <section id="galerie">
-    <div class="section-label">Galerie</div>
-    <h2 class="section-title">À bord</h2>
-    <p class="section-subtitle">Découvrez l'univers Prestige Charter.</p>
+    <div class="section-label"><span data-lang-fr>Galerie</span><span data-lang-en>Gallery</span></div>
+    <h2 class="section-title"><span data-lang-fr>À bord</span><span data-lang-en>On Board</span></h2>
+    <p class="section-subtitle"><span data-lang-fr>Découvrez l'univers Prestige Charter.</span><span data-lang-en>Discover the Prestige Charter universe.</span></p>
 
     <div class="galerie-grid">
       <div class="photo">
@@ -653,7 +679,7 @@
         <div class="photo-label">Prestige 42S</div>
       </div>
       <div class="photo">
-        <img src="images/yacht-3.webp" alt="Sunset en mer" loading="lazy">
+        <img src="images/yacht-3.webp" alt="Sunset" loading="lazy">
         <div class="photo-label">Sunset</div>
       </div>
       <div class="photo">
@@ -661,8 +687,8 @@
         <div class="photo-label">Cockpit</div>
       </div>
       <div class="photo">
-        <img src="images/Arri%C3%A8re%20V2.jpeg" alt="Plateforme arrière" loading="lazy">
-        <div class="photo-label">Plateforme</div>
+        <img src="images/Arri%C3%A8re%20V2.jpeg" alt="Plateforme" loading="lazy">
+        <div class="photo-label"><span data-lang-fr>Plateforme</span><span data-lang-en>Swim Platform</span></div>
       </div>
       <div class="photo">
         <img src="images/hero.jpg" alt="Cap-Ferrat" loading="lazy">
@@ -673,9 +699,15 @@
 
   <!-- CONTACT -->
   <section class="cta-section" id="contact">
-    <div class="section-label">Réservation</div>
-    <h2 class="section-title">Votre prochaine escapade<br>commence ici</h2>
-    <p>Acompte de 30% à la réservation. Solde 7 jours avant la sortie. Réponse sous 24h.</p>
+    <div class="section-label"><span data-lang-fr>Réservation</span><span data-lang-en>Booking</span></div>
+    <h2 class="section-title">
+      <span data-lang-fr>Votre prochaine escapade<br>commence ici</span>
+      <span data-lang-en>Your next escape<br>starts here</span>
+    </h2>
+    <p>
+      <span data-lang-fr>Acompte de 30% à la réservation. Solde 7 jours avant la sortie. Réponse sous 24h.</span>
+      <span data-lang-en>30% deposit upon booking. Balance due 7 days before departure. Reply within 24h.</span>
+    </p>
     <div class="cta-buttons">
       <a href="mailto:prestigecharter06@gmail.com" class="btn-gold">prestigecharter06@gmail.com</a>
       <a href="tel:+33652192414" class="btn-outline">+33 6 52 19 24 14</a>
@@ -698,8 +730,21 @@
       </svg>
       <div class="logo-text">PRESTIGE <span>CHARTER</span></div>
     </a>
-    <p>Saint-Jean-Cap-Ferrat — Côte d'Azur<br>© 2026 Prestige Charter AT. Tous droits réservés.</p>
+    <p>Saint-Jean-Cap-Ferrat — Côte d'Azur<br>© 2026 Prestige Charter AT. <span data-lang-fr>Tous droits réservés.</span><span data-lang-en>All rights reserved.</span></p>
   </footer>
+
+  <script>
+    function setLang(lang) {
+      document.body.classList.toggle('en', lang === 'en');
+      document.documentElement.lang = lang;
+      document.getElementById('btn-fr').classList.toggle('active', lang === 'fr');
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+      localStorage.setItem('pca-lang', lang);
+    }
+    // Restore saved language
+    const saved = localStorage.getItem('pca-lang');
+    if (saved) setLang(saved);
+  </script>
 
 </body>
 </html>
