@@ -29,472 +29,250 @@
     }
 
     nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 100;
-      padding: 16px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: rgba(11, 29, 58, 0.95);
-      backdrop-filter: blur(20px);
+      position: fixed; top: 0; width: 100%; z-index: 100;
+      padding: 16px 40px; display: flex; justify-content: space-between; align-items: center;
+      background: rgba(11, 29, 58, 0.95); backdrop-filter: blur(20px);
       border-bottom: 1px solid rgba(201, 168, 76, 0.15);
-      transition: all 0.3s ease;
     }
 
-    .logo-wrap {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      text-decoration: none;
-    }
+    .logo-wrap { display: flex; align-items: center; gap: 10px; text-decoration: none; }
     .logo-wrap svg { height: 36px; width: auto; }
     .logo-text {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.3rem;
-      font-weight: 700;
-      color: var(--gold);
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      line-height: 1.1;
+      font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 700;
+      color: var(--gold); letter-spacing: 2px; text-transform: uppercase; line-height: 1.1;
     }
     .logo-text span { color: var(--white); font-weight: 400; }
 
     .nav-links { display: flex; gap: 32px; list-style: none; }
-
     .nav-links a {
-      color: var(--gray);
-      text-decoration: none;
-      font-size: 0.85rem;
-      font-weight: 500;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      transition: color 0.3s;
+      color: var(--gray); text-decoration: none; font-size: 0.85rem; font-weight: 500;
+      letter-spacing: 1px; text-transform: uppercase; transition: color 0.3s;
     }
-
     .nav-links a:hover { color: var(--gold); }
 
     .nav-cta {
-      background: var(--gold);
-      color: var(--navy);
-      padding: 10px 24px;
-      border-radius: 4px;
-      font-weight: 600;
-      font-size: 0.8rem;
-      text-decoration: none;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      transition: all 0.3s;
+      background: var(--gold); color: var(--navy); padding: 10px 24px; border-radius: 4px;
+      font-weight: 600; font-size: 0.8rem; text-decoration: none; letter-spacing: 1px;
+      text-transform: uppercase; transition: all 0.3s;
     }
-
     .nav-cta:hover { background: var(--gold-light); }
 
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      cursor: pointer;
-      background: none;
-      border: none;
-      padding: 4px;
-    }
-    .hamburger div {
-      width: 24px;
-      height: 2px;
-      background: var(--gold);
-      border-radius: 2px;
-      transition: all 0.3s;
-    }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+    .hamburger div { width: 24px; height: 2px; background: var(--gold); border-radius: 2px; }
 
+    /* HERO */
     .hero {
-      position: relative;
-      height: 100vh;
-      min-height: 600px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 0 24px;
+      position: relative; height: 100vh; min-height: 600px;
+      display: flex; flex-direction: column; justify-content: center; align-items: center;
+      text-align: center; padding: 0 24px;
       background: linear-gradient(180deg, rgba(11,29,58,0.3) 0%, rgba(11,29,58,0.85) 100%),
                   url('images/hero.jpg') center/cover no-repeat;
     }
-
     .hero-badge {
-      display: inline-block;
-      border: 1px solid var(--gold);
-      color: var(--gold);
-      padding: 6px 20px;
-      border-radius: 30px;
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      margin-bottom: 24px;
+      display: inline-block; border: 1px solid var(--gold); color: var(--gold);
+      padding: 6px 20px; border-radius: 30px; font-size: 0.7rem; font-weight: 600;
+      letter-spacing: 3px; text-transform: uppercase; margin-bottom: 24px;
     }
-
     .hero h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2.4rem, 6vw, 4.5rem);
-      font-weight: 700;
-      line-height: 1.1;
-      margin-bottom: 20px;
-      max-width: 800px;
+      font-family: 'Playfair Display', serif; font-size: clamp(2.4rem, 6vw, 4.5rem);
+      font-weight: 700; line-height: 1.1; margin-bottom: 20px; max-width: 800px;
     }
-
-    .hero h1 em {
-      font-style: italic;
-      color: var(--gold);
-    }
-
-    .hero p {
-      font-size: 1.1rem;
-      color: var(--gray);
-      max-width: 520px;
-      line-height: 1.6;
-      margin-bottom: 36px;
-    }
-
+    .hero h1 em { font-style: italic; color: var(--gold); }
+    .hero p { font-size: 1.1rem; color: var(--gray); max-width: 520px; line-height: 1.6; margin-bottom: 36px; }
     .hero-buttons { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; }
 
     .btn-gold {
-      background: var(--gold);
-      color: var(--navy);
-      padding: 14px 36px;
-      border-radius: 4px;
-      font-weight: 600;
-      font-size: 0.85rem;
-      text-decoration: none;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      transition: all 0.3s;
+      background: var(--gold); color: var(--navy); padding: 14px 36px; border-radius: 4px;
+      font-weight: 600; font-size: 0.85rem; text-decoration: none; letter-spacing: 1px;
+      text-transform: uppercase; transition: all 0.3s;
     }
-
     .btn-gold:hover { background: var(--gold-light); transform: translateY(-2px); }
 
     .btn-outline {
-      border: 1px solid rgba(201, 168, 76, 0.4);
-      color: var(--gold);
-      padding: 14px 36px;
-      border-radius: 4px;
-      font-weight: 500;
-      font-size: 0.85rem;
-      text-decoration: none;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      transition: all 0.3s;
+      border: 1px solid rgba(201, 168, 76, 0.4); color: var(--gold);
+      padding: 14px 36px; border-radius: 4px; font-weight: 500; font-size: 0.85rem;
+      text-decoration: none; letter-spacing: 1px; text-transform: uppercase; transition: all 0.3s;
     }
-
     .btn-outline:hover { border-color: var(--gold); background: rgba(201, 168, 76, 0.1); }
 
     .scroll-hint {
-      position: absolute;
-      bottom: 32px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 8px;
-      color: var(--gray);
-      font-size: 0.7rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      animation: float 2s ease-in-out infinite;
+      position: absolute; bottom: 32px; display: flex; flex-direction: column;
+      align-items: center; gap: 8px; color: var(--gray); font-size: 0.7rem;
+      letter-spacing: 2px; text-transform: uppercase; animation: float 2s ease-in-out infinite;
     }
+    @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(8px); } }
 
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(8px); }
-    }
-
-    section {
-      padding: 100px 40px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
+    /* SECTIONS */
+    section { padding: 100px 40px; max-width: 1200px; margin: 0 auto; }
     .section-label {
-      color: var(--gold);
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      margin-bottom: 12px;
+      color: var(--gold); font-size: 0.7rem; font-weight: 600;
+      letter-spacing: 3px; text-transform: uppercase; margin-bottom: 12px;
     }
-
     .section-title {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(1.8rem, 4vw, 2.8rem);
-      font-weight: 700;
-      margin-bottom: 16px;
-      line-height: 1.2;
+      font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 700; margin-bottom: 16px; line-height: 1.2;
     }
+    .section-subtitle { color: var(--gray); font-size: 1rem; max-width: 560px; line-height: 1.6; margin-bottom: 48px; }
 
-    .section-subtitle {
-      color: var(--gray);
-      font-size: 1rem;
-      max-width: 560px;
-      line-height: 1.6;
-      margin-bottom: 48px;
-    }
-
-    .formules-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 24px;
-    }
-
+    /* FORMULES */
+    .formules-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
     .formule-card {
-      background: var(--navy-light);
-      border: 1px solid rgba(201, 168, 76, 0.1);
-      border-radius: 12px;
-      padding: 36px 32px;
-      position: relative;
-      overflow: hidden;
-      transition: all 0.4s ease;
+      background: var(--navy-light); border: 1px solid rgba(201, 168, 76, 0.1);
+      border-radius: 12px; padding: 36px 32px; position: relative; overflow: hidden; transition: all 0.4s ease;
     }
-
-    .formule-card:hover {
-      border-color: rgba(201, 168, 76, 0.3);
-      transform: translateY(-4px);
-      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-    }
-
-    .formule-card.featured {
-      border-color: var(--gold);
-      background: linear-gradient(135deg, var(--navy-light) 0%, rgba(201, 168, 76, 0.08) 100%);
-    }
-
+    .formule-card:hover { border-color: rgba(201, 168, 76, 0.3); transform: translateY(-4px); box-shadow: 0 20px 60px rgba(0,0,0,0.3); }
+    .formule-card.featured { border-color: var(--gold); background: linear-gradient(135deg, var(--navy-light) 0%, rgba(201, 168, 76, 0.08) 100%); }
     .formule-badge {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      background: var(--gold);
-      color: var(--navy);
-      font-size: 0.65rem;
-      font-weight: 700;
-      padding: 4px 12px;
-      border-radius: 20px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
+      position: absolute; top: 20px; right: 20px; background: var(--gold); color: var(--navy);
+      font-size: 0.65rem; font-weight: 700; padding: 4px 12px; border-radius: 20px;
+      letter-spacing: 1px; text-transform: uppercase;
     }
-
     .formule-icon { font-size: 2rem; margin-bottom: 16px; }
-
-    .formule-name {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.4rem;
-      font-weight: 700;
-      margin-bottom: 4px;
-    }
-
-    .formule-duration {
-      color: var(--gold);
-      font-size: 0.8rem;
-      font-weight: 500;
-      margin-bottom: 16px;
-    }
-
-    .formule-desc {
-      color: var(--gray);
-      font-size: 0.85rem;
-      line-height: 1.6;
-      margin-bottom: 20px;
-    }
-
+    .formule-name { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; margin-bottom: 4px; }
+    .formule-duration { color: var(--gold); font-size: 0.8rem; font-weight: 500; margin-bottom: 16px; }
+    .formule-desc { color: var(--gray); font-size: 0.85rem; line-height: 1.6; margin-bottom: 20px; }
     .formule-includes { list-style: none; margin-bottom: 24px; }
-
-    .formule-includes li {
-      color: var(--gray);
-      font-size: 0.82rem;
-      padding: 4px 0;
-      padding-left: 20px;
-      position: relative;
-    }
-
-    .formule-includes li::before {
-      content: '✦';
-      color: var(--gold);
-      position: absolute;
-      left: 0;
-      font-size: 0.6rem;
-      top: 6px;
-    }
-
-    .formule-prix {
-      display: flex;
-      align-items: baseline;
-      gap: 4px;
-      margin-top: auto;
-    }
-
-    .formule-prix .montant {
-      font-family: 'Playfair Display', serif;
-      font-size: 2rem;
-      font-weight: 700;
-      color: var(--white);
-    }
-
+    .formule-includes li { color: var(--gray); font-size: 0.82rem; padding: 4px 0; padding-left: 20px; position: relative; }
+    .formule-includes li::before { content: '✦'; color: var(--gold); position: absolute; left: 0; font-size: 0.6rem; top: 6px; }
+    .formule-prix { display: flex; align-items: baseline; gap: 4px; }
+    .formule-prix .montant { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700; color: var(--white); }
     .formule-prix .unite { color: var(--gray); font-size: 0.85rem; }
     .formule-prix .capacite { color: var(--gray); font-size: 0.75rem; margin-left: 8px; }
 
-    .options-grid { display: flex; flex-direction: column; gap: 12px; }
+    /* INCLUS BADGES */
+    .inclus-section { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 48px; padding-top: 32px; border-top: 1px solid rgba(201, 168, 76, 0.1); }
+    .inclus-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(201, 168, 76, 0.08); border: 1px solid rgba(201, 168, 76, 0.15);
+      border-radius: 20px; padding: 8px 16px; font-size: 0.78rem; color: var(--gray);
+    }
+    .inclus-badge .badge-icon { font-size: 1rem; }
+    .inclus-badge strong { color: var(--gold); font-weight: 600; }
+
+    /* ========== OPTIONS ACCORDION ========== */
+    .options-grid { display: flex; flex-direction: column; gap: 8px; }
 
     .option-card {
-      display: flex;
-      align-items: center;
-      gap: 20px;
       background: var(--navy-light);
       border: 1px solid rgba(201, 168, 76, 0.08);
-      border-radius: 10px;
-      padding: 20px 24px;
+      border-radius: 12px;
+      overflow: hidden;
       transition: all 0.3s;
     }
+    .option-card:hover { border-color: rgba(201, 168, 76, 0.25); }
+    .option-card.open { border-color: rgba(201, 168, 76, 0.35); }
 
-    .option-card:hover {
-      border-color: rgba(201, 168, 76, 0.25);
-      background: rgba(19, 43, 80, 0.8);
+    .option-header {
+      display: flex; align-items: center; gap: 16px;
+      padding: 20px 24px; cursor: pointer;
+      transition: background 0.3s;
+      user-select: none;
+    }
+    .option-header:hover { background: rgba(19, 43, 80, 0.8); }
+
+    .option-icon-wrap {
+      width: 52px; height: 52px; border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem; flex-shrink: 0;
+      background: rgba(201, 168, 76, 0.08);
+      border: 1px solid rgba(201, 168, 76, 0.12);
     }
 
-    .option-icon { font-size: 1.6rem; flex-shrink: 0; }
-    .option-name { font-weight: 600; font-size: 0.9rem; margin-bottom: 2px; }
-    .option-desc { color: var(--gray); font-size: 0.8rem; }
+    .option-info { flex: 1; }
+    .option-name { font-weight: 600; font-size: 0.95rem; margin-bottom: 2px; }
+    .option-tagline { color: var(--gray); font-size: 0.78rem; }
 
+    .option-right { display: flex; align-items: center; gap: 16px; margin-left: auto; }
     .option-prix {
-      margin-left: auto;
-      font-family: 'Playfair Display', serif;
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: var(--gold);
-      white-space: nowrap;
+      font-family: 'Playfair Display', serif; font-size: 1.15rem;
+      font-weight: 700; color: var(--gold); white-space: nowrap;
     }
 
+    .option-chevron {
+      width: 20px; height: 20px; flex-shrink: 0;
+      transition: transform 0.3s ease; color: var(--gray);
+    }
+    .option-card.open .option-chevron { transform: rotate(180deg); color: var(--gold); }
+
+    .option-details {
+      max-height: 0; overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.3s ease;
+      padding: 0 24px;
+    }
+    .option-card.open .option-details {
+      max-height: 600px;
+      padding: 0 24px 24px 24px;
+    }
+
+    .option-details-inner {
+      display: flex; gap: 24px; align-items: flex-start;
+      padding-top: 16px; border-top: 1px solid rgba(201, 168, 76, 0.08);
+    }
+
+    .option-illustration {
+      width: 160px; height: 110px; border-radius: 10px; flex-shrink: 0;
+      overflow: hidden; position: relative;
+      background: var(--navy);
+    }
+    .option-illustration svg { width: 100%; height: 100%; }
+
+    .option-detail-text { flex: 1; }
+    .option-detail-text p { color: var(--gray); font-size: 0.83rem; line-height: 1.7; margin-bottom: 10px; }
+    .option-detail-text ul { list-style: none; }
+    .option-detail-text li {
+      color: var(--gray); font-size: 0.8rem; padding: 3px 0; padding-left: 18px; position: relative;
+    }
+    .option-detail-text li::before { content: '✦'; color: var(--gold); position: absolute; left: 0; font-size: 0.55rem; top: 5px; }
+
+    /* GALERIE */
     .galerie-grid {
-      display: grid;
-      grid-template-columns: repeat(12, 1fr);
-      grid-auto-rows: 220px;
-      gap: 12px;
+      display: grid; grid-template-columns: repeat(12, 1fr);
+      grid-auto-rows: 220px; gap: 12px;
     }
-
     .galerie-grid .photo:nth-child(1) { grid-column: span 5; grid-row: span 2; }
     .galerie-grid .photo:nth-child(2) { grid-column: span 4; }
     .galerie-grid .photo:nth-child(3) { grid-column: span 3; }
     .galerie-grid .photo:nth-child(4) { grid-column: span 4; }
     .galerie-grid .photo:nth-child(5) { grid-column: span 3; }
 
-    .photo {
-      border-radius: 10px;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.6s ease;
-    }
-
+    .photo { border-radius: 10px; overflow: hidden; position: relative; }
+    .photo img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
     .photo:hover img { transform: scale(1.05); }
-
     .photo-label {
-      position: absolute;
-      bottom: 12px;
-      left: 12px;
-      background: var(--glass);
-      backdrop-filter: blur(10px);
-      color: var(--gold);
-      font-size: 0.7rem;
-      font-weight: 600;
-      padding: 4px 12px;
-      border-radius: 4px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
+      position: absolute; bottom: 12px; left: 12px;
+      background: var(--glass); backdrop-filter: blur(10px); color: var(--gold);
+      font-size: 0.7rem; font-weight: 600; padding: 4px 12px; border-radius: 4px;
+      letter-spacing: 1px; text-transform: uppercase;
     }
 
-    .cta-section {
-      text-align: center;
-      padding: 100px 40px;
-      max-width: 700px;
-      margin: 0 auto;
-    }
+    /* CTA */
+    .cta-section { text-align: center; padding: 100px 40px; max-width: 700px; margin: 0 auto; }
+    .cta-buttons { display: flex; gap: 16px; justify-content: center; margin-top: 32px; flex-wrap: wrap; }
 
-    .cta-buttons {
-      display: flex;
-      gap: 16px;
-      justify-content: center;
-      margin-top: 32px;
-      flex-wrap: wrap;
-    }
-
+    /* FOOTER */
     footer {
-      text-align: center;
-      padding: 48px 40px;
-      border-top: 1px solid rgba(201, 168, 76, 0.1);
-      color: var(--gray);
-      font-size: 0.8rem;
+      text-align: center; padding: 48px 40px;
+      border-top: 1px solid rgba(201, 168, 76, 0.1); color: var(--gray); font-size: 0.8rem;
     }
 
-    /* ========== INCLUS BADGES ========== */
-    .inclus-section {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 48px;
-      padding-top: 32px;
-      border-top: 1px solid rgba(201, 168, 76, 0.1);
-    }
-
-    .inclus-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: rgba(201, 168, 76, 0.08);
-      border: 1px solid rgba(201, 168, 76, 0.15);
-      border-radius: 20px;
-      padding: 8px 16px;
-      font-size: 0.78rem;
-      color: var(--gray);
-    }
-
-    .inclus-badge .badge-icon { font-size: 1rem; }
-    .inclus-badge strong { color: var(--gold); font-weight: 600; }
-
+    /* MOBILE */
     @media (max-width: 768px) {
       nav { padding: 16px 20px; }
-
       .nav-links {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: rgba(11, 29, 58, 0.98);
-        flex-direction: column;
-        padding: 24px;
-        gap: 20px;
+        display: none; position: absolute; top: 100%; left: 0; right: 0;
+        background: rgba(11, 29, 58, 0.98); flex-direction: column; padding: 24px; gap: 20px;
         border-bottom: 1px solid rgba(201, 168, 76, 0.15);
       }
-
       .nav-links.open { display: flex; }
       .hamburger { display: flex; }
       .nav-cta { display: none; }
-
       section { padding: 60px 20px; }
-
-      .galerie-grid {
-        grid-template-columns: 1fr 1fr;
-        grid-auto-rows: 180px;
-      }
+      .galerie-grid { grid-template-columns: 1fr 1fr; grid-auto-rows: 180px; }
       .galerie-grid .photo:nth-child(1) { grid-column: span 2; grid-row: span 1; }
-      .galerie-grid .photo:nth-child(2) { grid-column: span 1; }
-      .galerie-grid .photo:nth-child(3) { grid-column: span 1; }
-      .galerie-grid .photo:nth-child(4) { grid-column: span 1; }
-      .galerie-grid .photo:nth-child(5) { grid-column: span 1; }
-
-      .option-card { flex-wrap: wrap; }
-      .option-prix { margin-left: 0; width: 100%; text-align: right; margin-top: 8px; }
-
+      .galerie-grid .photo:nth-child(n) { grid-column: span 1; }
+      .option-details-inner { flex-direction: column; }
+      .option-illustration { width: 100%; height: 140px; }
+      .option-right { gap: 10px; }
       .logo-text { font-size: 1rem; }
       .logo-wrap svg { height: 28px; }
     }
@@ -502,7 +280,7 @@
 </head>
 <body>
 
-  <!-- ========== NAV ========== -->
+  <!-- NAV -->
   <nav>
     <a href="#" class="logo-wrap">
       <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -513,14 +291,11 @@
           <circle cx="30" cy="14" r="3" stroke-width="1.8"/>
           <path d="M18 42 C18 36, 24 32, 30 32"/>
           <path d="M42 42 C42 36, 36 32, 30 32"/>
-          <line x1="16" y1="40" x2="20" y2="44"/><line x1="16" y1="44" x2="20" y2="44"/>
-          <line x1="44" y1="40" x2="40" y2="44"/><line x1="44" y1="44" x2="40" y2="44"/>
         </g>
         <path d="M20 48 Q25 45, 30 48 Q35 51, 40 48" stroke="#C9A84C" stroke-width="1.2" fill="none" stroke-linecap="round"/>
       </svg>
       <div class="logo-text">PRESTIGE <span>CHARTER</span></div>
     </a>
-
     <button class="hamburger" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">
       <div></div><div></div><div></div>
     </button>
@@ -533,7 +308,7 @@
     <a href="#contact" class="nav-cta">Réserver</a>
   </nav>
 
-  <!-- ========== HERO ========== -->
+  <!-- HERO -->
   <section class="hero">
     <div class="hero-badge">⚓ Saint-Jean-Cap-Ferrat</div>
     <h1>L'excellence <em>maritime</em><br>à votre portée</h1>
@@ -542,20 +317,16 @@
       <a href="#formules" class="btn-gold">Découvrir nos formules</a>
       <a href="#contact" class="btn-outline">Réserver</a>
     </div>
-    <div class="scroll-hint">
-      <span>Explorer</span>
-      <span>↓</span>
-    </div>
+    <div class="scroll-hint"><span>Explorer</span><span>↓</span></div>
   </section>
 
-  <!-- ========== FORMULES ========== -->
+  <!-- FORMULES -->
   <section id="formules">
     <div class="section-label">Nos Formules</div>
     <h2 class="section-title">Choisissez votre escapade</h2>
     <p class="section-subtitle">Chaque sortie est privatisée. Skipper professionnel, équipements premium, service sur-mesure.</p>
 
     <div class="formules-grid">
-
       <div class="formule-card">
         <div class="formule-icon">🌅</div>
         <div class="formule-name">Sunset Prestige</div>
@@ -565,7 +336,7 @@
           <li>Champagne & planches apéritives</li>
           <li>Croisière Beaulieu → Cap-Ferrat</li>
           <li>Mouillage baie secrète</li>
-          <li>Musique d'ambiance Bluetooth</li>
+          <li>Enceinte Bluetooth intégrée</li>
           <li>Paddle inclus</li>
         </ul>
         <div class="formule-prix">
@@ -612,10 +383,8 @@
           <span class="capacite">jusqu'à 6 pers.</span>
         </div>
       </div>
-
     </div>
 
-    <!-- INCLUS DANS TOUTES LES FORMULES -->
     <div class="inclus-section">
       <div class="inclus-badge"><span class="badge-icon">🏄</span> <strong>Paddle</strong> inclus</div>
       <div class="inclus-badge"><span class="badge-icon">🔊</span> <strong>Enceinte Bluetooth</strong> intégrée</div>
@@ -625,63 +394,254 @@
     </div>
   </section>
 
-  <!-- ========== OPTIONS ========== -->
+  <!-- OPTIONS ACCORDION -->
   <section id="options">
     <div class="section-label">Personnalisez</div>
     <h2 class="section-title">Options & Extras</h2>
-    <p class="section-subtitle">Ajoutez une touche unique à votre croisière.</p>
+    <p class="section-subtitle">Cliquez pour découvrir les détails de chaque option.</p>
 
     <div class="options-grid">
 
-      <div class="option-card">
-        <div class="option-icon">🍾</div>
-        <div>
-          <div class="option-name">Upgrade Champagne Dom Pérignon</div>
-          <div class="option-desc">Remplace le champagne inclus par une bouteille de Dom Pérignon</div>
+      <!-- CHAMPAGNE -->
+      <div class="option-card" onclick="this.classList.toggle('open')">
+        <div class="option-header">
+          <div class="option-icon-wrap">🍾</div>
+          <div class="option-info">
+            <div class="option-name">Upgrade Champagne Dom Pérignon</div>
+            <div class="option-tagline">Remplace le champagne inclus par une cuvée d'exception</div>
+          </div>
+          <div class="option-right">
+            <div class="option-prix">+180€</div>
+            <svg class="option-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </div>
         </div>
-        <div class="option-prix">+180€</div>
+        <div class="option-details">
+          <div class="option-details-inner">
+            <div class="option-illustration">
+              <svg viewBox="0 0 160 110" xmlns="http://www.w3.org/2000/svg">
+                <rect width="160" height="110" fill="#0B1D3A"/>
+                <g transform="translate(50,10)">
+                  <rect x="22" y="8" width="16" height="60" rx="3" fill="none" stroke="#C9A84C" stroke-width="1.5"/>
+                  <rect x="18" y="60" width="24" height="30" rx="4" fill="none" stroke="#C9A84C" stroke-width="1.5"/>
+                  <ellipse cx="30" cy="8" rx="8" ry="4" fill="none" stroke="#C9A84C" stroke-width="1"/>
+                  <circle cx="30" cy="4" r="2" fill="#C9A84C" opacity="0.6"/>
+                  <circle cx="26" cy="2" r="1.5" fill="#C9A84C" opacity="0.4"/>
+                  <circle cx="34" cy="3" r="1" fill="#C9A84C" opacity="0.3"/>
+                  <text x="30" y="105" text-anchor="middle" fill="#C9A84C" font-family="Playfair Display,serif" font-size="8" opacity="0.7">Dom Pérignon</text>
+                </g>
+              </svg>
+            </div>
+            <div class="option-detail-text">
+              <p>Élevez votre expérience avec une bouteille de <strong style="color:var(--gold);">Dom Pérignon Vintage</strong>, servie fraîche au mouillage.</p>
+              <ul>
+                <li>Bouteille de 75cl Dom Pérignon</li>
+                <li>Service dans des flûtes en cristal</li>
+                <li>Glacière premium dédiée</li>
+                <li>Disponible sur toutes les formules</li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div class="option-card">
-        <div class="option-icon">🎂</div>
-        <div>
-          <div class="option-name">Pack Anniversaire</div>
-          <div class="option-desc">Gâteau personnalisé, décoration, ballons & service dédié</div>
+      <!-- ANNIVERSAIRE -->
+      <div class="option-card" onclick="this.classList.toggle('open')">
+        <div class="option-header">
+          <div class="option-icon-wrap">🎂</div>
+          <div class="option-info">
+            <div class="option-name">Pack Anniversaire</div>
+            <div class="option-tagline">Décoration, gâteau personnalisé & service dédié</div>
+          </div>
+          <div class="option-right">
+            <div class="option-prix">+250€</div>
+            <svg class="option-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </div>
         </div>
-        <div class="option-prix">+250€</div>
+        <div class="option-details">
+          <div class="option-details-inner">
+            <div class="option-illustration">
+              <svg viewBox="0 0 160 110" xmlns="http://www.w3.org/2000/svg">
+                <rect width="160" height="110" fill="#0B1D3A"/>
+                <g transform="translate(40,15)">
+                  <rect x="10" y="40" width="60" height="30" rx="6" fill="none" stroke="#C9A84C" stroke-width="1.5"/>
+                  <rect x="15" y="28" width="50" height="16" rx="4" fill="none" stroke="#C9A84C" stroke-width="1.5"/>
+                  <line x1="30" y1="18" x2="30" y2="28" stroke="#C9A84C" stroke-width="1.5"/>
+                  <line x1="40" y1="14" x2="40" y2="28" stroke="#C9A84C" stroke-width="1.5"/>
+                  <line x1="50" y1="18" x2="50" y2="28" stroke="#C9A84C" stroke-width="1.5"/>
+                  <circle cx="30" cy="15" r="3" fill="#C9A84C" opacity="0.5"/>
+                  <circle cx="40" cy="11" r="3" fill="#C9A84C" opacity="0.6"/>
+                  <circle cx="50" cy="15" r="3" fill="#C9A84C" opacity="0.5"/>
+                  <path d="M5 80 Q20 75, 35 80 Q50 85, 65 80 Q75 77, 80 80" stroke="#C9A84C" stroke-width="1" fill="none" opacity="0.4"/>
+                  <text x="40" y="100" text-anchor="middle" fill="#C9A84C" font-family="Playfair Display,serif" font-size="8" opacity="0.7">Happy Birthday</text>
+                </g>
+              </svg>
+            </div>
+            <div class="option-detail-text">
+              <p>Célébrez un moment inoubliable en mer avec un <strong style="color:var(--gold);">pack anniversaire complet</strong>.</p>
+              <ul>
+                <li>Gâteau personnalisé (pâtissier local)</li>
+                <li>Décoration ballons & guirlandes dorées</li>
+                <li>Bougie & mise en scène au coucher de soleil</li>
+                <li>Message personnalisé sur commande</li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div class="option-card">
-        <div class="option-icon">📸</div>
-        <div>
-          <div class="option-name">Shooting Photo & Drone</div>
-          <div class="option-desc">Photographe professionnel + prise de vue drone, 2h, 50 photos & vidéo retouchées livrées sous 48h</div>
+      <!-- SHOOTING PHOTO & DRONE -->
+      <div class="option-card" onclick="this.classList.toggle('open')">
+        <div class="option-header">
+          <div class="option-icon-wrap">📸</div>
+          <div class="option-info">
+            <div class="option-name">Shooting Photo & Drone</div>
+            <div class="option-tagline">Photographe professionnel + vidéo drone aérienne</div>
+          </div>
+          <div class="option-right">
+            <div class="option-prix">+450€</div>
+            <svg class="option-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </div>
         </div>
-        <div class="option-prix">+450€</div>
+        <div class="option-details">
+          <div class="option-details-inner">
+            <div class="option-illustration">
+              <svg viewBox="0 0 160 110" xmlns="http://www.w3.org/2000/svg">
+                <rect width="160" height="110" fill="#0B1D3A"/>
+                <g transform="translate(30,10)">
+                  <!-- Camera -->
+                  <rect x="5" y="40" width="40" height="28" rx="5" fill="none" stroke="#C9A84C" stroke-width="1.5"/>
+                  <circle cx="25" cy="54" r="9" fill="none" stroke="#C9A84C" stroke-width="1.5"/>
+                  <circle cx="25" cy="54" r="4" fill="#C9A84C" opacity="0.3"/>
+                  <rect x="15" y="34" width="20" height="8" rx="3" fill="none" stroke="#C9A84C" stroke-width="1"/>
+                  <!-- Drone -->
+                  <rect x="65" y="25" width="20" height="10" rx="3" fill="none" stroke="#C9A84C" stroke-width="1.5"/>
+                  <line x1="60" y1="25" x2="68" y2="25" stroke="#C9A84C" stroke-width="1.5"/>
+                  <line x1="82" y1="25" x2="90" y2="25" stroke="#C9A84C" stroke-width="1.5"/>
+                  <ellipse cx="58" cy="22" rx="8" ry="2" fill="none" stroke="#C9A84C" stroke-width="1" opacity="0.6"/>
+                  <ellipse cx="92" cy="22" rx="8" ry="2" fill="none" stroke="#C9A84C" stroke-width="1" opacity="0.6"/>
+                  <circle cx="75" cy="38" r="4" fill="none" stroke="#C9A84C" stroke-width="1"/>
+                  <circle cx="75" cy="38" r="1.5" fill="#C9A84C" opacity="0.4"/>
+                  <text x="50" y="90" text-anchor="middle" fill="#C9A84C" font-family="Playfair Display,serif" font-size="8" opacity="0.7">Photo &amp; Drone</text>
+                </g>
+              </svg>
+            </div>
+            <div class="option-detail-text">
+              <p>Immortalisez votre journée avec des <strong style="color:var(--gold);">prises de vue professionnelles</strong> et des plans aériens par drone.</p>
+              <ul>
+                <li>Photographe professionnel à bord (2h)</li>
+                <li>Pilote drone certifié DGAC</li>
+                <li>50+ photos HD retouchées</li>
+                <li>Vidéo drone montée (1-2 min)</li>
+                <li>Livraison galerie privée sous 48h</li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div class="option-card">
-        <div class="option-icon">🏎️</div>
-        <div>
-          <div class="option-name">Seabob</div>
-          <div class="option-desc">Scooter sous-marin électrique — sensations garanties, briefing inclus</div>
+      <!-- SEABOB -->
+      <div class="option-card" onclick="this.classList.toggle('open')">
+        <div class="option-header">
+          <div class="option-icon-wrap">🌊</div>
+          <div class="option-info">
+            <div class="option-name">Seabob</div>
+            <div class="option-tagline">Scooter sous-marin électrique — sensations aquatiques</div>
+          </div>
+          <div class="option-right">
+            <div class="option-prix">+350€</div>
+            <svg class="option-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </div>
         </div>
-        <div class="option-prix">+350€</div>
+        <div class="option-details">
+          <div class="option-details-inner">
+            <div class="option-illustration">
+              <svg viewBox="0 0 160 110" xmlns="http://www.w3.org/2000/svg">
+                <rect width="160" height="110" fill="#0B1D3A"/>
+                <g transform="translate(20,20)">
+                  <!-- Seabob shape -->
+                  <path d="M20 45 Q10 42, 8 38 Q6 34, 15 30 L100 25 Q115 23, 118 30 Q120 36, 110 40 L25 48 Q20 48, 20 45Z" fill="none" stroke="#C9A84C" stroke-width="1.5"/>
+                  <ellipse cx="110" cy="32" rx="6" ry="3" fill="#C9A84C" opacity="0.2"/>
+                  <line x1="22" y1="38" x2="40" y2="36" stroke="#C9A84C" stroke-width="1" opacity="0.5"/>
+                  <line x1="22" y1="42" x2="40" y2="40" stroke="#C9A84C" stroke-width="1" opacity="0.5"/>
+                  <!-- Water bubbles -->
+                  <circle cx="125" cy="30" r="2" fill="#C9A84C" opacity="0.3"/>
+                  <circle cx="128" cy="35" r="1.5" fill="#C9A84C" opacity="0.2"/>
+                  <circle cx="132" cy="28" r="1" fill="#C9A84C" opacity="0.2"/>
+                  <!-- Waves -->
+                  <path d="M5 60 Q20 55, 40 60 Q60 65, 80 60 Q100 55, 120 60" stroke="#C9A84C" stroke-width="1" fill="none" opacity="0.3"/>
+                  <path d="M10 68 Q30 63, 50 68 Q70 73, 90 68 Q110 63, 125 68" stroke="#C9A84C" stroke-width="0.8" fill="none" opacity="0.2"/>
+                  <text x="65" y="85" text-anchor="middle" fill="#C9A84C" font-family="Playfair Display,serif" font-size="8" opacity="0.7">Seabob F5</text>
+                </g>
+              </svg>
+            </div>
+            <div class="option-detail-text">
+              <p>Vivez des <strong style="color:var(--gold);">sensations uniques</strong> sous l'eau avec le Seabob F5, propulsion électrique jusqu'à 20 km/h.</p>
+              <ul>
+                <li>Seabob F5 (propulsion électrique)</li>
+                <li>Briefing sécurité & prise en main</li>
+                <li>Utilisable en surface ou en immersion</li>
+                <li>Autonomie ~1h par charge</li>
+                <li>Accessible dès 16 ans</li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div class="option-card">
-        <div class="option-icon">🍽️</div>
-        <div>
-          <div class="option-name">Boissons & Traiteur</div>
-          <div class="option-desc">Offres personnalisées selon vos envies — contactez-nous par mail ou téléphone</div>
+      <!-- BOISSONS & TRAITEUR -->
+      <div class="option-card" onclick="this.classList.toggle('open')">
+        <div class="option-header">
+          <div class="option-icon-wrap">🍽️</div>
+          <div class="option-info">
+            <div class="option-name">Boissons & Traiteur</div>
+            <div class="option-tagline">Offres personnalisées — vin, champagne, caviar, planches, repas</div>
+          </div>
+          <div class="option-right">
+            <div class="option-prix">Sur devis</div>
+            <svg class="option-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </div>
         </div>
-        <div class="option-prix"><a href="#contact" style="color:var(--gold);text-decoration:none;">Sur devis</a></div>
+        <div class="option-details">
+          <div class="option-details-inner">
+            <div class="option-illustration">
+              <svg viewBox="0 0 160 110" xmlns="http://www.w3.org/2000/svg">
+                <rect width="160" height="110" fill="#0B1D3A"/>
+                <g transform="translate(20,12)">
+                  <!-- Wine glass -->
+                  <path d="M25 30 Q25 15, 32 10 L32 5 L38 5 L38 10 Q45 15, 45 30 Q45 40, 35 42 L35 60 L28 60 L35 60 L42 65 L28 65 Z" fill="none" stroke="#C9A84C" stroke-width="1.2"/>
+                  <!-- Platter -->
+                  <ellipse cx="85" cy="50" rx="30" ry="8" fill="none" stroke="#C9A84C" stroke-width="1.2"/>
+                  <ellipse cx="75" cy="46" rx="4" ry="3" fill="#C9A84C" opacity="0.2"/>
+                  <ellipse cx="85" cy="44" rx="5" ry="3" fill="#C9A84C" opacity="0.25"/>
+                  <ellipse cx="95" cy="46" rx="4" ry="3" fill="#C9A84C" opacity="0.2"/>
+                  <rect x="80" y="58" width="10" height="12" rx="2" fill="none" stroke="#C9A84C" stroke-width="1"/>
+                  <!-- Caviar tin -->
+                  <ellipse cx="35" cy="78" rx="12" ry="5" fill="none" stroke="#C9A84C" stroke-width="1"/>
+                  <rect x="23" y="78" width="24" height="8" rx="2" fill="none" stroke="#C9A84C" stroke-width="1"/>
+                  <text x="70" y="95" text-anchor="middle" fill="#C9A84C" font-family="Playfair Display,serif" font-size="7" opacity="0.7">Conciergerie Saveurs</text>
+                </g>
+              </svg>
+            </div>
+            <div class="option-detail-text">
+              <p>Composez votre expérience gastronomique <strong style="color:var(--gold);">100% sur-mesure</strong>. Envoyez-nous vos envies par mail ou téléphone.</p>
+              <ul>
+                <li>Champagne Blanc de Blancs, Rosé, Dom Pérignon</li>
+                <li>Sélection de vins (Provence, Bourgogne, Italie)</li>
+                <li>Caviar d'Aquitaine — cuillère nacre</li>
+                <li>Planches charcuterie & fromages artisanaux</li>
+                <li>Plateau fruits de mer & sushi</li>
+                <li>Traiteur repas complet (chef sur demande)</li>
+              </ul>
+              <p style="margin-top:12px;"><a href="#contact" style="color:var(--gold);font-weight:600;text-decoration:none;">→ Contactez-nous pour un devis personnalisé</a></p>
+            </div>
+          </div>
+        </div>
       </div>
 
     </div>
   </section>
 
-  <!-- ========== GALERIE ========== -->
+  <!-- GALERIE -->
   <section id="galerie">
     <div class="section-label">Galerie</div>
     <h2 class="section-title">À bord</h2>
@@ -689,33 +649,29 @@
 
     <div class="galerie-grid">
       <div class="photo">
-        <img src="images/yacht-1.jpg" alt="Prestige 42S — vue latérale" loading="lazy">
+        <img src="images/yacht-1.jpg" alt="Prestige 42S" loading="lazy">
         <div class="photo-label">Prestige 42S</div>
       </div>
-
       <div class="photo">
         <img src="images/yacht-3.webp" alt="Sunset en mer" loading="lazy">
         <div class="photo-label">Sunset</div>
       </div>
-
       <div class="photo">
-        <img src="images/yacht-2.webp" alt="Cockpit intérieur teck" loading="lazy">
+        <img src="images/yacht-2.webp" alt="Cockpit" loading="lazy">
         <div class="photo-label">Cockpit</div>
       </div>
-
       <div class="photo">
-        <img src="images/Arri%C3%A8re%20V2.jpeg" alt="Vue arrière — plateforme" loading="lazy">
+        <img src="images/Arri%C3%A8re%20V2.jpeg" alt="Plateforme arrière" loading="lazy">
         <div class="photo-label">Plateforme</div>
       </div>
-
       <div class="photo">
-        <img src="images/hero.jpg" alt="Croisière Côte d'Azur" loading="lazy">
+        <img src="images/hero.jpg" alt="Cap-Ferrat" loading="lazy">
         <div class="photo-label">Cap-Ferrat</div>
       </div>
     </div>
   </section>
 
-  <!-- ========== CONTACT CTA ========== -->
+  <!-- CONTACT -->
   <section class="cta-section" id="contact">
     <div class="section-label">Réservation</div>
     <h2 class="section-title">Votre prochaine escapade<br>commence ici</h2>
@@ -726,7 +682,7 @@
     </div>
   </section>
 
-  <!-- ========== FOOTER ========== -->
+  <!-- FOOTER -->
   <footer>
     <a href="#" class="logo-wrap" style="justify-content:center; margin-bottom: 8px;">
       <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" style="height:28px;">
@@ -737,8 +693,6 @@
           <circle cx="30" cy="14" r="3" stroke-width="1.8"/>
           <path d="M18 42 C18 36, 24 32, 30 32"/>
           <path d="M42 42 C42 36, 36 32, 30 32"/>
-          <line x1="16" y1="40" x2="20" y2="44"/><line x1="16" y1="44" x2="20" y2="44"/>
-          <line x1="44" y1="40" x2="40" y2="44"/><line x1="44" y1="44" x2="40" y2="44"/>
         </g>
         <path d="M20 48 Q25 45, 30 48 Q35 51, 40 48" stroke="#C9A84C" stroke-width="1.2" fill="none" stroke-linecap="round"/>
       </svg>
