@@ -28,7 +28,6 @@
       overflow-x: hidden;
     }
 
-    /* ========== NAV ========== */
     nav {
       position: fixed;
       top: 0;
@@ -44,7 +43,6 @@
       transition: all 0.3s ease;
     }
 
-    /* LOGO SVG inline */
     .logo-wrap {
       display: flex;
       align-items: center;
@@ -109,7 +107,6 @@
       transition: all 0.3s;
     }
 
-    /* ========== HERO ========== */
     .hero {
       position: relative;
       height: 100vh;
@@ -210,7 +207,6 @@
       50% { transform: translateY(8px); }
     }
 
-    /* ========== SECTIONS ========== */
     section {
       padding: 100px 40px;
       max-width: 1200px;
@@ -242,7 +238,6 @@
       margin-bottom: 48px;
     }
 
-    /* ========== FORMULES ========== */
     .formules-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -343,7 +338,6 @@
     .formule-prix .unite { color: var(--gray); font-size: 0.85rem; }
     .formule-prix .capacite { color: var(--gray); font-size: 0.75rem; margin-left: 8px; }
 
-    /* ========== OPTIONS ========== */
     .options-grid { display: flex; flex-direction: column; gap: 12px; }
 
     .option-card {
@@ -375,7 +369,6 @@
       white-space: nowrap;
     }
 
-    /* ========== GALERIE ========== */
     .galerie-grid {
       display: grid;
       grid-template-columns: repeat(12, 1fr);
@@ -419,7 +412,6 @@
       text-transform: uppercase;
     }
 
-    /* ========== CTA ========== */
     .cta-section {
       text-align: center;
       padding: 100px 40px;
@@ -435,7 +427,6 @@
       flex-wrap: wrap;
     }
 
-    /* ========== FOOTER ========== */
     footer {
       text-align: center;
       padding: 48px 40px;
@@ -444,7 +435,31 @@
       font-size: 0.8rem;
     }
 
-    /* ========== RESPONSIVE ========== */
+    /* ========== INCLUS BADGES ========== */
+    .inclus-section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 48px;
+      padding-top: 32px;
+      border-top: 1px solid rgba(201, 168, 76, 0.1);
+    }
+
+    .inclus-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(201, 168, 76, 0.08);
+      border: 1px solid rgba(201, 168, 76, 0.15);
+      border-radius: 20px;
+      padding: 8px 16px;
+      font-size: 0.78rem;
+      color: var(--gray);
+    }
+
+    .inclus-badge .badge-icon { font-size: 1rem; }
+    .inclus-badge strong { color: var(--gold); font-weight: 600; }
+
     @media (max-width: 768px) {
       nav { padding: 16px 20px; }
 
@@ -490,30 +505,17 @@
   <!-- ========== NAV ========== -->
   <nav>
     <a href="#" class="logo-wrap">
-      <!-- LOGO SVG — Ancre dorée intégrée -->
       <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <!-- Cercle extérieur -->
         <circle cx="30" cy="30" r="28" stroke="#C9A84C" stroke-width="1.5" fill="none"/>
-        <!-- Ancre -->
         <g stroke="#C9A84C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none">
-          <!-- Barre verticale -->
           <line x1="30" y1="16" x2="30" y2="44"/>
-          <!-- Barre horizontale -->
           <line x1="22" y1="24" x2="38" y2="24"/>
-          <!-- Anneau en haut -->
           <circle cx="30" cy="14" r="3" stroke-width="1.8"/>
-          <!-- Bras gauche courbe -->
           <path d="M18 42 C18 36, 24 32, 30 32"/>
-          <!-- Bras droit courbe -->
           <path d="M42 42 C42 36, 36 32, 30 32"/>
-          <!-- Pointe bras gauche -->
-          <line x1="16" y1="40" x2="20" y2="44"/>
-          <line x1="16" y1="44" x2="20" y2="44"/>
-          <!-- Pointe bras droit -->
-          <line x1="44" y1="40" x2="40" y2="44"/>
-          <line x1="44" y1="44" x2="40" y2="44"/>
+          <line x1="16" y1="40" x2="20" y2="44"/><line x1="16" y1="44" x2="20" y2="44"/>
+          <line x1="44" y1="40" x2="40" y2="44"/><line x1="44" y1="44" x2="40" y2="44"/>
         </g>
-        <!-- Vague sous l'ancre -->
         <path d="M20 48 Q25 45, 30 48 Q35 51, 40 48" stroke="#C9A84C" stroke-width="1.2" fill="none" stroke-linecap="round"/>
       </svg>
       <div class="logo-text">PRESTIGE <span>CHARTER</span></div>
@@ -563,7 +565,8 @@
           <li>Champagne & planches apéritives</li>
           <li>Croisière Beaulieu → Cap-Ferrat</li>
           <li>Mouillage baie secrète</li>
-          <li>Musique d'ambiance</li>
+          <li>Musique d'ambiance Bluetooth</li>
+          <li>Paddle inclus</li>
         </ul>
         <div class="formule-prix">
           <span class="montant">1 300€</span>
@@ -581,9 +584,9 @@
         <ul class="formule-includes">
           <li>Croisière Cap-Ferrat & environs</li>
           <li>Arrêts baignade & snorkeling</li>
-          <li>Déjeuner traiteur à bord</li>
-          <li>Champagne & boissons</li>
-          <li>Paddle & équipements nautiques</li>
+          <li>Paddle inclus</li>
+          <li>Enceinte Bluetooth intégrée</li>
+          <li>Boissons & traiteur sur demande</li>
         </ul>
         <div class="formule-prix">
           <span class="montant">2 700€</span>
@@ -600,7 +603,7 @@
         <ul class="formule-includes">
           <li>Matériel de pêche professionnel</li>
           <li>Guidance par le skipper</li>
-          <li>Dîner froid & boissons</li>
+          <li>Boissons & dîner sur demande</li>
           <li>Croisière retour sous les étoiles</li>
         </ul>
         <div class="formule-prix">
@@ -611,6 +614,15 @@
       </div>
 
     </div>
+
+    <!-- INCLUS DANS TOUTES LES FORMULES -->
+    <div class="inclus-section">
+      <div class="inclus-badge"><span class="badge-icon">🏄</span> <strong>Paddle</strong> inclus</div>
+      <div class="inclus-badge"><span class="badge-icon">🔊</span> <strong>Enceinte Bluetooth</strong> intégrée</div>
+      <div class="inclus-badge"><span class="badge-icon">⛽</span> <strong>Carburant</strong> inclus</div>
+      <div class="inclus-badge"><span class="badge-icon">👨‍✈️</span> <strong>Skipper</strong> professionnel</div>
+      <div class="inclus-badge"><span class="badge-icon">🤿</span> <strong>Snorkeling</strong> équipement</div>
+    </div>
   </section>
 
   <!-- ========== OPTIONS ========== -->
@@ -620,6 +632,7 @@
     <p class="section-subtitle">Ajoutez une touche unique à votre croisière.</p>
 
     <div class="options-grid">
+
       <div class="option-card">
         <div class="option-icon">🍾</div>
         <div>
@@ -633,7 +646,7 @@
         <div class="option-icon">🎂</div>
         <div>
           <div class="option-name">Pack Anniversaire</div>
-          <div class="option-desc">Gâteau personnalisé, décoration, ballon & service dédié</div>
+          <div class="option-desc">Gâteau personnalisé, décoration, ballons & service dédié</div>
         </div>
         <div class="option-prix">+250€</div>
       </div>
@@ -641,38 +654,30 @@
       <div class="option-card">
         <div class="option-icon">📸</div>
         <div>
-          <div class="option-name">Photographe à bord</div>
-          <div class="option-desc">Photographe professionnel, 2h, 50 photos retouchées livrées sous 48h</div>
+          <div class="option-name">Shooting Photo & Drone</div>
+          <div class="option-desc">Photographe professionnel + prise de vue drone, 2h, 50 photos & vidéo retouchées livrées sous 48h</div>
         </div>
         <div class="option-prix">+450€</div>
       </div>
 
       <div class="option-card">
-        <div class="option-icon">🎵</div>
+        <div class="option-icon">🏎️</div>
         <div>
-          <div class="option-name">DJ Set Live</div>
-          <div class="option-desc">DJ professionnel avec sono, 3h de set sur-mesure</div>
+          <div class="option-name">Seabob</div>
+          <div class="option-desc">Scooter sous-marin électrique — sensations garanties, briefing inclus</div>
         </div>
-        <div class="option-prix">+600€</div>
+        <div class="option-prix">+350€</div>
       </div>
 
       <div class="option-card">
         <div class="option-icon">🍽️</div>
         <div>
-          <div class="option-name">Chef Privé à bord</div>
-          <div class="option-desc">Menu gastronomique 4 services, préparé en direct à bord</div>
+          <div class="option-name">Boissons & Traiteur</div>
+          <div class="option-desc">Offres personnalisées selon vos envies — contactez-nous par mail ou téléphone</div>
         </div>
-        <div class="option-prix">+150€<span style="color:var(--gray);font-size:0.75rem">/pers</span></div>
+        <div class="option-prix"><a href="#contact" style="color:var(--gold);text-decoration:none;">Sur devis</a></div>
       </div>
 
-      <div class="option-card">
-        <div class="option-icon">🚁</div>
-        <div>
-          <div class="option-name">Transfert Hélicoptère</div>
-          <div class="option-desc">Monaco → Yacht, 12 minutes, aller simple</div>
-        </div>
-        <div class="option-prix">+950€</div>
-      </div>
     </div>
   </section>
 
@@ -683,31 +688,26 @@
     <p class="section-subtitle">Découvrez l'univers Prestige Charter.</p>
 
     <div class="galerie-grid">
-      <!-- PHOTO 1 : Grande image gauche -->
       <div class="photo">
         <img src="images/yacht-1.jpg" alt="Prestige 42S — vue latérale" loading="lazy">
         <div class="photo-label">Prestige 42S</div>
       </div>
 
-      <!-- PHOTO 2 : Sunset (était cockpit, INVERSÉ) -->
       <div class="photo">
         <img src="images/yacht-3.webp" alt="Sunset en mer" loading="lazy">
         <div class="photo-label">Sunset</div>
       </div>
 
-      <!-- PHOTO 3 : Cockpit (était sunset, INVERSÉ) -->
       <div class="photo">
         <img src="images/yacht-2.webp" alt="Cockpit intérieur teck" loading="lazy">
         <div class="photo-label">Cockpit</div>
       </div>
 
-      <!-- PHOTO 4 : Plateforme — NOUVEAU FICHIER -->
       <div class="photo">
         <img src="images/Arri%C3%A8re%20V2.jpeg" alt="Vue arrière — plateforme" loading="lazy">
         <div class="photo-label">Plateforme</div>
       </div>
 
-      <!-- PHOTO 5 : Cap-Ferrat -->
       <div class="photo">
         <img src="images/hero.jpg" alt="Croisière Côte d'Azur" loading="lazy">
         <div class="photo-label">Cap-Ferrat</div>
