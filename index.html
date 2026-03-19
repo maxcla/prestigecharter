@@ -83,51 +83,59 @@
 
     .nav-cta:hover { background: var(--gold-light); }
 
+    /* ========== HAMBURGER MOBILE ========== */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+    .hamburger div {
+      width: 24px;
+      height: 2px;
+      background: var(--gold);
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+
     /* ========== HERO ========== */
     .hero {
+      position: relative;
       height: 100vh;
+      min-height: 600px;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
-      position: relative;
-      background: linear-gradient(180deg, rgba(11,29,58,0.2) 0%, rgba(11,29,58,0.85) 100%),
+      padding: 0 24px;
+      background: linear-gradient(180deg, rgba(11,29,58,0.3) 0%, rgba(11,29,58,0.85) 100%),
                   url('images/hero.jpg') center/cover no-repeat;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 200px;
-      background: linear-gradient(transparent, var(--navy));
     }
 
     .hero-badge {
       display: inline-block;
       border: 1px solid var(--gold);
       color: var(--gold);
-      padding: 8px 24px;
-      border-radius: 2px;
-      font-size: 0.75rem;
+      padding: 6px 20px;
+      border-radius: 30px;
+      font-size: 0.7rem;
+      font-weight: 600;
       letter-spacing: 3px;
       text-transform: uppercase;
       margin-bottom: 24px;
-      position: relative;
-      z-index: 1;
     }
 
     .hero h1 {
       font-family: 'Playfair Display', serif;
-      font-size: 4rem;
+      font-size: clamp(2.4rem, 6vw, 4.5rem);
       font-weight: 700;
       line-height: 1.1;
-      margin-bottom: 16px;
-      position: relative;
-      z-index: 1;
+      margin-bottom: 20px;
+      max-width: 800px;
     }
 
     .hero h1 em {
@@ -136,68 +144,75 @@
     }
 
     .hero p {
-      color: var(--gray);
       font-size: 1.1rem;
-      font-weight: 300;
-      max-width: 500px;
-      margin-bottom: 40px;
-      position: relative;
-      z-index: 1;
+      color: var(--gray);
+      max-width: 520px;
+      line-height: 1.6;
+      margin-bottom: 36px;
     }
 
-    .hero-cta {
-      display: inline-block;
+    .hero-buttons { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; }
+
+    .btn-gold {
       background: var(--gold);
       color: var(--navy);
-      padding: 16px 48px;
+      padding: 14px 36px;
+      border-radius: 4px;
       font-weight: 600;
       font-size: 0.85rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
       text-decoration: none;
-      border-radius: 4px;
-      position: relative;
-      z-index: 1;
+      letter-spacing: 1px;
+      text-transform: uppercase;
       transition: all 0.3s;
     }
 
-    .hero-cta:hover { background: var(--gold-light); transform: translateY(-2px); }
+    .btn-gold:hover { background: var(--gold-light); transform: translateY(-2px); }
 
-    /* ========== YACHT SPECS BANNER ========== */
-    .specs-banner {
-      display: flex;
-      justify-content: center;
-      gap: 48px;
-      padding: 40px 20px;
-      background: var(--navy-light);
-      border-top: 1px solid rgba(201,168,76,0.1);
-      border-bottom: 1px solid rgba(201,168,76,0.1);
-      flex-wrap: wrap;
-    }
-
-    .spec-item { text-align: center; }
-
-    .spec-value {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.6rem;
+    .btn-outline {
+      border: 1px solid rgba(201, 168, 76, 0.4);
       color: var(--gold);
-      font-weight: 700;
+      padding: 14px 36px;
+      border-radius: 4px;
+      font-weight: 500;
+      font-size: 0.85rem;
+      text-decoration: none;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: all 0.3s;
     }
 
-    .spec-label {
-      font-size: 0.7rem;
+    .btn-outline:hover { border-color: var(--gold); background: rgba(201, 168, 76, 0.1); }
+
+    .scroll-hint {
+      position: absolute;
+      bottom: 32px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
       color: var(--gray);
+      font-size: 0.7rem;
       letter-spacing: 2px;
       text-transform: uppercase;
-      margin-top: 4px;
+      animation: float 2s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(8px); }
     }
 
     /* ========== SECTIONS ========== */
-    section { padding: 100px 40px; max-width: 1200px; margin: 0 auto; }
+    section {
+      padding: 100px 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
 
     .section-label {
       color: var(--gold);
-      font-size: 0.75rem;
+      font-size: 0.7rem;
+      font-weight: 600;
       letter-spacing: 3px;
       text-transform: uppercase;
       margin-bottom: 12px;
@@ -205,307 +220,287 @@
 
     .section-title {
       font-family: 'Playfair Display', serif;
-      font-size: 2.5rem;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 700;
       margin-bottom: 16px;
+      line-height: 1.2;
     }
 
     .section-subtitle {
       color: var(--gray);
       font-size: 1rem;
-      font-weight: 300;
-      max-width: 600px;
-      margin-bottom: 60px;
+      max-width: 560px;
+      line-height: 1.6;
+      margin-bottom: 48px;
     }
 
     /* ========== FORMULES ========== */
     .formules-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 24px;
     }
 
     .formule-card {
-      background: var(--glass);
-      backdrop-filter: blur(20px);
-      border: 1px solid rgba(201, 168, 76, 0.12);
+      background: var(--navy-light);
+      border: 1px solid rgba(201, 168, 76, 0.1);
       border-radius: 12px;
-      padding: 40px 32px;
-      text-align: center;
-      transition: all 0.4s ease;
+      padding: 36px 32px;
       position: relative;
       overflow: hidden;
+      transition: all 0.4s ease;
     }
 
     .formule-card:hover {
-      border-color: var(--gold);
-      transform: translateY(-8px);
+      border-color: rgba(201, 168, 76, 0.3);
+      transform: translateY(-4px);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
     }
 
     .formule-card.featured {
       border-color: var(--gold);
-      background: linear-gradient(180deg, rgba(201,168,76,0.08) 0%, var(--glass) 100%);
+      background: linear-gradient(135deg, var(--navy-light) 0%, rgba(201, 168, 76, 0.08) 100%);
     }
 
-    .formule-card.featured::before {
-      content: 'POPULAIRE';
+    .formule-badge {
       position: absolute;
-      top: 16px;
-      right: -28px;
+      top: 20px;
+      right: 20px;
       background: var(--gold);
       color: var(--navy);
       font-size: 0.65rem;
       font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
       letter-spacing: 1px;
-      padding: 4px 32px;
-      transform: rotate(45deg);
+      text-transform: uppercase;
     }
 
-    .formule-icon { font-size: 2.5rem; margin-bottom: 20px; }
+    .formule-icon {
+      font-size: 2rem;
+      margin-bottom: 16px;
+    }
 
     .formule-name {
       font-family: 'Playfair Display', serif;
       font-size: 1.4rem;
-      margin-bottom: 8px;
-    }
-
-    .formule-horaire {
-      color: var(--gray);
-      font-size: 0.85rem;
-      margin-bottom: 24px;
-    }
-
-    .formule-prix {
-      font-size: 2.8rem;
       font-weight: 700;
-      color: var(--gold);
       margin-bottom: 4px;
     }
 
-    .formule-prix span {
-      font-size: 0.9rem;
-      font-weight: 400;
-      color: var(--gray);
-    }
-
-    .formule-details {
-      list-style: none;
-      margin-top: 24px;
-      text-align: left;
-    }
-
-    .formule-details li {
-      padding: 8px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.05);
-      font-size: 0.9rem;
-      color: var(--gray);
-    }
-
-    .formule-details li::before {
-      content: '✓';
+    .formule-duration {
       color: var(--gold);
-      margin-right: 10px;
-      font-weight: 600;
+      font-size: 0.8rem;
+      font-weight: 500;
+      margin-bottom: 16px;
+    }
+
+    .formule-desc {
+      color: var(--gray);
+      font-size: 0.85rem;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .formule-includes {
+      list-style: none;
+      margin-bottom: 24px;
+    }
+
+    .formule-includes li {
+      color: var(--gray);
+      font-size: 0.82rem;
+      padding: 4px 0;
+      padding-left: 20px;
+      position: relative;
+    }
+
+    .formule-includes li::before {
+      content: '✦';
+      color: var(--gold);
+      position: absolute;
+      left: 0;
+      font-size: 0.6rem;
+      top: 6px;
+    }
+
+    .formule-prix {
+      display: flex;
+      align-items: baseline;
+      gap: 4px;
+      margin-top: auto;
+    }
+
+    .formule-prix .montant {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--white);
+    }
+
+    .formule-prix .unite {
+      color: var(--gray);
+      font-size: 0.85rem;
+    }
+
+    .formule-prix .capacite {
+      color: var(--gray);
+      font-size: 0.75rem;
+      margin-left: 8px;
     }
 
     /* ========== OPTIONS ========== */
-    .options-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-    }
+    .options-grid { display: flex; flex-direction: column; gap: 12px; }
 
     .option-card {
       display: flex;
       align-items: center;
       gap: 20px;
-      background: var(--glass);
-      backdrop-filter: blur(20px);
+      background: var(--navy-light);
       border: 1px solid rgba(201, 168, 76, 0.08);
       border-radius: 10px;
-      padding: 24px;
+      padding: 20px 24px;
       transition: all 0.3s;
     }
 
     .option-card:hover {
-      border-color: var(--gold);
-      transform: translateX(4px);
+      border-color: rgba(201, 168, 76, 0.25);
+      background: rgba(19, 43, 80, 0.8);
     }
 
-    .option-icon { font-size: 2rem; flex-shrink: 0; }
+    .option-icon { font-size: 1.6rem; flex-shrink: 0; }
 
     .option-name {
       font-weight: 600;
-      font-size: 1rem;
-      margin-bottom: 4px;
+      font-size: 0.9rem;
+      margin-bottom: 2px;
     }
 
     .option-desc {
       color: var(--gray);
       font-size: 0.8rem;
-      font-weight: 300;
     }
 
     .option-prix {
       margin-left: auto;
-      color: var(--gold);
-      font-weight: 600;
+      font-family: 'Playfair Display', serif;
       font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--gold);
       white-space: nowrap;
     }
 
     /* ========== GALERIE ========== */
     .galerie-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: 300px 300px;
-      gap: 16px;
+      grid-template-columns: repeat(12, 1fr);
+      grid-auto-rows: 220px;
+      gap: 12px;
     }
 
-    .galerie-grid .photo {
+    .galerie-grid .photo:nth-child(1) { grid-column: span 5; grid-row: span 2; }
+    .galerie-grid .photo:nth-child(2) { grid-column: span 4; }
+    .galerie-grid .photo:nth-child(3) { grid-column: span 3; }
+    .galerie-grid .photo:nth-child(4) { grid-column: span 4; }
+    .galerie-grid .photo:nth-child(5) { grid-column: span 3; }
+
+    .photo {
       border-radius: 10px;
       overflow: hidden;
       position: relative;
-      cursor: pointer;
-      transition: transform 0.3s ease;
     }
 
-    .galerie-grid .photo:hover { transform: scale(1.02); }
-
-    .galerie-grid .photo img {
+    .photo img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       transition: transform 0.6s ease;
     }
 
-    .galerie-grid .photo:hover img { transform: scale(1.08); }
-
-    .galerie-grid .photo:first-child {
-      grid-row: 1 / 3;
-      grid-column: 1 / 2;
-    }
+    .photo:hover img { transform: scale(1.05); }
 
     .photo-label {
       position: absolute;
       bottom: 12px;
       left: 12px;
-      background: rgba(11,29,58,0.8);
-      backdrop-filter: blur(8px);
+      background: var(--glass);
+      backdrop-filter: blur(10px);
       color: var(--gold);
-      padding: 6px 14px;
-      border-radius: 4px;
       font-size: 0.7rem;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 4px;
       letter-spacing: 1px;
       text-transform: uppercase;
-      font-weight: 600;
     }
 
-    /* ========== CONTACT / CTA ========== */
+    /* ========== CTA ========== */
     .cta-section {
       text-align: center;
-      padding: 120px 40px;
-      max-width: 100%;
-      background: linear-gradient(180deg, var(--navy) 0%, var(--navy-light) 50%, var(--navy) 100%);
+      padding: 100px 40px;
+      max-width: 700px;
+      margin: 0 auto;
     }
 
-    .cta-section .section-title { margin-bottom: 24px; }
-
-    .cta-section p {
-      color: var(--gray);
-      max-width: 500px;
-      margin: 0 auto 40px;
-      font-weight: 300;
+    .cta-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      margin-top: 32px;
+      flex-wrap: wrap;
     }
-
-    .cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
-
-    .btn-gold {
-      background: var(--gold);
-      color: var(--navy);
-      padding: 16px 40px;
-      font-weight: 600;
-      font-size: 0.85rem;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      text-decoration: none;
-      border-radius: 4px;
-      transition: all 0.3s;
-    }
-
-    .btn-gold:hover { background: var(--gold-light); }
-
-    .btn-outline {
-      border: 1px solid var(--gold);
-      color: var(--gold);
-      padding: 16px 40px;
-      font-weight: 500;
-      font-size: 0.85rem;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      text-decoration: none;
-      border-radius: 4px;
-      transition: all 0.3s;
-    }
-
-    .btn-outline:hover { background: rgba(201,168,76,0.1); }
 
     /* ========== FOOTER ========== */
     footer {
       text-align: center;
-      padding: 40px;
+      padding: 48px 40px;
       border-top: 1px solid rgba(201, 168, 76, 0.1);
       color: var(--gray);
       font-size: 0.8rem;
     }
 
-    footer .logo { margin-bottom: 12px; font-size: 1.1rem; }
-
     /* ========== RESPONSIVE ========== */
     @media (max-width: 768px) {
       nav { padding: 16px 20px; }
-      .nav-links { display: none; }
-      .hero h1 { font-size: 2.4rem; }
-      .hero p { font-size: 0.95rem; padding: 0 20px; }
-      section { padding: 60px 20px; }
-      .section-title { font-size: 1.8rem; }
-      .formules-grid { grid-template-columns: 1fr; }
-      .options-grid { grid-template-columns: 1fr; }
-      .galerie-grid { grid-template-columns: 1fr; grid-template-rows: auto; }
-      .galerie-grid .photo:first-child { grid-row: auto; grid-column: auto; }
-      .cta-buttons { flex-direction: column; align-items: center; }
-      .specs-banner { gap: 24px; }
-      .spec-value { font-size: 1.2rem; }
-    }
 
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      cursor: pointer;
-      z-index: 101;
-    }
-
-    .hamburger span {
-      width: 24px;
-      height: 2px;
-      background: var(--gold);
-      transition: all 0.3s;
-    }
-
-    @media (max-width: 768px) {
-      .hamburger { display: flex; }
-      .nav-links.open {
-        display: flex;
-        flex-direction: column;
-        position: fixed;
-        top: 0; left: 0; right: 0; bottom: 0;
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
         background: rgba(11, 29, 58, 0.98);
-        justify-content: center;
-        align-items: center;
-        gap: 40px;
-        z-index: 100;
+        flex-direction: column;
+        padding: 24px;
+        gap: 20px;
+        border-bottom: 1px solid rgba(201, 168, 76, 0.15);
       }
-      .nav-links.open a { font-size: 1.2rem; color: var(--white); }
+
+      .nav-links.open { display: flex; }
+      .hamburger { display: flex; }
+      .nav-cta { display: none; }
+
+      section { padding: 60px 20px; }
+
+      .galerie-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-auto-rows: 180px;
+      }
+      .galerie-grid .photo:nth-child(1) { grid-column: span 2; grid-row: span 1; }
+      .galerie-grid .photo:nth-child(2) { grid-column: span 1; }
+      .galerie-grid .photo:nth-child(3) { grid-column: span 1; }
+      .galerie-grid .photo:nth-child(4) { grid-column: span 1; }
+      .galerie-grid .photo:nth-child(5) { grid-column: span 1; }
+
+      .option-card {
+        flex-wrap: wrap;
+      }
+      .option-prix {
+        margin-left: 0;
+        width: 100%;
+        text-align: right;
+        margin-top: 8px;
+      }
     }
   </style>
 </head>
@@ -514,99 +509,95 @@
   <!-- ========== NAV ========== -->
   <nav>
     <div class="logo">PRESTIGE <span>CHARTER</span></div>
-    <ul class="nav-links" id="navLinks">
+    <button class="hamburger" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">
+      <div></div><div></div><div></div>
+    </button>
+    <ul class="nav-links">
       <li><a href="#formules">Formules</a></li>
       <li><a href="#options">Options</a></li>
       <li><a href="#galerie">Galerie</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
     <a href="#contact" class="nav-cta">Réserver</a>
-    <div class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')">
-      <span></span><span></span><span></span>
-    </div>
   </nav>
 
   <!-- ========== HERO ========== -->
   <section class="hero">
-    <div class="hero-badge">Saint-Jean-Cap-Ferrat</div>
-    <h1>L'excellence<br>sur <em>la Méditerranée</em></h1>
-    <p>Journées prestige, sunsets privés et expériences sur-mesure au départ du plus beau cap de la Côte d'Azur.</p>
-    <a href="#formules" class="hero-cta">Découvrir nos formules</a>
+    <div class="hero-badge">⚓ Saint-Jean-Cap-Ferrat</div>
+    <h1>L'excellence <em>maritime</em><br>à votre portée</h1>
+    <p>Embarquez pour une expérience unique sur la Côte d'Azur à bord de notre Prestige 42S. Journée, sunset ou événement privé.</p>
+    <div class="hero-buttons">
+      <a href="#formules" class="btn-gold">Découvrir nos formules</a>
+      <a href="#contact" class="btn-outline">Réserver</a>
+    </div>
+    <div class="scroll-hint">
+      <span>Explorer</span>
+      <span>↓</span>
+    </div>
   </section>
-
-  <!-- ========== SPECS BANNER ========== -->
-  <div class="specs-banner">
-    <div class="spec-item">
-      <div class="spec-value">42'</div>
-      <div class="spec-label">Longueur</div>
-    </div>
-    <div class="spec-item">
-      <div class="spec-value">10</div>
-      <div class="spec-label">Passagers max</div>
-    </div>
-    <div class="spec-item">
-      <div class="spec-value">2×370</div>
-      <div class="spec-label">Chevaux</div>
-    </div>
-    <div class="spec-item">
-      <div class="spec-value">30 kn</div>
-      <div class="spec-label">Vitesse max</div>
-    </div>
-    <div class="spec-item">
-      <div class="spec-value">2</div>
-      <div class="spec-label">Cabines</div>
-    </div>
-  </div>
 
   <!-- ========== FORMULES ========== -->
   <section id="formules">
-    <div class="section-label">Nos formules</div>
-    <h2 class="section-title">Choisissez votre expérience</h2>
-    <p class="section-subtitle">Chaque sortie est privatisée. Capitaine professionnel, carburant et équipements de sécurité inclus.</p>
+    <div class="section-label">Nos Formules</div>
+    <h2 class="section-title">Choisissez votre escapade</h2>
+    <p class="section-subtitle">Chaque sortie est privatisée. Skipper professionnel, équipements premium, service sur-mesure.</p>
 
     <div class="formules-grid">
 
       <div class="formule-card">
         <div class="formule-icon">🌅</div>
-        <div class="formule-name">Sunset & Champagne</div>
-        <div class="formule-horaire">17h00 — 21h00 · 4 heures</div>
-        <div class="formule-prix">1 300€ <span>/ sortie</span></div>
-        <ul class="formule-details">
-          <li>Yacht privatisé jusqu'à 10 personnes</li>
-          <li>Capitaine professionnel</li>
-          <li>Champagne Blanc de Blancs offert</li>
+        <div class="formule-name">Sunset Prestige</div>
+        <div class="formule-duration">3h · 18h00 – 21h00</div>
+        <div class="formule-desc">Le coucher de soleil depuis la mer, champagne à la main. L'expérience signature de la Riviera.</div>
+        <ul class="formule-includes">
+          <li>Champagne & planches apéritives</li>
+          <li>Croisière Beaulieu → Cap-Ferrat</li>
           <li>Mouillage baie secrète</li>
-          <li>Coucher de soleil face au large</li>
+          <li>Musique d'ambiance</li>
         </ul>
+        <div class="formule-prix">
+          <span class="montant">1 300€</span>
+          <span class="unite">/ sortie</span>
+          <span class="capacite">jusqu'à 8 pers.</span>
+        </div>
       </div>
 
       <div class="formule-card featured">
-        <div class="formule-icon">⚓</div>
+        <div class="formule-badge">Populaire</div>
+        <div class="formule-icon">⛵</div>
         <div class="formule-name">Journée Prestige</div>
-        <div class="formule-horaire">9h00 — 18h00 · Journée complète</div>
-        <div class="formule-prix">2 700€ <span>/ journée</span></div>
-        <ul class="formule-details">
-          <li>Yacht privatisé jusqu'à 10 personnes</li>
-          <li>Capitaine professionnel</li>
-          <li>Croisière Èze — Monaco — Cap-Ferrat</li>
-          <li>Pause baignade & snorkeling</li>
-          <li>Carburant inclus</li>
-          <li>Options gastronomiques disponibles</li>
+        <div class="formule-duration">8h · 09h00 – 17h00</div>
+        <div class="formule-desc">La journée complète : criques secrètes, baignade, déjeuner au mouillage. Le luxe sans compromis.</div>
+        <ul class="formule-includes">
+          <li>Croisière Cap-Ferrat & environs</li>
+          <li>Arrêts baignade & snorkeling</li>
+          <li>Déjeuner traiteur à bord</li>
+          <li>Champagne & boissons</li>
+          <li>Paddle & équipements nautiques</li>
         </ul>
+        <div class="formule-prix">
+          <span class="montant">2 700€</span>
+          <span class="unite">/ journée</span>
+          <span class="capacite">jusqu'à 10 pers.</span>
+        </div>
       </div>
 
       <div class="formule-card">
         <div class="formule-icon">🎣</div>
         <div class="formule-name">Pêche de Nuit</div>
-        <div class="formule-horaire">20h00 — 01h00 · 5 heures</div>
-        <div class="formule-prix">1 800€ <span>/ sortie</span></div>
-        <ul class="formule-details">
-          <li>Yacht privatisé jusqu'à 8 personnes</li>
-          <li>Capitaine & guide de pêche</li>
-          <li>Matériel de pêche fourni</li>
-          <li>Ambiance nocturne & éclairage LED</li>
-          <li>Apéritif à bord inclus</li>
+        <div class="formule-duration">5h · 20h00 – 01h00</div>
+        <div class="formule-desc">Session de pêche nocturne au large, sous les étoiles. Une aventure authentique pour passionnés.</div>
+        <ul class="formule-includes">
+          <li>Matériel de pêche professionnel</li>
+          <li>Guidance par le skipper</li>
+          <li>Dîner froid & boissons</li>
+          <li>Croisière retour sous les étoiles</li>
         </ul>
+        <div class="formule-prix">
+          <span class="montant">1 800€</span>
+          <span class="unite">/ sortie</span>
+          <span class="capacite">jusqu'à 6 pers.</span>
+        </div>
       </div>
 
     </div>
@@ -614,53 +605,53 @@
 
   <!-- ========== OPTIONS ========== -->
   <section id="options">
-    <div class="section-label">Conciergerie</div>
-    <h2 class="section-title">Options & Privilèges</h2>
-    <p class="section-subtitle">Sublimez votre expérience avec nos services à la carte.</p>
+    <div class="section-label">Personnalisez</div>
+    <h2 class="section-title">Options & Extras</h2>
+    <p class="section-subtitle">Ajoutez une touche unique à votre croisière.</p>
 
     <div class="options-grid">
 
       <div class="option-card">
-        <div class="option-icon">🥂</div>
+        <div class="option-icon">🍾</div>
         <div>
-          <div class="option-name">Champagne Blanc de Blancs</div>
-          <div class="option-desc">Bouteille premium (Ruinart / Bollinger), servie à 8°C</div>
+          <div class="option-name">Upgrade Champagne Dom Pérignon</div>
+          <div class="option-desc">Remplace le champagne inclus par une bouteille de Dom Pérignon</div>
         </div>
         <div class="option-prix">+180€</div>
       </div>
 
       <div class="option-card">
-        <div class="option-icon">🍾</div>
+        <div class="option-icon">🎂</div>
         <div>
-          <div class="option-name">Champagne Prestige</div>
-          <div class="option-desc">Cuvée d'exception (Dom Pérignon / Krug), service glacé</div>
+          <div class="option-name">Pack Anniversaire</div>
+          <div class="option-desc">Gâteau personnalisé, décoration, ballon & service dédié</div>
         </div>
-        <div class="option-prix">+350€</div>
+        <div class="option-prix">+250€</div>
       </div>
 
       <div class="option-card">
-        <div class="option-icon">🐟</div>
+        <div class="option-icon">📸</div>
         <div>
-          <div class="option-name">Caviar d'Aquitaine</div>
-          <div class="option-desc">Plateau 30g, blinis maison, crème fraîche — 4 personnes</div>
+          <div class="option-name">Photographe à bord</div>
+          <div class="option-desc">Photographe professionnel, 2h, 50 photos retouchées livrées sous 48h</div>
         </div>
-        <div class="option-prix">+220€</div>
+        <div class="option-prix">+450€</div>
       </div>
 
       <div class="option-card">
-        <div class="option-icon">🍷</div>
+        <div class="option-icon">🎵</div>
         <div>
-          <div class="option-name">Cave à vins</div>
-          <div class="option-desc">2 bouteilles — Grand Cru Médoc ou Rosé Prestige Provence</div>
+          <div class="option-name">DJ Set Live</div>
+          <div class="option-desc">DJ professionnel avec sono, 3h de set sur-mesure</div>
         </div>
-        <div class="option-prix">+150€</div>
+        <div class="option-prix">+600€</div>
       </div>
 
       <div class="option-card">
-        <div class="option-icon">👨‍🍳</div>
+        <div class="option-icon">🍽️</div>
         <div>
-          <div class="option-name">Chef à bord</div>
-          <div class="option-desc">Déjeuner 3 services par traiteur palace — min. 4 personnes</div>
+          <div class="option-name">Chef Privé à bord</div>
+          <div class="option-desc">Menu gastronomique 4 services, préparé en direct à bord</div>
         </div>
         <div class="option-prix">+150€<span style="color:var(--gray);font-size:0.75rem">/pers</span></div>
       </div>
@@ -681,36 +672,27 @@
   <section id="galerie">
     <div class="section-label">Galerie</div>
     <h2 class="section-title">À bord</h2>
-    <p class="section-subtitle">Jeanneau Prestige 42S — Votre yacht privé sur la Riviera.</p>
+    <p class="section-subtitle">Découvrez l'univers Prestige Charter.</p>
 
     <div class="galerie-grid">
-      <!-- PHOTO 1 : Yacht latéral turquoise (ta photo 3) — Grande image gauche -->
       <div class="photo">
-        <img src="images/yacht-1.jpg" alt="Prestige 42S — vue latérale en mer turquoise" loading="lazy">
+        <img src="images/yacht-1.jpg" alt="Prestige 42S — vue latérale" loading="lazy">
         <div class="photo-label">Prestige 42S</div>
       </div>
-
-      <!-- PHOTO 2 : Cockpit intérieur teck (ta photo 1) -->
       <div class="photo">
-        <img src="images/yacht-2.jpg" alt="Cockpit — banquette cuir et pont teck" loading="lazy">
+        <img src="images/yacht-2.webp" alt="Cockpit intérieur teck" loading="lazy">
         <div class="photo-label">Cockpit</div>
       </div>
-
-      <!-- PHOTO 3 : Sunset champagne (image IA) -->
       <div class="photo">
-        <img src="images/yacht-3.jpg" alt="Sunset champagne à bord" loading="lazy">
+        <img src="images/yacht-3.webp" alt="Sunset en mer" loading="lazy">
         <div class="photo-label">Sunset</div>
       </div>
-
-      <!-- PHOTO 4 : Vue arrière port (ta photo 2) -->
       <div class="photo">
-        <img src="images/yacht-4.jpg" alt="Yacht — vue arrière au port" loading="lazy">
+        <img src="images/yacht-4.png" alt="Vue arrière au port" loading="lazy">
         <div class="photo-label">Plateforme</div>
       </div>
-
-      <!-- PHOTO 5 : Hero IA ou doublon de ta meilleure photo -->
       <div class="photo">
-        <img src="images/hero.jpg" alt="Croisière sur la Riviera" loading="lazy">
+        <img src="images/hero.jpg" alt="Croisière Côte d'Azur" loading="lazy">
         <div class="photo-label">Cap-Ferrat</div>
       </div>
     </div>
@@ -735,4 +717,3 @@
 
 </body>
 </html>
-
