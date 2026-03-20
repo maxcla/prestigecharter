@@ -1,83 +1,90 @@
-(function(){
-  /* === LANGUAGE TOGGLE === */
-  window.toggleLang = function(){
-    document.body.classList.toggle('en');
-    var btn = document.querySelector('.lang-btn');
-    if(btn) btn.textContent = document.body.classList.contains('en') ? 'FR' : 'EN';
-  };
+document.addEventListener('DOMContentLoaded', function() {
+    // Toggle de langue
+    const languageToggle = document.querySelector('.language-toggle button');
+    const isFrench = localStorage.getItem('language') === 'fr';
 
-  /* === BURGER MENU === */
-  var burger = document.querySelector('.burger');
-  var navLinks = document.querySelector('.nav-links');
-  if(burger && navLinks){
-    burger.addEventListener('click', function(){
-      navLinks.classList.toggle('open');
-    });
-    navLinks.querySelectorAll('a').forEach(function(a){
-      a.addEventListener('click', function(){ navLinks.classList.remove('open'); });
-    });
-  }
-
-  /* === NAV SCROLL === */
-  var nav = document.querySelector('.nav');
-  if(nav){
-    window.addEventListener('scroll', function(){
-      nav.classList.toggle('scrolled', window.scrollY > 60);
-    });
-  }
-
-  /* === ACTIVE NAV LINK === */
-  var path = window.location.pathname.split('/').pop() || 'index.html';
-  document.querySelectorAll('.nav-links a').forEach(function(a){
-    var href = a.getAttribute('href');
-    if(href === path || (path === '' && href === 'index.html')){
-      a.classList.add('active');
+    // Appliquer la langue sauvegardée ou utiliser le français par défaut
+    if (isFrench) {
+        document.documentElement.lang = 'fr';
+    } else {
+        document.documentElement.lang = 'en';
     }
-  });
 
-  /* === SMOOTH SCROLL === */
-  document.querySelectorAll('a[href^="#"]').forEach(function(a){
-    a.addEventListener('click', function(e){
-      var t = document.querySelector(a.getAttribute('href'));
-      if(t){ e.preventDefault(); t.scrollIntoView({behavior:'smooth',block:'start'}); }
+    // Mettre à jour le texte selon la langue
+    updateLanguageTexts();
+
+    // Gestion du toggle de langue
+    languageToggle.addEventListener('click', function() {
+        const currentLang = document.documentElement.lang;
+        const newLang = currentLang === 'fr' ? 'en' : 'fr';
+
+        document.documentElement.lang = newLang;
+        localStorage.setItem('language', newLang);
+
+        // Mettre à jour le texte du bouton
+        if (newLang === 'fr') {
+            languageToggle.textContent = 'FR';
+        } else {
+            languageToggle.textContent = 'EN';
+        }
+
+        // Mettre à jour tous les textes
+        updateLanguageTexts();
     });
-  });
 
-  /* === SCROLL REVEAL === */
-  var obs = new IntersectionObserver(function(entries){
-    entries.forEach(function(entry){
-      if(entry.isIntersecting){
-        entry.target.style.opacity='1';
-        entry.target.style.transform='translateY(0)';
-      }
-    });
-  },{threshold:0.1});
-  document.querySelectorAll('section,.itin,.tarif,.extra,.avis,.spec,.contact-card').forEach(function(el){
-    el.style.opacity='0';
-    el.style.transform='translateY(30px)';
-    el.style.transition='opacity .6s ease, transform .6s ease';
-    obs.observe(el);
-  });
+    // Fonction pour mettre à jour tous les textes selon la langue
+    function updateLanguageTexts() {
+        const currentLang = document.documentElement.lang;
+        const allElements = document.querySelectorAll('[data-fr], [data-en]');
 
-  /* === FORM SUBMIT === */
-  var form = document.getElementById('bookForm');
-  if(form){
-    form.addEventListener('submit', function(e){
-      e.preventDefault();
-      var fd = new FormData(form);
-      var body = '';
-      fd.forEach(function(v,k){ body += k+': '+v+'\n'; });
-      var subject = encodeURIComponent('Réservation Prestige Charter');
-      var mailBody = encodeURIComponent(body);
-      window.location.href = 'mailto:contact@prestigecharter.fr?subject='+subject+'&body='+mailBody;
-      form.reset();
-    });
-  }
+        allElements.forEach(element => {
+            if (currentLang === 'fr') {
+                if (element.hasAttribute('data-fr')) {
+                    element.textContent = element.getAttribute('data-fr');
+                }
+            } else {
+                if (element.hasAttribute('data-en')) {
+                    element.textContent = element.getAttribute('data-en');
+                }
+            }
+        });
+    }
 
-  /* === SET MIN DATE === */
-  var dateInput = document.querySelector('input[name="date"]');
-  if(dateInput){
-    var today = new Date().toISOString().split('T')[0];
-    dateInput.setAttribute('min', today);
-  }
-})();
+    // Gestion du menu mobile (si nécessaire)
+    const menuToggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('nav');
+
+    if (menuToggle && nav) {
+        menuToggle.addEventListener('click', function() {
+            nav.classList.toggle('active');
+        });
+    }
+
+    // Parallax léger pour le hero
+    const hero = document.querySelector('.hero');
+    if (hero) {
+        window.addEventListener('scroll', function() {
+            const scrollPosition = window.pageYOffset;
+            hero.style.backgroundPositionY = scrollPosition * 0.3 + 'px';
+        });
+    }
+
+    // Animation fade-in pour les éléments
+    const animateOnScroll = function() {
+        const elements = document.querySelectorAll('.fade-in');
+
+        elements.forEach(element => {
+            const elementPosition = element.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
+
+            if (elementPosition < windowHeight - 100) {
+                element.style.opacity = '1';
+                element.style.transform = 'translateY(0)';
+            }
+        });
+    };
+
+    // Appeler la fonction au chargement et au scroll
+    window.addEventListener('load', animateOnScroll);
+    window.addEventListener('scroll', animateOnScroll);
+});
