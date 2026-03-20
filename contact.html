@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Prestige Charter AT</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .contact-hero{position:relative;height:40vh;min-height:300px;display:flex;align-items:center;justify-content:center;text-align:center;margin-top:70px;overflow:hidden}
+    .contact-hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+    .contact-hero::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(7,15,27,.5),rgba(7,15,27,.95))}
+    .contact-hero .content{position:relative;z-index:2}
+    .cwrap{max-width:1100px;margin:0 auto;padding:0 40px 80px}
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;margin-top:50px}
+    .info-block{margin-bottom:36px}
+    .info-block h3{font-family:var(--font-head);color:var(--gold);font-size:1.15rem;margin-bottom:18px}
+    .info-item{display:flex;align-items:flex-start;gap:14px;margin-bottom:18px}
+    .info-item .ico{font-size:1.3rem;width:32px;text-align:center;flex-shrink:0}
+    .info-item .label{color:var(--white);font-weight:600;font-size:.9rem}
+    .info-item .val{color:var(--gray);font-size:.85rem;line-height:1.6}
+    .info-item .sub{color:var(--gray);font-size:.78rem;margin-top:2px}
+    .hours-row{display:flex;justify-content:space-between;color:var(--gray);font-size:.85rem;padding:10px 0;border-bottom:1px solid rgba(201,168,76,.08)}
+    .hours-row .v{color:var(--white);font-weight:600}
+    .social-icons{display:flex;gap:12px}
+    .social-icons a{display:flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:10px;background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.15);font-size:1.2rem;transition:all .25s}
+    .social-icons a:hover{background:var(--gold);color:var(--navy-dark);border-color:var(--gold)}
+    .form-box{background:rgba(201,168,76,.04);border:1px solid rgba(201,168,76,.12);border-radius:16px;padding:36px}
+    .form-box h3{font-family:var(--font-head);color:var(--gold);font-size:1.15rem;margin-bottom:24px}
+    .field label{display:block;color:var(--gray);font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.04em;margin-bottom:6px}
+    .field input,.field select,.field textarea{width:100%;padding:12px 16px;background:rgba(255,255,255,.04);border:1px solid rgba(201,168,76,.15);border-radius:10px;color:var(--white);font-size:.9rem;font-family:var(--font-body);transition:border-color .3s}
+    .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--gold)}
+    .field select option{background:var(--navy);color:var(--white)}
+    .btn-gold{background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--navy-dark);font-weight:700;border:none;border-radius:10px;cursor:pointer;letter-spacing:.02em;transition:transform .2s,box-shadow .2s}
+    .btn-gold:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(201,168,76,.3)}
+    .map-wrap{margin-top:60px;border-radius:16px;overflow:hidden;border:1px solid rgba(201,168,76,.12)}
+    .yacht-banner{margin:40px 0;border-radius:14px;overflow:hidden;position:relative;height:200px}
+    .yacht-banner img{width:100%;height:100%;object-fit:cover}
+    .yacht-banner::after{content:'';position:absolute;inset:0;background:linear-gradient(to right,rgba(7,15,27,.7),transparent,rgba(7,15,27,.7))}
+    @media(max-width:768px){
+      .contact-grid{grid-template-columns:1fr;gap:40px}
+      .cwrap{padding:0 20px 60px}
+    }
+  </style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html" class="nav-logo">✦ PRESTIGE CHARTER</a>
+  <div class="nav-links">
+    <a href="index.html"><span data-fr>Accueil</span><span data-en>Home</span></a>
+    <a href="yacht.html"><span data-fr>Le Yacht</span><span data-en>The Yacht</span></a>
+    <a href="itineraires.html"><span data-fr>Itinéraires</span><span data-en>Itineraries</span></a>
+    <a href="tarifs.html"><span data-fr>Tarifs</span><span data-en>Pricing</span></a>
+    <a href="reservation.html"><span data-fr>Réserver</span><span data-en>Book</span></a>
+    <a href="avis.html"><span data-fr>Avis</span><span data-en>Reviews</span></a>
+    <a href="contact.html" class="active">Contact</a>
+    <button class="lang-btn" onclick="toggleLang()">EN</button>
+  </div>
+  <button class="burger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- HERO -->
+<div class="contact-hero">
+  <img src="images/Arrière V2.jpeg" alt="Yacht arrière">
+  <div class="content">
+    <div class="s-label">Contact</div>
+    <h1 style="font-family:var(--font-head);font-size:2.4rem;color:var(--white);margin-top:8px"><span data-fr>Contactez-Nous</span><span data-en>Get In Touch</span></h1>
+    <p style="color:var(--gray);margin-top:10px"><span data-fr>7j/7 en saison · Réponse sous 2h</span><span data-en>7 days a week in season · Reply within 2h</span></p>
+  </div>
+</div>
+
+<div class="cwrap">
+
+  <!-- PHOTO BANNER -->
+  <div class="yacht-banner">
+    <img src="images/yacht-4.pnj" alt="Yacht navigation">
+  </div>
+
+  <div class="contact-grid">
+
+    <!-- COLONNE GAUCHE -->
+    <div>
+
+      <div class="info-block">
+        <h3><span data-fr>Nos Coordonnées</span><span data-en>Our Details</span></h3>
+
+        <div class="info-item">
+          <div class="ico">📍</div>
+          <div>
+            <div class="label"><span data-fr>Port de plaisance</span><span data-en>Marina</span></div>
+            <div class="val">Port de Saint-Jean-Cap-Ferrat<br>06230, Côte d'Azur, France</div>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <div class="ico">📞</div>
+          <div>
+            <div class="label"><span data-fr>Téléphone</span><span data-en>Phone</span></div>
+            <div class="val">+33 6 XX XX XX XX</div>
+            <div class="sub"><span data-fr>Réponse immédiate en saison</span><span data-en>Immediate reply in season</span></div>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <div class="ico">💬</div>
+          <div>
+            <div class="label">WhatsApp</div>
+            <div class="val">+33 6 XX XX XX XX</div>
+            <div class="sub"><span data-fr>Moyen le plus rapide</span><span data-en>Fastest way to reach us</span></div>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <div class="ico">✉️</div>
+          <div>
+            <div class="label">Email</div>
+            <div class="val">contact@prestigecharter.fr</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="info-block">
+        <h3><span data-fr>Horaires</span><span data-en>Hours</span></h3>
+        <div class="hours-row">
+          <span><span data-fr>Haute saison (Mai – Oct)</span><span data-en>High season (May – Oct)</span></span>
+          <span class="v">8h – 21h · 7j/7</span>
+        </div>
+        <div class="hours-row">
+          <span><span data-fr>Basse saison (Nov – Avr)</span><span data-en>Low season (Nov – Apr)</span></span>
+          <span class="v">9h – 18h · Lun–Sam</span>
+        </div>
+      </div>
+
+      <div class="info-block">
+        <h3><span data-fr>Suivez-nous</span><span data-en>Follow Us</span></h3>
+        <div class="social-icons">
+          <a href="#">📷</a>
+          <a href="#">👤</a>
+          <a href="#">🎵</a>
+          <a href="#">▶️</a>
+        </div>
+      </div>
+
+      <!-- PHOTO YACHT -->
+      <div style="border-radius:12px;overflow:hidden;margin-top:10px">
+        <img src="images/yacht-1.jpg" alt="Yacht exterior" style="width:100%;height:220px;object-fit:cover">
+      </div>
+
+    </div>
+
+    <!-- COLONNE DROITE : FORMULAIRE -->
+    <div>
+      <div class="form-box">
+        <h3><span data-fr>Envoyez-nous un message</span><span data-en>Send Us a Message</span></h3>
+
+        <form id="contactForm" style
