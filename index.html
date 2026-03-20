@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Prestige Charter — Location Yacht Côte d'Azur</title>
+<meta name="description" content="Location de yacht de luxe au départ de Saint-Jean-Cap-Ferrat. Vivez une expérience nautique d'exception sur la Côte d'Azur.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="index.html" class="nav-logo">
+    <svg viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.5"><path d="M12 2L12 22M12 22C12 22 6 18 6 12M12 22C12 22 18 18 18 12M4 9C4 9 8 11 12 11C16 11 20 9 20 9"/></svg>
+    <span class="logo-prestige">PRESTIGE</span>
+    <span class="logo-charter">CHARTER</span>
+  </a>
+  <button class="nav-burger" onclick="document.querySelector('.nav-links').classList.toggle('active')">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-links">
+    <a href="yacht.html" data-fr="Le Yacht" data-en="The Yacht">Le Yacht</a>
+    <a href="experiences.html" data-fr="Expériences" data-en="Experiences">Expériences</a>
+    <a href="tarifs.html" data-fr="Tarifs" data-en="Rates">Tarifs</a>
+    <a href="reservation.html" data-fr="Réservation" data-en="Booking">Réservation</a>
+    <a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a>
+    <button class="lang-toggle" onclick="toggleLang()">EN</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <img src="images/hero.jpg" alt="Yacht sur la Côte d'Azur">
+  <div class="hero-content">
+    <h1 data-fr="L'excellence nautique sur la <em>Côte d'Azur</em>" data-en="Nautical excellence on the <em>French Riviera</em>">L'excellence nautique sur la <em>Côte d'Azur</em></h1>
+    <p data-fr="Embarquez depuis Saint-Jean-Cap-Ferrat à bord de l'Artemis" data-en="Embark from Saint-Jean-Cap-Ferrat aboard the Artemis">Embarquez depuis Saint-Jean-Cap-Ferrat à bord de l'Artemis</p>
+    <a href="reservation.html" class="btn btn-fill" data-fr="Réserver" data-en="Book Now">Réserver</a>
+  </div>
+</section>
+<!-- YACHT APERÇU -->
+<section class="fade-in">
+  <h2 class="section-title" data-fr="L'<em>Artemis</em>" data-en="The <em>Artemis</em>">L'<em>Artemis</em></h2>
+  <p class="section-sub" data-fr="Jeanneau Prestige 42S — 13 mètres d'élégance" data-en="Jeanneau Prestige 42S — 13 metres of elegance">Jeanneau Prestige 42S — 13 mètres d'élégance</p>
+  <div class="about-grid">
+    <img src="images/yacht-1.jpg" alt="Yacht Artemis" loading="lazy">
+    <div class="about-text">
+      <h3 data-fr="Confort & Performance" data-en="Comfort & Performance">Confort & Performance</h3>
+      <p data-fr="11 passagers, 2 moteurs Volvo 370CV, 33 nœuds max. Cockpit spacieux, salon climatisé, cabine propriétaire et plateforme de bain hydraulique." data-en="11 guests, twin Volvo 370HP engines, 33 knots max. Spacious cockpit, air-conditioned lounge, master cabin and hydraulic swim platform.">11 passagers, 2 moteurs Volvo 370CV, 33 nœuds max. Cockpit spacieux, salon climatisé, cabine propriétaire et plateforme de bain hydraulique.</p>
+      <a href="yacht.html" class="btn" data-fr="Découvrir le yacht" data-en="Discover the yacht">Découvrir le yacht</a>
+    </div>
+  </div>
+</section>
+
+<!-- OFFRES -->
+<section class="fade-in" style="background:var(--darker)">
+  <h2 class="section-title" data-fr="Nos <em>Expériences</em>" data-en="Our <em>Experiences</em>">Nos <em>Expériences</em></h2>
+  <p class="section-sub" data-fr="Trois formules, un même niveau d'excellence" data-en="Three packages, one standard of excellence">Trois formules, un même niveau d'excellence</p>
+  <div class="cards">
+    <div class="card">
+      <h3 data-fr="Sunset Experience" data-en="Sunset Experience">Sunset Experience</h3>
+      <div class="price">1 300 €</div>
+      <ul>
+        <li data-fr="3h — 18h à 21h" data-en="3h — 6pm to 9pm">3h — 18h à 21h</li>
+        <li data-fr="Jusqu'à 11 passagers" data-en="Up to 11 guests">Jusqu'à 11 passagers</li>
+        <li data-fr="Skipper, paddle, SeaBob" data-en="Skipper, paddle, SeaBob">Skipper, paddle, SeaBob</li>
+        <li data-fr="Carburant en sus" data-en="Fuel not included">Carburant en sus</li>
+      </ul>
+      <a href="reservation.html" class="btn" data-fr="Réserver" data-en="Book">Réserver</a>
+    </div>
+    <div class="card">
+      <h3 data-fr="Journée en Mer" data-en="Full Day at Sea">Journée en Mer</h3>
+      <div class="price">2 700 €</div>
+      <ul>
+        <li data-fr="8h — 9h à 17h" data-en="8h — 9am to 5pm">8h — 9h à 17h</li>
+        <li data-fr="Jusqu'à 11 passagers" data-en="Up to 11 guests">Jusqu'à 11 passagers</li>
+        <li data-fr="Skipper, paddle, SeaBob" data-en="Skipper, paddle, SeaBob">Skipper, paddle, SeaBob</li>
+        <li data-fr="Carburant en sus" data-en="Fuel not included">Carburant en sus</li>
+      </ul>
+      <a href="reservation.html" class="btn" data-fr="Réserver" data-en="Book">Réserver</a>
+    </div>
+    <div class="card">
+      <h3 data-fr="Journée Prestige" data-en="Prestige Day">Journée Prestige</h3>
+      <div class="price">3 800 €</div>
+      <ul>
+        <li data-fr="10h — 9h à 19h" data-en="10h — 9am to 7pm">10h — 9h à 19h</li>
+        <li data-fr="Jusqu'à 11 passagers" data-en="Up to 11 guests">Jusqu'à 11 passagers</li>
+        <li data-fr="Skipper, paddle, SeaBob" data-en="Skipper, paddle, SeaBob">Skipper, paddle, SeaBob</li>
+        <li data-fr="Carburant en sus" data-en="Fuel not included">Carburant en sus</li>
+      </ul>
+      <a href="reservation.html" class="btn" data-fr="Réserver" data-en="Book">Réserver</a>
+    </div>
+  </div>
+</section>
+<!-- EXPÉRIENCES VISUEL -->
+<section class="fade-in">
+  <h2 class="section-title" data-fr="Votre <em>Évasion</em>" data-en="Your <em>Escape</em>">Votre <em>Évasion</em></h2>
+  <p class="section-sub" data-fr="Monaco, Villefranche, Antibes, Îles de Lérins, Saint-Tropez…" data-en="Monaco, Villefranche, Antibes, Lérins Islands, Saint-Tropez…">Monaco, Villefranche, Antibes, Îles de Lérins, Saint-Tropez…</p>
+  <div class="about-grid">
+    <div class="about-text">
+      <h3 data-fr="Itinéraire sur mesure" data-en="Tailor-made itinerary">Itinéraire sur mesure</h3>
+      <p data-fr="Choisissez librement votre destination. Le skipper adapte la navigation selon vos envies, la météo et les conditions de mer." data-en="Choose your destination freely. The skipper adapts navigation to your wishes, weather and sea conditions.">Choisissez librement votre destination. Le skipper adapte la navigation selon vos envies, la météo et les conditions de mer.</p>
+      <a href="experiences.html" class="btn" data-fr="Voir les itinéraires" data-en="View itineraries">Voir les itinéraires</a>
+    </div>
+    <img src="images/yacht-3.webp" alt="Navigation sunset Côte d'Azur" loading="lazy">
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="fade-in" style="text-align:center;background:var(--darker)">
+  <h2 class="section-title" data-fr="Prêt à <em>embarquer</em> ?" data-en="Ready to <em>set sail</em>?">Prêt à <em>embarquer</em> ?</h2>
+  <p class="section-sub" data-fr="Contactez-nous pour réserver votre expérience" data-en="Contact us to book your experience">Contactez-nous pour réserver votre expérience</p>
+  <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+    <a href="reservation.html" class="btn btn-fill" data-fr="Réserver en ligne" data-en="Book online">Réserver en ligne</a>
+    <a href="https://wa.me/33652192414" class="btn" target="_blank">WhatsApp</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p><span class="logo-prestige">PRESTIGE</span> <span class="logo-charter">CHARTER</span></p>
+  <p data-fr="Saint-Jean-Cap-Ferrat — Côte d'Azur" data-en="Saint-Jean-Cap-Ferrat — French Riviera">Saint-Jean-Cap-Ferrat — Côte d'Azur</p>
+  <p><a href="tel:+33652192414">06 52 19 24 14</a> · <a href="mailto:prestigecharter06@gmail.com">prestigecharter06@gmail.com</a></p>
+  <p><a href="https://instagram.com/prestigecharter06" target="_blank">@prestigecharter06</a></p>
+  <p style="margin-top:1rem"><a href="mentionslegales.html" data-fr="Mentions légales" data-en="Legal notice">Mentions légales</a> · <a href="cgv.html" data-fr="CGV" data-en="Terms">CGV</a></p>
+  <p style="margin-top:.5rem">© 2025 Prestige Charter AT</p>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
