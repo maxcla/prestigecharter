@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prestige Charter - Réservation</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <svg width="100" height="40" viewBox="0 0 100 40">
+                <path d="M0,0 L100,0 L100,40 L0,40 Z" fill="#070F1B"/>
+                <text x="10" y="25" font-family="'Playfair Display', serif" font-size="20" fill="#FFFFFF">PRESTIGE</text>
+                <text x="70" y="25" font-family="'Playfair Display', serif" font-size="20" font-weight="bold" fill="#C9A84C">CHARTER</text>
+                <path d="M50,0 L50,10 L45,15 L50,20 L55,15 L50,10 Z" fill="#C9A84C" transform="translate(0, 5)"/>
+            </svg>
+        </div>
+        <nav class="nav">
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="yacht.html">Le Yacht</a></li>
+                <li><a href="experiences.html">Expériences</a></li>
+                <li><a href="tarifs.html">Tarifs</a></li>
+                <li><a href="reservation.html" class="active">Réservation</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="language-toggle">
+            <button data-fr="FR" data-en="EN">FR</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero reservation-hero">
+            <div class="hero-content">
+                <h1 data-fr="Réservation" data-en="Booking"></h1>
+                <p data-fr="Réservez votre expérience nautique de luxe sur la Côte d'Azur" data-en="Book your luxury nautical experience on the French Riviera"></p>
+            </div>
+            <div class="hero-image" style="background-image: url('images/Arrière%20V2.jpeg');"></div>
+        </section>
+
+        <section class="section reservation-form-section fade-in">
+            <div class="container">
+                <h2 data-fr="Formulaire de réservation" data-en="Booking form"></h2>
+                <p data-fr="Complétez le formulaire pour réserver votre croisière" data-en="Complete the form to book your cruise"></p>
+
+                <form class="reservation-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name" data-fr="Nom et prénom" data-en="Full name"></label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" data-fr="Email" data-en="Email"></label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone" data-fr="Téléphone" data-en="Phone"></label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="date" data-fr="Date" data-en="Date"></label>
+                            <input type="date" id="date" name="date" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="offer" data-fr="Offre" data-en="Offer"></label>
+                            <select id="offer" name="offer" required>
+                                <option value="" data-fr="Sélectionnez une offre" data-en="Select an offer"></option>
+                                <option value="sunset" data-fr="Sunset Experience" data-en="Sunset Experience"></option>
+                                <option value="day" data-fr="Journée en Mer" data-en="Day at Sea"></option>
+                                <option value="prestige" data-fr="Journée Prestige" data-en="Prestige Day"></option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="passengers" data-fr="Nombre de passagers" data-en="Number of passengers"></label>
+                            <input type="number" id="passengers" name="passengers" min="1" max="11" value="1" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="itinerary" data-fr="Itinéraire souhaité" data-en="Desired itinerary"></label>
+                            <select id="itinerary" name="itinerary">
+                                <option value="" data-fr="Sélectionnez un itinéraire" data-en="Select an itinerary"></option>
+                                <option value="monaco" data-fr="Monaco & Èze-sur-Mer" data-en="Monaco & Èze-sur-Mer"></option>
+                                <option value="beaulieu" data-fr="Beaulieu / Villefranche-sur-Mer" data-en="Beaulieu / Villefranche-sur-Mer"></option>
+                                <option value="antibes" data-fr="Antibes / Cap d'Antibes" data-en="Antibes / Cap d'Antibes"></option>
+                                <option value="lerins" data-fr="Îles de Lérins (Cannes)" data-en="Lérins Islands (Cannes)"></option>
+                                <option value="saint-tropez" data-fr="Saint-Tropez (journée complète)" data-en="Saint-Tropez (full day)"></option>
+                                <option value="custom" data-fr="Autre (à préciser)" data-en="Other (to specify)"></option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group extras-group">
+                            <label data-fr="Options extras" data-en="Extra options"></label>
+                            <div class="extras-checkboxes">
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="chef" name="extras" value="chef">
+                                    <label for="chef" data-fr="Chef privé à bord (500 €)" data-en="Private chef on board (500 €)"></label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="champagne" name="extras" value="champagne">
+                                    <label for="champagne" data-fr="Bouteille Dom Pérignon (350 €)" data-en="Dom Pérignon bottle (350 €)"></label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="photographer" name="extras" value="photographer">
+                                    <label for="photographer" data-fr="Photographe/Vidéaste (800 €)" data-en="Photographer/Videographer (800 €)"></label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="comments" data-fr="Commentaires" data-en="Comments"></label>
+                            <textarea id="comments" name="comments" rows="4"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group terms">
+                            <input type="checkbox" id="terms" name="terms" required>
+                            <label for="terms" data-fr="J'accepte les conditions générales de vente" data-en="I accept the terms and conditions"></label>
+                            <a href="cgv.html" target="_blank" data-fr="(voir les CGV)" data-en="(see terms and conditions)"></a>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <button type="submit" class="cta-button" data-fr="Réserver maintenant" data-en="Book now"></button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <section class="section booking-info fade-in">
+            <div class="container">
+                <h2 data-fr="Informations de réservation" data-en="Booking information"></h2>
+
+                <div class="booking-info-grid">
+                    <div class="info-card">
+                        <h3 data-fr="Conditions de réservation" data-en="Booking conditions"></h3>
+                        <ul>
+                            <li data-fr="Acompte de 30% à la réservation" data-en="30% deposit at booking"></li>
+                            <li data-fr="Solde 48h avant la prestation" data-en="Balance due 48h before the service"></li>
+                            <li data-fr="Paiement par virement, carte bancaire ou espèces" data-en="Payment by bank transfer, credit card or cash"></li>
+                        </ul>
+                    </div>
+
+                    <div class="info-card">
+                        <h3 data-fr="Politique d'annulation" data-en="Cancellation policy"></h3>
+                        <ul>
+                            <li data-fr="J-7 ou plus : remboursement intégral de l'acompte" data-en="More than 7 days before: full refund of the deposit"></li>
+                            <li data-fr="J-7 à J-3 : acompte conservé, report possible" data-en="Between 7 and 3 days before: deposit retained, rescheduling possible"></li>
+                            <li data-fr="Moins de J-3 : aucun remboursement" data-en="Less than 3 days before: no refund"></li>
+                            <li data-fr="Météo : report ou remboursement intégral si annulation par le skipper" data-en="Weather: rescheduling or full refund if canceled by the skipper"></li>
+                        </ul>
+                    </div>
+
+                    <div class="info-card">
+                        <h3 data-fr="Contact" data-en="Contact"></h3>
+                        <p><a href="tel:+33652192414">06 52 19 24 14</a></p>
+                        <p><a href="tel:+33652192414">06 52 19 24 14 (WhatsApp)</a></p>
+                        <p><a href="mailto:prestigecharter06@gmail.com">prestigecharter06@gmail.com</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section cta-section fade-in">
+            <div class="container">
+                <h2 data-fr="Des questions ?" data-en="Questions?"></h2>
+                <p data-fr="Notre équipe est à votre disposition pour toute question concernant votre réservation" data-en="Our team is at your disposal for any questions about your booking"></p>
+                <a href="contact.html" class="cta-button" data-fr="Contactez-nous" data-en="Contact us"></a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="contact-info">
+                <h3 data-fr="Contactez-nous" data-en="Contact us"></h3>
+                <p><a href="tel:+33652192414">06 52 19 24 14</a></p>
+                <p><a href="tel:+33652192414">06 52 19 24 14 (WhatsApp)</a></p>
+                <p><a href="mailto:prestigecharter06@gmail.com">prestigecharter06@gmail.com</a></p>
+                <p><a href="https://www.instagram.com/prestigecharter06/" target="_blank" rel="noopener noreferrer">@prestigecharter06</a></p>
+            </div>
+            <div class="legal-links">
+                <a href="cgv.html" data-fr="Conditions générales" data-en="Terms and conditions"></a>
+                <a href="mentionslegales.html" data-fr="Mentions légales" data-en="Legal notices"></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p data-fr="© 2023 Prestige Charter AT. Tous droits réservés." data-en="© 2023 Prestige Charter AT. All rights reserved."></p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
