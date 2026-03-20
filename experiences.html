@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Expériences — Prestige Charter AT | Croisières Côte d'Azur</title>
+  <meta name="description" content="Découvrez nos expériences de croisières privées au départ de Saint-Jean-Cap-Ferrat. Itinéraires sur mesure, couchers de soleil, Monaco, Èze, Villefranche.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --gold: #C9A84C;
+      --dark: #070F1B;
+      --darker: #050B14;
+      --white: #F4F0EB;
+      --gray: #9A968E;
+      --font-body: 'Inter', sans-serif;
+      --font-head: 'Playfair Display', serif;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-body); background: var(--dark); color: var(--white); overflow-x: hidden; }
+
+    /* Bilingue */
+    [data-en] { display: none; }
+    body.en [data-en] { display: inline; }
+    body.en [data-fr] { display: none; }
+
+    /* ===== NAVBAR ===== */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 50px; height: 70px;
+      background: rgba(5,11,20,.85); backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(201,168,76,.08);
+    }
+    .nav-logo {
+      font-family: var(--font-head); color: var(--gold);
+      font-size: 1.1rem; text-decoration: none; letter-spacing: .04em;
+    }
+    .nav-right { display: flex; align-items: center; gap: 28px; }
+    .nav-right a {
+      color: var(--gray); text-decoration: none; font-size: .82rem;
+      font-weight: 500; letter-spacing: .03em; text-transform: uppercase;
+      transition: color .3s;
+    }
+    .nav-right a:hover, .nav-right a.active { color: var(--gold); }
+    .lang-btn {
+      background: transparent; border: 1px solid var(--gold); color: var(--gold);
+      padding: 5px 14px; border-radius: 6px; font-size: .75rem; font-weight: 600;
+      cursor: pointer; transition: all .3s;
+    }
+    .lang-btn:hover { background: var(--gold); color: var(--dark); }
+
+    /* Burger */
+    .burger { display: none; flex-direction: column; gap: 5px; cursor: pointer; z-index: 1002; background: none; border: none; padding: 8px; }
+    .burger span { display: block; width: 24px; height: 2px; background: var(--white); border-radius: 2px; transition: all .3s; }
+    .burger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .burger.active span:nth-child(2) { opacity: 0; }
+    .burger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+    /* Mobile overlay */
+    .mobile-menu {
+      display: none; position: fixed; inset: 0; z-index: 1001;
+      background: rgba(5,11,20,.97); backdrop-filter: blur(30px);
+      flex-direction: column; align-items: center; justify-content: center; gap: 30px;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      color: var(--white); text-decoration: none; font-family: var(--font-head);
+      font-size: 1.6rem; transition: color .3s;
+    }
+    .mobile-menu a:hover { color: var(--gold); }
+
+    /* ===== HERO ===== */
+    .hero {
+      position: relative; height: 75vh; min-height: 500px;
+      display: flex; align-items: center; justify-content: center;
+      text-align: center; overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, var(--darker), #0A1628, var(--darker));
+    }
+    .hero-bg::after {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 50% 80%, rgba(201,168,76,.06), transparent 70%);
+    }
+    .hero-content { position: relative; z-index: 2; padding: 0 30px; }
+    .hero-badge {
+      display: inline-block; font-size: .72rem; font-weight: 600;
+      letter-spacing: .15em; text-transform: uppercase; color: var(--gold);
+      border: 1px solid rgba(201,168,76,.3); padding: 8px 20px;
+      border-radius: 30px; margin-bottom: 24px;
+    }
+    .hero h1 {
+      font-family: var(--font-head); font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 400; line-height: 1.2; margin-bottom: 16px;
+    }
+    .hero h1 em { font-style: italic; color: var(--gold); }
+    .hero p { color: var(--gray); font-size: 1rem; max-width: 550px; margin: 0 auto 30px; line-height: 1.6; }
+
+    /* Buttons */
+    .btn {
+      display: inline-block; padding: 14px 32px; border-radius: 8px;
+      text-decoration: none; font-size: .85rem; font-weight: 600;
+      letter-spacing: .03em; transition: all .3s; cursor: pointer;
+    }
+    .btn-gold { background: var(--gold); color: var(--dark); }
+    .btn-gold:hover { background: #b8933e; transform: translateY(-2px); }
+    .btn-outline { background: transparent; color: var(--gold); border: 1px solid var(--gold); }
+    .btn-outline:hover { background: rgba(201,168,76,.1); transform: translateY(-2px); }
+
+    /* ===== SECTIONS ===== */
+    .section { padding: 80px 50px; }
+    .section-badge {
+      display: inline-block; font-size: .68rem; font-weight: 600;
+      letter-spacing: .18em; text-transform: uppercase; color: var(--gold);
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-family: var(--font-head); font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-weight: 400; margin-bottom: 16px; line-height: 1.2;
+    }
+    .section-title em { font-style: italic; color: var(--gold); }
+    .section-text { color: var(--gray); font-size: .92rem; line-height: 1.7; max-width: 620px; margin-bottom: 40px; }
+
+    /* ===== EXPERIENCE CARDS ===== */
+    .exp-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 30px; margin-top: 40px;
+    }
+    .exp-card {
+      background: rgba(201,168,76,.03); border: 1px solid rgba(201,168,76,.08);
+      border-radius: 16px; overflow: hidden; transition: all .4s;
+    }
+    .exp-card:hover { border-color: rgba(201,168,76,.25); transform: translateY(-4px); }
+    .exp-img {
+      height: 220px; background-size: cover; background-position: center;
+      position: relative;
+    }
+    .exp-img::after {
+      content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 80px;
+      background: linear-gradient(to top, var(--dark), transparent);
+    }
+    .exp-tag {
+      position: absolute; top: 16px; left: 16px; z-index: 2;
+      font-size: .68rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase;
+      color: var(--dark); background: var(--gold); padding: 5px 12px; border-radius: 20px;
+    }
+    .exp-body { padding: 24px; }
+    .exp-body h3 {
+      font-family: var(--font-head); font-size: 1.25rem; font-weight: 400;
+      margin-bottom: 10px; color: var(--white);
+    }
+    .exp-body p { color: var(--gray); font-size: .85rem; line-height: 1.65; margin-bottom: 16px; }
+    .exp-details {
+      display: flex; gap: 20px; flex-wrap: wrap;
+      padding-top: 16px; border-top: 1px solid rgba(201,168,76,.08);
+    }
+    .exp-detail { font-size: .78rem; color: var(--gray); display: flex; align-items: center; gap: 6px; }
+    .exp-detail strong { color: var(--white); }
+
+    /* ===== MAP SECTION ===== */
+    .map-section { text-align: center; }
+    .map-wrap {
+      margin-top: 40px; border-radius: 16px; overflow: hidden;
+      border: 1px solid rgba(201,168,76,.1); height: 400px;
+    }
+    .map-wrap iframe { width: 100%; height: 100%; border: 0; filter: grayscale(.3) contrast(1.1); }
+
+    /* ===== BESPOKE ===== */
+    .bespoke {
+      display: flex; align-items: center; gap: 60px;
+      padding: 80px 50px; flex-wrap: wrap;
+    }
+    .bespoke-text { flex: 1; min-width: 300px; }
+    .bespoke-visual {
+      flex: 1; min-width: 300px; text-align: center;
+      background: rgba(201,168,76,.03); border: 1px solid rgba(201,168,76,.08);
+      border-radius: 16px; padding: 50px 40px;
+    }
+    .bespoke-visual .big-num {
+      font-family: var(--font-head); font-size: 4rem; color: var(--gold);
+      line-height: 1; margin-bottom: 8px;
+    }
+    .bespoke-visual p { color: var(--gray); font-size: .9rem; }
+    .bespoke-features { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 30px; }
+    .bespoke-feat {
+      background: rgba(201,168,76,.03); border: 1px solid rgba(201,168,76,.06);
+      border-radius: 10px; padding: 16px; font-size: .82rem; color: var(--gray);
+    }
+    .bespoke-feat strong { display: block; color: var(--white); margin-bottom: 4px; font-size: .85rem; }
+
+    /* ===== CTA FINAL ===== */
+    .cta-final {
+      text-align: center; padding: 80px 30px; margin: 0 50px 80px;
+      background: rgba(201,168,76,.04); border: 1px solid rgba(201,168,76,.1);
+      border-radius: 20px;
+    }
+    .cta-final h2 { font-family: var(--font-head); font-size: 2.2rem; margin-bottom: 12px; }
+    .cta-final h2 em { font-style: italic; color: var(--gold); }
+    .cta-final p { color: var(--gray); font-size: .95rem; margin-bottom: 30px; max-width: 500px; margin-left: auto; margin-right: auto; }
+    .cta-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      padding: 50px; border-top: 1px solid rgba(201,168,76,.08); text-align: center;
+    }
+    .footer-logo { font-family: var(--font-head); color: var(--gold); font-size: 1.1rem; margin-bottom: 6px; }
+    .footer-sub { color: var(--gray); font-size: .75rem; margin-bottom: 20px; }
+    .footer-links { display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; margin-bottom: 20px; }
+    .footer-links a { color: var(--gray); text-decoration: none; font-size: .78rem; transition: color .3s; }
+    .footer-links a:hover { color: var(--gold); }
+    .footer-copy { font-size: .68rem; color: rgba(154,150,142,.5); }
+
+    /* WhatsApp */
+    .wa-float {
+      position: fixed; bottom: 24px; right: 24px; z-index: 999;
+      width: 56px; height: 56px; background: #25D366; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 20px rgba(37,211,102,.4); transition: transform .3s;
+    }
+    .wa-float:hover { transform: scale(1.1); }
+    .wa-float svg { width: 28px; height: 28px; fill: white; }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .nav { padding: 0 20px; }
+      .nav-right a:not(.lang-btn) { display: none; }
+      .burger { display: flex; }
+      .section { padding: 60px 20px; }
+      .exp-grid { grid-template-columns: 1fr; }
+      .bespoke { padding: 60px 20px; flex-direction: column; gap: 40px; }
+      .bespoke-features { grid-template-columns: 1fr; }
+      .cta-final { margin: 0 20px 60px; padding: 50px 20px; }
+      .footer { padding: 40px 20px; }
+      .map-wrap { height: 280px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="nav" id="navbar">
+  <a href="index.html" class="nav-logo">Prestige Charter</a>
+  <div class="nav-right">
+    <a href="index.html"><span data-fr>Accueil</span><span data-en>Home</span></a>
+    <a href="yacht.html"><span data-fr>Le Yacht</span><span data-en>The Yacht</span></a>
+    <a href="experiences.html" class="active"><span data-fr>Expériences</span><span data-en>Experiences</span></a>
+    <a href="tarifs.html"><span data-fr>Tarifs</span><span data-en>Rates</span></a>
+    <a href="reservation.html"><span data-fr>Réserver</span><span data-en>Book</span></a>
+    <a href="contact.html">Contact</a>
+    <button class="lang-btn" onclick="toggleLang()">EN</button>
+  </div>
+  <button class="burger" id="burgerBtn" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html" onclick="closeMenu()"><span data-fr>Accueil</span><span data-en>Home</span></a>
+  <a href="yacht.html" onclick="closeMenu()"><span data-fr>Le Yacht</span><span data-en>The Yacht</span></a>
+  <a href="experiences.html" onclick="closeMenu()"><span data-fr>Expériences</span><span data-en>Experiences</span></a>
+  <a href="tarifs.html" onclick="closeMenu()"><span data-fr>Tarifs</span><span data-en>Rates</span></a>
+  <a href="reservation.html" onclick="closeMenu()"><span data-fr>Réserver</span><span data-en>Book</span></a>
+  <a href="contact.html" onclick="closeMenu()">Contact</a>
+  <button class="lang-btn" onclick="toggleLang()">EN</button>
+</div>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span data-fr>Côte d'Azur · Expériences Exclusives</span>
+      <span data-en>French Riviera · Exclusive Experiences</span>
+    </div>
+    <h1>
+      <span data-fr>Des croisières <em>inoubliables</em></span>
+      <span data-en>Unforgettable <em>cruises</em></span>
+    </h1>
+    <p>
+      <span data-fr>Au départ de Saint-Jean-Cap-Ferrat, explorez les plus beaux sites de la Côte d'Azur à bord de notre Prestige 42S avec skipper privé.</span>
+      <span data-en>From Saint-Jean-Cap-Ferrat, explore the finest spots of the French Riviera aboard our Prestige 42S with a private skipper.</span>
+    </p>
+    <a href="reservation.html" class="btn btn-gold">
+      <span data-fr>Réserver une expérience</span>
+      <span data-en>Book an experience</span>
+    </a>
+  </div>
+</section>
+
+<!-- ===== NOS EXPÉRIENCES ===== -->
+<section class="section">
+  <span class="section-badge">
+    <span data-fr>Nos Expériences</span>
+    <span data-en>Our Experiences</span>
+  </span>
+  <h2 class="section-title">
+    <span data-fr>Chaque sortie, une <em>nouvelle émotion</em></span>
+    <span data-en>Every outing, a <em>new emotion</em></span>
+  </h2>
+  <p class="section-text">
+    <span data-fr>Des itinéraires pensés pour sublimer chaque instant. Baignade en eaux turquoise, apéritif face au sunset, découverte de criques secrètes — choisissez votre aventure.</span>
+    <span data-en>Itineraries designed to elevate every moment. Swimming in turquoise waters, sunset aperitifs, discovering secret coves — choose your adventure.</span>
+  </p>
+
+  <div class="exp-grid">
+
+    <!-- Card 1 : Sunset -->
+    <div class="exp-card">
+      <div class="exp-img" style="background-image:url('images/sunset-cruise.jpg');background-color:#1a2540;">
+        <span class="exp-tag">
+          <span data-fr>Signature</span><span data-en>Signature</span>
+        </span>
+      </div>
+      <div class="exp-body">
+        <h3><span data-fr>Croisière Coucher de Soleil</span><span data-en>Sunset Cruise</span></h3>
+        <p>
+          <span data-fr>Naviguez le long du Cap-Ferrat tandis que le soleil plonge dans la Méditerranée. Champagne, musique d'ambiance et panorama à couper le souffle.</span>
+          <span data-en>Sail along Cap-Ferrat as the sun dips into the Mediterranean. Champagne, ambient music and breathtaking panoramas.</span>
+        </p>
+        <div class="exp-details">
+          <span class="exp-detail">⏱ <strong>3h</strong></span>
+          <span class="exp-detail">👥 <strong>10 <span data-fr>pers.</span><span data-en>guests</span></strong></span>
+          <span class="exp-detail">💰 <strong><span data-fr>Dès 1 300€</span><span data-en>From €1,300</span></strong></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2 : Journée -->
+    <div class="exp-card">
+      <div class="exp-img" style="background-image:url('images/full-day.jpg');background-color:#1a2540;">
+        <span class="exp-tag">
+          <span data-fr>Journée</span><span data-en>Full Day</span>
+        </span>
+      </div>
+      <div class="exp-body">
+        <h3><span data-fr>Journée en Mer</span><span data-en>Full Day at Sea</span></h3>
+        <p>
+          <span data-fr>Monaco, Èze, Villefranche, Beaulieu — une journée complète pour découvrir les joyaux de la Riviera. Baignade, snorkeling, farniente.</span>
+          <span data-en>Monaco, Èze, Villefranche, Beaulieu — a full day discovering Riviera gems. Swimming, snorkeling, relaxation.</span>
+        </p>
+        <div class="exp-details">
+          <span class="exp-detail">⏱ <strong>8h</strong></span>
+          <span class="exp-detail">👥 <strong>10 <span data-fr>pers.</span><span data-en>guests</span></strong></span>
+          <span class="exp-detail">💰 <strong><span data-fr>Dès 2 700€</span><span data-en>From €2,700</span></strong></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3 : Monaco -->
+    <div class="exp-card">
+      <div class="exp-img" style="background-image:url('images/monaco.jpg');background-color:#1a2540;">
+        <span class="exp-tag">Monaco</span>
+      </div>
+      <div class="exp-body">
+        <h3><span data-fr>Escale à Monaco</span><span data-en>Monaco Stopover</span></h3>
+        <p>
+          <span data-fr>Arrivée par la mer au port Hercule. Déjeuner à quai ou cabotage le long du Rocher. L'expérience princière par excellence.</span>
+          <span data-en>Arrive by sea at Port Hercules. Lunch at the quay or sail along the Rock. The ultimate princely experience.</span>
+        </p>
+        <div class="exp-details">
+          <span class="exp-detail">⏱ <strong>5-8h</strong></span>
+          <span class="exp-detail">👥 <strong>10 <span data-fr>pers.</span><span data-en>guests</span></strong></span>
+          <span class="exp-detail">💰 <strong><span data-fr>Dès 2 200€</span><span data-en>From €2,200</span></strong></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 4 : Criques -->
+    <div class="exp-card">
+      <div class="exp-img" style="background-image:url('images/criques.jpg');background-color:#1a2540;">
+        <span class="exp-tag">
+          <span data-fr>Aventure</span><span data-en>Adventure</span>
+        </span>
+      </div>
+      <div class="exp-body">
+        <h3><span data-fr>Criques Secrètes</span><span data-en>Secret Coves</span></h3>
+        <p>
+          <span data-fr>Mouillage dans des criques accessibles uniquement par la mer. Eau cristalline, tranquillité absolue, paddleboard et snorkeling inclus.</span>
+          <span data-en>Anchor in coves accessible only by sea. Crystal-clear water, absolute tranquility, paddleboard and snorkeling included.</span>
+        </p>
+        <div class="exp-details">
+          <span class="exp-detail">⏱ <strong>4-6h</strong></span>
+          <span class="exp-detail">👥 <strong>8 <span data-fr>pers.</span><span data-en>guests</span></strong></span>
+          <span class="exp-detail">💰 <strong><span data-fr>Dès 1 800€</span><span data-en>From €1,800</span></strong></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 5 : Événement -->
+    <div class="exp-card">
+      <div class="exp-img" style="background-image:url('images/event.jpg');background-color:#1a2540;">
+        <span class="exp-tag">
+          <span data-fr>Événement</span><span data-en>Event</span>
+        </span>
+      </div>
+      <div class="exp-body">
+        <h3><span data-fr>Privatisation Événement</span><span data-en>Private Event</span></h3>
+        <p>
+          <span data-fr>Anniversaire, EVJF/EVG, team-building, demande en mariage — privatisez le yacht pour un moment d'exception avec service traiteur sur demande.</span>
+          <span data-en>Birthday, bachelor party, team-building, marriage proposal — privatize the yacht for an exceptional moment with catering on request.</span>
+        </p>
+        <div class="exp-details">
+          <span class="exp-detail">⏱ <strong>4-10h</strong></span>
+          <span class="exp-detail">👥 <strong>12 <span data-fr>pers.</span><span data-en>guests</span></strong></span>
+          <span class="exp-detail">💰 <strong><span data-fr>Sur devis</span><span data-en>On quote</span></strong></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 6 : Demi-journée -->
+    <div class="exp-card">
+      <div class="exp-img" style="background-image:url('images/half-day.jpg');background-color:#1a2540;">
+        <span class="exp-tag">
+          <span data-fr>Essentiel</span><span data-en>Essential</span>
+        </span>
+      </div>
+      <div class="exp-body">
+        <h3><span data-fr>Demi-Journée Découverte</span><span data-en>Half-Day Discovery</span></h3>
+        <p>
+          <span data-fr>L'initiation idéale : 4 heures pour longer le Cap-Ferrat, plonger dans les eaux de la Paloma et savourer le cadre unique de Villefranche.</span>
+          <span data-en>The ideal introduction: 4 hours along Cap-Ferrat, swim at Paloma beach and enjoy the unique setting of Villefranche.</span>
+        </p>
+        <div class="exp-details">
+          <span class="exp-detail">⏱ <strong>4h</strong></span>
+          <span class="exp-detail">👥 <strong>10 <span data-fr>pers.</span><span data-en>guests</span></strong></span>
+          <span class="exp-detail">💰 <strong><span data-fr>Dès 1 300€</span><span data-en>From €1,300</span></strong></span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== MAP ===== -->
+<section class="section map-section">
+  <span class="section-badge">
+    <span data-fr>Notre Zone</span><span data-en>Our Area</span>
+  </span>
+  <h2 class="section-title">
+    <span data-fr>De Monaco à <em>Antibes</em></span>
+    <span data-en>From Monaco to <em>Antibes</em></span>
+  </h2>
+  <p class="section-text" style="margin-left:auto;margin-right:auto;">
+    <span data-fr>Notre port d'attache à Saint-Jean-Cap-Ferrat nous place au cœur de la Riviera, à quelques minutes de chaque destination emblématique.</span>
+    <span data-en>Our home port in Saint-Jean-Cap-Ferrat places us at the heart of the Riviera, minutes from every iconic destination.</span>
+  </p>
+  <div class="map-wrap">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d46153.!2d7.3!3d43.69!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12cdc28fe53a1251%3A0x404f69e2dba5f80!2sSaint-Jean-Cap-Ferrat!5e0!3m2!1sfr!2sfr!4v1700000000000!5m2!1sfr!2sfr" allowfullscreen loading="lazy"></iframe>
+  </div>
+</section>
+
+<!-- ===== SUR MESURE ===== -->
+<section class="bespoke">
+  <div class="bespoke-text">
+    <span class="section-badge">
+      <span data-fr>Sur Mesure</span><span data-en>Bespoke</span>
+    </span>
+    <h2 class="section-title">
+      <span data-fr>Votre croisière, <em>votre scénario</em></span>
+      <span data-en>Your cruise, <em>your scenario</em></span>
+    </h2>
+    <p class="section-text">
+      <span data-fr>Aucune expérience n'est figée. Notre skipper adapte chaque sortie en fonction de la météo, de vos envies et du moment. Vous rêvez d'un itinéraire unique ? Nous le créons pour vous.</span>
+      <span data-en>No experience is set in stone. Our skipper adapts every outing based on weather, your desires and the moment. Dreaming of a unique itinerary? We create it for you.</span>
+    </p>
+    <div class="bespoke-features">
+      <div class="bespoke-feat">
+        <strong><span data-fr>🍾 Traiteur</span><span data-en>🍾 Catering</span></strong>
+        <span data-fr>Champagne, plateaux, chef à bord</span>
+        <span data-en>Champagne, platters, onboard chef</span>
+      </div>
+      <div class="bespoke-feat">
+        <strong><span data-fr>🎵 Ambiance</span><span data-en>🎵 Ambiance</span></strong>
+        <span data-fr>DJ, musicien, décoration florale</span>
+        <span data-en>DJ, musician, floral décor</span>
+      </div>
+      <div class="bespoke-feat">
+        <strong><span data-fr>📸 Souvenir</span><span data-en>📸 Memories</span></strong>
+        <span data-fr>Photographe, drone, vidéo</span>
+        <span data-en>Photographer, drone, video</span>
+      </div>
+      <div class="bespoke-feat">
+        <strong><span data-fr>🤿 Activités</span><span data-en>🤿 Activities</span></strong>
+        <span data-fr>Jet-ski, paddle, snorkeling</span>
+        <span data-en>Jet-ski, paddle, snorkeling</span>
+      </div>
+    </div>
+  </div>
+  <div class="bespoke-visual">
+    <div class="big-num">∞</div>
+    <p><span data-fr>Itinéraires possibles depuis Cap-Ferrat</span><span data-en>Possible itineraries from Cap-Ferrat</span></p>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<div class="cta-final">
+  <h2><span data-fr>Prêt à <em>embarquer</em> ?</span><span data-en>Ready to <em>embark</em>?</span></h2>
+  <p>
+    <span data-fr>Réservez votre expérience en quelques clics ou contactez-nous pour un itinéraire sur mesure.</span>
+    <span data-en>Book your experience in a few clicks or contact us for a bespoke itinerary.</span>
+  </p>
+  <div class="cta-btns">
+    <a href="reservation.html" class="btn btn-gold"><span data-fr>Réserver maintenant</span><span data-en>Book now</span></a>
+    <a href="contact.html" class="btn btn-outline">Contact</a>
+  </div>
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="footer-logo">Prestige Charter</div>
+  <div class="footer-sub">Saint-Jean-Cap-Ferrat, Côte d'Azur</div>
+  <div class="footer-links">
+    <a href="index.html"><span data-fr>Accueil</span><span data-en>Home</span></a>
+    <a href="yacht.html"><span data-fr>Le Yacht</span><span data-en>The Yacht</span></a>
+    <a href="experiences.html"><span data-fr>Expériences</span><span data-en>Experiences</span></a>
+    <a href="tarifs.html"><span data-fr>Tarifs</span><span data-en>Rates</span></a>
+    <a href="reservation.html"><span data-fr>Réserver</span><span data-en>Book</span></a>
+    <a href="contact.html">Contact</a>
+    <a href="mentions-legales.html"><span data-fr>Mentions légales</span><span data-en>Legal</span></a>
+  </div>
+  <div class="footer-copy">© 2025 Prestige Charter AT — <span data-fr>Tous droits réservés</span><span data-en>All rights reserved</span></div>
+</footer>
+
+<!-- WhatsApp -->
+<a href="https://wa.me/33600000000" target="_blank" class="wa-float" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12.05 21.785h-.01a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.981.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884zM20.52 3.449C18.24 1.245 15.24 0 12.045 0 5.463 0 .104 5.334.101 11.893c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.88 11.88 0 005.683 1.448h.005c6.585 0 11.946-5.336 11.949-11.896 0-3.176-1.24-6.165-3.495-8.411z"/></svg>
+</a>
+
+<!-- ===== SCRIPTS ===== -->
+<script>
+  function toggleLang() {
+    document.body.classList.toggle('en');
+    document.querySelectorAll('.lang-btn').forEach(function(b) {
+      b.textContent = document.body.classList.contains('en') ? 'FR' : 'EN';
+    });
+  }
+  function toggleMenu() {
+    document.getElementById('burgerBtn').classList.toggle('active');
+    var m = document.getElementById('mobileMenu');
+    m.classList.toggle('open');
+    document.body.style.overflow = m.classList.contains('open') ? 'hidden' : '';
+  }
+  function closeMenu() {
+    document.getElementById('burgerBtn').classList.remove('active');
+    document.getElementById('mobileMenu').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  window.addEventListener('scroll', function() {
+    document.getElementById('navbar').style.background = window.scrollY > 50 ? 'rgba(5,11,20,.95)' : 'rgba(5,11,20,.85)';
+  });
+</script>
+</body>
+</html>
