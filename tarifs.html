@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tarifs 2025 — Prestige Charter AT</title>
+  <meta name="description" content="Découvrez nos tarifs pour des croisières privées de luxe au départ de Saint-Jean-Cap-Ferrat.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --gold: #C9A84C;
+      --gold-dim: rgba(201,168,76,.15);
+      --dark: #070F1B;
+      --darker: #050B14;
+      --white: #F4F0EB;
+      --gray: #9A968E;
+      --font-body: 'Inter', sans-serif;
+      --font-head: 'Playfair Display', serif;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { font-family:var(--font-body); background:var(--dark); color:var(--white); overflow-x:hidden; }
+    [data-en] { display:none; }
+    body.en [data-en] { display:inline; }
+    body.en [data-fr] { display:none; }
+
+    .nav { position:fixed; top:0; left:0; right:0; z-index:1000; display:flex; align-items:center; justify-content:space-between; padding:0 50px; height:70px; background:rgba(5,11,20,.85); backdrop-filter:blur(20px); border-bottom:1px solid rgba(201,168,76,.08); }
+    .nav-logo { font-family:var(--font-head); color:var(--gold); font-size:1.1rem; text-decoration:none; letter-spacing:.04em; }
+    .nav-right { display:flex; align-items:center; gap:32px; }
+    .nav-links { display:flex; gap:28px; }
+    .nav-links a { color:var(--gray); text-decoration:none; font-size:.82rem; font-weight:500; letter-spacing:.06em; text-transform:uppercase; transition:color .3s; }
+    .nav-links a:hover { color:var(--gold); }
+    .lang-btn { background:none; border:1px solid var(--gold); color:var(--gold); padding:4px 12px; border-radius:4px; cursor:pointer; font-size:.75rem; font-weight:600; letter-spacing:.08em; }
+    .burger { display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:4px; }
+    .burger span { display:block; width:22px; height:2px; background:var(--gold); border-radius:2px; transition:all .3s; }
+    .mobile-menu { display:none; position:fixed; top:70px; left:0; right:0; bottom:0; background:rgba(5,11,20,.97); backdrop-filter:blur(30px); z-index:999; flex-direction:column; align-items:center; justify-content:center; gap:24px; }
+    .mobile-menu.open { display:flex; }
+    .mobile-menu a { color:var(--white); text-decoration:none; font-size:1.1rem; font-weight:500; letter-spacing:.06em; text-transform:uppercase; }
+
+    @media(max-width:768px) {
+      .nav { padding:0 24px; }
+      .nav-links { display:none; }
+      .burger { display:flex; }
+    }
+
+    .page-hero { position:relative; height:50vh; min-height:350px; display:flex; align-items:center; justify-content:center; text-align:center; margin-top:70px; overflow:hidden; }
+    .page-hero-bg { position:absolute; inset:0; background-size:cover; background-position:center; }
+    .page-hero-bg::after { content:''; position:absolute; inset:0; background:linear-gradient(to bottom, rgba(7,15,27,.4), rgba(7,15,27,.9)); }
+    .page-hero-content { position:relative; z-index:2; }
+    .page-hero h1 { font-family:var(--font-head); font-size:clamp(2rem,5vw,3.5rem); color:var(--white); margin-bottom:12px; }
+    .page-hero p { color:var(--gray); font-size:1.05rem; max-width:550px; margin:0 auto; }
+
+    .section { padding:80px 50px; max-width:1100px; margin:0 auto; }
+    .section-label { color:var(--gold); font-size:.75rem; font-weight:600; letter-spacing:.15em; text-transform:uppercase; margin-bottom:12px; text-align:center; }
+    .section-title { font-family:var(--font-head); font-size:clamp(1.6rem,3vw,2.4rem); margin-bottom:16px; text-align:center; }
+    .section-sub { color:var(--gray); font-size:.95rem; text-align:center; max-width:600px; margin:0 auto 50px; line-height:1.6; }
+
+    .tarif-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:24px; margin-bottom:60px; }
+    .tarif { position:relative; background:rgba(255,255,255,.02); border:1px solid rgba(201,168,76,.1); border-radius:16px; padding:40px 28px; text-align:center; transition:transform .3s, border-color .3s; }
+    .tarif:hover { transform:translateY(-4px); border-color:var(--gold); }
+    .tarif.pop { border-color:var(--gold); box-shadow:0 0 40px rgba(201,168,76,.12); }
+    .tarif-badge { position:absolute; top:-12px; left:50%; transform:translateX(-50%); background:var(--gold); color:var(--dark); font-size:.7rem; font-weight:700; padding:4px 16px; border-radius:20px; letter-spacing:.06em; text-transform:uppercase; }
+    .tarif-name { font-family:var(--font-head); font-size:1.2rem; margin-bottom:6px; }
+    .tarif-duration { color:var(--gray); font-size:.85rem; margin-bottom:20px; }
+    .tarif-price { font-size:2.2rem; color:var(--gold); font-weight:700; margin-bottom:6px; }
+    .tarif-unit { color:var(--gray); font-size:.8rem; margin-bottom:24px; }
+    .tarif-features { list-style:none; text-align:left; margin-bottom:28px; }
+    .tarif-features li { padding:6px 0; font-size:.88rem; color:var(--gray); border-bottom:1px solid rgba(201,168,76,.05); }
+    .tarif-features li::before { content:'✦ '; color:var(--gold); font-size:.7rem; }
+    .tarif-btn { display:inline-block; padding:12px 32px; border:1px solid var(--gold); color:var(--gold); font-size:.8rem; font-weight:600; letter-spacing:.08em; text-transform:uppercase; text-decoration:none; border-radius:8px; transition:all .3s; }
+    .tarif-btn:hover { background:var(--gold); color:var(--dark); }
+    .tarif.pop .tarif-btn { background:var(--gold); color:var(--dark); }
+    .tarif.pop .tarif-btn:hover { filter:brightness(1.15); }
+
+    .extras { max-width:800px; margin:0 auto 60px; }
+    .extras h3 { font-family:var(--font-head); font-size:1.3rem; margin-bottom:20px; text-align:center; }
+    .extras-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px; }
+    .extra-card { background:rgba(201,168,76,.04); border:1px solid rgba(201,168,76,.08); border-radius:12px; padding:24px; text-align:center; }
+    .extra-card .name { font-weight:600; font-size:.9rem; margin-bottom:4px; }
+    .extra-card .price { color:var(--gold); font-size:1.1rem; font-weight:700; }
+    .extra-card .detail { color:var(--gray); font-size:.8rem; margin-top:4px; }
+
+    .notes { max-width:700px; margin:0 auto; padding:30px; background:rgba(201,168,76,.03); border:1px solid rgba(201,168,76,.08); border-radius:12px; }
+    .notes h4 { font-family:var(--font-head); margin-bottom:12px; font-size:1rem; }
+    .notes ul { list-style:none; }
+    .notes li { padding:4px 0; font-size:.85rem; color:var(--gray); }
+    .notes li::before { content:'→ '; color:var(--gold); }
+
+    .cta-section { text-align:center; padding:80px 50px; }
+    .btn { display:inline-block; padding:16px 40px; background:var(--gold); color:var(--dark); font-weight:600; font-size:.85rem; letter-spacing:.08em; text-transform:uppercase; text-decoration:none; border-radius:8px; transition:all .3s; }
+    .btn:hover { filter:brightness(1.15); transform:translateY(-2px); }
+
+    .footer { border-top:1px solid rgba(201,168,76,.08); padding:40px 50px; display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:16px; max-width:1200px; margin:0 auto; }
+    .footer-left { color:var(--gray); font-size:.8rem; }
+    .footer-links { display:flex; gap:24px; }
+    .footer-links a { color:var(--gray); text-decoration:none; font-size:.8rem; transition:color .3s; }
+    .footer-links a:hover { color:var(--gold); }
+
+    @media(max-width:768px) {
+      .section { padding:60px 24px; }
+      .cta-section { padding:60px 24px; }
+      .footer { padding:30px 24px; flex-direction:column; text-align:center; }
+    }
+  </style>
+</head>
+<body>
+<!-- NAV -->
+<nav class="nav">
+  <a href="index.html" class="nav-logo">PRESTIGE CHARTER</a>
+  <div class="nav-right">
+    <div class="nav-links">
+      <a href="yacht.html"><span data-fr>Yacht</span><span data-en>Yacht</span></a>
+      <a href="experiences.html"><span data-fr>Expériences</span><span data-en>Experiences</span></a>
+      <a href="tarifs.html"><span data-fr>Tarifs</span><span data-en>Pricing</span></a>
+      <a href="reservation.html"><span data-fr>Réserver</span><span data-en>Book</span></a>
+      <a href="contact.html"><span data-fr>Contact</span><span data-en>Contact</span></a>
+    </div>
+    <button class="lang-btn" onclick="toggleLang()">EN</button>
+    <button class="burger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="yacht.html" onclick="toggleMenu()"><span data-fr>Yacht</span><span data-en>Yacht</span></a>
+  <a href="experiences.html" onclick="toggleMenu()"><span data-fr>Expériences</span><span data-en>Experiences</span></a>
+  <a href="tarifs.html" onclick="toggleMenu()"><span data-fr>Tarifs</span><span data-en>Pricing</span></a>
+  <a href="reservation.html" onclick="toggleMenu()"><span data-fr>Réserver</span><span data-en>Book</span></a>
+  <a href="contact.html" onclick="toggleMenu()"><span data-fr>Contact</span><span data-en>Contact</span></a>
+</div>
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="page-hero-bg" style="background-image:url('https://images.unsplash.com/photo-1559599238-308793637427?w=1600')"></div>
+  <div class="page-hero-content">
+    <h1><span data-fr>Tarifs 2025</span><span data-en>2025 Rates</span></h1>
+    <p><span data-fr>Des formules transparentes pour chaque envie. Carburant et skipper inclus.</span><span data-en>Transparent packages for every wish. Fuel and skipper included.</span></p>
+  </div>
+</section>
+
+<!-- TARIFS -->
+<section class="section">
+  <div class="section-label"><span data-fr>Nos formules</span><span data-en>Our packages</span></div>
+  <h2 class="section-title"><span data-fr>Choisissez votre croisière</span><span data-en>Choose your cruise</span></h2>
+  <p class="section-sub"><span data-fr>Tous nos tarifs incluent le skipper professionnel, le carburant, les équipements de baignade et les boissons fraîches.</span><span data-en>All our rates include professional skipper, fuel, swimming equipment and cold drinks.</span></p>
+
+  <div class="tarif-grid">
+    <!-- SUNSET -->
+    <div class="tarif">
+      <div class="tarif-name"><span data-fr>Croisière Sunset</span><span data-en>Sunset Cruise</span></div>
+      <div class="tarif-duration"><span data-fr>2h — Fin d'après-midi</span><span data-en>2h — Late afternoon</span></div>
+      <div class="tarif-price">1 300 €</div>
+      <div class="tarif-unit"><span data-fr>jusqu'à 12 personnes</span><span data-en>up to 12 guests</span></div>
+      <ul class="tarif-features">
+        <li><span data-fr>Départ 17h ou 18h selon saison</span><span data-en>Departure 5pm or 6pm depending on season</span></li>
+        <li><span data-fr>Baignade dans une crique privée</span><span data-en>Swimming in a private cove</span></li>
+        <li><span data-fr>Coucher de soleil en mer</span><span data-en>Sunset at sea</span></li>
+        <li><span data-fr>Boissons fraîches offertes</span><span data-en>Complimentary cold drinks</span></li>
+      </ul>
+      <a href="reservation.html" class="tarif-btn"><span data-fr>Réserver</span><span data-en>Book</span></a>
+    </div>
+
+    <!-- DEMI-JOURNÉE -->
+    <div class="tarif pop">
+      <div class="tarif-badge">★ POPULAIRE</div>
+      <div class="tarif-name"><span data-fr>Demi-Journée</span><span data-en>Half Day</span></div>
+      <div class="tarif-duration"><span data-fr>4h — Matin ou après-midi</span><span data-en>4h — Morning or afternoon</span></div>
+      <div class="tarif-price">2 200 €</div>
+      <div class="tarif-unit"><span data-fr>jusqu'à 12 personnes</span><span data-en>up to 12 guests</span></div>
+      <ul class="tarif-features">
+        <li><span data-fr>2 à 3 arrêts baignade</span><span data-en>2 to 3 swimming stops</span></li>
+        <li><span data-fr>Snorkelling équipement fourni</span><span data-en>Snorkelling equipment provided</span></li>
+        <li><span data-fr>Criques secrètes de la Riviera</span><span data-en>Secret Riviera coves</span></li>
+        <li><span data-fr>Boissons et snacks offerts</span><span data-en>Complimentary drinks & snacks</span></li>
+      </ul>
+      <a href="reservation.html" class="tarif-btn"><span data-fr>Réserver</span><span data-en>Book</span></a>
+    </div>
+
+    <!-- JOURNÉE -->
+    <div class="tarif">
+      <div class="tarif-name"><span data-fr>Journée Complète</span><span data-en>Full Day</span></div>
+      <div class="tarif-duration"><span data-fr>8h — 9h00 à 17h00</span><span data-en>8h — 9am to 5pm</span></div>
+      <div class="tarif-price">3 500 €</div>
+      <div class="tarif-unit"><span data-fr>jusqu'à 12 personnes</span><span data-en>up to 12 guests</span></div>
+      <ul class="tarif-features">
+        <li><span data-fr>Itinéraire personnalisé complet</span><span data-en>Full custom itinerary</span></li>
+        <li><span data-fr>Escale déjeuner restaurant</span><span data-en>Lunch stop at restaurant</span></li>
+        <li><span data-fr>Monaco, Èze, Cap-Ferrat, Villefranche</span><span data-en>Monaco, Èze, Cap-Ferrat, Villefranche</span></li>
+        <li><span data-fr>Boissons illimitées à bord</span><span data-en>Unlimited onboard drinks</span></li>
+      </ul>
+      <a href="reservation.html" class="tarif-btn"><span data-fr>Réserver</span><span data-en>Book</span></a>
+    </div>
+  </div>
+
+  <!-- OPTIONS -->
+  <div class="extras">
+    <h3><span data-fr>✦ Options & Suppléments</span><span data-en>✦ Add-ons & Extras</span></h3>
+    <div class="extras-grid">
+      <div class="extra-card">
+        <div class="name"><span data-fr>🍾 Pack Champagne</span><span data-en>🍾 Champagne Package</span></div>
+        <div class="price">180 €</div>
+        <div class="detail"><span data-fr>Bouteille + mignardises</span><span data-en>Bottle + petit fours</span></div>
+      </div>
+      <div class="extra-card">
+        <div class="name"><span data-fr>🍣 Plateau Traiteur</span><span data-en>🍣 Catering Platter</span></div>
+        <div class="price">35 € <span style="font-size:.75rem;color:var(--gray)">/pers</span></div>
+        <div class="detail"><span data-fr>Sur commande 48h avant</span><span data-en>Order 48h in advance</span></div>
+      </div>
+      <div class="extra-card">
+        <div class="name"><span data-fr>📸 Photographe</span><span data-en>📸 Photographer</span></div>
+        <div class="price">350 €</div>
+        <div class="detail"><span data-fr>Photos pro + livraison 48h</span><span data-en>Pro photos + 48h delivery</span></div>
+      </div>
+      <div class="extra-card">
+        <div class="name"><span data-fr>🎂 Pack Anniversaire</span><span data-en>🎂 Birthday Package</span></div>
+        <div class="price">250 €</div>
+        <div class="detail"><span data-fr>Gâteau + décoration + champagne</span><span data-en>Cake + decoration + champagne</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NOTES -->
+  <div class="notes">
+    <h4><span data-fr>ℹ️ Informations importantes</span><span data-en>ℹ️ Important information</span></h4>
+    <ul>
+      <li><span data-fr>Carburant et skipper toujours inclus dans le prix</span><span data-en>Fuel and skipper always included in the price</span></li>
+      <li><span data-fr>Départ depuis le port de Saint-Jean-Cap-Ferrat</span><span data-en>Departure from Saint-Jean-Cap-Ferrat harbour</span></li>
+      <li><span data-fr>Annulation gratuite jusqu'à 48h avant</span><span data-en>Free cancellation up to 48h before</span></li>
+      <li><span data-fr>Report gratuit en cas de météo défavorable</span><span data-en>Free rescheduling in case of bad weather</span></li>
+      <li><span data-fr>Acompte de 30% à la réservation</span><span data-en>30% deposit upon booking</span></li>
+      <li><span data-fr>Tarifs haute saison (juillet-août) : +15%</span><span data-en>High season rates (July-August): +15%</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <h2 class="section-title"><span data-fr>Une question sur nos tarifs ?</span><span data-en>Questions about our rates?</span></h2>
+  <a href="contact.html" class="btn"><span data-fr>Nous contacter</span><span data-en>Contact us</span></a>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-left">© 2025 Prestige Charter AT — Saint-Jean-Cap-Ferrat</div>
+  <div class="footer-links">
+    <a href="mentions-legales.html"><span data-fr>Mentions légales</span><span data-en>Legal</span></a>
+    <a href="contact.html">Contact</a>
+  </div>
+</footer>
+
+<script>
+  function toggleLang() {
+    document.body.classList.toggle('en');
+    const btn = document.querySelector('.lang-btn');
+    btn.textContent = document.body.classList.contains('en') ? 'FR' : 'EN';
+    localStorage.setItem('lang', document.body.classList.contains('en') ? 'en' : 'fr');
+  }
+  if(localStorage.getItem('lang')==='en') { document.body.classList.add('en'); document.querySelector('.lang-btn').textContent='FR'; }
+
+  function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('open'); }
+</script>
+</body>
+</html>
