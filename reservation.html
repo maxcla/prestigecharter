@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Réserver — Prestige Charter AT</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html" class="nav-logo">✦ PRESTIGE CHARTER</a>
+  <div class="nav-links">
+    <a href="index.html"><span data-fr>Accueil</span><span data-en>Home</span></a>
+    <a href="yacht.html"><span data-fr>Le Yacht</span><span data-en>The Yacht</span></a>
+    <a href="itineraires.html"><span data-fr>Itinéraires</span><span data-en>Itineraries</span></a>
+    <a href="tarifs.html"><span data-fr>Tarifs</span><span data-en>Pricing</span></a>
+    <a href="reservation.html" class="active"><span data-fr>Réserver</span><span data-en>Book</span></a>
+    <a href="avis.html"><span data-fr>Avis</span><span data-en>Reviews</span></a>
+    <a href="contact.html">Contact</a>
+    <button class="lang-btn" onclick="toggleLang()">EN</button>
+  </div>
+  <button class="burger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+</nav>
+
+<section style="padding:140px 40px 80px;max-width:900px;margin:0 auto">
+
+  <div class="s-label"><span data-fr>Réservation</span><span data-en>Booking</span></div>
+  <h2 class="s-title"><span data-fr>Réservez Votre Croisière</span><span data-en>Book Your Cruise</span></h2>
+  <p class="s-text"><span data-fr>Remplissez le formulaire ci-dessous. Nous vous recontactons sous 2h. Acompte de 30% à la réservation, solde 48h avant le départ.</span><span data-en>Fill out the form below. We'll reply within 2 hours. 30% deposit at booking, balance due 48h before departure.</span></p>
+
+  <!-- MINI RECAP -->
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:40px 0 50px;text-align:center">
+    <div style="background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.15);border-radius:12px;padding:20px">
+      <div style="font-family:var(--font-head);font-size:1.3rem;color:var(--gold)">2 700 €</div>
+      <div style="color:var(--gray);font-size:.82rem;margin-top:4px"><span data-fr>Journée · 8h</span><span data-en>Full Day · 8h</span></div>
+    </div>
+    <div style="background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.15);border-radius:12px;padding:20px">
+      <div style="font-family:var(--font-head);font-size:1.3rem;color:var(--gold)">1 600 €</div>
+      <div style="color:var(--gray);font-size:.82rem;margin-top:4px"><span data-fr>Demi-Journée · 4h</span><span data-en>Half Day · 4h</span></div>
+    </div>
+    <div style="background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.15);border-radius:12px;padding:20px">
+      <div style="font-family:var(--font-head);font-size:1.3rem;color:var(--gold)">1 300 €</div>
+      <div style="color:var(--gray);font-size:.82rem;margin-top:4px">Sunset · 2h30</div>
+    </div>
+  </div>
+
+  <!-- FORM -->
+  <form id="bookForm" style="display:flex;flex-direction:column;gap:20px" onsubmit="return submitBook(event)">
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+      <div class="field">
+        <label><span data-fr>Prénom & Nom</span><span data-en>Full Name</span> *</label>
+        <input type="text" name="name" required placeholder="Jean Dupont">
+      </div>
+      <div class="field">
+        <label>Email *</label>
+        <input type="email" name="email" required placeholder="jean@email.com">
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+      <div class="field">
+        <label><span data-fr>Téléphone</span><span data-en>Phone</span> *</label>
+        <input type="tel" name="phone" required placeholder="+33 6 00 00 00 00">
+      </div>
+      <div class="field">
+        <label><span data-fr>Date souhaitée</span><span data-en>Desired Date</span> *</label>
+        <input type="date" name="date" required>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+      <div class="field">
+        <label><span data-fr>Formule</span><span data-en>Package</span> *</label>
+        <select name="package" required>
+          <option value="" disabled selected>—</option>
+          <option value="fullday">Journée / Full Day — 2 700 €</option>
+          <option value="halfday">Demi-Journée / Half Day — 1 600 €</option>
+          <option value="sunset">Sunset Cruise — 1 300 €</option>
+        </select>
+      </div>
+      <div class="field">
+        <label><span data-fr>Nombre de passagers</span><span data-en>Number of Guests</span> *</label>
+        <select name="guests" required>
+          <option value="" disabled selected>—</option>
+          <option>2</option><option>3</option><option>4</option>
+          <option>5</option><option>6</option><option>7</option>
+          <option>8</option><option>9</option><option>10</option>
+          <option>11</option><option>12</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="field">
+      <label>Extras</label>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:6px">
+        <label style="display:flex;align-items:center;gap:8px;color:var(--gray);font-size:.85rem;cursor:pointer">
+          <input type="checkbox" name="extras" value="champagne"> 🍾 Champagne +120 €
+        </label>
+        <label style="display:flex;align-items:center;gap:8px;color:var(--gray);font-size:.85rem;cursor:pointer">
+          <input type="checkbox" name="extras" value="seafood"> 🦞 Fruits de mer +280 €
+        </label>
+        <label style="display:flex;align-items:center;gap:8px;color:var(--gray);font-size:.85rem;cursor:pointer">
+          <input type="checkbox" name="extras" value="photo"> 📸 Photographe +350 €
+        </label>
+        <label style="display:flex;align-items:center;gap:8px;color:var(--gray);font-size:.85rem;cursor:pointer">
+          <input type="checkbox" name="extras" value="deco"> 🎂 Décoration +200 €
+        </label>
+        <label style="display:flex;align-items:center;gap:8px;color:var(--gray);font-size:.85rem;cursor:pointer">
+          <input type="checkbox" name="extras" value="dj"> 🎧 DJ privé +500 €
+        </label>
+        <label style="display:flex;align-items:center;gap:8px;color:var(--gray);font-size:.85rem;cursor:pointer">
+          <input type="checkbox" name="extras" value="jet"> 🚤 Jet-ski +400 €
+        </label>
+      </div>
+    </div>
+
+    <div class="field">
+      <label><span data-fr>Message / Occasion spéciale</span><span data-en>Message / Special Occasion</span></label>
+      <textarea name="message" rows="4" placeholder="Anniversaire, demande en mariage, événement corporate…"></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-gold" style="align-self:center;margin-top:10px;padding:16px 60px;font-size:1rem">
+      <span data-fr>Envoyer la demande</span><span data-en>Send Request</span>
+    </button>
+  </form>
+
+  <!-- CONFIRMATION -->
+  <div id="bookOk" style="display:none;text-align:center;padding:60px 0">
+    <div style="font-size:3rem;margin-bottom:16px">✦</div>
+    <h3 style="font-family:var(--font-head);color:var(--gold);font-size:1.6rem;margin-bottom:12px">
+      <span data-fr>Demande envoyée !</span><span data-en>Request Sent!</span>
+    </h3>
+    <p style="color:var(--gray);max-width:500px;margin:0 auto;line-height:1.7">
+      <span data-fr>Notre équipe vous recontactera sous 2 heures pour confirmer votre croisière et procéder à l'acompte de 30%.</span>
+      <span data-en>Our team will contact you within 2 hours to confirm your cruise and process the 30% deposit.</span>
+    </p>
+  </div>
+
+  <!-- INFOS -->
+  <div style="margin-top:60px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;text-align:center">
+    <div>
+      <div style="font-size:1.5rem;margin-bottom:8px">📞</div>
+      <div style="color:var(--gold);font-weight:600;font-size:.85rem">+33 6 XX XX XX XX</div>
+      <div style="color:var(--gray);font-size:.78rem;margin-top:4px"><span data-fr>Réponse immédiate</span><span data-en>Immediate reply</span></div>
+    </div>
+    <div>
+      <div style="font-size:1.5rem;margin-bottom:8px">💬</div>
+      <div style="color:var(--gold);font-weight:600;font-size:.85rem">WhatsApp</div>
+      <div style="color:var(--gray);font-size:.78rem;margin-top:4px"><span data-fr>Chat direct</span><span data-en>Direct chat</span></div>
+    </div>
+    <div>
+      <div style="font-size:1.5rem;margin-bottom:8px">✉️</div>
+      <div style="color:var(--gold);font-weight:600;font-size:.85rem">contact@prestigecharter.fr</div>
+      <div style="color:var(--gray);font-size:.78rem;margin-top:4px"><span data-fr>Sous 2h</span><span data-en>Within 2h</span></div>
+    </div>
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer style="padding:40px;text-align:center;border-top:1px solid rgba(201,168,76,.1)">
+  <div style="font-family:var(--font-head);color:var(--gold);font-size:1.1rem;margin-bottom:8px">✦ PRESTIGE CHARTER AT</div>
+  <div style="color:var(--gray);font-size:.78rem">Saint-Jean-Cap-Ferrat · © 2025</div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+function submitBook(e){
+  e.preventDefault();
+  document.getElementById('bookForm').style.display='none';
+  document.getElementById('bookOk').style.display='block';
+  return false;
+}
+</script>
+</body>
+</html>
