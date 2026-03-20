@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Le Yacht — Prestige Charter AT</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .yacht-hero{position:relative;height:55vh;min-height:400px;display:flex;align-items:center;justify-content:center;text-align:center;margin-top:70px;overflow:hidden}
+    .yacht-hero img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+    .yacht-hero::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(7,15,27,.4),rgba(7,15,27,.95))}
+    .yacht-hero .cnt{position:relative;z-index:2}
+    .yw{max-width:1100px;margin:0 auto;padding:0 40px 80px}
+    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:50px 0;border-radius:14px;overflow:hidden}
+    .gallery .big{grid-column:1/3;grid-row:1/3}
+    .gallery img{width:100%;height:100%;object-fit:cover;cursor:pointer;transition:transform .5s}
+    .gallery img:hover{transform:scale(1.04)}
+    .gallery .big img{min-height:360px}
+    .gallery .sm img{height:175px}
+    .lb{display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.92);align-items:center;justify-content:center}
+    .lb.open{display:flex}
+    .lb img{max-width:90vw;max-height:85vh;border-radius:12px;object-fit:contain}
+    .lb .x{position:absolute;top:24px;right:28px;color:var(--gold);font-size:2rem;cursor:pointer;background:none;border:none}
+    .lb .ar{position:absolute;top:50%;transform:translateY(-50%);color:var(--gold);font-size:2.5rem;cursor:pointer;background:rgba(0,0,0,.4);border:none;border-radius:50%;width:52px;height:52px;display:flex;align-items:center;justify-content:center}
+    .lb .ar:hover{background:rgba(201,168,76,.2)}
+    .lb .ar.p{left:20px}
+    .lb .ar.n{right:20px}
+    .specs{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin:50px 0}
+    .sp{text-align:center;padding:28px 16px;background:rgba(201,168,76,.04);border:1px solid rgba(201,168,76,.1);border-radius:14px;transition:border-color .3s}
+    .sp:hover{border-color:var(--gold)}
+    .sp .ico{font-size:1.8rem;margin-bottom:10px}
+    .sp .v{font-family:var(--font-head);font-size:1.4rem;color:var(--gold);margin-bottom:4px}
+    .sp .l{font-size:.75rem;color:var(--gray);text-transform:uppercase;letter-spacing:.04em}
+    .amenities{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:30px 0 50px}
+    .am{display:flex;align-items:center;gap:12px;padding:16px 20px;background:rgba(201,168,76,.04);border:1px solid rgba(201,168,76,.08);border-radius:12px;font-size:.88rem;color:var(--white)}
+    .am .ai{font-size:1.2rem}
+    .sh{font-family:var(--font-head);font-size:1.8rem;color:var(--white);margin-bottom:8px}
+    .sp2{color:var(--gray);font-size:.95rem;line-height:1.7;margin-bottom:20px}
+    .photo-break{position:relative;height:340px;border-radius:14px;overflow:hidden;margin:50px 0}
+    .photo-break img{width:100%;height:100%;object-fit:cover}
+    .photo-break::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(7,15,27,.7),transparent)}
+    .photo-break .qt{position:absolute;bottom:30px;left:30px;right:30px;z-index:2;font-family:var(--font-head);font-style:italic;font-size:1.3rem;color:var(--white)}
+    .cta-b{text-align:center;padding:60px 20px;margin-top:50px;background:rgba(201,168,76,.04);border:1px solid rgba(201,168,76,.1);border-radius:18px}
+    .cta-b h3{font-family:var(--font-head);font-size:1.8rem;color:var(--white);margin-bottom:10px}
+    .cta-b p{color:var(--gray);margin-bottom:24px;font-size:.95rem}
+    @media(max-width:768px){
+      .specs{grid-template-columns:repeat(2,1fr)}
+      .gallery{grid-template-columns:1fr}
+      .gallery .big{grid-column:1;grid-row:1}
+      .amenities{grid-template-columns:1fr 1fr}
+      .yw{padding:0 20px 60px}
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="index.html" class="nav-logo">✦ PRESTIGE CHARTER</a>
+  <div class="nav-links">
+    <a href="index.html"><span data-fr>Accueil</span><span data-en>Home</span></a>
+    <a href="yacht.html" class="active"><span data-fr>Le Yacht</span><span data-en>The Yacht</span></a>
+    <a href="itineraires.html"><span data-fr>Itinéraires</span><span data-en>Itineraries</span></a>
+    <a href="tarifs.html"><span data-fr>Tarifs</span><span data-en>Pricing</span></a>
+    <a href="reservation.html"><span data-fr>Réserver</span><span data-en>Book</span></a>
+    <a href="avis.html"><span data-fr>Avis</span><span data-en>Reviews</span></a>
+    <a href="contact.html">Contact</a>
+    <button class="lang-btn" onclick="toggleLang()">EN</button>
+  </div>
+  <button class="burger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- HERO -->
+<div class="yacht-hero">
+  <img class="bg" src="images/hero.jpg" alt="Prestige 42S">
+  <div class="cnt">
+    <div class="s-label"><span data-fr>Le Yacht</span><span data-en>The Yacht</span></div>
+    <h1 style="font-family:var(--font-head);font-size:2.8rem;color:var(--white);margin-top:8px">Prestige 42S</h1>
+    <p style="color:var(--gray);margin-top:12px;font-size:1.05rem">
+      <span data-fr>42 pieds d'élégance sportive sur la Côte d'Azur</span>
+      <span data-en>42 feet of sporty elegance on the French Riviera</span>
+    </p>
+  </div>
+</div>
+
+<div class="yw">
+
+  <!-- ==================== GALERIE ==================== -->
+  <div class="gallery">
+    <div class="big">
+      <img src="images/yacht-1.jpg" alt="Prestige 42S extérieur" onclick="openLb(0)">
+    </div>
+    <div class="sm">
+      <img src="images/yacht-2.webp" alt="Cockpit" onclick="openLb(1)">
+    </div>
+    <div class="sm">
+      <img src="images/yacht-3.webp" alt="Salon intérieur" onclick="openLb(2)">
+    </div>
+    <div class="sm">
+      <img src="images/yacht-4.pnj" alt="Cabine Master" onclick="openLb(3)">
+    </div>
+    <div class="sm">
+      <img src="images/Arrière V2.jpeg" alt="Vue arrière" onclick="openLb(4)">
+    </div>
+  </div>
+
+  <!-- LIGHTBOX -->
+  <div class="lb" id="lb">
+    <button class="x" onclick="closeLb()">✕</button>
+    <button class="ar p" onclick="navLb(-1)">❮</button>
+    <img id="lbImg" src="" alt="Photo yacht">
+    <button class="ar n" onclick="navLb(1)">❯</button>
+  </div>
+
+  <!-- ==================== SPECS PRESTIGE 42S ==================== -->
+  <div style="text-align:center;margin-top:40px">
+    <div class="s-label">PRESTIGE 42S</div>
+    <h2 class="sh"><span data-fr>Caractéristiques Techniques</span><span data-en>Technical Specifications</span></h2>
+  </div>
+
+  <div class="specs">
+    <div class="sp">
+      <div class="ico">📏</div>
+      <div class="v">13.1m</div>
+      <div class="l"><span data-fr>Longueur</span><span data-en>Length</span></div>
+    </div>
+    <div class="sp">
+      <div class="ico">👥</div>
+      <div class="v">11</div>
+      <div class="l"><span data-fr>Passagers + skipper</span><span data-en>Guests + skipper</span></div>
+    </div>
+    <div class="sp">
+      <div class="ico">⚓</div>
+      <div class="v">2×370</div>
+      <div class="l"><span data-fr>Chevaux</span><span data-en>Horsepower</span></div>
+    </div>
+    <div class="sp">
+      <div class="ico">🛏️</div>
+      <div class="v">2</div>
+      <div class="l"><span data-fr>Cabines</span><span data-en>Cabins</span></div>
+    </div>
+    <div class="sp">
+      <div class="ico">📐</div>
+      <div class="v">4.0m</div>
+      <div class="l"><span data-fr>Largeur</span><span data-en>Beam</span></div>
+    </div>
+    <div class="sp">
+      <div class="ico">⛽</div>
+      <div class="v">800L</div>
+      <div class="l"><span data-fr>Carburant</span><span data-en>Fuel</span></div>
+    </div>
+    <div class="sp">
+      <div class="ico">💨</div>
+      <div class="v">30 kn</div>
+      <div class="l"><span data-fr>Vitesse max</span><span data-en>Max speed</span></div>
+    </div>
+    <div class="sp">
+      <div class="ico">🚿</div>
+      <div class="v">1</div>
+      <div class="l"><span data-fr>Salle de bain</span><span data-en>Bathroom</span></div>
+    </div>
+  </div>
+
+  <!-- ==================== PHOTO BREAK 1 ==================== -->
+  <div class="photo-break">
+    <img src="images/yacht-2.webp" alt="Cockpit Prestige 42S">
+    <div class="qt">
+      <span data-fr>« Un concentré de luxe dans un format sportif et agile. »</span>
+      <span data-en>"Pure luxury packed into a sporty, agile format."</span>
+    </div>
+  </div>
+
+  <!-- ==================== CONFORT ==================== -->
+  <div style="text-align:center">
+    <div class="s-label"><span data-fr>CONFORT & LUXE</span><span data-en>COMFORT & LUXURY</span></div>
+    <h2 class="sh"><span data-fr>Équipements à Bord</span><span data-en>Onboard Amenities</span></h2>
+  </div>
+
+  <div class="amenities">
+    <div class="am"><span class="ai">🥂</span><span data-fr>Bar & réfrigérateur</span><span data-en>Bar & refrigerator</span></div>
+    <div class="am"><span class="ai">☀️</span><span data-fr>Bain de soleil avant</span><span data-en>Forward sunpad</span></div>
+    <div class="am"><span class="ai">🎵</span><span data-fr>Sono JBL Bluetooth</span><span data-en>JBL Bluetooth sound</span></div>
+    <div class="am"><span class="ai">🚿</span><span data-fr>Douche de pont</span><span data-en>Deck shower</span></div>
+    <div class="am"><span class="ai">🤿</span><span data-fr>Masques & palmes</span><span data-en>Snorkeling gear</span></div>
+    <div class="am"><span class="ai">🛟</span><span data-fr>Paddle & bouée</span><span data-en>Paddle & float</span></div>
+    <div class="am"><span class="ai">❄️</span><span data-fr>Climatisation cabine</span><span data-en>Cabin A/C</span></div>
+    <div class="am"><span class="ai">📺</span><span data-fr>Écran intérieur</span><span data-en>Interior display</span></div>
+    <div class="am"><span class="ai">🍽️</span><span data-fr>Table cockpit 8 places</span><span data-en>Cockpit table 8 seats</span></div>
+  </div>
+
+  <!-- ==================== PHOTO BREAK 2 ==================== -->
+  <div class="photo-break">
+    <img src="images/yacht-4.pnj" alt="Intérieur Prestige 42S">
+    <div class="qt">
+      <span data-fr>« 2 cabines, 1 salle d'eau : l'escale parfaite. »</span>
+      <span data-en>"2 cabins, 1 bathroom: the perfect overnight stay."</span>
+    </div>
+  </div>
+
+  <!-- ==================== SÉCURITÉ ==================== -->
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;margin:50px 0">
+    <div>
+      <div class="s-label"><span data-fr>SÉCURITÉ</span><span data-en>SAFETY</span></div>
+      <h2 class="sh"><span data-fr>Votre Sécurité, Notre Priorité</span><span data-en>Your Safety, Our Priority</span></h2>
+      <p class="sp2">
+        <span data-fr>Le Prestige 42S est équipé de tous les dispositifs de sécurité conformes à la réglementation Division 240. Notre skipper professionnel titulaire du Capitaine 200 assure une navigation irréprochable.</span>
+        <span data-en>The Prestige 42S is equipped with all safety devices compliant with Division 240. Our professional skipper holding a Captain 200 license ensures flawless navigation.</span>
+      </p>
+      <div style="display:flex;flex-wrap:wrap;gap:10px">
+        <span class="am" style="flex:none;padding:10px 16px;font-size:.8rem"><span class="ai">🧥</span><span data-fr>Gilets de sauvetage</span><span data-en>Life jackets</span></span>
+        <span class="am" style="flex:none;padding:10px 16px;font-size:.8rem"><span class="ai">🔥</span><span data-fr>Extincteurs</span><span data-en>Extinguishers</span></span>
+        <span class="am" style="flex:none;padding:10px 16px;font-size:.8rem"><span class="ai">📡</span><span data-fr>VHF & GPS</span><span data-en>VHF & GPS</span></span>
+        <span class="am" style="flex:none;padding:10px 16px;font-size:.8rem"><span class="ai">🚨</span><span data-fr>Fusées de détresse</span><span data-en>Distress flares</span></span>
+      </div>
+    </div>
+    <div style="border-radius:14px;overflow:hidden;height:320px">
+      <img src="images/yacht-3.webp" alt="Navigation sécurisée" style="width:100%;height:100%;object-fit:cover">
+    </div>
+  </div>
+
+  <!-- ==================== PHOTO ARRIÈRE ==================== -->
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;margin:50px 0">
+    <div style="border-radius:14px;overflow:hidden;height:320px">
+      <img src="images/Arrière V2.jpeg" alt="Plateforme arrière Prestige 42S" style="width:100%;height:100%;object-fit:cover">
+    </div>
+    <div>
+      <div class="s-label"><span data-fr>PLATEFORME ARRIÈRE</span><span data-en>SWIM PLATFORM</span></div>
+      <h2 class="sh"><span data-fr>Accès Direct à la Mer</span><span data-en>Direct Sea Access</span></h2>
+      <p class="sp2">
+        <span data-fr>La plateforme de bain hydraulique du Prestige 42S offre un accès direct à la Méditerranée. Idéale pour la baignade, le paddle, ou simplement profiter les pieds dans l'eau avec un verre de champagne.</span>
+        <span data-en>The hydraulic swim platform of the Prestige 42S offers direct access to the Mediterranean. Perfect for swimming, paddleboarding, or simply enjoying champagne with your feet in the water.</span>
+      </p>
+    </div>
+  </div>
+
+  <!-- ==================== EXPÉRIENCE ==================== -->
+  <div style="text-align:center;margin:50px 0 20px">
+    <div class="s-label"><span data-fr>L'EXPÉRIENCE</span><span data-en>THE EXPERIENCE</span></div>
+    <h2 class="sh"><span data-fr>Plus Qu'une Croisière</span><span data-en>More Than a Cruise</span></h2>
+    <p class="sp2" style="max-width:700px;margin:0 auto">
+      <span data-fr>À bord du Prestige 42S, chaque détail a été pensé pour vous. Ligne sportive, intérieur luxueux, et une plateforme de bain qui transforme chaque escale en moment d'exception.</span>
+      <span data-en>Aboard the Prestige 42S, every detail has been designed for you. Sporty lines, luxurious interior, and a swim platform that turns every stop into a moment of pure luxury.</span>
+    </p>
+  </div>
+
+  <!-- ==================== CTA ==================== -->
+  <div class="cta-b">
+    <h3><span data-fr>Prêt à Embarquer ?</span><span data-en>Ready to Board?</span></h3>
+    <p>
+      <span data-fr>Réservez votre croisière privée à bord du Prestige 42S et vivez une expérience inoubliable sur la Côte d'Azur.</span>
+      <span data-en>Book your private cruise aboard the Prestige 42S and live an unforgettable experience on the French Riviera.</span>
+    </p>
+    <a href="reservation.html" class="btn-gold" style="padding:16px 40px;font-size:1rem;border-radius:12px">
+      <span data-fr>Réserver maintenant →</span><span data-en>Book Now →</span>
+    </a>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer style="padding:40px;text-align:center;border-top:1px solid rgba(201,168,76,.1);margin-top:40px">
+  <div style="font-family:var(--font-head);color:var(--gold);font-size:1.1rem;margin-bottom:8px">✦ PRESTIGE CHARTER AT</div>
+  <div style="color:var(--gray);font-size:.78rem">Saint-Jean-Cap-Ferrat · © 2025</div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+const lbImgs=[
+  'images/yacht-1.jpg',
+  'images/yacht-2.webp',
+  'images/yacht-3.webp',
+  'images/yacht-4.pnj',
+  'images/Arrière V2.jpeg'
+];
+let lbIdx=0;
+function openLb(i){lbIdx=i;document.getElementById('lbImg').src=lbImgs[i];document.getElementById('lb').classList.add('open');document.body.style.overflow='hidden'}
+function closeLb(){document.getElementById('lb').classList.remove('open');document.body.style.overflow=''}
+function navLb(d){lbIdx=(lbIdx+d+lbImgs.length)%lbImgs.length;document.getElementById('lbImg').src=lbImgs[lbIdx]}
+document.getElementById('lb').addEventListener('click',function(e){if(e.target===this)closeLb()});
+document.addEventListener('keydown',function(e){if(!document.getElementById('lb').classList.contains('open'))return;if(e.key==='Escape')closeLb();if(e.key==='ArrowLeft')navLb(-1);if(e.key==='ArrowRight')navLb(1)});
+</script>
+</body>
+</html>
