@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prestige Charter AT — Location yacht luxe Côte d'Azur</title>
+  <meta name="description" content="Location de yacht de luxe au départ de Saint-Jean-Cap-Ferrat. Sunset, journée en mer, pêche de nuit. Jusqu'à 11 passagers." />
+  <link rel="canonical" href="https://www.prestigecharter.fr/" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- Scroll Progress -->
+<div id="scroll-progress"></div>
+
+<!-- Page Transition -->
+<div id="pageTransition" class="page-transition active"></div>
+
+<!-- WhatsApp Flottant -->
+<a href="https://wa.me/33652192414" target="_blank" rel="noopener" class="whatsapp-float" aria-label="Contactez-nous sur WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" width="26" height="26">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+    <path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.549 4.107 1.51 5.833L.057 23.215a.75.75 0 0 0 .916.916l5.382-1.453A11.954 11.954 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.73 9.73 0 0 1-4.964-1.358l-.356-.212-3.695.998.997-3.696-.211-.355A9.718 9.718 0 0 1 2.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/>
+  </svg>
+</a>
+
+<!-- ═══════════════════════════════════════════
+     NAVIGATION
+════════════════════════════════════════════ -->
+<nav>
+  <a href="index.html" class="logo">
+    <svg class="logo-anchor" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+         stroke-width="1.5" width="18" height="18" aria-hidden="true">
+      <circle cx="12" cy="5" r="2"/>
+      <line x1="12" y1="7" x2="12" y2="11"/>
+      <path d="M5 11h14M5 11C5 16 8 19 12 20M19 11C19 16 16 19 12 20"/>
+      <line x1="9" y1="20" x2="12" y2="22"/><line x1="15" y1="20" x2="12" y2="22"/>
+    </svg>
+    <span class="logo-prestige">PRESTIGE</span>
+    <span class="logo-charter">CHARTER</span>
+  </a>
+
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html" data-fr="Accueil" data-en="Home">Accueil</a></li>
+    <li><a href="yacht.html" data-fr="Le Yacht" data-en="The Yacht">Le Yacht</a></li>
+    <li><a href="experiences.html" data-fr="Expériences" data-en="Experiences">Expériences</a></li>
+    <li><a href="tarifs.html" data-fr="Tarifs" data-en="Rates">Tarifs</a></li>
+    <li><a href="histoire.html" data-fr="Notre Histoire" data-en="Our Story">Notre Histoire</a></li>
+    <li><a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a></li>
+    <li><a href="reservation.html" class="nav-cta" data-fr="Réserver" data-en="Book">Réserver</a></li>
+  </ul>
+
+  <button class="lang-btn" id="langBtn" aria-label="Changer de langue">EN</button>
+
+  <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ═══════════════════════════════════════════
+     HERO
+════════════════════════════════════════════ -->
+<section class="hero">
+  <div class="hero-bg">
+    <img src="images/hero.jpg" alt="Yacht de luxe sur la Côte d'Azur" />
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow" data-fr="Saint-Jean-Cap-Ferrat · Côte d'Azur" data-en="Saint-Jean-Cap-Ferrat · French Riviera">
+      Saint-Jean-Cap-Ferrat · Côte d'Azur
+    </p>
+    <h1 data-fr="L'excellence nautique<br>sur la Côte d'Azur" data-en="Nautical excellence<br>on the French Riviera">
+      L'excellence nautique<br>sur la Côte d'Azur
+    </h1>
+    <p class="hero-sub" data-fr="Vivez la mer autrement à bord de l'Artemis, votre yacht privé 13 mètres — jusqu'à 11 passagers." data-en="Experience the sea differently aboard Artemis, your private 13-metre yacht — up to 11 passengers.">
+      Vivez la mer autrement à bord de l'Artemis, votre yacht privé 13 mètres — jusqu'à 11 passagers.
+    </p>
+    <div class="hero-ctas">
+      <a href="reservation.html" class="btn-gold" data-fr="Réserver maintenant" data-en="Book now">Réserver maintenant</a>
+      <a href="yacht.html" class="btn-outline" data-fr="Découvrir le yacht" data-en="Discover the yacht">Découvrir le yacht</a>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <span></span>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SECTION — LE YACHT
+════════════════════════════════════════════ -->
+<section class="section-yacht">
+  <div class="container">
+    <div class="split-section">
+      <div class="split-image fade-in">
+        <img src="images/yacht-1.jpg" alt="Artemis — Jeanneau Prestige 42S" loading="lazy" />
+      </div>
+      <div class="split-text fade-in fade-in-delay-1">
+        <span class="eyebrow" data-fr="Le Yacht" data-en="The Yacht">Le Yacht</span>
+        <h2 data-fr="Artemis" data-en="Artemis">Artemis</h2>
+        <p class="gold-line"></p>
+        <p data-fr="Jeanneau Prestige 42S (2018) · 13 mètres · 2 × 370CV" data-en="Jeanneau Prestige 42S (2018) · 13 metres · 2 × 370HP">
+          Jeanneau Prestige 42S (2018) · 13 mètres · 2 × 370CV
+        </p>
+        <p data-fr="Vitesse de croisière 22 nœuds, pointe à 33 nœuds. Cockpit aménagé, salon climatisé, cabine propriétaire, cuisine équipée. Un équipement d'exception pour une expérience incomparable." data-en="Cruising speed 22 knots, top speed 33 knots. Fitted cockpit, air-conditioned saloon, owner's cabin, equipped galley. Exceptional equipment for an incomparable experience.">
+          Vitesse de croisière 22 nœuds, pointe à 33 nœuds. Cockpit aménagé, salon climatisé, cabine propriétaire, cuisine équipée. Un équipement d'exception pour une expérience incomparable.
+        </p>
+        <ul class="feature-list">
+          <li data-fr="Paddle &amp; SeaBob inclus" data-en="Paddle &amp; SeaBob included">Paddle &amp; SeaBob inclus</li>
+          <li data-fr="Kit snorkeling complet" data-en="Full snorkeling kit">Kit snorkeling complet</li>
+          <li data-fr="Plateforme de bain hydraulique" data-en="Hydraulic swim platform">Plateforme de bain hydraulique</li>
+          <li data-fr="Son Bluetooth premium" data-en="Premium Bluetooth sound">Son Bluetooth premium</li>
+        </ul>
+        <a href="yacht.html" class="btn-gold mt-2" data-fr="Voir le yacht" data-en="View the yacht">Voir le yacht</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SECTION — NOS OFFRES
+════════════════════════════════════════════ -->
+<section class="section-offres">
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="eyebrow" data-fr="Nos Offres" data-en="Our Offers">Nos Offres</span>
+      <h2 data-fr="Choisissez votre expérience" data-en="Choose your experience">Choisissez votre expérience</h2>
+      <p class="gold-line center"></p>
+    </div>
+
+    <div class="cards-grid">
+
+      <!-- Sunset -->
+      <div class="card fade-in fade-in-delay-1">
+        <div class="card-top">
+          <span class="card-icon">🌅</span>
+          <h3 data-fr="Sunset Experience" data-en="Sunset Experience">Sunset Experience</h3>
+          <p class="card-duration" data-fr="3h · 18h–21h" data-en="3h · 6pm–9pm">3h · 18h–21h</p>
+        </div>
+        <div class="card-price">
+          <span class="price">1 300 €</span>
+          <span class="price-label" data-fr="TTC · jusqu'à 11 pax" data-en="incl. tax · up to 11 pax">TTC · jusqu'à 11 pax</span>
+        </div>
+        <ul class="card-features">
+          <li data-fr="Skipper professionnel" data-en="Professional skipper">Skipper professionnel</li>
+          <li data-fr="Paddle, SeaBob, snorkeling" data-en="Paddle, SeaBob, snorkeling">Paddle, SeaBob, snorkeling</li>
+          <li data-fr="Son Bluetooth · Assurance RC" data-en="Bluetooth sound · RC insurance">Son Bluetooth · Assurance RC</li>
+          <li class="not-included" data-fr="Carburant non inclus (~100–150 €)" data-en="Fuel not included (~€100–150)">Carburant non inclus (~100–150 €)</li>
+        </ul>
+        <a href="reservation.html" class="btn-gold" data-fr="Réserver" data-en="Book">Réserver</a>
+      </div>
+
+      <!-- Journée en mer -->
+      <div class="card card-featured fade-in fade-in-delay-2">
+        <div class="card-badge" data-fr="Populaire" data-en="Popular">Populaire</div>
+        <div class="card-top">
+          <span class="card-icon">⚓</span>
+          <h3 data-fr="Journée en Mer" data-en="Day at Sea">Journée en Mer</h3>
+          <p class="card-duration" data-fr="8h · 9h–17h" data-en="8h · 9am–5pm">8h · 9h–17h</p>
+        </div>
+        <div class="card-price">
+          <span class="price">2 700 €</span>
+          <span class="price-label" data-fr="TTC · jusqu'à 11 pax" data-en="incl. tax · up to 11 pax">TTC · jusqu'à 11 pax</span>
+        </div>
+        <ul class="card-features">
+          <li data-fr="Skipper professionnel" data-en="Professional skipper">Skipper professionnel</li>
+          <li data-fr="Paddle, SeaBob, snorkeling" data-en="Paddle, SeaBob, snorkeling">Paddle, SeaBob, snorkeling</li>
+          <li data-fr="Son Bluetooth · Assurance RC" data-en="Bluetooth sound · RC insurance">Son Bluetooth · Assurance RC</li>
+          <li class="not-included" data-fr="Carburant non inclus (~200–350 €)" data-en="Fuel not included (~€200–350)">Carburant non inclus (~200–350 €)</li>
+        </ul>
+        <a href="reservation.html" class="btn-gold" data-fr="Réserver" data-en="Book">Réserver</a>
+      </div>
+
+      <!-- Pêche de Nuit -->
+      <div class="card fade-in fade-in-delay-3">
+        <div class="card-top">
+          <span class="card-icon">🎣</span>
+          <h3 data-fr="Pêche de Nuit" data-en="Night Fishing">Pêche de Nuit</h3>
+          <p class="card-duration" data-fr="6h · 23h–5h" data-en="6h · 11pm–5am">6h · 23h–5h</p>
+        </div>
+        <div class="card-price">
+          <span class="price">2 600 €</span>
+          <span class="price-label" data-fr="TTC · jusqu'à 11 pax" data-en="incl. tax · up to 11 pax">TTC · jusqu'à 11 pax</span>
+        </div>
+        <ul class="card-features">
+          <li data-fr="Skipper professionnel" data-en="Professional skipper">Skipper professionnel</li>
+          <li data-fr="Équipement de pêche complet" data-en="Full fishing equipment">Équipement de pêche complet</li>
+          <li data-fr="Apéritif · Son Bluetooth · Assurance RC" data-en="Aperitif · Bluetooth · RC insurance">Apéritif · Son Bluetooth · Assurance RC</li>
+          <li class="not-included" data-fr="Carburant non inclus" data-en="Fuel not included">Carburant non inclus</li>
+        </ul>
+        <a href="reservation.html" class="btn-gold" data-fr="Réserver" data-en="Book">Réserver</a>
+      </div>
+
+    </div>
+
+    <p class="offres-note fade-in" data-fr="Options disponibles : Chef privé (500 €) · Dom Pérignon (350 €) · Photographe (800 €)" data-en="Available options: Private chef (€500) · Dom Pérignon (€350) · Photographer (€800)">
+      Options disponibles : Chef privé (500 €) · Dom Pérignon (350 €) · Photographe (800 €)
+    </p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SECTION — EXPÉRIENCES / PHOTO
+════════════════════════════════════════════ -->
+<section class="section-exp">
+  <div class="exp-bg">
+    <img src="images/yacht-3.webp" alt="Navigation au coucher du soleil" loading="lazy" />
+  </div>
+  <div class="exp-overlay"></div>
+  <div class="exp-content fade-in">
+    <span class="eyebrow" data-fr="La Côte d'Azur" data-en="The French Riviera">La Côte d'Azur</span>
+    <h2 data-fr="Des destinations d'exception" data-en="Exceptional destinations">Des destinations d'exception</h2>
+    <p data-fr="Monaco, Villefranche-sur-Mer, Antibes, Îles de Lérins, Saint-Tropez… Votre skipper adapte chaque itinéraire à vos envies." data-en="Monaco, Villefranche-sur-Mer, Antibes, Lérins Islands, Saint-Tropez… Your skipper tailors every itinerary to your wishes.">
+      Monaco, Villefranche-sur-Mer, Antibes, Îles de Lérins, Saint-Tropez… Votre skipper adapte chaque itinéraire à vos envies.
+    </p>
+    <a href="experiences.html" class="btn-outline" data-fr="Découvrir les expériences" data-en="Discover experiences">Découvrir les expériences</a>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SECTION — TÉMOIGNAGES
+════════════════════════════════════════════ -->
+<section class="section-temoignages">
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="eyebrow" data-fr="Avis clients" data-en="Reviews">Avis clients</span>
+      <h2 data-fr="Ils ont vécu l'expérience" data-en="They lived the experience">Ils ont vécu l'expérience</h2>
+      <p class="gold-line center"></p>
+    </div>
+    <div class="temoignages-grid">
+
+      <div class="temoignage fade-in fade-in-delay-1">
+        <div class="stars">★★★★★</div>
+        <p class="temoignage-text" data-fr="&laquo;&nbsp;Une journée absolument parfaite. Le skipper est aux petits soins, le bateau est magnifique. On reviendra sans hésiter.&nbsp;&raquo;" data-en="&laquo;&nbsp;An absolutely perfect day. The skipper is attentive, the boat is magnificent. We will definitely return.&nbsp;&raquo;">
+          &laquo;&nbsp;Une journée absolument parfaite. Le skipper est aux petits soins, le bateau est magnifique. On reviendra sans hésiter.&nbsp;&raquo;
+        </p>
+        <p class="temoignage-author">— Sophie &amp; Marc, Paris</p>
+      </div>
+
+      <div class="temoignage fade-in fade-in-delay-2">
+        <div class="stars">★★★★★</div>
+        <p class="temoignage-text" data-fr="&laquo;&nbsp;Sunset exceptionnel au large de Monaco. Le SeaBob et le paddle ont conquis nos enfants. Prestation haut de gamme, merci !&nbsp;&raquo;" data-en="&laquo;&nbsp;Exceptional sunset off Monaco. The SeaBob and paddle won over our children. Premium service, thank you!&nbsp;&raquo;">
+          &laquo;&nbsp;Sunset exceptionnel au large de Monaco. Le SeaBob et le paddle ont conquis nos enfants. Prestation haut de gamme, merci !&nbsp;&raquo;
+        </p>
+        <p class="temoignage-author">— Famille Bertrand, Lyon</p>
+      </div>
+
+      <div class="temoignage fade-in fade-in-delay-3">
+        <div class="stars">★★★★★</div>
+        <p class="temoignage-text" data-fr="&laquo;&nbsp;Anniversaire inoubliable à bord. Le champagne, le coucher de soleil, la Méditerranée… Un moment hors du temps.&nbsp;&raquo;" data-en="&laquo;&nbsp;An unforgettable birthday on board. The champagne, the sunset, the Mediterranean… A timeless moment.&nbsp;&raquo;">
+          &laquo;&nbsp;Anniversaire inoubliable à bord. Le champagne, le coucher de soleil, la Méditerranée… Un moment hors du temps.&nbsp;&raquo;
+        </p>
+        <p class="temoignage-author">— Camille D., Nice</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SECTION — INSTAGRAM
+════════════════════════════════════════════ -->
+<section class="section-instagram">
+  <div class="container text-center fade-in">
+    <span class="eyebrow">Instagram</span>
+    <h2 data-fr="Suivez l'aventure" data-en="Follow the adventure">Suivez l'aventure</h2>
+    <p class="gold-line center"></p>
+    <p data-fr="Découvrez nos moments en mer sur Instagram." data-en="Discover our moments at sea on Instagram.">
+      Découvrez nos moments en mer sur Instagram.
+    </p>
+    <a href="https://instagram.com/prestigecharter06" target="_blank" rel="noopener" class="btn-outline mt-2">
+      @prestigecharter06
+    </a>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SECTION — CTA FINAL
+════════════════════════════════════════════ -->
+<section class="section-cta">
+  <div class="container text-center fade-in">
+    <h2 data-fr="Prêt à larguer les amarres ?" data-en="Ready to set sail?">Prêt à larguer les amarres ?</h2>
+    <p data-fr="Contactez-nous par téléphone, WhatsApp ou formulaire de réservation." data-en="Contact us by phone, WhatsApp or reservation form.">
+      Contactez-nous par téléphone, WhatsApp ou formulaire de réservation.
+    </p>
+    <div class="cta-btns">
+      <a href="reservation.html" class="btn-gold" data-fr="Réserver en ligne" data-en="Book online">Réserver en ligne</a>
+      <a href="https://wa.me/33652192414" target="_blank" rel="noopener" class="btn-outline" data-fr="WhatsApp" data-en="WhatsApp">WhatsApp</a>
+      <a href="tel:+33652192414" class="btn-outline" data-fr="06 52 19 24 14" data-en="06 52 19 24 14">06 52 19 24 14</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════════ -->
+<footer>
+  <div class="footer-inner">
+
+    <div class="footer-col">
+      <a href="index.html" class="logo">
+        <svg class="logo-anchor" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="1.5" width="18" height="18" aria-hidden="true">
+          <circle cx="12" cy="5" r="2"/>
+          <line x1="12" y1="7" x2="12" y2="11"/>
+          <path d="M5 11h14M5 11C5 16 8 19 12 20M19 11C19 16 16 19 12 20"/>
+          <line x1="9" y1="20" x2="12" y2="22"/><line x1="15" y1="20" x2="12" y2="22"/>
+        </svg>
+        <span class="logo-prestige">PRESTIGE</span>
+        <span class="logo-charter">CHARTER</span>
+      </a>
+      <p class="footer-tagline" data-fr="L'excellence nautique sur la Côte d'Azur" data-en="Nautical excellence on the French Riviera">
+        L'excellence nautique sur la Côte d'Azur
+      </p>
+    </div>
+
+    <div class="footer-col">
+      <h4 data-fr="Navigation" data-en="Navigation">Navigation</h4>
+      <ul>
+        <li><a href="index.html" data-fr="Accueil" data-en="Home">Accueil</a></li>
+        <li><a href="yacht.html" data-fr="Le Yacht" data-en="The Yacht">Le Yacht</a></li>
+        <li><a href="experiences.html" data-fr="Expériences" data-en="Experiences">Expériences</a></li>
+        <li><a href="tarifs.html" data-fr="Tarifs" data-en="Rates">Tarifs</a></li>
+        <li><a href="histoire.html" data-fr="Notre Histoire" data-en="Our Story">Notre Histoire</a></li>
+        <li><a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4 data-fr="Contact" data-en="Contact">Contact</h4>
+      <ul>
+        <li><a href="tel:+33652192414">06 52 19 24 14</a></li>
+        <li><a href="mailto:prestigecharter06@gmail.com">prestigecharter06@gmail.com</a></li>
+        <li><a href="https://wa.me/33652192414" target="_blank" rel="noopener">WhatsApp</a></li>
+        <li><a href="https://instagram.com/prestigecharter06" target="_blank" rel="noopener">@prestigecharter06</a></li>
+      </ul>
+      <p class="footer-address" data-fr="Saint-Jean-Cap-Ferrat, Côte d'Azur" data-en="Saint-Jean-Cap-Ferrat, French Riviera">
+        Saint-Jean-Cap-Ferrat, Côte d'Azur
+      </p>
+    </div>
+
+    <div class="footer-col">
+      <h4 data-fr="Informations" data-en="Information">Informations</h4>
+      <ul>
+        <li><a href="cgv.html" data-fr="CGV" data-en="Terms &amp; Conditions">CGV</a></li>
+        <li><a href="mentionslegales.html" data-fr="Mentions légales" data-en="Legal Notice">Mentions légales</a></li>
+        <li><a href="reservation.html" data-fr="Réserver" data-en="Book">Réserver</a></li>
+      </ul>
+    </div>
+
+  </div>
+  <div class="footer-bottom">
+    <p data-fr="© 2025 Prestige Charter AT — SAS Prestige Charter AT / Prestige Charter Operations Ltd (Malte)" data-en="© 2025 Prestige Charter AT — SAS Prestige Charter AT / Prestige Charter Operations Ltd (Malta)">
+      © 2025 Prestige Charter AT — SAS Prestige Charter AT / Prestige Charter Operations Ltd (Malte)
+    </p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
