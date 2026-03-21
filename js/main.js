@@ -1,260 +1,328 @@
-/* ============================================================
-   PRESTIGE CHARTER AT — main.js
-   Version complète — Janvier 2025
-   ============================================================ */
+/* ==========================================
+   PRESTIGE CHARTER AT — Main JavaScript
+   ========================================== */
 
-/* ─── SCROLL PROGRESS BAR ─── */
-function initScrollProgress() {
-  const bar = document.getElementById('scroll-progress');
-  if (!bar) return;
-  window.addEventListener('scroll', () => {
-    const max = document.documentElement.scrollHeight - window.innerHeight;
-    const pct = max > 0 ? (window.scrollY / max) * 100 : 0;
-    bar.style.width = pct + '%';
-  }, { passive: true });
-}
+document.addEventListener('DOMContentLoaded', () => {
 
-/* ─── NAV SCROLL EFFECT ─── */
-function initNavScroll() {
-  const nav = document.querySelector('nav');
-  if (!nav) return;
-  window.addEventListener('scroll', () => {
-    nav.classList.toggle('scrolled', window.scrollY > 40);
-  }, { passive: true });
-}
-
-/* ─── NAV ACTIVE LINK (auto-détection par URL) ─── */
-function initNavActive() {
-  const links = document.querySelectorAll('.nav-links a');
-  const current = window.location.pathname.split('/').pop() || 'index.html';
-  links.forEach(link => {
-    const href = link.getAttribute('href');
-    if (href === current || (current === '' && href === 'index.html')) {
-      link.classList.add('active');
-    }
-  });
-}
-
-/* ─── BURGER MENU ─── */
-function initBurger() {
-  const burger = document.getElementById('burger');
-  const navLinks = document.getElementById('navLinks');
-  if (!burger || !navLinks) return;
-
-  burger.addEventListener('click', () => {
-    const isOpen = navLinks.classList.toggle('open');
-    burger.classList.toggle('open', isOpen);
-    burger.setAttribute('aria-expanded', isOpen);
-    document.body.style.overflow = isOpen ? 'hidden' : '';
-  });
-
-  // Fermer au clic sur un lien
-  navLinks.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      navLinks.classList.remove('open');
-      burger.classList.remove('open');
-      burger.setAttribute('aria-expanded', false);
-      document.body.style.overflow = '';
+  /* ------------------------------------------
+     PAGE TRANSITION
+  ------------------------------------------ */
+  const transition = document.getElementById('pageTransition');
+  if (transition) {
+    setTimeout(() => transition.classList.remove('active'), 400);
+    document.querySelectorAll('a[href]').forEach(link => {
+      if (link.hostname === location.hostname && !link.hash && !link.hasAttribute('target')) {
+        link.addEventListener('click', e => {
+          e.preventDefault();
+          const dest = link.href;
+          transition.classList.add('active');
+          setTimeout(() => window.location = dest, 400);
+        });
+      }
     });
-  });
-
-  // Fermer au clic extérieur
-  document.addEventListener('click', (e) => {
-    if (!burger.contains(e.target) && !navLinks.contains(e.target)) {
-      navLinks.classList.remove('open');
-      burger.classList.remove('open');
-      burger.setAttribute('aria-expanded', false);
-      document.body.style.overflow = '';
-    }
-  });
-}
-
-/* ─── LANGUE FR / EN ─── */
-function initLang() {
-  const btn = document.getElementById('langBtn');
-  if (!btn) return;
-
-  let lang = localStorage.getItem('pc_lang') || 'fr';
-
-  function applyLang(l) {
-    document.querySelectorAll('[data-fr]').forEach(el => {
-      el.textContent = l === 'fr' ? el.dataset.fr : el.dataset.en;
-    });
-    // Placeholders
-    document.querySelectorAll('[data-fr-placeholder]').forEach(el => {
-      el.placeholder = l === 'fr'
-        ? el.dataset.frPlaceholder
-        : el.dataset.enPlaceholder;
-    });
-    btn.textContent = l === 'fr' ? 'EN' : 'FR';
-    document.documentElement.lang = l === 'fr' ? 'fr' : 'en';
-    localStorage.setItem('pc_lang', l);
-    lang = l;
   }
 
-  btn.addEventListener('click', () => {
-    applyLang(lang === 'fr' ? 'en' : 'fr');
-  });
+  /* ------------------------------------------
+     SCROLL PROGRESS BAR
+  ------------------------------------------ */
+  const progressBar = document.getElementById('scroll-progress');
+  if (progressBar) {
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      progressBar.style.width = progress + '%';
+    }, { passive: true });
+  }
 
-  applyLang(lang);
-}
+  /* ------------------------------------------
+     HEADER SCROLL (shrink + shadow)
+  ------------------------------------------ */
+  const header = document.getElementById('header');
+  if (header) {
+    let lastScroll = 0;
+    window.addEventListener('scroll', () => {
+      const currentScroll = window.scrollY;
+      if (currentScroll > 60) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+      // Hide/show on scroll direction
+      if (currentScroll > lastScroll && currentScroll > 200) {
+        header.classList.add('header--hidden');
+      } else {
+        header.classList.remove('header--hidden');
+      }
+      lastScroll = currentScroll;
+    }, { passive: true });
+  }
 
-/* ─── FADE-IN AU SCROLL ─── */
-function initFadeIn() {
-  const els = document.querySelectorAll('.fade-in');
-  if (!els.length) return;
+  /* ------------------------------------------
+     MOBILE MENU TOGGLE
+  ------------------------------------------ */
+  const menuToggle = document.getElementById('menuToggle');
+  const navLinks = document.getElementById('navLinks');
+  if (menuToggle && navLinks) {
+    menuToggle.addEventListener('click', () => {
+      menuToggle.classList.toggle('active');
+      navLinks.classList.toggle('active');
+      document.body.classList.toggle('nav-open');
+    });
+    // Close menu on link click
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        menuToggle.classList.remove('active');
+        navLinks.classList.remove('active');
+        document.body.classList.remove('nav-open');
+      });
+    });
+  }
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
+  /* ------------------------------------------
+     LANGUAGE TOGGLE (FR / EN)
+  ------------------------------------------ */
+  const langToggle = document.getElementById('langToggle');
+  let currentLang = localStorage.getItem('pc-lang') || 'fr';
+
+  function applyLanguage(lang) {
+    currentLang = lang;
+    localStorage.setItem('pc-lang', lang);
+    if (langToggle) langToggle.textContent = lang === 'fr' ? 'EN' : 'FR';
+    document.querySelectorAll('[data-fr][data-en]').forEach(el => {
+      const text = lang === 'fr' ? el.getAttribute('data-fr') : el.getAttribute('data-en');
+      if (text) {
+        // Preserve child elements (like links inside paragraphs)
+        if (el.children.length === 0) {
+          el.textContent = text;
+        } else {
+          // Only update if it's a simple text swap
+          const firstText = el.childNodes[0];
+          if (firstText && firstText.nodeType === 3) {
+            firstText.textContent = text;
+          }
+        }
       }
     });
-  }, { threshold: 0.12 });
+    document.documentElement.lang = lang;
+  }
 
-  els.forEach(el => observer.observe(el));
-}
+  // Apply saved language on load
+  if (currentLang !== 'fr') applyLanguage(currentLang);
 
-/* ─── TIMELINE ANIMATION ─── */
-function initTimeline() {
-  const items = document.querySelectorAll('.timeline-item');
-  if (!items.length) return;
+  if (langToggle) {
+    langToggle.addEventListener('click', () => {
+      applyLanguage(currentLang === 'fr' ? 'en' : 'fr');
+    });
+  }
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
+  /* ------------------------------------------
+     FADE-IN ON SCROLL (Intersection Observer)
+  ------------------------------------------ */
+  const fadeElements = document.querySelectorAll('.fade-in');
+  if (fadeElements.length > 0 && 'IntersectionObserver' in window) {
+    const fadeObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          fadeObserver.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    });
+    fadeElements.forEach(el => fadeObserver.observe(el));
+  } else {
+    // Fallback: show everything
+    fadeElements.forEach(el => el.classList.add('visible'));
+  }
+
+  /* ------------------------------------------
+     PARALLAX HERO (subtle)
+  ------------------------------------------ */
+  const heroSection = document.querySelector('.hero, .page-hero');
+  if (heroSection && window.innerWidth > 768) {
+    window.addEventListener('scroll', () => {
+      const scroll = window.scrollY;
+      if (scroll < window.innerHeight) {
+        heroSection.style.setProperty('--parallax-y', (scroll * 0.3) + 'px');
       }
-    });
-  }, { threshold: 0.2 });
+    }, { passive: true });
+  }
 
-  items.forEach(el => observer.observe(el));
-}
+  /* ------------------------------------------
+     GALLERY LIGHTBOX (yacht.html)
+  ------------------------------------------ */
+  const galleryItems = document.querySelectorAll('.gallery-item img, .gallery-grid img');
+  if (galleryItems.length > 0) {
+    // Create lightbox
+    const lightbox = document.createElement('div');
+    lightbox.className = 'lightbox';
+    lightbox.innerHTML = `
+      <div class="lightbox__overlay"></div>
+      <div class="lightbox__content">
+        <button class="lightbox__close" aria-label="Fermer">&times;</button>
+        <button class="lightbox__prev" aria-label="Précédent">&#8249;</button>
+        <img class="lightbox__img" src="" alt="" />
+        <button class="lightbox__next" aria-label="Suivant">&#8250;</button>
+      </div>
+    `;
+    document.body.appendChild(lightbox);
 
-/* ─── HERO PARALLAX LÉGER ─── */
-function initHeroParallax() {
-  const heroBg = document.querySelector('.hero-bg');
-  if (!heroBg) return;
+    const lbImg = lightbox.querySelector('.lightbox__img');
+    const lbClose = lightbox.querySelector('.lightbox__close');
+    const lbOverlay = lightbox.querySelector('.lightbox__overlay');
+    const lbPrev = lightbox.querySelector('.lightbox__prev');
+    const lbNext = lightbox.querySelector('.lightbox__next');
+    let currentIndex = 0;
+    const images = Array.from(galleryItems);
 
-  window.addEventListener('scroll', () => {
-    const offset = window.scrollY;
-    heroBg.style.transform = `scale(1) translateY(${offset * 0.25}px)`;
-  }, { passive: true });
-
-  // Trigger loaded class pour animation scale
-  setTimeout(() => {
-    const hero = document.querySelector('.hero');
-    if (hero) hero.classList.add('loaded');
-  }, 100);
-}
-
-/* ─── PAGE TRANSITION ─── */
-function initPageTransition() {
-  const overlay = document.getElementById('pageTransition');
-  if (!overlay) return;
-
-  // Entrée : fade out de l'overlay
-  window.addEventListener('load', () => {
-    overlay.classList.remove('active');
-  });
-
-  // Sortie : fade in avant navigation
-  document.querySelectorAll('a[href]').forEach(link => {
-    const href = link.getAttribute('href');
-    // Ignorer liens externes, anchors, tel, mailto
-    if (
-      !href ||
-      href.startsWith('#') ||
-      href.startsWith('http') ||
-      href.startsWith('tel') ||
-      href.startsWith('mailto') ||
-      href.startsWith('https') ||
-      link.hasAttribute('target')
-    ) return;
-
-    link.addEventListener('click', (e) => {
-      e.preventDefault();
-      overlay.classList.add('active');
-      setTimeout(() => {
-        window.location.href = href;
-      }, 280);
-    });
-  });
-}
-
-/* ─── FORM VALIDATION ─── */
-function initForm() {
-  const form = document.getElementById('reservationForm');
-  if (!form) return;
-
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-
-    const required = form.querySelectorAll('[required]');
-    let valid = true;
-
-    required.forEach(field => {
-      field.style.borderColor = '';
-      if (!field.value.trim()) {
-        field.style.borderColor = '#e05252';
-        valid = false;
-      }
-    });
-
-    if (!valid) {
-      const firstError = form.querySelector('[required][style*="e05252"]');
-      if (firstError) firstError.focus();
-      return;
+    function openLightbox(index) {
+      currentIndex = index;
+      lbImg.src = images[currentIndex].src;
+      lbImg.alt = images[currentIndex].alt || '';
+      lightbox.classList.add('active');
+      document.body.style.overflow = 'hidden';
     }
 
-    // Préparer données WhatsApp
-    const name    = form.querySelector('#name')?.value || '';
-    const date    = form.querySelector('#date')?.value || '';
-    const offre   = form.querySelector('#offre')?.value || '';
-    const pax     = form.querySelector('#pax')?.value || '';
-    const message = form.querySelector('#message')?.value || '';
+    function closeLightbox() {
+      lightbox.classList.remove('active');
+      document.body.style.overflow = '';
+    }
 
-    const text = encodeURIComponent(
-      `Bonjour, je souhaite réserver :\n` +
-      `• Nom : ${name}\n` +
-      `• Offre : ${offre}\n` +
-      `• Date : ${date}\n` +
-      `• Passagers : ${pax}\n` +
-      (message ? `• Message : ${message}` : '')
-    );
+    function navigate(dir) {
+      currentIndex = (currentIndex + dir + images.length) % images.length;
+      lbImg.src = images[currentIndex].src;
+      lbImg.alt = images[currentIndex].alt || '';
+    }
 
-    window.open(`https://wa.me/33652192414?text=${text}`, '_blank');
-  });
-}
+    images.forEach((img, i) => {
+      img.style.cursor = 'pointer';
+      img.addEventListener('click', () => openLightbox(i));
+    });
 
-/* ─── SMOOTH SCROLL ANCHORS ─── */
-function initSmoothScroll() {
-  document.querySelectorAll('a[href^="#"]').forEach(link => {
-    link.addEventListener('click', (e) => {
-      const id = link.getAttribute('href').slice(1);
-      const target = document.getElementById(id);
-      if (!target) return;
+    lbClose.addEventListener('click', closeLightbox);
+    lbOverlay.addEventListener('click', closeLightbox);
+    lbPrev.addEventListener('click', () => navigate(-1));
+    lbNext.addEventListener('click', () => navigate(1));
+
+    document.addEventListener('keydown', e => {
+      if (!lightbox.classList.contains('active')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') navigate(-1);
+      if (e.key === 'ArrowRight') navigate(1);
+    });
+  }
+
+  /* ------------------------------------------
+     RESERVATION FORM — Date min (today)
+  ------------------------------------------ */
+  const dateInput = document.querySelector('input[type="date"]');
+  if (dateInput) {
+    const today = new Date().toISOString().split('T')[0];
+    dateInput.setAttribute('min', today);
+  }
+
+  /* ------------------------------------------
+     RESERVATION FORM — Submission
+  ------------------------------------------ */
+  const form = document.getElementById('reservationForm');
+  if (form) {
+    form.addEventListener('submit', e => {
       e.preventDefault();
-      const offset = 80;
-      const top = target.getBoundingClientRect().top + window.scrollY - offset;
-      window.scrollTo({ top, behavior: 'smooth' });
+
+      // Collect data
+      const formData = new FormData(form);
+      const data = {};
+      formData.forEach((value, key) => data[key] = value);
+
+      // Build WhatsApp message
+      const msg = encodeURIComponent(
+        `✨ Nouvelle demande de réservation — Prestige Charter\n\n` +
+        `👤 Nom : ${data.name || '[non renseigné]'}\n` +
+        `📧 Email : ${data.email || '[non renseigné]'}\n` +
+        `📞 Téléphone : ${data.phone || '[non renseigné]'}\n` +
+        `📅 Date souhaitée : ${data.date || '[non renseignée]'}\n` +
+        `🛥️ Formule : ${data.experience || '[non renseignée]'}\n` +
+        `👥 Passagers : ${data.guests || '[non renseigné]'}\n` +
+        `💬 Message : ${data.message || 'Aucun'}`
+      );
+
+      // Redirect to WhatsApp
+      window.open(`https://wa.me/33652192414?text=${msg}`, '_blank');
+
+      // Show confirmation
+      const btn = form.querySelector('button[type="submit"]');
+      if (btn) {
+        const originalText = btn.textContent;
+        btn.textContent = currentLang === 'fr' ? '✓ Envoyé !' : '✓ Sent!';
+        btn.disabled = true;
+        setTimeout(() => {
+          btn.textContent = originalText;
+          btn.disabled = false;
+          form.reset();
+        }, 3000);
+      }
+    });
+  }
+
+  /* ------------------------------------------
+     CONTACT FORM — Mailto fallback
+  ------------------------------------------ */
+  const contactForm = document.getElementById('contactForm');
+  if (contactForm) {
+    contactForm.addEventListener('submit', e => {
+      e.preventDefault();
+      const formData = new FormData(contactForm);
+      const data = {};
+      formData.forEach((value, key) => data[key] = value);
+
+      const subject = encodeURIComponent('Contact via prestigecharter.fr');
+      const body = encodeURIComponent(
+        `Nom : ${data.name || ''}\n` +
+        `Email : ${data.email || ''}\n` +
+        `Téléphone : ${data.phone || ''}\n\n` +
+        `Message :\n${data.message || ''}`
+      );
+
+      window.location.href = `mailto:prestigecharter06@gmail.com?subject=${subject}&body=${body}`;
+
+      const btn = contactForm.querySelector('button[type="submit"]');
+      if (btn) {
+        const originalText = btn.textContent;
+        btn.textContent = currentLang === 'fr' ? '✓ Message prêt !' : '✓ Message ready!';
+        btn.disabled = true;
+        setTimeout(() => {
+          btn.textContent = originalText;
+          btn.disabled = false;
+        }, 3000);
+      }
+    });
+  }
+
+  /* ------------------------------------------
+     SMOOTH SCROLL for anchor links
+  ------------------------------------------ */
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', e => {
+      const target = document.querySelector(anchor.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
     });
   });
-}
 
-/* ─── INIT GLOBAL ─── */
-document.addEventListener('DOMContentLoaded', () => {
-  initScrollProgress();
-  initNavScroll();
-  initNavActive();
-  initBurger();
-  initLang();
-  initFadeIn();
-  initTimeline();
-  initHeroParallax();
-  initPageTransition();
-  initForm();
-  initSmoothScroll();
+  /* ------------------------------------------
+     PRICING CARDS HOVER (tarifs.html)
+  ------------------------------------------ */
+  const pricingCards = document.querySelectorAll('.pricing-card');
+  pricingCards.forEach(card => {
+    card.addEventListener('mouseenter', () => {
+      pricingCards.forEach(c => c.classList.remove('pricing-card--active'));
+      card.classList.add('pricing-card--active');
+    });
+  });
+
 });
