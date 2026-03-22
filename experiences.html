@@ -1,361 +1,366 @@
+<!-- experiences.html -->
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Expériences — Prestige Charter AT</title>
-  <meta name="description" content="Sunset Experience, Journée en Mer, Pêche de Nuit. Découvrez nos expériences nautiques de luxe au départ de Saint-Jean-Cap-Ferrat." />
-  <link rel="canonical" href="https://www.prestigecharter.fr/experiences.html" />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
-
-  <link rel="stylesheet" href="css/style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nos Expériences — Sunset, Journée en Mer, Pêche de Nuit | Prestige Charter</title>
+  <meta name="description" content="Trois expériences nautiques d'exception au départ de Saint-Jean-Cap-Ferrat : Sunset Experience 1 300€, Journée en Mer 2 700€, Pêche de Nuit 2 600€. Yacht privé avec skipper.">
+  <meta property="og:title" content="Nos Expériences — Prestige Charter">
+  <meta property="og:description" content="Sunset, Journée en Mer, Pêche de Nuit. Trois façons de vivre la Côte d'Azur depuis la mer.">
+  <meta property="og:image" content="images/hero.jpg">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><path d='M16 2 L16 28 M10 26 Q16 22 22 26 M8 10 Q16 4 24 10 L16 8Z' fill='none' stroke='%23C9A84C' stroke-width='2'/></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<div id="scroll-progress"></div>
-<div id="pageTransition" class="page-transition active"></div>
-
-<!-- WhatsApp Flottant -->
-<a href="https://wa.me/33652192414" target="_blank" rel="noopener" class="whatsapp-float" aria-label="WhatsApp">
-  <svg viewBox="0 0 24 24" fill="currentColor" width="26" height="26">
-    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-    <path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.549 4.107 1.51 5.833L.057 23.215a.75.75 0 0 0 .916.916l5.382-1.453A11.954 11.954 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.73 9.73 0 0 1-4.964-1.358l-.356-.212-3.695.998.997-3.696-.211-.355A9.718 9.718 0 0 1 2.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/>
-  </svg>
-</a>
-
-<!-- ═══ NAV ═══ -->
-<nav>
-  <a href="index.html" class="logo">
-    <svg class="logo-anchor" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-         stroke-width="1.5" width="18" height="18" aria-hidden="true">
-      <circle cx="12" cy="5" r="2"/>
-      <line x1="12" y1="7" x2="12" y2="11"/>
-      <path d="M5 11h14M5 11C5 16 8 19 12 20M19 11C19 16 16 19 12 20"/>
-      <line x1="9" y1="20" x2="12" y2="22"/><line x1="15" y1="20" x2="12" y2="22"/>
+  <!-- PRELOADER -->
+  <div id="preloader" aria-hidden="true">
+    <svg class="preloader-anchor" viewBox="0 0 64 64" width="64" height="64">
+      <path d="M32 8a6 6 0 1 1 0 12 6 6 0 0 1 0-12Zm0 16v28M20 56q12-6 24 0M14 28q18-10 36 0" fill="none" stroke="#C9A84C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>
-    <span class="logo-prestige">PRESTIGE</span>
-    <span class="logo-charter">CHARTER</span>
-  </a>
-
-  <ul class="nav-links" id="navLinks">
-    <li><a href="index.html" data-fr="Accueil" data-en="Home">Accueil</a></li>
-    <li><a href="yacht.html" data-fr="Le Yacht" data-en="The Yacht">Le Yacht</a></li>
-    <li><a href="experiences.html" data-fr="Expériences" data-en="Experiences">Expériences</a></li>
-    <li><a href="tarifs.html" data-fr="Tarifs" data-en="Rates">Tarifs</a></li>
-    <li><a href="histoire.html" data-fr="Notre Histoire" data-en="Our Story">Notre Histoire</a></li>
-    <li><a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a></li>
-    <li><a href="reservation.html" class="nav-cta" data-fr="Réserver" data-en="Book">Réserver</a></li>
-  </ul>
-
-  <button class="lang-btn" id="langBtn" aria-label="Changer de langue">EN</button>
-  <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
-
-<!-- ═══ PAGE HERO ═══ -->
-<section class="page-hero">
-  <div class="page-hero-bg">
-    <img src="images/yacht-3.webp" alt="Expériences Prestige Charter" />
   </div>
-  <div class="page-hero-overlay"></div>
-  <div class="page-hero-content fade-in">
-    <span class="eyebrow" data-fr="Nos Expériences" data-en="Our Experiences">Nos Expériences</span>
-    <h1 data-fr="Vivez la Méditerranée" data-en="Experience the Mediterranean">Vivez la Méditerranée</h1>
-    <p data-fr="Trois formules d'exception au départ de Saint-Jean-Cap-Ferrat" data-en="Three exceptional packages from Saint-Jean-Cap-Ferrat">
-      Trois formules d'exception au départ de Saint-Jean-Cap-Ferrat
-    </p>
-  </div>
-</section>
 
-<!-- ═══ OFFRE 1 — SUNSET ═══ -->
-<section class="section-offre" id="sunset">
-  <div class="container">
-    <div class="split-section">
-      <div class="split-image fade-in">
-        <img src="images/yacht-3.webp" alt="Sunset Experience — coucher de soleil en mer" loading="lazy" />
-        <div class="offre-badge">1 300 € TTC</div>
-      </div>
-      <div class="split-text fade-in fade-in-delay-1">
-        <span class="eyebrow" data-fr="Offre 1" data-en="Package 1">Offre 1</span>
-        <h2 data-fr="Sunset Experience" data-en="Sunset Experience">Sunset Experience</h2>
-        <p class="gold-line"></p>
-        <p class="offre-duree">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          <span data-fr="3 heures · 18h–21h (ou selon coucher du soleil)" data-en="3 hours · 6pm–9pm (or sunset time)">3 heures · 18h–21h (ou selon coucher du soleil)</span>
-        </p>
-        <p data-fr="Une croisière inoubliable à l'heure dorée. Naviguez le long de la Côte d'Azur tandis que le soleil se couche sur la Méditerranée, teintant le ciel de nuances d'or et de rose. Un moment suspendu, parfait pour un anniversaire, une demande en mariage ou simplement une soirée d'exception." data-en="An unforgettable cruise at golden hour. Sail along the French Riviera as the sun sets over the Mediterranean, painting the sky in shades of gold and rose. A timeless moment, perfect for an anniversary, a proposal, or simply an exceptional evening.">
-          Une croisière inoubliable à l'heure dorée. Naviguez le long de la Côte d'Azur tandis que le soleil se couche sur la Méditerranée, teintant le ciel de nuances d'or et de rose. Un moment suspendu, parfait pour un anniversaire, une demande en mariage ou simplement une soirée d'exception.
-        </p>
-
-        <div class="offre-inclus">
-          <h4 data-fr="Inclus" data-en="Included">Inclus</h4>
-          <ul>
-            <li data-fr="✅ Skipper professionnel" data-en="✅ Professional skipper">✅ Skipper professionnel</li>
-            <li data-fr="✅ Paddle & SeaBob" data-en="✅ Paddle & SeaBob">✅ Paddle & SeaBob</li>
-            <li data-fr="✅ Kit snorkeling" data-en="✅ Snorkeling kit">✅ Kit snorkeling</li>
-            <li data-fr="✅ Son Bluetooth premium" data-en="✅ Premium Bluetooth sound">✅ Son Bluetooth premium</li>
-            <li data-fr="✅ Assurance RC" data-en="✅ Liability insurance">✅ Assurance RC</li>
-            <li data-fr="⛽ Carburant non inclus (~100–150 €)" data-en="⛽ Fuel not included (~€100–150)">⛽ Carburant non inclus (~100–150 €)</li>
-          </ul>
-        </div>
-
-        <div class="offre-capacite">
-          <span data-fr="👥 Jusqu'à 11 passagers" data-en="👥 Up to 11 passengers">👥 Jusqu'à 11 passagers</span>
-        </div>
-
-        <div class="cta-btns">
-          <a href="reservation.html?offre=sunset" class="btn-gold" data-fr="Réserver cette expérience" data-en="Book this experience">Réserver cette expérience</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Séparateur -->
-<div class="section-separator">
-  <div class="separator-line"></div>
-</div>
-
-<!-- ═══ OFFRE 2 — JOURNÉE EN MER ═══ -->
-<section class="section-offre alt-bg" id="journee">
-  <div class="container">
-    <div class="split-section reverse">
-      <div class="split-image fade-in">
-        <img src="images/hero.jpg" alt="Journée en Mer — Côte d'Azur" loading="lazy" />
-        <div class="offre-badge">2 700 € TTC</div>
-      </div>
-      <div class="split-text fade-in fade-in-delay-1">
-        <span class="eyebrow" data-fr="Offre 2" data-en="Package 2">Offre 2</span>
-        <h2 data-fr="Journée en Mer" data-en="Day at Sea">Journée en Mer</h2>
-        <p class="gold-line"></p>
-        <p class="offre-duree">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          <span data-fr="8 heures · 9h–17h" data-en="8 hours · 9am–5pm">8 heures · 9h–17h</span>
-        </p>
-        <p data-fr="Une journée complète en mer pour explorer la Côte d'Azur à votre rythme. Cap sur Monaco, les criques de Villefranche, Antibes ou les Îles de Lérins. Baignades, sports nautiques, détente sur le pont… Une liberté totale pour vivre votre Méditerranée idéale." data-en="A full day at sea to explore the French Riviera at your own pace. Head to Monaco, the coves of Villefranche, Antibes or the Lérins Islands. Swimming, water sports, relaxing on deck… Total freedom to experience your ideal Mediterranean.">
-          Une journée complète en mer pour explorer la Côte d'Azur à votre rythme. Cap sur Monaco, les criques de Villefranche, Antibes ou les Îles de Lérins. Baignades, sports nautiques, détente sur le pont… Une liberté totale pour vivre votre Méditerranée idéale.
-        </p>
-
-        <div class="offre-inclus">
-          <h4 data-fr="Inclus" data-en="Included">Inclus</h4>
-          <ul>
-            <li data-fr="✅ Skipper professionnel" data-en="✅ Professional skipper">✅ Skipper professionnel</li>
-            <li data-fr="✅ Paddle & SeaBob" data-en="✅ Paddle & SeaBob">✅ Paddle & SeaBob</li>
-            <li data-fr="✅ Kit snorkeling" data-en="✅ Snorkeling kit">✅ Kit snorkeling</li>
-            <li data-fr="✅ Son Bluetooth premium" data-en="✅ Premium Bluetooth sound">✅ Son Bluetooth premium</li>
-            <li data-fr="✅ Assurance RC" data-en="✅ Liability insurance">✅ Assurance RC</li>
-            <li data-fr="⛽ Carburant non inclus (~200–350 €)" data-en="⛽ Fuel not included (~€200–350)">⛽ Carburant non inclus (~200–350 €)</li>
-          </ul>
-        </div>
-
-        <div class="offre-capacite">
-          <span data-fr="👥 Jusqu'à 11 passagers" data-en="👥 Up to 11 passengers">👥 Jusqu'à 11 passagers</span>
-        </div>
-
-        <div class="cta-btns">
-          <a href="reservation.html?offre=journee" class="btn-gold" data-fr="Réserver cette expérience" data-en="Book this experience">Réserver cette expérience</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Séparateur -->
-<div class="section-separator">
-  <div class="separator-line"></div>
-</div>
-
-<!-- ═══ OFFRE 3 — PÊCHE DE NUIT ═══ -->
-<section class="section-offre" id="peche">
-  <div class="container">
-    <div class="split-section">
-      <div class="split-image fade-in">
-        <img src="images/yacht-2.webp" alt="Pêche de Nuit — Prestige Charter" loading="lazy" />
-        <div class="offre-badge">2 600 € TTC</div>
-      </div>
-      <div class="split-text fade-in fade-in-delay-1">
-        <span class="eyebrow" data-fr="Offre 3" data-en="Package 3">Offre 3</span>
-        <h2 data-fr="Pêche de Nuit" data-en="Night Fishing">Pêche de Nuit</h2>
-        <p class="gold-line"></p>
-        <p class="offre-duree">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          <span data-fr="6 heures · 23h–5h" data-en="6 hours · 11pm–5am">6 heures · 23h–5h</span>
-        </p>
-        <p data-fr="Une expérience unique au cœur de la nuit méditerranéenne. Partez en mer à la tombée de la nuit pour une session de pêche inoubliable avec équipement complet fourni. Entre apéritif sous les étoiles et sensations fortes, cette sortie nocturne promet une aventure hors du commun." data-en="A unique experience in the heart of the Mediterranean night. Head out to sea after dark for an unforgettable fishing session with full equipment provided. Between aperitifs under the stars and thrilling catches, this night trip promises an extraordinary adventure.">
-          Une expérience unique au cœur de la nuit méditerranéenne. Partez en mer à la tombée de la nuit pour une session de pêche inoubliable avec équipement complet fourni. Entre apéritif sous les étoiles et sensations fortes, cette sortie nocturne promet une aventure hors du commun.
-        </p>
-
-        <div class="offre-inclus">
-          <h4 data-fr="Inclus" data-en="Included">Inclus</h4>
-          <ul>
-            <li data-fr="✅ Skipper professionnel" data-en="✅ Professional skipper">✅ Skipper professionnel</li>
-            <li data-fr="✅ Équipement de pêche complet" data-en="✅ Full fishing equipment">✅ Équipement de pêche complet</li>
-            <li data-fr="✅ Apéritif inclus" data-en="✅ Aperitif included">✅ Apéritif inclus</li>
-            <li data-fr="✅ Son Bluetooth premium" data-en="✅ Premium Bluetooth sound">✅ Son Bluetooth premium</li>
-            <li data-fr="✅ Assurance RC" data-en="✅ Liability insurance">✅ Assurance RC</li>
-            <li data-fr="⛽ Carburant non inclus (au réel)" data-en="⛽ Fuel not included (at cost)">⛽ Carburant non inclus (au réel)</li>
-          </ul>
-        </div>
-
-        <div class="offre-capacite">
-          <span data-fr="👥 Jusqu'à 11 passagers" data-en="👥 Up to 11 passengers">👥 Jusqu'à 11 passagers</span>
-        </div>
-
-        <div class="cta-btns">
-          <a href="reservation.html?offre=peche" class="btn-gold" data-fr="Réserver cette expérience" data-en="Book this experience">Réserver cette expérience</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ SECTION ITINÉRAIRES ═══ -->
-<section class="section-itineraires alt-bg">
-  <div class="container">
-    <div class="section-header fade-in">
-      <span class="eyebrow" data-fr="Destinations" data-en="Destinations">Destinations</span>
-      <h2 data-fr="Vos itinéraires sur mesure" data-en="Your tailor-made itineraries">Vos itinéraires sur mesure</h2>
-      <p class="gold-line center"></p>
-      <p class="section-intro fade-in" data-fr="Au départ de Saint-Jean-Cap-Ferrat, naviguez librement vers les plus belles destinations de la Côte d'Azur. Le skipper adapte l'itinéraire selon vos envies, la météo et les conditions de mer." data-en="Departing from Saint-Jean-Cap-Ferrat, sail freely to the most beautiful destinations on the French Riviera. The skipper adapts the itinerary to your wishes, the weather and sea conditions.">
-        Au départ de Saint-Jean-Cap-Ferrat, naviguez librement vers les plus belles destinations de la Côte d'Azur. Le skipper adapte l'itinéraire selon vos envies, la météo et les conditions de mer.
-      </p>
-    </div>
-
-    <div class="itineraires-grid">
-      <div class="itineraire-card fade-in">
-        <div class="itineraire-icon">🎰</div>
-        <h4 data-fr="Monaco & Èze-sur-Mer" data-en="Monaco & Èze-sur-Mer">Monaco & Èze-sur-Mer</h4>
-        <p data-fr="Le glamour de la Principauté depuis la mer, vue imprenable sur le Rocher." data-en="The glamour of the Principality from the sea, stunning views of the Rock.">Le glamour de la Principauté depuis la mer, vue imprenable sur le Rocher.</p>
-      </div>
-      <div class="itineraire-card fade-in fade-in-delay-1">
-        <div class="itineraire-icon">⚓</div>
-        <h4 data-fr="Villefranche & Beaulieu" data-en="Villefranche & Beaulieu">Villefranche & Beaulieu</h4>
-        <p data-fr="Rades profondes et eaux cristallines à deux pas de Saint-Jean-Cap-Ferrat." data-en="Deep harbours and crystal-clear waters just moments from Saint-Jean-Cap-Ferrat.">Rades profondes et eaux cristallines à deux pas de Saint-Jean-Cap-Ferrat.</p>
-      </div>
-      <div class="itineraire-card fade-in fade-in-delay-2">
-        <div class="itineraire-icon">🏰</div>
-        <h4 data-fr="Antibes & Cap d'Antibes" data-en="Antibes & Cap d'Antibes">Antibes & Cap d'Antibes</h4>
-        <p data-fr="Remparts historiques, criques secrètes et eaux turquoise." data-en="Historic ramparts, secret coves and turquoise waters.">Remparts historiques, criques secrètes et eaux turquoise.</p>
-      </div>
-      <div class="itineraire-card fade-in fade-in-delay-3">
-        <div class="itineraire-icon">🏝️</div>
-        <h4 data-fr="Îles de Lérins" data-en="Lérins Islands">Îles de Lérins</h4>
-        <p data-fr="Paradis naturel face à Cannes, eau translucide et nature préservée." data-en="Natural paradise off Cannes, translucent water and unspoilt nature.">Paradis naturel face à Cannes, eau translucide et nature préservée.</p>
-      </div>
-      <div class="itineraire-card fade-in">
-        <div class="itineraire-icon">⛵</div>
-        <h4 data-fr="Saint-Tropez" data-en="Saint-Tropez">Saint-Tropez</h4>
-        <p data-fr="L'icône de la Riviera — disponible en journée complète (10h recommandées)." data-en="The icon of the Riviera — available as a full day (10h recommended).">L'icône de la Riviera — disponible en journée complète (10h recommandées).</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ OPTIONS EXTRAS ═══ -->
-<section class="section-extras">
-  <div class="container">
-    <div class="section-header fade-in">
-      <span class="eyebrow" data-fr="En supplément" data-en="Optional extras">En supplément</span>
-      <h2 data-fr="Personnalisez votre expérience" data-en="Personalise your experience">Personnalisez votre expérience</h2>
-      <p class="gold-line center"></p>
-    </div>
-
-    <div class="extras-grid">
-      <div class="extra-card fade-in">
-        <span class="extra-icon">👨‍🍳</span>
-        <h4 data-fr="Chef privé à bord" data-en="Private chef on board">Chef privé à bord</h4>
-        <span class="extra-price">500 €</span>
-        <p data-fr="Un chef à votre service pour un repas gastronomique en mer." data-en="A chef at your service for a gourmet meal at sea.">Un chef à votre service pour un repas gastronomique en mer.</p>
-      </div>
-      <div class="extra-card fade-in fade-in-delay-1">
-        <span class="extra-icon">🍾</span>
-        <h4 data-fr="Dom Pérignon" data-en="Dom Pérignon">Dom Pérignon</h4>
-        <span class="extra-price">350 €</span>
-        <p data-fr="Une bouteille de Dom Pérignon pour célébrer votre moment d'exception." data-en="A bottle of Dom Pérignon to celebrate your exceptional moment.">Une bouteille de Dom Pérignon pour célébrer votre moment d'exception.</p>
-      </div>
-      <div class="extra-card fade-in fade-in-delay-2">
-        <span class="extra-icon">📸</span>
-        <h4 data-fr="Photographe / Vidéaste" data-en="Photographer / Videographer">Photographe / Vidéaste</h4>
-        <span class="extra-price">800 €</span>
-        <p data-fr="Un professionnel pour immortaliser chaque instant de votre sortie en mer." data-en="A professional to capture every moment of your sea trip.">Un professionnel pour immortaliser chaque instant de votre sortie en mer.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ CTA FINAL ═══ -->
-<section class="section-cta">
-  <div class="container text-center fade-in">
-    <h2 data-fr="Quelle expérience vous attend ?" data-en="Which experience awaits you?">Quelle expérience vous attend ?</h2>
-    <p data-fr="Contactez-nous pour personnaliser votre sortie ou réservez directement en ligne." data-en="Contact us to personalise your trip or book directly online.">
-      Contactez-nous pour personnaliser votre sortie ou réservez directement en ligne.
-    </p>
-    <div class="cta-btns">
-      <a href="reservation.html" class="btn-gold" data-fr="Réserver maintenant" data-en="Book now">Réserver maintenant</a>
-      <a href="https://wa.me/33652192414" target="_blank" rel="noopener" class="btn-outline" data-fr="Nous contacter" data-en="Contact us">Nous contacter</a>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ FOOTER ═══ -->
-<footer>
-  <div class="footer-inner">
-    <div class="footer-col">
-      <a href="index.html" class="logo">
-        <svg class="logo-anchor" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-             stroke-width="1.5" width="18" height="18" aria-hidden="true">
-          <circle cx="12" cy="5" r="2"/>
-          <line x1="12" y1="7" x2="12" y2="11"/>
-          <path d="M5 11h14M5 11C5 16 8 19 12 20M19 11C19 16 16 19 12 20"/>
-          <line x1="9" y1="20" x2="12" y2="22"/><line x1="15" y1="20" x2="12" y2="22"/>
+  <!-- HEADER -->
+  <header id="header" class="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" aria-label="Prestige Charter - Accueil">
+        <svg class="logo-anchor" viewBox="0 0 36 36" width="28" height="28" aria-hidden="true">
+          <path d="M18 4a4 4 0 1 1 0 8 4 4 0 0 1 0-8Zm0 10v16M11 32q7-4 14 0M8 14q10-6 20 0" fill="none" stroke="#C9A84C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
-        <span class="logo-prestige">PRESTIGE</span>
-        <span class="logo-charter">CHARTER</span>
+        <span class="logo-text"><span class="logo-prestige">PRESTIGE</span> <span class="logo-charter">CHARTER</span></span>
       </a>
-      <p class="footer-tagline" data-fr="L'excellence nautique sur la Côte d'Azur" data-en="Nautical excellence on the French Riviera">
-        L'excellence nautique sur la Côte d'Azur
-      </p>
+      <nav class="nav-desktop" aria-label="Navigation principale">
+        <a href="index.html" data-fr="Accueil" data-en="Home">Accueil</a>
+        <a href="yacht.html" data-fr="Le Yacht" data-en="The Yacht">Le Yacht</a>
+        <a href="experiences.html" class="active" data-fr="Expériences" data-en="Experiences">Expériences</a>
+        <a href="histoire.html" data-fr="Notre Histoire" data-en="Our Story">Notre Histoire</a>
+        <a href="yachtclub.html" data-fr="Yacht Club" data-en="Yacht Club">Yacht Club</a>
+        <a href="tarifs.html" data-fr="Tarifs" data-en="Pricing">Tarifs</a>
+        <a href="reservation.html" data-fr="Réservation" data-en="Booking">Réservation</a>
+        <a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a>
+      </nav>
+      <button id="lang-toggle" class="btn-lang" aria-label="Switch language">EN</button>
+      <button id="burger" class="burger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
-    <div class="footer-col">
-      <h4 data-fr="Navigation" data-en="Navigation">Navigation</h4>
-      <ul>
-        <li><a href="index.html" data-fr="Accueil" data-en="Home">Accueil</a></li>
-        <li><a href="yacht.html" data-fr="Le Yacht" data-en="The Yacht">Le Yacht</a></li>
-        <li><a href="experiences.html" data-fr="Expériences" data-en="Experiences">Expériences</a></li>
-        <li><a href="tarifs.html" data-fr="Tarifs" data-en="Rates">Tarifs</a></li>
-        <li><a href="histoire.html" data-fr="Notre Histoire" data-en="Our Story">Notre Histoire</a></li>
-        <li><a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4 data-fr="Contact" data-en="Contact">Contact</h4>
-      <ul>
-        <li><a href="tel:+33652192414">06 52 19 24 14</a></li>
-        <li><a href="mailto:prestigecharter06@gmail.com">prestigecharter06@gmail.com</a></li>
-        <li><a href="https://wa.me/33652192414" target="_blank" rel="noopener">WhatsApp</a></li>
-        <li><a href="https://instagram.com/prestigecharter06" target="_blank" rel="noopener">@prestigecharter06</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4 data-fr="Informations" data-en="Information">Informations</h4>
-      <ul>
-        <li><a href="cgv.html" data-fr="CGV" data-en="Terms &amp; Conditions">CGV</a></li>
-        <li><a href="mentionslegales.html" data-fr="Mentions légales" data-en="Legal Notice">Mentions légales</a></li>
-        <li><a href="reservation.html" data-fr="Réserver" data-en="Book">Réserver</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <p data-fr="© 2025 Prestige Charter AT — SAS Prestige Charter AT / Prestige Charter Operations Ltd (Malte)" data-en="© 2025 Prestige Charter AT — SAS Prestige Charter AT / Prestige Charter Operations Ltd (Malta)">
-      © 2025 Prestige Charter AT — SAS Prestige Charter AT / Prestige Charter Operations Ltd (Malte)
-    </p>
-  </div>
-</footer>
+  </header>
 
-<script src="js/main.js"></script>
+  <!-- MOBILE NAV -->
+  <nav id="mobile-nav" class="mobile-nav" aria-label="Navigation mobile">
+    <a href="index.html" data-fr="Accueil" data-en="Home">Accueil</a>
+    <a href="yacht.html" data-fr="Le Yacht" data-en="The Yacht">Le Yacht</a>
+    <a href="experiences.html" data-fr="Expériences" data-en="Experiences">Expériences</a>
+    <a href="histoire.html" data-fr="Notre Histoire" data-en="Our Story">Notre Histoire</a>
+    <a href="yachtclub.html" data-fr="Yacht Club" data-en="Yacht Club">Yacht Club</a>
+    <a href="tarifs.html" data-fr="Tarifs" data-en="Pricing">Tarifs</a>
+    <a href="reservation.html" data-fr="Réservation" data-en="Booking">Réservation</a>
+    <a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a>
+    <button id="lang-toggle-mobile" class="btn-lang mt-24" aria-label="Switch language">EN</button>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero" style="background-image:url('images/hero.jpg')">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <span class="overline" data-fr="Expériences" data-en="Experiences">Expériences</span>
+      <h1 data-fr="Trois façons de vivre la mer" data-en="Three ways to experience the sea">Trois façons de vivre la mer</h1>
+      <p class="hero-sub" data-fr="Chaque sortie est une parenthèse d'exception, taillée sur mesure." data-en="Every outing is an exceptional escape, tailored just for you.">Chaque sortie est une parenthèse d'exception, taillée sur mesure.</p>
+    </div>
+  </section>
+
+  <main>
+
+    <!-- SUNSET EXPERIENCE -->
+    <section class="section" id="sunset">
+      <div class="container">
+        <div class="split reveal">
+          <div class="split-img">
+            <img src="images/yacht-3.webp" alt="Sunset Experience - Navigation au coucher du soleil sur la Côte d'Azur" loading="lazy">
+          </div>
+          <div class="split-text">
+            <span class="overline" data-fr="Offre 1" data-en="Offer 1">Offre 1</span>
+            <h2 data-fr="Sunset Experience" data-en="Sunset Experience">Sunset Experience</h2>
+            <p class="experience-tagline" data-fr="Quand le soleil plonge dans la Méditerranée, le temps s'arrête." data-en="When the sun dips into the Mediterranean, time stands still.">Quand le soleil plonge dans la Méditerranée, le temps s'arrête.</p>
+            <p data-fr="Embarquez à bord de l'Artemis pour trois heures de navigation au crépuscule. Les falaises dorées de la Côte d'Azur, les reflets cuivrés sur l'eau, le silence ponctué par le clapotis des vagues. Monaco, Èze-sur-Mer, Villefranche — le skipper compose votre itinéraire selon vos envies et la météo. Profitez du paddle, du SeaBob et du snorkeling dans les criques secrètes avant que la nuit ne dessine ses premières étoiles." data-en="Step aboard the Artemis for three hours of twilight navigation. The golden cliffs of the Côte d'Azur, copper reflections on the water, silence punctuated by the lapping of waves. Monaco, Èze-sur-Mer, Villefranche — the skipper crafts your itinerary according to your wishes and the weather. Enjoy paddle, SeaBob and snorkeling in hidden coves before the night draws its first stars.">Embarquez à bord de l'Artemis pour trois heures de navigation au crépuscule. Les falaises dorées de la Côte d'Azur, les reflets cuivrés sur l'eau, le silence ponctué par le clapotis des vagues. Monaco, Èze-sur-Mer, Villefranche — le skipper compose votre itinéraire selon vos envies et la météo. Profitez du paddle, du SeaBob et du snorkeling dans les criques secrètes avant que la nuit ne dessine ses premières étoiles.</p>
+
+            <div class="experience-details">
+              <div class="exp-detail">
+                <strong data-fr="Durée" data-en="Duration">Durée</strong>
+                <span data-fr="3h (18h–21h)" data-en="3h (6pm–9pm)">3h (18h–21h)</span>
+              </div>
+              <div class="exp-detail">
+                <strong data-fr="Tarif" data-en="Price">Tarif</strong>
+                <span class="text-gold">1 300 € <small>TTC</small></span>
+              </div>
+              <div class="exp-detail">
+                <strong data-fr="Capacité" data-en="Capacity">Capacité</strong>
+                <span data-fr="11 passagers max + skipper" data-en="11 guests max + skipper">11 passagers max + skipper</span>
+              </div>
+            </div>
+
+            <div class="experience-includes">
+              <h4 data-fr="Inclus" data-en="Included">Inclus</h4>
+              <ul>
+                <li data-fr="Skipper professionnel" data-en="Professional skipper">Skipper professionnel</li>
+                <li data-fr="Paddle" data-en="Paddle">Paddle</li>
+                <li data-fr="SeaBob" data-en="SeaBob">SeaBob</li>
+                <li data-fr="Kit snorkeling" data-en="Snorkeling kit">Kit snorkeling</li>
+                <li data-fr="Son Bluetooth premium" data-en="Premium Bluetooth sound">Son Bluetooth premium</li>
+                <li data-fr="Assurance RC" data-en="Liability insurance">Assurance RC</li>
+              </ul>
+            </div>
+
+            <div class="experience-fuel">
+              <svg viewBox="0 0 24 24" width="18" height="18"><path d="M3 22V6a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16M15 10h2a2 2 0 0 1 2 2v4a2 2 0 0 0 2 2M7 10h4" fill="none" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <p data-fr="⛽ Carburant NON INCLUS — estimation ~100–150 €, facturé au réel." data-en="⛽ Fuel NOT INCLUDED — estimated ~€100–150, charged at cost.">⛽ Carburant NON INCLUS — estimation ~100–150 €, facturé au réel.</p>
+            </div>
+
+            <a href="reservation.html" class="btn btn-gold mt-24" data-fr="Réserver cette expérience" data-en="Book this experience">Réserver cette expérience</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- JOURNÉE EN MER -->
+    <section class="section section-dark" id="journee">
+      <div class="container">
+        <div class="split split-reverse reveal">
+          <div class="split-img">
+            <img src="images/hero.jpg" alt="Journée en Mer - Navigation complète sur la Côte d'Azur" loading="lazy">
+          </div>
+          <div class="split-text">
+            <span class="overline" data-fr="Offre 2" data-en="Offer 2">Offre 2</span>
+            <h2 data-fr="Journée en Mer" data-en="Full Day at Sea">Journée en Mer</h2>
+            <p class="experience-tagline" data-fr="Huit heures d'évasion totale. La Méditerranée vous appartient." data-en="Eight hours of total escape. The Mediterranean is yours.">Huit heures d'évasion totale. La Méditerranée vous appartient.</p>
+            <p data-fr="Une journée entière à bord de l'Artemis, c'est la promesse d'un voyage hors du temps. Au départ de Saint-Jean-Cap-Ferrat, voguez vers Beaulieu-sur-Mer, les eaux cristallines d'Antibes ou les célèbres Îles de Lérins. Pour les plus aventuriers, cap sur Saint-Tropez pour une journée légendaire. Le skipper vous guide à travers les plus belles escales de la Riviera. Baignade dans des criques inaccessibles par la terre, session SeaBob en eaux turquoise, déjeuner face au large — chaque instant est un souvenir éternel." data-en="A full day aboard the Artemis is a journey beyond time. Departing from Saint-Jean-Cap-Ferrat, sail to Beaulieu-sur-Mer, the crystal-clear waters of Antibes or the famous Lérins Islands. For the more adventurous, set course for Saint-Tropez for a legendary day. The skipper guides you through the Riviera's most beautiful stops. Swim in coves inaccessible by land, SeaBob session in turquoise waters, lunch facing the open sea — every moment becomes an eternal memory.">Une journée entière à bord de l'Artemis, c'est la promesse d'un voyage hors du temps. Au départ de Saint-Jean-Cap-Ferrat, voguez vers Beaulieu-sur-Mer, les eaux cristallines d'Antibes ou les célèbres Îles de Lérins. Pour les plus aventuriers, cap sur Saint-Tropez pour une journée légendaire. Le skipper vous guide à travers les plus belles escales de la Riviera. Baignade dans des criques inaccessibles par la terre, session SeaBob en eaux turquoise, déjeuner face au large — chaque instant est un souvenir éternel.</p>
+
+            <div class="experience-details">
+              <div class="exp-detail">
+                <strong data-fr="Durée" data-en="Duration">Durée</strong>
+                <span data-fr="8h (9h–17h)" data-en="8h (9am–5pm)">8h (9h–17h)</span>
+              </div>
+              <div class="exp-detail">
+                <strong data-fr="Tarif" data-en="Price">Tarif</strong>
+                <span class="text-gold">2 700 € <small>TTC</small></span>
+              </div>
+              <div class="exp-detail">
+                <strong data-fr="Capacité" data-en="Capacity">Capacité</strong>
+                <span data-fr="11 passagers max + skipper" data-en="11 guests max + skipper">11 passagers max + skipper</span>
+              </div>
+            </div>
+
+            <div class="experience-includes">
+              <h4 data-fr="Inclus" data-en="Included">Inclus</h4>
+              <ul>
+                <li data-fr="Skipper professionnel" data-en="Professional skipper">Skipper professionnel</li>
+                <li data-fr="Paddle" data-en="Paddle">Paddle</li>
+                <li data-fr="SeaBob" data-en="SeaBob">SeaBob</li>
+                <li data-fr="Kit snorkeling" data-en="Snorkeling kit">Kit snorkeling</li>
+                <li data-fr="Son Bluetooth premium" data-en="Premium Bluetooth sound">Son Bluetooth premium</li>
+                <li data-fr="Assurance RC" data-en="Liability insurance">Assurance RC</li>
+              </ul>
+            </div>
+
+            <div class="experience-fuel">
+              <svg viewBox="0 0 24 24" width="18" height="18"><path d="M3 22V6a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16M15 10h2a2 2 0 0 1 2 2v4a2 2 0 0 0 2 2M7 10h4" fill="none" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <p data-fr="⛽ Carburant NON INCLUS — estimation ~200–350 €, facturé au réel. Saint-Tropez A/R : ~400–600 € supplémentaires." data-en="⛽ Fuel NOT INCLUDED — estimated ~€200–350, charged at cost. Saint-Tropez return: ~€400–600 additional.">⛽ Carburant NON INCLUS — estimation ~200–350 €, facturé au réel. Saint-Tropez A/R : ~400–600 € supplémentaires.</p>
+            </div>
+
+            <a href="reservation.html" class="btn btn-gold mt-24" data-fr="Réserver cette expérience" data-en="Book this experience">Réserver cette expérience</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PÊCHE DE NUIT -->
+    <section class="section" id="peche">
+      <div class="container">
+        <div class="split reveal">
+          <div class="split-img">
+            <img src="images/yacht-2.webp" alt="Pêche de Nuit - Expérience nocturne exclusive en Méditerranée" loading="lazy">
+          </div>
+          <div class="split-text">
+            <span class="overline" data-fr="Offre 3" data-en="Offer 3">Offre 3</span>
+            <h2 data-fr="Pêche de Nuit" data-en="Night Fishing">Pêche de Nuit</h2>
+            <p class="experience-tagline" data-fr="Quand la Méditerranée dort, les plus belles prises s'éveillent." data-en="When the Mediterranean sleeps, the finest catches awaken.">Quand la Méditerranée dort, les plus belles prises s'éveillent.</p>
+            <p data-fr="Une expérience réservée aux initiés. De 23h à 5h, l'Artemis se transforme en vaisseau de pêche au large. Équipement professionnel complet fourni, le skipper partage son expertise héritée de trois générations de pêcheurs bretons. Sous les étoiles, loin des lumières du rivage, traquez les poissons nocturnes dans un silence presque sacré. Un apéritif est servi à bord pour accompagner cette nuit hors du commun. L'aube se lève sur vos prises et sur des souvenirs ineffaçables." data-en="An experience reserved for the initiated. From 11pm to 5am, the Artemis transforms into an offshore fishing vessel. Full professional equipment provided, the skipper shares expertise inherited from three generations of Breton fishermen. Under the stars, far from the shore lights, track nocturnal fish in an almost sacred silence. An aperitif is served on board to accompany this extraordinary night. Dawn rises on your catches and on unforgettable memories.">Une expérience réservée aux initiés. De 23h à 5h, l'Artemis se transforme en vaisseau de pêche au large. Équipement professionnel complet fourni, le skipper partage son expertise héritée de trois générations de pêcheurs bretons. Sous les étoiles, loin des lumières du rivage, traquez les poissons nocturnes dans un silence presque sacré. Un apéritif est servi à bord pour accompagner cette nuit hors du commun. L'aube se lève sur vos prises et sur des souvenirs ineffaçables.</p>
+
+            <div class="experience-details">
+              <div class="exp-detail">
+                <strong data-fr="Durée" data-en="Duration">Durée</strong>
+                <span data-fr="6h (23h–5h)" data-en="6h (11pm–5am)">6h (23h–5h)</span>
+              </div>
+              <div class="exp-detail">
+                <strong data-fr="Tarif" data-en="Price">Tarif</strong>
+                <span class="text-gold">2 600 € <small>TTC</small></span>
+              </div>
+              <div class="exp-detail">
+                <strong data-fr="Capacité" data-en="Capacity">Capacité</strong>
+                <span data-fr="11 passagers max + skipper" data-en="11 guests max + skipper">11 passagers max + skipper</span>
+              </div>
+            </div>
+
+            <div class="experience-includes">
+              <h4 data-fr="Inclus" data-en="Included">Inclus</h4>
+              <ul>
+                <li data-fr="Skipper professionnel" data-en="Professional skipper">Skipper professionnel</li>
+                <li data-fr="Équipement de pêche complet" data-en="Full fishing equipment">Équipement de pêche complet</li>
+                <li data-fr="Apéritif à bord" data-en="Onboard aperitif">Apéritif à bord</li>
+                <li data-fr="Son Bluetooth premium" data-en="Premium Bluetooth sound">Son Bluetooth premium</li>
+                <li data-fr="Assurance RC" data-en="Liability insurance">Assurance RC</li>
+              </ul>
+            </div>
+
+            <div class="experience-fuel">
+              <svg viewBox="0 0 24 24" width="18" height="18"><path d="M3 22V6a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16M15 10h2a2 2 0 0 1 2 2v4a2 2 0 0 0 2 2M7 10h4" fill="none" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <p data-fr="⛽ Carburant NON INCLUS — facturé au réel." data-en="⛽ Fuel NOT INCLUDED — charged at cost.">⛽ Carburant NON INCLUS — facturé au réel.</p>
+            </div>
+
+            <a href="reservation.html" class="btn btn-gold mt-24" data-fr="Réserver cette expérience" data-en="Book this experience">Réserver cette expérience</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OPTIONS EXTRAS -->
+    <section class="section section-dark" id="extras">
+      <div class="container text-center">
+        <span class="overline reveal" data-fr="Sur mesure" data-en="Bespoke">Sur mesure</span>
+        <h2 class="reveal" data-fr="Options extras" data-en="Extra options">Options extras</h2>
+        <p class="section-desc reveal" data-fr="Sublimez votre expérience avec nos services additionnels, disponibles sur toutes nos offres." data-en="Elevate your experience with our additional services, available on all offers.">Sublimez votre expérience avec nos services additionnels, disponibles sur toutes nos offres.</p>
+
+        <div class="cards-3 mt-48">
+          <div class="card reveal">
+            <div class="card-body text-center">
+              <svg viewBox="0 0 64 64" width="48" height="48" class="loisir-icon"><path d="M20 44V24a4 4 0 0 1 4-4h16a4 4 0 0 1 4 4v20M28 20v-6a4 4 0 0 1 8 0v6M24 32h16M24 38h10" fill="none" stroke="#C9A84C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <h3 data-fr="Chef privé à bord" data-en="Private chef on board">Chef privé à bord</h3>
+              <p class="text-gold" style="font-size:1.5rem;font-family:var(--font-heading);">500 €</p>
+              <p data-fr="Un chef prépare un menu d'exception à bord, adapté à vos goûts." data-en="A chef prepares an exceptional menu on board, tailored to your tastes.">Un chef prépare un menu d'exception à bord, adapté à vos goûts.</p>
+            </div>
+          </div>
+          <div class="card reveal">
+            <div class="card-body text-center">
+              <svg viewBox="0 0 64 64" width="48" height="48" class="loisir-icon"><path d="M32 14v20M28 14h8M22 48c0-6 4-10 10-14 6 4 10 8 10 14" fill="none" stroke="#C9A84C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="32" cy="42" r="3" fill="none" stroke="#C9A84C" stroke-width="2"/></svg>
+              <h3 data-fr="Dom Pérignon" data-en="Dom Pérignon">Dom Pérignon</h3>
+              <p class="text-gold" style="font-size:1.5rem;font-family:var(--font-heading);">350 €</p>
+              <p data-fr="Une bouteille de Dom Pérignon servie à bord pour célébrer l'instant." data-en="A bottle of Dom Pérignon served on board to celebrate the moment.">Une bouteille de Dom Pérignon servie à bord pour célébrer l'instant.</p>
+            </div>
+          </div>
+          <div class="card reveal">
+            <div class="card-body text-center">
+              <svg viewBox="0 0 64 64" width="48" height="48" class="loisir-icon"><rect x="18" y="20" width="28" height="20" rx="3" fill="none" stroke="#C9A84C" stroke-width="2"/><circle cx="32" cy="30" r="6" fill="none" stroke="#C9A84C" stroke-width="2"/><path d="M22 44v4M42 44v4" fill="none" stroke="#C9A84C" stroke-width="2" stroke-linecap="round"/></svg>
+              <h3 data-fr="Photographe / Vidéaste" data-en="Photographer / Videographer">Photographe / Vidéaste</h3>
+              <p class="text-gold" style="font-size:1.5rem;font-family:var(--font-heading);">800 €</p>
+              <p data-fr="Un professionnel capture chaque instant pour des souvenirs d'exception." data-en="A professional captures every moment for exceptional memories.">Un professionnel capture chaque instant pour des souvenirs d'exception.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ITINÉRAIRES -->
+    <section class="section" id="itineraires">
+      <div class="container text-center">
+        <span class="overline reveal" data-fr="Destinations" data-en="Destinations">Destinations</span>
+        <h2 class="reveal" data-fr="Vos escales sur la Riviera" data-en="Your stops on the Riviera">Vos escales sur la Riviera</h2>
+        <p class="section-desc reveal" data-fr="Au départ de Saint-Jean-Cap-Ferrat, le skipper compose votre itinéraire selon vos envies et la météo. Voici les destinations accessibles :" data-en="Departing from Saint-Jean-Cap-Ferrat, the skipper crafts your itinerary according to your wishes and the weather. Here are the accessible destinations:">Au départ de Saint-Jean-Cap-Ferrat, le skipper compose votre itinéraire selon vos envies et la météo. Voici les destinations accessibles :</p>
+        <div class="destinations-grid mt-48 reveal">
+          <div class="dest-item">
+            <span class="dest-name">Monaco</span>
+          </div>
+          <div class="dest-item">
+            <span class="dest-name">Èze-sur-Mer</span>
+          </div>
+          <div class="dest-item">
+            <span class="dest-name">Beaulieu-sur-Mer</span>
+          </div>
+          <div class="dest-item">
+            <span class="dest-name">Villefranche-sur-Mer</span>
+          </div>
+          <div class="dest-item">
+            <span class="dest-name">Antibes</span>
+          </div>
+          <div class="dest-item">
+            <span class="dest-name">Cap d'Antibes</span>
+          </div>
+          <div class="dest-item">
+            <span class="dest-name" data-fr="Îles de Lérins" data-en="Lérins Islands">Îles de Lérins</span>
+          </div>
+          <div class="dest-item">
+            <span class="dest-name" data-fr="Saint-Tropez (journée)" data-en="Saint-Tropez (full day)">Saint-Tropez (journée)</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="section section-cta" style="background-image:url('images/yacht-3.webp')">
+      <div class="hero-overlay"></div>
+      <div class="container text-center" style="position:relative;z-index:2;">
+        <h2 class="reveal" data-fr="Quelle sera votre expérience ?" data-en="What will your experience be?">Quelle sera votre expérience ?</h2>
+        <p class="section-desc reveal" data-fr="Contactez-nous pour personnaliser votre sortie ou réservez directement en ligne." data-en="Contact us to personalise your outing or book directly online.">Contactez-nous pour personnaliser votre sortie ou réservez directement en ligne.</p>
+        <div class="cta-buttons reveal mt-24">
+          <a href="reservation.html" class="btn btn-gold" data-fr="Réserver" data-en="Book now">Réserver</a>
+          <a href="https://wa.me/33652192414" target="_blank" rel="noopener" class="btn btn-outline">WhatsApp</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="index.html" class="logo footer-logo" aria-label="Prestige Charter">
+            <svg class="logo-anchor" viewBox="0 0 36 36" width="24" height="24" aria-hidden="true">
+              <path d="M18 4a4 4 0 1 1 0 8 4 4 0 0 1 0-8Zm0 10v16M11 32q7-4 14 0M8 14q10-6 20 0" fill="none" stroke="#C9A84C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span class="logo-text"><span class="logo-prestige">PRESTIGE</span> <span class="logo-charter">CHARTER</span></span>
+          </a>
+          <p class="footer-address" data-fr="Saint-Jean-Cap-Ferrat · Côte d'Azur" data-en="Saint-Jean-Cap-Ferrat · French Riviera">Saint-Jean-Cap-Ferrat · Côte d'Azur</p>
+        </div>
+        <div class="footer-col">
+          <h4 data-fr="Navigation" data-en="Navigation">Navigation</h4>
+          <a href="yacht.html" data-fr="Le Yacht" data-en="The Yacht">Le Yacht</a>
+          <a href="experiences.html" data-fr="Expériences" data-en="Experiences">Expériences</a>
+          <a href="histoire.html" data-fr="Notre Histoire" data-en="Our Story">Notre Histoire</a>
+          <a href="tarifs.html" data-fr="Tarifs" data-en="Pricing">Tarifs</a>
+        </div>
+        <div class="footer-col">
+          <h4 data-fr="Contact" data-en="Contact">Contact</h4>
+          <a href="tel:+33652192414">06 52 19 24 14</a>
+          <a href="mailto:prestigecharter06@gmail.com">prestigecharter06@gmail.com</a>
+          <a href="https://wa.me/33652192414" target="_blank" rel="noopener">WhatsApp</a>
+          <a href="https://www.instagram.com/prestigecharter06" target="_blank" rel="noopener">Instagram</a>
+        </div>
+        <div class="footer-col">
+          <h4 data-fr="Légal" data-en="Legal">Légal</h4>
+          <a href="cgv.html" data-fr="CGV" data-en="T&Cs">CGV</a>
+          <a href="mentionslegales.html" data-fr="Mentions légales" data-en="Legal notices">Mentions légales</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Prestige Charter AT. <span data-fr="Tous droits réservés." data-en="All rights reserved.">Tous droits réservés.</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- LIGHTBOX -->
+  <div id="lightbox" class="lightbox" aria-hidden="true">
+    <button id="lb-close" class="lb-close" aria-label="Fermer">&times;</button>
+    <button id="lb-prev" class="lb-arrow lb-prev-arrow" aria-label="Précédent">&#10094;</button>
+    <img id="lb-img" src="" alt="">
+    <button id="lb-next" class="lb-arrow lb-next-arrow" aria-label="Suivant">&#10095;</button>
+    <span id="lb-counter" class="lb-counter"></span>
+  </div>
+
+  <script src="js/main.js"></script>
 </body>
 </html>
