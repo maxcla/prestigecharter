@@ -1,328 +1,258 @@
-/* ==========================================
-   PRESTIGE CHARTER AT — Main JavaScript
-   ========================================== */
+// js/main.js — Prestige Charter
 
-document.addEventListener('DOMContentLoaded', () => {
+(function () {
+  'use strict';
 
-  /* ------------------------------------------
-     PAGE TRANSITION
-  ------------------------------------------ */
-  const transition = document.getElementById('pageTransition');
-  if (transition) {
-    setTimeout(() => transition.classList.remove('active'), 400);
-    document.querySelectorAll('a[href]').forEach(link => {
-      if (link.hostname === location.hostname && !link.hash && !link.hasAttribute('target')) {
-        link.addEventListener('click', e => {
-          e.preventDefault();
-          const dest = link.href;
-          transition.classList.add('active');
-          setTimeout(() => window.location = dest, 400);
-        });
-      }
-    });
+  /* ========== PRELOADER ========== */
+  const preloader = document.getElementById('preloader');
+  function hidePreloader() {
+    if (!preloader) return;
+    preloader.classList.add('hidden');
+    setTimeout(() => preloader.remove(), 600);
   }
+  window.addEventListener('load', () => setTimeout(hidePreloader, 800));
+  setTimeout(hidePreloader, 2000); // fallback
 
-  /* ------------------------------------------
-     SCROLL PROGRESS BAR
-  ------------------------------------------ */
-  const progressBar = document.getElementById('scroll-progress');
-  if (progressBar) {
-    window.addEventListener('scroll', () => {
-      const scrollTop = window.scrollY;
-      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-      progressBar.style.width = progress + '%';
-    }, { passive: true });
-  }
-
-  /* ------------------------------------------
-     HEADER SCROLL (shrink + shadow)
-  ------------------------------------------ */
+  /* ========== HEADER SCROLL ========== */
   const header = document.getElementById('header');
-  if (header) {
-    let lastScroll = 0;
-    window.addEventListener('scroll', () => {
-      const currentScroll = window.scrollY;
-      if (currentScroll > 60) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
-      }
-      // Hide/show on scroll direction
-      if (currentScroll > lastScroll && currentScroll > 200) {
-        header.classList.add('header--hidden');
-      } else {
-        header.classList.remove('header--hidden');
-      }
-      lastScroll = currentScroll;
-    }, { passive: true });
+  let lastScroll = 0;
+  function onScroll() {
+    const y = window.scrollY;
+    if (header) {
+      header.classList.toggle('scrolled', y > 60);
+    }
+    lastScroll = y;
   }
+  window.addEventListener('scroll', onScroll, { passive: true });
 
-  /* ------------------------------------------
-     MOBILE MENU TOGGLE
-  ------------------------------------------ */
-  const menuToggle = document.getElementById('menuToggle');
-  const navLinks = document.getElementById('navLinks');
-  if (menuToggle && navLinks) {
-    menuToggle.addEventListener('click', () => {
-      menuToggle.classList.toggle('active');
-      navLinks.classList.toggle('active');
-      document.body.classList.toggle('nav-open');
-    });
-    // Close menu on link click
-    navLinks.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        menuToggle.classList.remove('active');
-        navLinks.classList.remove('active');
-        document.body.classList.remove('nav-open');
-      });
-    });
+  /* ========== MOBILE NAV ========== */
+  const burger = document.getElementById('burger');
+  const mobileNav = document.getElementById('mobile-nav');
+  const mobileLinks = mobileNav ? mobileNav.querySelectorAll('a') : [];
+
+  function toggleMobile() {
+    if (!mobileNav) return;
+    const open = mobileNav.classList.toggle('open');
+    burger && burger.classList.toggle('open', open);
+    document.body.style.overflow = open ? 'hidden' : '';
   }
+  burger && burger.addEventListener('click', toggleMobile);
+  mobileLinks.forEach(link => link.addEventListener('click', () => {
+    if (mobileNav.classList.contains('open')) toggleMobile();
+  }));
 
-  /* ------------------------------------------
-     LANGUAGE TOGGLE (FR / EN)
-  ------------------------------------------ */
-  const langToggle = document.getElementById('langToggle');
-  let currentLang = localStorage.getItem('pc-lang') || 'fr';
+  /* ========== LANGUAGE TOGGLE ========== */
+  const langBtn = document.getElementById('lang-toggle');
+  const langBtnMobile = document.getElementById('lang-toggle-mobile');
 
-  function applyLanguage(lang) {
-    currentLang = lang;
-    localStorage.setItem('pc-lang', lang);
-    if (langToggle) langToggle.textContent = lang === 'fr' ? 'EN' : 'FR';
-    document.querySelectorAll('[data-fr][data-en]').forEach(el => {
-      const text = lang === 'fr' ? el.getAttribute('data-fr') : el.getAttribute('data-en');
-      if (text) {
-        // Preserve child elements (like links inside paragraphs)
-        if (el.children.length === 0) {
-          el.textContent = text;
-        } else {
-          // Only update if it's a simple text swap
-          const firstText = el.childNodes[0];
-          if (firstText && firstText.nodeType === 3) {
-            firstText.textContent = text;
-          }
-        }
-      }
-    });
+  function setLang(lang) {
     document.documentElement.lang = lang;
-  }
-
-  // Apply saved language on load
-  if (currentLang !== 'fr') applyLanguage(currentLang);
-
-  if (langToggle) {
-    langToggle.addEventListener('click', () => {
-      applyLanguage(currentLang === 'fr' ? 'en' : 'fr');
+    localStorage.setItem('pc-lang', lang);
+    document.querySelectorAll('[data-fr]').forEach(el => {
+      el.textContent = lang === 'fr' ? el.getAttribute('data-fr') : el.getAttribute('data-en');
     });
+    document.querySelectorAll('[data-fr-html]').forEach(el => {
+      el.innerHTML = lang === 'fr' ? el.getAttribute('data-fr-html') : el.getAttribute('data-en-html');
+    });
+    [langBtn, langBtnMobile].forEach(b => { if (b) b.textContent = lang === 'fr' ? 'EN' : 'FR'; });
   }
 
-  /* ------------------------------------------
-     FADE-IN ON SCROLL (Intersection Observer)
-  ------------------------------------------ */
-  const fadeElements = document.querySelectorAll('.fade-in');
-  if (fadeElements.length > 0 && 'IntersectionObserver' in window) {
-    const fadeObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          fadeObserver.unobserve(entry.target);
+  function toggleLang() {
+    setLang(document.documentElement.lang === 'fr' ? 'en' : 'fr');
+  }
+  langBtn && langBtn.addEventListener('click', toggleLang);
+  langBtnMobile && langBtnMobile.addEventListener('click', toggleLang);
+
+  // Init lang
+  const savedLang = localStorage.getItem('pc-lang') || 'fr';
+  setLang(savedLang);
+
+  /* ========== SCROLL REVEAL ========== */
+  const revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const revealObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          revealObs.unobserve(e.target);
         }
       });
-    }, {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    });
-    fadeElements.forEach(el => fadeObserver.observe(el));
+    }, { threshold: 0.1 });
+    revealEls.forEach(el => revealObs.observe(el));
   } else {
-    // Fallback: show everything
-    fadeElements.forEach(el => el.classList.add('visible'));
+    revealEls.forEach(el => el.classList.add('visible'));
   }
 
-  /* ------------------------------------------
-     PARALLAX HERO (subtle)
-  ------------------------------------------ */
-  const heroSection = document.querySelector('.hero, .page-hero');
-  if (heroSection && window.innerWidth > 768) {
+  /* ========== PARALLAX HERO ========== */
+  const hero = document.querySelector('.hero');
+  if (hero) {
     window.addEventListener('scroll', () => {
-      const scroll = window.scrollY;
-      if (scroll < window.innerHeight) {
-        heroSection.style.setProperty('--parallax-y', (scroll * 0.3) + 'px');
+      const y = window.scrollY;
+      if (y < window.innerHeight) {
+        hero.style.setProperty('--parallax-y', (y * 0.3) + 'px');
       }
     }, { passive: true });
   }
 
-  /* ------------------------------------------
-     GALLERY LIGHTBOX (yacht.html)
-  ------------------------------------------ */
-  const galleryItems = document.querySelectorAll('.gallery-item img, .gallery-grid img');
-  if (galleryItems.length > 0) {
-    // Create lightbox
-    const lightbox = document.createElement('div');
-    lightbox.className = 'lightbox';
-    lightbox.innerHTML = `
-      <div class="lightbox__overlay"></div>
-      <div class="lightbox__content">
-        <button class="lightbox__close" aria-label="Fermer">&times;</button>
-        <button class="lightbox__prev" aria-label="Précédent">&#8249;</button>
-        <img class="lightbox__img" src="" alt="" />
-        <button class="lightbox__next" aria-label="Suivant">&#8250;</button>
-      </div>
-    `;
-    document.body.appendChild(lightbox);
+  /* ========== LIGHTBOX GALLERY ========== */
+  const lightbox = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lb-img');
+  const lbCounter = document.getElementById('lb-counter');
+  const lbClose = document.getElementById('lb-close');
+  const lbPrev = document.getElementById('lb-prev');
+  const lbNext = document.getElementById('lb-next');
+  let galleryItems = [];
+  let lbIndex = 0;
 
-    const lbImg = lightbox.querySelector('.lightbox__img');
-    const lbClose = lightbox.querySelector('.lightbox__close');
-    const lbOverlay = lightbox.querySelector('.lightbox__overlay');
-    const lbPrev = lightbox.querySelector('.lightbox__prev');
-    const lbNext = lightbox.querySelector('.lightbox__next');
-    let currentIndex = 0;
-    const images = Array.from(galleryItems);
+  function openLightbox(index) {
+    if (!lightbox || !galleryItems.length) return;
+    lbIndex = index;
+    updateLightbox();
+    lightbox.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
 
-    function openLightbox(index) {
-      currentIndex = index;
-      lbImg.src = images[currentIndex].src;
-      lbImg.alt = images[currentIndex].alt || '';
-      lightbox.classList.add('active');
-      document.body.style.overflow = 'hidden';
+  function closeLightbox() {
+    if (!lightbox) return;
+    lightbox.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  function updateLightbox() {
+    if (!lbImg) return;
+    lbImg.src = galleryItems[lbIndex].src;
+    lbImg.alt = galleryItems[lbIndex].alt || '';
+    if (lbCounter) lbCounter.textContent = (lbIndex + 1) + ' / ' + galleryItems.length;
+  }
+
+  function lbNavigate(dir) {
+    lbIndex = (lbIndex + dir + galleryItems.length) % galleryItems.length;
+    updateLightbox();
+  }
+
+  // Init gallery
+  document.querySelectorAll('.gallery-grid img, .gallery-item img').forEach((img, i) => {
+    galleryItems.push({ src: img.getAttribute('data-full') || img.src, alt: img.alt });
+    img.style.cursor = 'pointer';
+    img.addEventListener('click', () => openLightbox(i));
+  });
+
+  lbClose && lbClose.addEventListener('click', closeLightbox);
+  lbPrev && lbPrev.addEventListener('click', () => lbNavigate(-1));
+  lbNext && lbNext.addEventListener('click', () => lbNavigate(1));
+  lightbox && lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (!lightbox || !lightbox.classList.contains('open')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') lbNavigate(-1);
+    if (e.key === 'ArrowRight') lbNavigate(1);
+  });
+
+  /* ========== TIMELINE ANIMATION ========== */
+  const timelineLine = document.querySelector('.timeline-line-fill');
+  const timelineItems = document.querySelectorAll('.timeline-item');
+
+  if (timelineLine && timelineItems.length) {
+    const timelineSection = document.querySelector('.timeline');
+    window.addEventListener('scroll', () => {
+      if (!timelineSection) return;
+      const rect = timelineSection.getBoundingClientRect();
+      const sectionH = timelineSection.offsetHeight;
+      const visible = Math.min(Math.max(-rect.top / (sectionH - window.innerHeight), 0), 1);
+      timelineLine.style.height = (visible * 100) + '%';
+    }, { passive: true });
+
+    if ('IntersectionObserver' in window) {
+      const tObs = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.classList.add('visible');
+            tObs.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.2 });
+      timelineItems.forEach(el => tObs.observe(el));
     }
-
-    function closeLightbox() {
-      lightbox.classList.remove('active');
-      document.body.style.overflow = '';
-    }
-
-    function navigate(dir) {
-      currentIndex = (currentIndex + dir + images.length) % images.length;
-      lbImg.src = images[currentIndex].src;
-      lbImg.alt = images[currentIndex].alt || '';
-    }
-
-    images.forEach((img, i) => {
-      img.style.cursor = 'pointer';
-      img.addEventListener('click', () => openLightbox(i));
-    });
-
-    lbClose.addEventListener('click', closeLightbox);
-    lbOverlay.addEventListener('click', closeLightbox);
-    lbPrev.addEventListener('click', () => navigate(-1));
-    lbNext.addEventListener('click', () => navigate(1));
-
-    document.addEventListener('keydown', e => {
-      if (!lightbox.classList.contains('active')) return;
-      if (e.key === 'Escape') closeLightbox();
-      if (e.key === 'ArrowLeft') navigate(-1);
-      if (e.key === 'ArrowRight') navigate(1);
-    });
   }
 
-  /* ------------------------------------------
-     RESERVATION FORM — Date min (today)
-  ------------------------------------------ */
-  const dateInput = document.querySelector('input[type="date"]');
-  if (dateInput) {
-    const today = new Date().toISOString().split('T')[0];
-    dateInput.setAttribute('min', today);
+  /* ========== COUNT-UP ANIMATION ========== */
+  const counters = document.querySelectorAll('[data-count]');
+  if (counters.length && 'IntersectionObserver' in window) {
+    const cObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        const el = e.target;
+        const target = parseInt(el.getAttribute('data-count'), 10);
+        const suffix = el.getAttribute('data-suffix') || '';
+        const duration = 1500;
+        const start = performance.now();
+        function step(now) {
+          const progress = Math.min((now - start) / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          el.textContent = Math.round(target * eased) + suffix;
+          if (progress < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+        cObs.unobserve(el);
+      });
+    }, { threshold: 0.5 });
+    counters.forEach(el => cObs.observe(el));
   }
 
-  /* ------------------------------------------
-     RESERVATION FORM — Submission
-  ------------------------------------------ */
-  const form = document.getElementById('reservationForm');
-  if (form) {
-    form.addEventListener('submit', e => {
-      e.preventDefault();
-
-      // Collect data
-      const formData = new FormData(form);
-      const data = {};
-      formData.forEach((value, key) => data[key] = value);
-
-      // Build WhatsApp message
-      const msg = encodeURIComponent(
-        `✨ Nouvelle demande de réservation — Prestige Charter\n\n` +
-        `👤 Nom : ${data.name || '[non renseigné]'}\n` +
-        `📧 Email : ${data.email || '[non renseigné]'}\n` +
-        `📞 Téléphone : ${data.phone || '[non renseigné]'}\n` +
-        `📅 Date souhaitée : ${data.date || '[non renseignée]'}\n` +
-        `🛥️ Formule : ${data.experience || '[non renseignée]'}\n` +
-        `👥 Passagers : ${data.guests || '[non renseigné]'}\n` +
-        `💬 Message : ${data.message || 'Aucun'}`
-      );
-
-      // Redirect to WhatsApp
-      window.open(`https://wa.me/33652192414?text=${msg}`, '_blank');
-
-      // Show confirmation
-      const btn = form.querySelector('button[type="submit"]');
-      if (btn) {
-        const originalText = btn.textContent;
-        btn.textContent = currentLang === 'fr' ? '✓ Envoyé !' : '✓ Sent!';
-        btn.disabled = true;
-        setTimeout(() => {
-          btn.textContent = originalText;
-          btn.disabled = false;
-          form.reset();
-        }, 3000);
-      }
-    });
-  }
-
-  /* ------------------------------------------
-     CONTACT FORM — Mailto fallback
-  ------------------------------------------ */
-  const contactForm = document.getElementById('contactForm');
-  if (contactForm) {
-    contactForm.addEventListener('submit', e => {
-      e.preventDefault();
-      const formData = new FormData(contactForm);
-      const data = {};
-      formData.forEach((value, key) => data[key] = value);
-
-      const subject = encodeURIComponent('Contact via prestigecharter.fr');
-      const body = encodeURIComponent(
-        `Nom : ${data.name || ''}\n` +
-        `Email : ${data.email || ''}\n` +
-        `Téléphone : ${data.phone || ''}\n\n` +
-        `Message :\n${data.message || ''}`
-      );
-
-      window.location.href = `mailto:prestigecharter06@gmail.com?subject=${subject}&body=${body}`;
-
-      const btn = contactForm.querySelector('button[type="submit"]');
-      if (btn) {
-        const originalText = btn.textContent;
-        btn.textContent = currentLang === 'fr' ? '✓ Message prêt !' : '✓ Message ready!';
-        btn.disabled = true;
-        setTimeout(() => {
-          btn.textContent = originalText;
-          btn.disabled = false;
-        }, 3000);
-      }
-    });
-  }
-
-  /* ------------------------------------------
-     SMOOTH SCROLL for anchor links
-  ------------------------------------------ */
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', e => {
-      const target = document.querySelector(anchor.getAttribute('href'));
+  /* ========== SMOOTH SCROLL ========== */
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', (e) => {
+      const id = a.getAttribute('href').slice(1);
+      const target = document.getElementById(id);
       if (target) {
         e.preventDefault();
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        const offset = header ? header.offsetHeight : 0;
+        const top = target.getBoundingClientRect().top + window.scrollY - offset;
+        window.scrollTo({ top, behavior: 'smooth' });
       }
     });
   });
 
-  /* ------------------------------------------
-     PRICING CARDS HOVER (tarifs.html)
-  ------------------------------------------ */
-  const pricingCards = document.querySelectorAll('.pricing-card');
-  pricingCards.forEach(card => {
-    card.addEventListener('mouseenter', () => {
-      pricingCards.forEach(c => c.classList.remove('pricing-card--active'));
-      card.classList.add('pricing-card--active');
-    });
-  });
+  /* ========== RESERVATION FORM ========== */
+  const resoForm = document.getElementById('reso-form');
+  if (resoForm) {
+    const paxInput = resoForm.querySelector('[name="passengers"]');
+    if (paxInput) {
+      paxInput.addEventListener('change', () => {
+        if (parseInt(paxInput.value) > 11) paxInput.value = 11;
+        if (parseInt(paxInput.value) < 1) paxInput.value = 1;
+      });
+    }
 
-});
+    // WhatsApp button
+    const waBtn = document.getElementById('wa-send');
+    if (waBtn) {
+      waBtn.addEventListener('click', () => {
+        const name = resoForm.querySelector('[name="name"]')?.value || '';
+        const date = resoForm.querySelector('[name="date"]')?.value || '';
+        const offer = resoForm.querySelector('[name="offer"]')?.value || '';
+        const pax = resoForm.querySelector('[name="passengers"]')?.value || '';
+        const msg = resoForm.querySelector('[name="message"]')?.value || '';
+        const text = encodeURIComponent(
+          `Bonjour Prestige Charter,\n\nJe souhaite réserver :\n` +
+          `• Offre : ${offer}\n• Date : ${date}\n• Passagers : ${pax}\n• Nom : ${name}\n` +
+          (msg ? `• Message : ${msg}\n` : '') +
+          `\nMerci !`
+        );
+        window.open('https://wa.me/33652192414?text=' + text, '_blank');
+      });
+    }
+  }
+
+  /* ========== CONTACT FORM (Formspree) ========== */
+  const contactForm = document.getElementById('contact-form');
+  if (contactForm) {
+    contactForm.addEventListener('submit', function (e) {
+      const btn = contactForm.querySelector('button[type="submit"]');
+      if (btn) btn.textContent = 'Envoi…';
+    });
+  }
+
+})();
