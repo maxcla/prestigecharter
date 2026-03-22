@@ -1,450 +1,376 @@
+<!-- tarifs.html -->
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tarifs — Prestige Charter AT</title>
-  <meta name="description" content="Tarifs location yacht luxe Côte d'Azur. Sunset 1300€, Journée 2700€, Pêche de Nuit 2600€. Jusqu'à 11 passagers. Saint-Jean-Cap-Ferrat." />
-  <link rel="canonical" href="https://www.prestigecharter.fr/tarifs.html" />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
-
-  <link rel="stylesheet" href="css/style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tarifs — Charter de Luxe Côte d'Azur | Prestige Charter</title>
+  <meta name="description" content="Découvrez nos tarifs : Sunset Experience 1 300€, Journée en Mer 2 700€, Pêche de Nuit 2 600€. Yacht privatisé jusqu'à 11 passagers. Carburant non inclus.">
+  <meta property="og:title" content="Tarifs — Prestige Charter">
+  <meta property="og:description" content="Trois expériences exclusives à bord de l'Artemis. Tarifs transparents, prestations tout inclus.">
+  <meta property="og:image" content="images/yacht-1.jpg">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><path d='M16 2 L16 28 M10 26 Q16 22 22 26 M8 10 Q16 4 24 10 L16 8Z' fill='none' stroke='%23C9A84C' stroke-width='2'/></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<div id="scroll-progress"></div>
-<div id="pageTransition" class="page-transition active"></div>
-
-<!-- WhatsApp Flottant -->
-<a href="https://wa.me/33652192414" target="_blank" rel="noopener" class="whatsapp-float" aria-label="WhatsApp">
-  <svg viewBox="0 0 24 24" fill="currentColor" width="26" height="26">
-    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-    <path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.549 4.107 1.51 5.833L.057 23.215a.75.75 0 0 0 .916.916l5.382-1.453A11.954 11.954 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.73 9.73 0 0 1-4.964-1.358l-.356-.212-3.695.998.997-3.696-.211-.355A9.718 9.718 0 0 1 2.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/>
-  </svg>
-</a>
-
-<!-- ═══ NAV ═══ -->
-<nav>
-  <a href="index.html" class="logo">
-    <svg class="logo-anchor" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-         stroke-width="1.5" width="18" height="18" aria-hidden="true">
-      <circle cx="12" cy="5" r="2"/>
-      <line x1="12" y1="7" x2="12" y2="11"/>
-      <path d="M5 11h14M5 11C5 16 8 19 12 20M19 11C19 16 16 19 12 20"/>
-      <line x1="9" y1="20" x2="12" y2="22"/>
-      <line x1="15" y1="20" x2="12" y2="22"/>
+  <!-- PRELOADER -->
+  <div id="preloader" aria-hidden="true">
+    <svg class="preloader-anchor" viewBox="0 0 64 64" width="64" height="64">
+      <path d="M32 8a6 6 0 1 1 0 12 6 6 0 0 1 0-12Zm0 16v28M20 56q12-6 24 0M14 28q18-10 36 0" fill="none" stroke="#C9A84C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>
-    <span class="logo-prestige">PRESTIGE</span>
-    <span class="logo-charter">CHARTER</span>
-  </a>
-
-  <ul class="nav-links" id="navLinks">
-    <li><a href="index.html" data-fr="Accueil" data-en="Home">Accueil</a></li>
-    <li><a href="yacht.html" data-fr="Le Yacht" data-en="The Yacht">Le Yacht</a></li>
-    <li><a href="experiences.html" data-fr="Expériences" data-en="Experiences">Expériences</a></li>
-    <li><a href="tarifs.html" class="active" data-fr="Tarifs" data-en="Rates">Tarifs</a></li>
-    <li><a href="histoire.html" data-fr="Notre Histoire" data-en="Our Story">Notre Histoire</a></li>
-    <li><a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a></li>
-    <li><a href="reservation.html" class="nav-cta" data-fr="Réserver" data-en="Book">Réserver</a></li>
-  </ul>
-
-  <button class="lang-btn" id="langBtn" aria-label="Changer de langue">EN</button>
-  <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
-
-<!-- ═══ PAGE HERO ═══ -->
-<section class="page-hero page-hero--short">
-  <div class="page-hero-bg">
-    <img src="images/yacht-1.jpg" alt="Tarifs Prestige Charter" loading="lazy" />
   </div>
-  <div class="page-hero-overlay"></div>
-  <div class="page-hero-content fade-in">
-    <span class="eyebrow" data-fr="Nos Tarifs" data-en="Our Rates">Nos Tarifs</span>
-    <h1 data-fr="Transparence & Excellence" data-en="Transparency & Excellence">Transparence & Excellence</h1>
-    <p data-fr="Des tarifs uniques, toute l'année. Sans surprise." data-en="Fixed rates, all year round. No hidden fees.">
-      Des tarifs uniques, toute l'année. Sans surprise.
-    </p>
-  </div>
-</section>
 
-<!-- ═══ CARBURANT NOTICE ═══ -->
-<div class="carburant-notice">
-  <div class="container">
-    <p>
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 22V8l9-6 9 6v14H3z"/><path d="M9 22V12h6v10"/></svg>
-      <span data-fr="⛽ Le carburant n'est pas inclus dans les tarifs — facturé au réel selon l'itinéraire choisi. Le skipper vous informera de l'estimation avant le départ." data-en="⛽ Fuel is not included in the rates — charged at cost according to the chosen itinerary. The skipper will inform you of the estimate before departure.">
-        ⛽ Le carburant n'est pas inclus dans les tarifs — facturé au réel selon l'itinéraire choisi. Le skipper vous informera de l'estimation avant le départ.
-      </span>
-    </p>
-  </div>
-</div>
-
-<!-- ═══ CARTES TARIFS ═══ -->
-<section class="section-tarifs">
-  <div class="container">
-    <div class="tarifs-grid">
-
-      <!-- SUNSET -->
-      <div class="tarif-card fade-in">
-        <div class="tarif-card-header">
-          <span class="tarif-icon">🌅</span>
-          <span class="tarif-label" data-fr="Offre 1" data-en="Package 1">Offre 1</span>
-          <h3 data-fr="Sunset Experience" data-en="Sunset Experience">Sunset Experience</h3>
-          <div class="tarif-price">
-            <span class="price-amount">1 300 €</span>
-            <span class="price-ttc">TTC</span>
-          </div>
-          <div class="tarif-duree">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            <span data-fr="3h · 18h–21h" data-en="3h · 6pm–9pm">3h · 18h–21h</span>
-          </div>
-        </div>
-        <div class="tarif-card-body">
-          <ul class="tarif-inclus">
-            <li class="inclus">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              <span data-fr="Skipper professionnel" data-en="Professional skipper">Skipper professionnel</span>
-            </li>
-            <li class="inclus">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              <span data-fr="Paddle & SeaBob" data-en="Paddle & SeaBob">Paddle & SeaBob</span>
-            </li>
-            <li class="inclus">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              <span data-fr="Kit snorkeling" data-en="Snorkeling kit">Kit snorkeling</span>
-            </li>
-            <li class="inclus">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              <span data-fr="Son Bluetooth premium" data-en="Premium Bluetooth sound">Son Bluetooth premium</span>
-            </li>
-            <li class="inclus">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              <span data-fr="Assurance RC" data-en="Liability insurance">Assurance RC</span>
-            </li>
-            <li class="non-inclus">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-              <span data-fr="Carburant (~100–150 €)" data-en="Fuel (~€100–150)">Carburant (~100–150 €)</span>
-            </li>
-          </ul>
-          <div class="tarif-capacite" data-fr="👥 11 passagers max" data-en="👥 11 passengers max">👥 11 passagers max</div>
-        </div>
-        <div class="tarif-card-footer">
-          <a href="reservation.html?offre=sunset" class="btn-gold" data-fr="Réserver" data-en="Book">Réserver</a>
-        </div>
-      </div>
-
-      <!-- JOURNÉE EN MER -->
-      <div class="tarif-card tarif-card--featured fade-in fade-in-delay-1">
-        <div class="tarif-badge-popular" data-fr="Le plus populaire" data-en="Most popular">Le plus populaire</div>
-        <div class="tarif-card-header">
-          <span class="tarif-icon">☀️</span>
-          <span class="tarif-label" data-fr="Offre 2" data-en="Package 2">Offre 2</span>
-          <h3 data-fr="Journée en Mer" data-en="Day at Sea">Journée en Mer</h3>
-          <div class="tarif-price">
-            <span class="price-amount">2 700 €</span>
-            <span class="price-ttc">TTC</span>
-          </div>
-          <div class="tarif-duree">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            <span data-fr="8h · 9h–17h" data-en="8h · 9am–5pm">8h · 9h–17h</span>
-          </div>
-        </div>
-        <div class="tarif-card-body">
-          <ul class="tarif-inclus">
-            <li class="inclus">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              <span data-fr="Skipper professionnel" data-en="Professional skipper">Skipper professionnel</span>
-            </li>
-            <li class="inclus">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              <span data-fr="Paddle & SeaBob" data-en="Paddle & SeaBob">Paddle & SeaBob</span>
-            </li>
-            <li class="inclus">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              <span data-fr="Kit snorkeling" data-en="Snorkeling kit">Kit snorkeling</span>
-            </li>
-            <li class="inclus">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              <span data-fr="Son Bluetooth premium" data-en="Premium Bluetooth sound">Son Bluetooth premium</span>
-            </li>
-            <li class="inclus">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              <span data-fr="Assurance RC" data-en="Liability insurance">Assurance RC</span>
-            </li>
-            <li class="non-inclus">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-              <span data-fr="Carburant (~200–350 €)" data-en="Fuel (~€200–350)">Carburant (~200–350 €)</span>
-            </li>
-          </ul>
-          <div class="tarif-capacite" data-fr="👥 11 passagers max" data-en="👥 11 passengers max">👥 11 passagers max</div>
-        </div>
-        <div class="tarif-card-footer">
-          <a href="reservation.html?offre=journee" class="btn-gold" data-fr="Réserver" data-en="Book">Réserver</a>
-        </div>
-      </div>
-
-      <!-- PÊCHE DE NUIT -->
-      <div class="tarif-card fade-in fade-in-delay-2">
-        <div class="tarif-card-header">
-          <span class="tarif-icon">🎣</span>
-          <span class="tarif-label" data-fr="Offre 3" data-en="Package 3">Offre 3</span>
-          <h3 data-fr="Pêche de Nuit" data-en="Night Fishing">Pêche de Nuit</h3>
-          <div class="tarif-price">
-            <span class="price-amount">2 600 €</span>
-            <span class="price-ttc">TTC</span>
-          </div>
-          <div class="tarif-duree">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            <span data-fr="6h · 23h–5h" data-en="6h · 11pm–5am">6h · 23h–5h</span>
-          </div>
-        </div>
-        <div class="tarif-card-body">
-          <ul class="tarif-inclus">
-            <li class="inclus">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              <span data-fr="Skipper professionnel" data-en="Professional skipper">Skipper professionnel</span>
-            </li>
-            <li class="inclus">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              <span data-fr="Équipement de pêche complet" data-en="Full fishing equipment">Équipement de pêche complet</span>
-            </li>
-            <li class="inclus">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              <span data-fr="Apéritif inclus" data-en="Aperitif included">Apéritif inclus</span>
-            </li>
-            <li class="inclus">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              <span data-fr="Son Bluetooth premium" data-en="Premium Bluetooth sound">Son Bluetooth premium</span>
-            </li>
-            <li class="inclus">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              <span data-fr="Assurance RC" data-en="Liability insurance">Assurance RC</span>
-            </li>
-            <li class="non-inclus">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-              <span data-fr="Carburant (au réel)" data-en="Fuel (at cost)">Carburant (au réel)</span>
-            </li>
-          </ul>
-          <div class="tarif-capacite" data-fr="👥 11 passagers max" data-en="👥 11 passengers max">👥 11 passagers max</div>
-        </div>
-        <div class="tarif-card-footer">
-          <a href="reservation.html?offre=peche" class="btn-gold" data-fr="Réserver" data-en="Book">Réserver</a>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ═══ TABLEAU COMPARATIF ═══ -->
-<section class="section-comparatif alt-bg">
-  <div class="container">
-    <div class="section-header fade-in">
-      <span class="eyebrow" data-fr="Comparatif" data-en="Comparison">Comparatif</span>
-      <h2 data-fr="Tout en un coup d'œil" data-en="Everything at a glance">Tout en un coup d'œil</h2>
-      <p class="gold-line center"></p>
-    </div>
-    <div class="table-wrapper fade-in">
-      <table class="compare-table">
-        <thead>
-          <tr>
-            <th data-fr="Offre" data-en="Package">Offre</th>
-            <th data-fr="Durée" data-en="Duration">Durée</th>
-            <th data-fr="Horaires" data-en="Schedule">Horaires</th>
-            <th data-fr="Tarif TTC" data-en="Price incl. tax">Tarif TTC</th>
-            <th data-fr="Carburant" data-en="Fuel">Carburant</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td data-fr="🌅 Sunset Experience" data-en="🌅 Sunset Experience">🌅 Sunset Experience</td>
-            <td>3h</td>
-            <td data-fr="18h–21h" data-en="6pm–9pm">18h–21h</td>
-            <td class="price-cell">1 300 €</td>
-            <td data-fr="~100–150 € en sus" data-en="~€100–150 extra">~100–150 € en sus</td>
-          </tr>
-          <tr class="featured-row">
-            <td data-fr="☀️ Journée en Mer" data-en="☀️ Day at Sea">☀️ Journée en Mer</td>
-            <td>8h</td>
-            <td data-fr="9h–17h" data-en="9am–5pm">9h–17h</td>
-            <td class="price-cell">2 700 €</td>
-            <td data-fr="~200–350 € en sus" data-en="~€200–350 extra">~200–350 € en sus</td>
-          </tr>
-          <tr>
-            <td data-fr="🎣 Pêche de Nuit" data-en="🎣 Night Fishing">🎣 Pêche de Nuit</td>
-            <td>6h</td>
-            <td data-fr="23h–5h" data-en="11pm–5am">23h–5h</td>
-            <td class="price-cell">2 600 €</td>
-            <td data-fr="Au réel en sus" data-en="At cost, extra">Au réel en sus</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <p class="table-note fade-in" data-fr="* Tous les tarifs s'entendent pour l'ensemble du bateau (pas au passager). Capacité max. 11 passagers + skipper." data-en="* All rates are for the entire boat (not per person). Max capacity 11 passengers + skipper.">
-      * Tous les tarifs s'entendent pour l'ensemble du bateau (pas au passager). Capacité max. 11 passagers + skipper.
-    </p>
-  </div>
-</section>
-
-<!-- ═══ OPTIONS EXTRAS ═══ -->
-<section class="section-extras">
-  <div class="container">
-    <div class="section-header fade-in">
-      <span class="eyebrow" data-fr="En supplément" data-en="Optional extras">En supplément</span>
-      <h2 data-fr="Options à la carte" data-en="À la carte options">Options à la carte</h2>
-      <p class="gold-line center"></p>
-    </div>
-    <div class="extras-grid">
-      <div class="extra-card fade-in">
-        <span class="extra-icon">👨‍🍳</span>
-        <h4 data-fr="Chef privé à bord" data-en="Private chef on board">Chef privé à bord</h4>
-        <span class="extra-price">500 €</span>
-      </div>
-      <div class="extra-card fade-in fade-in-delay-1">
-        <span class="extra-icon">🍾</span>
-        <h4 data-fr="Dom Pérignon" data-en="Dom Pérignon">Dom Pérignon</h4>
-        <span class="extra-price">350 €</span>
-      </div>
-      <div class="extra-card fade-in fade-in-delay-2">
-        <span class="extra-icon">📸</span>
-        <h4 data-fr="Photographe / Vidéaste" data-en="Photographer / Videographer">Photographe / Vidéaste</h4>
-        <span class="extra-price">800 €</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ CONDITIONS COMMERCIALES ═══ -->
-<section class="section-conditions alt-bg">
-  <div class="container">
-    <div class="section-header fade-in">
-      <span class="eyebrow" data-fr="Conditions" data-en="Conditions">Conditions</span>
-      <h2 data-fr="Réservation & Annulation" data-en="Booking & Cancellation">Réservation & Annulation</h2>
-      <p class="gold-line center"></p>
-    </div>
-
-    <div class="conditions-grid">
-
-      <!-- Réservation -->
-      <div class="condition-card fade-in">
-        <div class="condition-icon">📋</div>
-        <h4 data-fr="Réservation" data-en="Booking">Réservation</h4>
-        <ul>
-          <li data-fr="Acompte de 30% à la réservation" data-en="30% deposit upon booking">Acompte de 30% à la réservation</li>
-          <li data-fr="Solde 48h avant la prestation" data-en="Balance 48h before the service">Solde 48h avant la prestation</li>
-        </ul>
-      </div>
-
-      <!-- Paiement -->
-      <div class="condition-card fade-in fade-in-delay-1">
-        <div class="condition-icon">💳</div>
-        <h4 data-fr="Paiement accepté" data-en="Payment accepted">Paiement accepté</h4>
-        <ul>
-          <li data-fr="Virement bancaire" data-en="Bank transfer">Virement bancaire</li>
-          <li data-fr="Carte bancaire" data-en="Credit/debit card">Carte bancaire</li>
-          <li data-fr="Espèces" data-en="Cash">Espèces</li>
-        </ul>
-      </div>
-
-      <!-- Annulation -->
-      <div class="condition-card fade-in fade-in-delay-2">
-        <div class="condition-icon">🗓️</div>
-        <h4 data-fr="Annulation" data-en="Cancellation">Annulation</h4>
-        <ul>
-          <li data-fr="J-7 ou plus : remboursement intégral" data-en="7+ days: full refund">J-7 ou plus : remboursement intégral</li>
-          <li data-fr="J-7 à J-3 : acompte conservé, report possible" data-en="J-7 to J-3: deposit kept, rescheduling possible">J-7 à J-3 : acompte conservé, report possible</li>
-          <li data-fr="Moins de J-3 : aucun remboursement" data-en="Less than 3 days: no refund">Moins de J-3 : aucun remboursement</li>
-        </ul>
-      </div>
-
-      <!-- Météo -->
-      <div class="condition-card fade-in fade-in-delay-3">
-        <div class="condition-icon">⛅</div>
-        <h4 data-fr="Annulation météo" data-en="Weather cancellation">Annulation météo</h4>
-        <ul>
-          <li data-fr="Annulation par le skipper : report ou remboursement intégral garanti" data-en="Cancelled by skipper: rescheduling or full refund guaranteed">Annulation par le skipper : report ou remboursement intégral garanti</li>
-        </ul>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ═══ CTA FINAL ═══ -->
-<section class="section-cta">
-  <div class="container text-center fade-in">
-    <h2 data-fr="Prêt à embarquer ?" data-en="Ready to embark?">Prêt à embarquer ?</h2>
-    <p data-fr="Réservez votre expérience dès maintenant ou contactez-nous pour toute question." data-en="Book your experience now or contact us for any questions.">
-      Réservez votre expérience dès maintenant ou contactez-nous pour toute question.
-    </p>
-    <div class="cta-btns">
-      <a href="reservation.html" class="btn-gold" data-fr="Réserver maintenant" data-en="Book now">Réserver maintenant</a>
-      <a href="https://wa.me/33652192414" target="_blank" rel="noopener" class="btn-outline" data-fr="Nous contacter" data-en="Contact us">Nous contacter</a>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ FOOTER ═══ -->
-<footer>
-  <div class="footer-inner">
-    <div class="footer-col">
-      <a href="index.html" class="logo">
-        <svg class="logo-anchor" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-             stroke-width="1.5" width="18" height="18" aria-hidden="true">
-          <circle cx="12" cy="5" r="2"/>
-          <line x1="12" y1="7" x2="12" y2="11"/>
-          <path d="M5 11h14M5 11C5 16 8 19 12 20M19 11C19 16 16 19 12 20"/>
-          <line x1="9" y1="20" x2="12" y2="22"/>
-          <line x1="15" y1="20" x2="12" y2="22"/>
+  <!-- HEADER -->
+  <header id="header" class="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" aria-label="Prestige Charter - Accueil">
+        <svg class="logo-anchor" viewBox="0 0 36 36" width="28" height="28" aria-hidden="true">
+          <path d="M18 4a4 4 0 1 1 0 8 4 4 0 0 1 0-8Zm0 10v16M11 32q7-4 14 0M8 14q10-6 20 0" fill="none" stroke="#C9A84C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
-        <span class="logo-prestige">PRESTIGE</span>
-        <span class="logo-charter">CHARTER</span>
+        <span class="logo-text"><span class="logo-prestige">PRESTIGE</span> <span class="logo-charter">CHARTER</span></span>
       </a>
-      <p class="footer-tagline" data-fr="L'excellence nautique sur la Côte d'Azur" data-en="Nautical excellence on the French Riviera">
-        L'excellence nautique sur la Côte d'Azur
-      </p>
+      <nav class="nav-desktop" aria-label="Navigation principale">
+        <a href="index.html" data-fr="Accueil" data-en="Home">Accueil</a>
+        <a href="yacht.html" data-fr="Le Yacht" data-en="The Yacht">Le Yacht</a>
+        <a href="experiences.html" data-fr="Expériences" data-en="Experiences">Expériences</a>
+        <a href="histoire.html" data-fr="Notre Histoire" data-en="Our Story">Notre Histoire</a>
+        <a href="yachtclub.html" data-fr="Yacht Club" data-en="Yacht Club">Yacht Club</a>
+        <a href="tarifs.html" class="active" data-fr="Tarifs" data-en="Pricing">Tarifs</a>
+        <a href="reservation.html" data-fr="Réservation" data-en="Booking">Réservation</a>
+        <a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <button id="lang-toggle" class="lang-toggle" aria-label="Switch language">FR</button>
+        <button id="menu-toggle" class="menu-toggle" aria-label="Menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
-    <div class="footer-col">
-      <h4 data-fr="Navigation" data-en="Navigation">Navigation</h4>
-      <ul>
-        <li><a href="index.html" data-fr="Accueil" data-en="Home">Accueil</a></li>
-        <li><a href="yacht.html" data-fr="Le Yacht" data-en="The Yacht">Le Yacht</a></li>
-        <li><a href="experiences.html" data-fr="Expériences" data-en="Experiences">Expériences</a></li>
-        <li><a href="tarifs.html" data-fr="Tarifs" data-en="Rates">Tarifs</a></li>
-        <li><a href="histoire.html" data-fr="Notre Histoire" data-en="Our Story">Notre Histoire</a></li>
-        <li><a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4 data-fr="Contact" data-en="Contact">Contact</h4>
-      <ul>
-        <li><a href="tel:+33652192414">06 52 19 24 14</a></li>
-        <li><a href="mailto:prestigecharter06@gmail.com">prestigecharter06@gmail.com</a></li>
-        <li><a href="https://wa.me/33652192414" target="_blank" rel="noopener">WhatsApp</a></li>
-        <li><a href="https://instagram.com/prestigecharter06" target="_blank" rel="noopener">@prestigecharter06</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4 data-fr="Informations" data-en="Information">Informations</h4>
-      <ul>
-        <li><a href="cgv.html" data-fr="CGV" data-en="Terms &amp; Conditions">CGV</a></li>
-        <li><a href="mentionslegales.html" data-fr="Mentions légales" data-en="Legal Notice">Mentions légales</a></li>
-        <li><a href="reservation.html" data-fr="Réserver" data-en="Book">Réserver</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <p data-fr="© 2025 Prestige Charter AT — SAS Prestige Charter AT / Prestige Charter Operations Ltd (Malte)" data-en="© 2025 Prestige Charter AT — SAS Prestige Charter AT / Prestige Charter Operations Ltd (Malta)">
-      © 2025 Prestige Charter AT — SAS Prestige Charter AT / Prestige Charter Operations Ltd (Malte)
-    </p>
-  </div>
-</footer>
+  </header>
 
-<script src="js/main.js"></script>
+  <!-- MOBILE NAV -->
+  <nav id="mobile-nav" class="mobile-nav" aria-hidden="true">
+    <a href="index.html" data-fr="Accueil" data-en="Home">Accueil</a>
+    <a href="yacht.html" data-fr="Le Yacht" data-en="The Yacht">Le Yacht</a>
+    <a href="experiences.html" data-fr="Expériences" data-en="Experiences">Expériences</a>
+    <a href="histoire.html" data-fr="Notre Histoire" data-en="Our Story">Notre Histoire</a>
+    <a href="yachtclub.html" data-fr="Yacht Club" data-en="Yacht Club">Yacht Club</a>
+    <a href="tarifs.html" class="active" data-fr="Tarifs" data-en="Pricing">Tarifs</a>
+    <a href="reservation.html" data-fr="Réservation" data-en="Booking">Réservation</a>
+    <a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a>
+  </nav>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="page-hero" style="background-image:url('images/yacht-1.jpg');">
+      <div class="page-hero-overlay"></div>
+      <div class="container page-hero-content">
+        <h1 class="reveal" data-fr="Nos Tarifs" data-en="Our Pricing">Nos Tarifs</h1>
+        <p class="subtitle reveal" data-fr="Transparence & excellence — tarif unique toute l'année" data-en="Transparency & excellence — same rate all year round">Transparence & excellence — tarif unique toute l'année</p>
+      </div>
+    </section>
+
+    <!-- TARIFS COMPARATIF -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title reveal" data-fr="Trois expériences, un même yacht" data-en="Three experiences, one yacht">Trois expériences, un même yacht</h2>
+        <p class="section-subtitle reveal" data-fr="L'Artemis, privatisé pour vous — jusqu'à 11 passagers + skipper" data-en="The Artemis, privatised for you — up to 11 guests + skipper">L'Artemis, privatisé pour vous — jusqu'à 11 passagers + skipper</p>
+
+        <div class="pricing-grid reveal">
+
+          <!-- SUNSET -->
+          <div class="pricing-card">
+            <div class="pricing-badge" data-fr="Incontournable" data-en="Must-do">Incontournable</div>
+            <h3 class="pricing-name" data-fr="Sunset Experience" data-en="Sunset Experience">Sunset Experience</h3>
+            <p class="pricing-duration" data-fr="3h · 18h–21h" data-en="3h · 6pm–9pm">3h · 18h–21h</p>
+            <div class="pricing-price">
+              <span class="pricing-amount" data-count="1300">1 300</span>
+              <span class="pricing-currency">€ <small>TTC</small></span>
+            </div>
+            <p class="pricing-pax" data-fr="Jusqu'à 11 passagers" data-en="Up to 11 guests">Jusqu'à 11 passagers</p>
+            <ul class="pricing-features">
+              <li data-fr="✓ Skipper professionnel" data-en="✓ Professional skipper">✓ Skipper professionnel</li>
+              <li data-fr="✓ Paddle" data-en="✓ Paddle board">✓ Paddle</li>
+              <li data-fr="✓ SeaBob" data-en="✓ SeaBob">✓ SeaBob</li>
+              <li data-fr="✓ Kit snorkeling" data-en="✓ Snorkeling kit">✓ Kit snorkeling</li>
+              <li data-fr="✓ Son Bluetooth premium" data-en="✓ Premium Bluetooth sound">✓ Son Bluetooth premium</li>
+              <li data-fr="✓ Assurance RC" data-en="✓ Liability insurance">✓ Assurance RC</li>
+            </ul>
+            <div class="pricing-fuel">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2"><path d="M3 22V6a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16M7 2v4m10 2l3-3v12a2 2 0 0 1-2 2h-1"/></svg>
+              <span data-fr="Carburant NON inclus · ~100–150 €" data-en="Fuel NOT included · ~€100–150">Carburant NON inclus · ~100–150 €</span>
+            </div>
+            <a href="reservation.html?offre=sunset" class="btn" data-fr="Réserver" data-en="Book now">Réserver</a>
+          </div>
+
+          <!-- JOURNÉE -->
+          <div class="pricing-card pricing-card--featured">
+            <div class="pricing-badge" data-fr="★ Populaire" data-en="★ Popular">★ Populaire</div>
+            <h3 class="pricing-name" data-fr="Journée en Mer" data-en="Full Day at Sea">Journée en Mer</h3>
+            <p class="pricing-duration" data-fr="8h · 9h–17h" data-en="8h · 9am–5pm">8h · 9h–17h</p>
+            <div class="pricing-price">
+              <span class="pricing-amount" data-count="2700">2 700</span>
+              <span class="pricing-currency">€ <small>TTC</small></span>
+            </div>
+            <p class="pricing-pax" data-fr="Jusqu'à 11 passagers" data-en="Up to 11 guests">Jusqu'à 11 passagers</p>
+            <ul class="pricing-features">
+              <li data-fr="✓ Skipper professionnel" data-en="✓ Professional skipper">✓ Skipper professionnel</li>
+              <li data-fr="✓ Paddle" data-en="✓ Paddle board">✓ Paddle</li>
+              <li data-fr="✓ SeaBob" data-en="✓ SeaBob">✓ SeaBob</li>
+              <li data-fr="✓ Kit snorkeling" data-en="✓ Snorkeling kit">✓ Kit snorkeling</li>
+              <li data-fr="✓ Son Bluetooth premium" data-en="✓ Premium Bluetooth sound">✓ Son Bluetooth premium</li>
+              <li data-fr="✓ Assurance RC" data-en="✓ Liability insurance">✓ Assurance RC</li>
+            </ul>
+            <div class="pricing-fuel">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2"><path d="M3 22V6a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16M7 2v4m10 2l3-3v12a2 2 0 0 1-2 2h-1"/></svg>
+              <span data-fr="Carburant NON inclus · ~200–350 €" data-en="Fuel NOT included · ~€200–350">Carburant NON inclus · ~200–350 €</span>
+            </div>
+            <a href="reservation.html?offre=journee" class="btn" data-fr="Réserver" data-en="Book now">Réserver</a>
+          </div>
+
+          <!-- PÊCHE DE NUIT -->
+          <div class="pricing-card">
+            <div class="pricing-badge" data-fr="Exclusive" data-en="Exclusive">Exclusive</div>
+            <h3 class="pricing-name" data-fr="Pêche de Nuit" data-en="Night Fishing">Pêche de Nuit</h3>
+            <p class="pricing-duration" data-fr="6h · 23h–5h" data-en="6h · 11pm–5am">6h · 23h–5h</p>
+            <div class="pricing-price">
+              <span class="pricing-amount" data-count="2600">2 600</span>
+              <span class="pricing-currency">€ <small>TTC</small></span>
+            </div>
+            <p class="pricing-pax" data-fr="Jusqu'à 11 passagers" data-en="Up to 11 guests">Jusqu'à 11 passagers</p>
+            <ul class="pricing-features">
+              <li data-fr="✓ Skipper professionnel" data-en="✓ Professional skipper">✓ Skipper professionnel</li>
+              <li data-fr="✓ Équipement pêche complet" data-en="✓ Full fishing equipment">✓ Équipement pêche complet</li>
+              <li data-fr="✓ Apéritif offert" data-en="✓ Complimentary aperitif">✓ Apéritif offert</li>
+              <li data-fr="✓ Son Bluetooth premium" data-en="✓ Premium Bluetooth sound">✓ Son Bluetooth premium</li>
+              <li data-fr="✓ Assurance RC" data-en="✓ Liability insurance">✓ Assurance RC</li>
+            </ul>
+            <div class="pricing-fuel">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2"><path d="M3 22V6a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16M7 2v4m10 2l3-3v12a2 2 0 0 1-2 2h-1"/></svg>
+              <span data-fr="Carburant NON inclus · facturé au réel" data-en="Fuel NOT included · charged at cost">Carburant NON inclus · facturé au réel</span>
+            </div>
+            <a href="reservation.html?offre=peche" class="btn" data-fr="Réserver" data-en="Book now">Réserver</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SAINT-TROPEZ -->
+    <section class="section section--alt">
+      <div class="container text-center">
+        <div class="info-banner reveal">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4m0 4h.01"/></svg>
+          <div>
+            <h3 data-fr="Option Saint-Tropez" data-en="Saint-Tropez Option">Option Saint-Tropez</h3>
+            <p data-fr="Aller-retour depuis Saint-Jean-Cap-Ferrat : supplément carburant estimé entre 400 € et 600 €. Disponible uniquement en Journée en Mer (8h)." data-en="Round trip from Saint-Jean-Cap-Ferrat: estimated fuel supplement between €400 and €600. Available only with the Full Day at Sea (8h).">Aller-retour depuis Saint-Jean-Cap-Ferrat : supplément carburant estimé entre 400 € et 600 €. Disponible uniquement en Journée en Mer (8h).</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OPTIONS EXTRAS -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title reveal" data-fr="Options Extras" data-en="Extra Options">Options Extras</h2>
+        <p class="section-subtitle reveal" data-fr="Sublimez votre expérience" data-en="Elevate your experience">Sublimez votre expérience</p>
+
+        <div class="extras-grid reveal">
+
+          <div class="extra-card">
+            <div class="extra-icon">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.48 2 2 6 2 6s4.48 4 10 4 10-4 10-4-4.48-4-10-4Z"/><path d="M2 6v12c0 2 4.48 4 10 4s10-2 10-4V6"/><path d="M12 10v12"/></svg>
+            </div>
+            <h3 data-fr="Chef Privé à Bord" data-en="Private Chef on Board">Chef Privé à Bord</h3>
+            <p class="extra-price">500 €</p>
+            <p data-fr="Un chef cuisinier prépare un repas gastronomique à bord, adapté à vos envies et au fil de l'eau." data-en="A private chef prepares a gourmet meal on board, tailored to your wishes as you cruise.">Un chef cuisinier prépare un repas gastronomique à bord, adapté à vos envies et au fil de l'eau.</p>
+          </div>
+
+          <div class="extra-card">
+            <div class="extra-icon">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 22h8M12 2v2m0 16v2M5 12H3m18 0h-2M7.05 7.05 5.64 5.64m12.73 12.73-1.42-1.42M7.05 16.95l-1.41 1.42M18.36 5.64l-1.41 1.41"/><circle cx="12" cy="12" r="4"/></svg>
+            </div>
+            <h3 data-fr="Dom Pérignon" data-en="Dom Pérignon">Dom Pérignon</h3>
+            <p class="extra-price">350 €</p>
+            <p data-fr="Une bouteille de Dom Pérignon servie fraîche, pour célébrer un moment d'exception en mer." data-en="A chilled bottle of Dom Pérignon to celebrate an exceptional moment at sea.">Une bouteille de Dom Pérignon servie fraîche, pour célébrer un moment d'exception en mer.</p>
+          </div>
+
+          <div class="extra-card">
+            <div class="extra-icon">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="3"/><path d="M2 10h2m16 0h2"/></svg>
+            </div>
+            <h3 data-fr="Photographe / Vidéaste" data-en="Photographer / Videographer">Photographe / Vidéaste</h3>
+            <p class="extra-price">800 €</p>
+            <p data-fr="Un professionnel capture chaque instant de votre sortie : photos HD, vidéo cinématique, souvenirs éternels." data-en="A professional captures every moment: HD photos, cinematic video, eternal memories.">Un professionnel capture chaque instant de votre sortie : photos HD, vidéo cinématique, souvenirs éternels.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CARBURANT -->
+    <section class="section section--alt">
+      <div class="container">
+        <div class="fuel-notice reveal">
+          <div class="fuel-notice-icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round"><path d="M3 22V6a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16M7 2v4m10 2l3-3v12a2 2 0 0 1-2 2h-1"/><rect x="5" y="10" width="8" height="4" rx="1"/></svg>
+          </div>
+          <div>
+            <h3 data-fr="À propos du carburant" data-en="About fuel">À propos du carburant</h3>
+            <p data-fr="Le carburant n'est jamais inclus dans nos tarifs. Il est facturé au réel, en toute transparence, en fin de sortie. L'estimation dépend de l'itinéraire choisi et des conditions de navigation." data-en="Fuel is never included in our rates. It is charged at cost, with full transparency, at the end of the trip. The estimate depends on the chosen itinerary and navigation conditions.">Le carburant n'est jamais inclus dans nos tarifs. Il est facturé au réel, en toute transparence, en fin de sortie. L'estimation dépend de l'itinéraire choisi et des conditions de navigation.</p>
+            <table class="fuel-table">
+              <thead>
+                <tr>
+                  <th data-fr="Offre" data-en="Experience">Offre</th>
+                  <th data-fr="Estimation carburant" data-en="Fuel estimate">Estimation carburant</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td data-fr="Sunset Experience (3h)" data-en="Sunset Experience (3h)">Sunset Experience (3h)</td>
+                  <td>~100 – 150 €</td>
+                </tr>
+                <tr>
+                  <td data-fr="Journée en Mer (8h)" data-en="Full Day at Sea (8h)">Journée en Mer (8h)</td>
+                  <td>~200 – 350 €</td>
+                </tr>
+                <tr>
+                  <td data-fr="Pêche de Nuit (6h)" data-en="Night Fishing (6h)">Pêche de Nuit (6h)</td>
+                  <td data-fr="Facturé au réel" data-en="Charged at cost">Facturé au réel</td>
+                </tr>
+                <tr>
+                  <td data-fr="Option Saint-Tropez A/R" data-en="Saint-Tropez round trip">Option Saint-Tropez A/R</td>
+                  <td>~400 – 600 €</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONDITIONS -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title reveal" data-fr="Conditions de réservation" data-en="Booking conditions">Conditions de réservation</h2>
+
+        <div class="conditions-grid reveal">
+
+          <div class="condition-card">
+            <div class="condition-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+            </div>
+            <h4 data-fr="Acompte" data-en="Deposit">Acompte</h4>
+            <p data-fr="30 % du montant total à la réservation" data-en="30% of the total amount upon booking">30 % du montant total à la réservation</p>
+          </div>
+
+          <div class="condition-card">
+            <div class="condition-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            </div>
+            <h4 data-fr="Solde" data-en="Balance">Solde</h4>
+            <p data-fr="Le solde est dû 48h avant la prestation" data-en="Balance due 48h before the experience">Le solde est dû 48h avant la prestation</p>
+          </div>
+
+          <div class="condition-card">
+            <div class="condition-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round"><rect x="1" y="4" width="22" height="16" rx="2"/><path d="M1 10h22"/></svg>
+            </div>
+            <h4 data-fr="Paiement" data-en="Payment">Paiement</h4>
+            <p data-fr="Virement bancaire · Carte bancaire · Espèces" data-en="Bank transfer · Credit card · Cash">Virement bancaire · Carte bancaire · Espèces</p>
+          </div>
+
+          <div class="condition-card">
+            <div class="condition-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round"><path d="M3 12a9 9 0 1 0 18 0 9 9 0 0 0-18 0Zm9-4v4"/><circle cx="12" cy="16" r=".5" fill="#C9A84C"/></svg>
+            </div>
+            <h4 data-fr="Annulation" data-en="Cancellation">Annulation</h4>
+            <ul class="condition-list">
+              <li data-fr="≥ J-7 : remboursement acompte" data-en="≥ 7 days: deposit refunded">≥ J-7 : remboursement acompte</li>
+              <li data-fr="J-7 à J-3 : acompte conservé, report possible" data-en="7–3 days: deposit kept, reschedule possible">J-7 à J-3 : acompte conservé, report possible</li>
+              <li data-fr="< J-3 : aucun remboursement" data-en="< 3 days: no refund">< J-3 : aucun remboursement</li>
+              <li data-fr="Météo (skipper) : report ou remboursement intégral" data-en="Weather (skipper): reschedule or full refund">Météo (skipper) : report ou remboursement intégral</li>
+            </ul>
+          </div>
+
+        </div>
+
+        <p class="text-center mt-24 reveal">
+          <a href="cgv.html" class="link-gold" data-fr="Consulter les CGV complètes →" data-en="View full T&Cs →">Consulter les CGV complètes →</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="section section--cta">
+      <div class="container text-center">
+        <h2 class="reveal" data-fr="Prêt à embarquer ?" data-en="Ready to set sail?">Prêt à embarquer ?</h2>
+        <p class="reveal" data-fr="Réservez votre sortie en quelques clics ou contactez-nous par WhatsApp." data-en="Book your trip in a few clicks or contact us via WhatsApp.">Réservez votre sortie en quelques clics ou contactez-nous par WhatsApp.</p>
+        <div class="cta-buttons reveal">
+          <a href="reservation.html" class="btn" data-fr="Réserver maintenant" data-en="Book now">Réserver maintenant</a>
+          <a href="https://wa.me/33652192414?text=Bonjour%2C%20je%20souhaite%20r%C3%A9server%20une%20sortie%20en%20mer." class="btn btn--outline" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347Z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.832-1.438A9.955 9.955 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2Z"/></svg>
+            WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col footer-brand">
+          <a href="index.html" class="logo">
+            <svg class="logo-anchor" viewBox="0 0 36 36" width="28" height="28" aria-hidden="true">
+              <path d="M18 4a4 4 0 1 1 0 8 4 4 0 0 1 0-8Zm0 10v16M11 32q7-4 14 0M8 14q10-6 20 0" fill="none" stroke="#C9A84C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span class="logo-text"><span class="logo-prestige">PRESTIGE</span> <span class="logo-charter">CHARTER</span></span>
+          </a>
+          <p class="footer-address" data-fr="Saint-Jean-Cap-Ferrat · Côte d'Azur" data-en="Saint-Jean-Cap-Ferrat · French Riviera">Saint-Jean-Cap-Ferrat · Côte d'Azur</p>
+        </div>
+        <div class="footer-col">
+          <h4 data-fr="Navigation" data-en="Navigation">Navigation</h4>
+          <a href="yacht.html" data-fr="Le Yacht" data-en="The Yacht">Le Yacht</a>
+          <a href="experiences.html" data-fr="Expériences" data-en="Experiences">Expériences</a>
+          <a href="histoire.html" data-fr="Notre Histoire" data-en="Our Story">Notre Histoire</a>
+          <a href="tarifs.html" data-fr="Tarifs" data-en="Pricing">Tarifs</a>
+        </div>
+        <div class="footer-col">
+          <h4 data-fr="Contact" data-en="Contact">Contact</h4>
+          <a href="tel:+33652192414">06 52 19 24 14</a>
+          <a href="mailto:prestigecharter06@gmail.com">prestigecharter06@gmail.com</a>
+          <a href="https://wa.me/33652192414" target="_blank" rel="noopener">WhatsApp</a>
+          <a href="https://www.instagram.com/prestigecharter06" target="_blank" rel="noopener">Instagram</a>
+        </div>
+        <div class="footer-col">
+          <h4 data-fr="Légal" data-en="Legal">Légal</h4>
+          <a href="cgv.html" data-fr="CGV" data-en="T&Cs">CGV</a>
+          <a href="mentionslegales.html" data-fr="Mentions légales" data-en="Legal notices">Mentions légales</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Prestige Charter AT. <span data-fr="Tous droits réservés." data-en="All rights reserved.">Tous droits réservés.</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- LIGHTBOX -->
+  <div id="lightbox" class="lightbox" aria-hidden="true">
+    <button id="lb-close" class="lb-close" aria-label="Fermer">&times;</button>
+    <button id="lb-prev" class="lb-arrow lb-prev-arrow" aria-label="Précédent">&#10094;</button>
+    <img id="lb-img" src="" alt="">
+    <button id="lb-next" class="lb-arrow lb-next-arrow" aria-label="Suivant">&#10095;</button>
+    <span id="lb-counter" class="lb-counter"></span>
+  </div>
+
+  <script src="js/main.js"></script>
 </body>
 </html>
