@@ -2013,3 +2013,524 @@ footer {
   .hero-ctas .btn { justify-content: center; }
 
   .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+  .footer-bottom { flex-direction: column; text-align: center; }
+
+  .gallery-grid { grid-template-columns: 1fr; }
+  .gallery-grid .img-wrap:first-child { grid-column: 1; aspect-ratio: 4/3; }
+  .gallery-grid .img-wrap:nth-child(4) { grid-column: 1; aspect-ratio: 4/3; }
+
+  .form-actions { flex-direction: column; }
+  .form-actions .btn { min-width: unset; }
+
+  .cta-btns { flex-direction: column; align-items: center; }
+
+  .extras-grid { grid-template-columns: 1fr; }
+  .conditions-grid { grid-template-columns: 1fr; }
+  .equipment-grid { grid-template-columns: 1fr 1fr; }
+
+  .instagram-photos { grid-template-columns: repeat(3, 1fr); }
+
+  .page-hero { height: clamp(280px, 40vh, 380px); }
+
+  .fuel-encart { flex-direction: column; }
+
+  .offer-card { padding: 24px 20px; }
+
+  .section-title { font-size: clamp(1.7rem, 6vw, 2.2rem); }
+
+  .lightbox-content { width: 95vw; }
+  .lightbox-caption { font-size: .8rem; }
+}
+
+/* ============================================================
+   LIGHTBOX MODAL
+   ============================================================ */
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(5,11,20,.96);
+  z-index: 9000;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  backdrop-filter: blur(6px);
+}
+
+.lightbox.open { display: flex; }
+
+.lightbox-inner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1100px;
+  width: 100%;
+}
+
+.lightbox-content {
+  position: relative;
+  width: 90vw;
+  max-width: 1000px;
+  max-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox-content img {
+  max-width: 100%;
+  max-height: 78vh;
+  object-fit: contain;
+  border-radius: var(--radius);
+  box-shadow: 0 20px 80px rgba(0,0,0,.7);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: -50px;
+  right: 0;
+  width: 44px;
+  height: 44px;
+  background: var(--gold-dim);
+  border: 1px solid var(--dark-border);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: all var(--transition);
+  line-height: 1;
+}
+
+.lightbox-close:hover {
+  background: var(--gold);
+  color: var(--dark);
+  border-color: var(--gold);
+}
+
+.lightbox-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  background: var(--gold-dim);
+  border: 1px solid var(--dark-border);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  cursor: pointer;
+  transition: all var(--transition);
+  z-index: 2;
+}
+
+.lightbox-arrow:hover {
+  background: var(--gold);
+  color: var(--dark);
+  border-color: var(--gold);
+}
+
+.lightbox-prev { left: -64px; }
+.lightbox-next { right: -64px; }
+
+.lightbox-counter {
+  margin-top: 18px;
+  font-size: .78rem;
+  letter-spacing: .2em;
+  color: var(--gray);
+  text-transform: uppercase;
+}
+
+.lightbox-caption {
+  margin-top: 10px;
+  font-family: var(--font-title);
+  font-style: italic;
+  font-size: .92rem;
+  color: var(--gray-light);
+  text-align: center;
+}
+
+/* ============================================================
+   TIMELINE — HISTOIRE
+   ============================================================ */
+.timeline {
+  position: relative;
+  padding: 20px 0;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, var(--gold), transparent);
+  opacity: .4;
+}
+
+.timeline-item {
+  display: grid;
+  grid-template-columns: 1fr 60px 1fr;
+  gap: 0;
+  margin-bottom: 80px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity .9s cubic-bezier(.4,0,.2,1), transform .9s cubic-bezier(.4,0,.2,1);
+}
+
+.timeline-item.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.timeline-item:nth-child(2) { transition-delay: .15s; }
+.timeline-item:nth-child(3) { transition-delay: .3s; }
+
+.timeline-empty { }
+
+.timeline-content {
+  padding: 8px 0;
+}
+
+.timeline-item:nth-child(odd) .timeline-content {
+  grid-column: 1;
+  text-align: right;
+  padding-right: 40px;
+}
+
+.timeline-item:nth-child(odd) .timeline-center { grid-column: 2; }
+.timeline-item:nth-child(odd) .timeline-empty { grid-column: 3; }
+
+.timeline-item:nth-child(even) .timeline-empty { grid-column: 1; }
+.timeline-item:nth-child(even) .timeline-center { grid-column: 2; }
+.timeline-item:nth-child(even) .timeline-content {
+  grid-column: 3;
+  padding-left: 40px;
+}
+
+.timeline-center {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 8px;
+}
+
+.timeline-dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--gold);
+  border: 3px solid var(--dark);
+  box-shadow: 0 0 0 2px var(--gold), 0 0 20px rgba(201,168,76,.4);
+  flex-shrink: 0;
+}
+
+.timeline-gen {
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .25em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+
+.timeline-content h3 {
+  font-family: var(--font-title);
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 12px;
+  line-height: 1.2;
+}
+
+.timeline-content p {
+  font-size: .95rem;
+  color: var(--gray);
+  line-height: 1.85;
+}
+
+.timeline-img {
+  width: 100%;
+  max-width: 280px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-top: 20px;
+  border: 1px solid var(--dark-border);
+}
+
+.timeline-item:nth-child(odd) .timeline-img { margin-left: auto; }
+
+.timeline-img img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  transition: transform .55s ease;
+}
+
+.timeline-img:hover img { transform: scale(1.05); }
+
+/* Histoire intro block */
+.histoire-intro {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.histoire-intro p {
+  font-family: var(--font-title);
+  font-style: italic;
+  font-size: clamp(1.1rem, 2.2vw, 1.4rem);
+  color: var(--gray-light);
+  line-height: 1.85;
+}
+
+/* Histoire arc final */
+.arc-final {
+  background: linear-gradient(135deg, var(--dark-card), var(--darker));
+  border: 1px solid var(--dark-border);
+  border-radius: var(--radius-lg);
+  padding: clamp(36px, 6vw, 64px);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.arc-final::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, rgba(201,168,76,.06) 0%, transparent 70%);
+}
+
+.arc-final blockquote {
+  position: relative;
+  z-index: 1;
+  font-family: var(--font-title);
+  font-style: italic;
+  font-size: clamp(1.15rem, 2.5vw, 1.55rem);
+  color: var(--gold);
+  line-height: 1.75;
+  quotes: '«\00A0' '\00A0»';
+}
+
+.arc-final blockquote::before { content: open-quote; }
+.arc-final blockquote::after { content: close-quote; }
+
+/* ============================================================
+   YACHT CLUB — HERO EMBLÈME
+   ============================================================ */
+.club-hero {
+  text-align: center;
+  position: relative;
+}
+
+.club-emblem {
+  margin: 0 auto 32px;
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(0 0 30px rgba(201,168,76,.4));
+}
+
+.club-access-note {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--gold-dim);
+  border: 1px solid var(--dark-border);
+  border-radius: 50px;
+  padding: 10px 24px;
+  font-size: .8rem;
+  color: var(--gold);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  margin-top: 24px;
+}
+
+/* ============================================================
+   EXPERIENCE PAGE — OFFRE DÉTAILLÉE
+   ============================================================ */
+.exp-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  margin-bottom: 80px;
+}
+
+.exp-section.reverse { direction: rtl; }
+.exp-section.reverse > * { direction: ltr; }
+
+.exp-img-wrap {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  position: relative;
+}
+
+.exp-img-wrap img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  transition: transform .55s ease;
+}
+
+.exp-img-wrap:hover img { transform: scale(1.05); }
+
+.exp-tag {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: rgba(7,15,27,.85);
+  border: 1px solid var(--gold);
+  border-radius: 30px;
+  padding: 6px 16px;
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  backdrop-filter: blur(6px);
+}
+
+.exp-content h2 {
+  font-family: var(--font-title);
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+
+.exp-content .exp-duration {
+  font-size: .8rem;
+  color: var(--gold);
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.exp-content .exp-desc {
+  font-size: .97rem;
+  color: var(--gray);
+  line-height: 1.85;
+  margin-bottom: 28px;
+}
+
+.exp-price-block {
+  background: var(--dark-card);
+  border: 1px solid var(--dark-border);
+  border-radius: var(--radius);
+  padding: 22px 26px;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.exp-price-num {
+  font-family: var(--font-title);
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--gold);
+}
+
+.exp-price-detail {
+  font-size: .82rem;
+  color: var(--gray);
+}
+
+.exp-price-detail strong { color: #E8A04C; display: block; margin-top: 2px; }
+
+.exp-includes {
+  margin-bottom: 28px;
+}
+
+.exp-includes-title {
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--gray);
+  margin-bottom: 12px;
+}
+
+.exp-includes ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.exp-includes li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: .88rem;
+  color: var(--gray-light);
+}
+
+.exp-includes li svg { color: var(--gold); flex-shrink: 0; }
+
+@media (max-width: 900px) {
+  .exp-section {
+    grid-template-columns: 1fr;
+    gap: 36px;
+    margin-bottom: 60px;
+  }
+  .exp-section.reverse { direction: ltr; }
+  .exp-includes ul { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 560px) {
+  .exp-price-block { flex-direction: column; align-items: flex-start; }
+}
+
+/* ============================================================
+   NAVIGATION ACTIVE STATE PER PAGE
+   ============================================================ */
+body.page-index     .nav-accueil,
+body.page-yacht     .nav-yacht,
+body.page-exp       .nav-exp,
+body.page-histoire  .nav-histoire,
+body.page-club      .nav-club,
+body.page-tarifs    .nav-tarifs,
+body.page-resa      .nav-resa,
+body.page-contact   .nav-contact {
+  color: var(--gold);
+}
+
+body.page-index     .nav-accueil::after,
+body.page-yacht     .nav-yacht::after,
+body.page-exp       .nav-exp::after,
+body.page-histoire  .nav-histoire::after,
+body.page-club      .nav-club::after,
+body.page-tarifs    .nav-tarifs::after,
+body.page-resa      .nav-resa::after,
+body.page-contact   .nav-contact::after {
+  width: 100%;
+}
+
+/* ============================================================
+   PRINT — Masquer éléments non imprimables
+   ============================================================ */
+@media print {
+  #preloader, #header, footer, .btn, .hero-scroll { display: none !important; }
+  main { padding-top: 0; }
+  body { background: #fff; color: #111; }
+}
