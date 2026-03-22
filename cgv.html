@@ -1,11 +1,14 @@
-<!-- cgv.html -->
 <!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Conditions Générales de Vente — Prestige Charter</title>
-  <meta name="description" content="Conditions générales de vente de Prestige Charter AT. Réservation, paiement, annulation, responsabilité.">
+  <meta name="description" content="Conditions générales de vente de Prestige Charter AT. Réservation, paiement, annulation, responsabilité pour nos charters nautiques de luxe.">
+  <meta property="og:title" content="CGV — Prestige Charter">
+  <meta property="og:description" content="Conditions générales de vente. Charter nautique de luxe, Côte d'Azur.">
+  <meta property="og:image" content="images/hero.jpg">
+  <meta property="og:url" content="https://www.prestigecharter.fr/cgv.html">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><path d='M16 2 L16 28 M10 26 Q16 22 22 26 M8 10 Q16 4 24 10 L16 8Z' fill='none' stroke='%23C9A84C' stroke-width='2'/></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -37,254 +40,345 @@
         <a href="histoire.html" data-fr="Notre Histoire" data-en="Our Story">Notre Histoire</a>
         <a href="yachtclub.html" data-fr="Yacht Club" data-en="Yacht Club">Yacht Club</a>
         <a href="tarifs.html" data-fr="Tarifs" data-en="Pricing">Tarifs</a>
-        <a href="reservation.html" data-fr="Réservation" data-en="Booking">Réservation</a>
-        <a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a>
+        <a href="reservation.html" class="nav-cta" data-fr="Réserver" data-en="Book">Réserver</a>
       </nav>
-      <div class="header-actions">
-        <button id="lang-toggle" class="lang-toggle" aria-label="Switch language">FR</button>
-        <button id="menu-toggle" class="menu-toggle" aria-label="Menu" aria-expanded="false">
-          <span></span><span></span><span></span>
-        </button>
-      </div>
+      <button class="lang-toggle" id="langToggle" aria-label="Switch language">EN</button>
+      <button class="hamburger" id="hamburger" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </header>
 
   <!-- MOBILE NAV -->
-  <nav id="mobile-nav" class="mobile-nav" aria-hidden="true">
-    <a href="index.html" data-fr="Accueil" data-en="Home">Accueil</a>
-    <a href="yacht.html" data-fr="Le Yacht" data-en="The Yacht">Le Yacht</a>
-    <a href="experiences.html" data-fr="Expériences" data-en="Experiences">Expériences</a>
-    <a href="histoire.html" data-fr="Notre Histoire" data-en="Our Story">Notre Histoire</a>
-    <a href="yachtclub.html" data-fr="Yacht Club" data-en="Yacht Club">Yacht Club</a>
-    <a href="tarifs.html" data-fr="Tarifs" data-en="Pricing">Tarifs</a>
-    <a href="reservation.html" data-fr="Réservation" data-en="Booking">Réservation</a>
-    <a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a>
-  </nav>
+  <div class="nav-mobile" id="navMobile" aria-hidden="true">
+    <nav>
+      <a href="index.html" data-fr="Accueil" data-en="Home">Accueil</a>
+      <a href="yacht.html" data-fr="Le Yacht" data-en="The Yacht">Le Yacht</a>
+      <a href="experiences.html" data-fr="Expériences" data-en="Experiences">Expériences</a>
+      <a href="histoire.html" data-fr="Notre Histoire" data-en="Our Story">Notre Histoire</a>
+      <a href="yachtclub.html" data-fr="Yacht Club" data-en="Yacht Club">Yacht Club</a>
+      <a href="tarifs.html" data-fr="Tarifs" data-en="Pricing">Tarifs</a>
+      <a href="reservation.html" data-fr="Réserver" data-en="Book">Réserver</a>
+      <a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a>
+    </nav>
+  </div>
 
   <main>
 
-    <!-- PAGE HERO -->
-    <section class="page-hero page-hero--short">
+    <!-- HERO COMPACT -->
+    <section class="page-hero page-hero--minimal">
       <div class="container">
-        <span class="section-label reveal" data-fr="Juridique" data-en="Legal">Juridique</span>
-        <h1 class="reveal" data-fr="Conditions Générales de Vente" data-en="General Terms and Conditions">Conditions Générales de Vente</h1>
-        <p class="subtitle reveal" data-fr="Dernière mise à jour : janvier 2025" data-en="Last updated: January 2025">Dernière mise à jour : janvier 2025</p>
+        <h1 class="page-hero-title" data-fr="Conditions Générales de Vente" data-en="Terms & Conditions">Conditions Générales de Vente</h1>
+        <p class="page-hero-sub" data-fr="Prestige Charter AT — Applicables à compter du 1er janvier 2025" data-en="Prestige Charter AT — Effective from January 1, 2025">Prestige Charter AT — Applicables à compter du 1er janvier 2025</p>
       </div>
     </section>
 
-    <!-- CGV CONTENT -->
-    <section class="section">
-      <div class="container container--narrow">
-        <div class="legal-content reveal">
+    <!-- SOMMAIRE -->
+    <section class="section section--dark legal-page">
+      <div class="container">
+
+        <nav class="legal-toc reveal" aria-label="Sommaire">
+          <h2 data-fr="Sommaire" data-en="Table of Contents">Sommaire</h2>
+          <ol>
+            <li><a href="#art1">Objet</a></li>
+            <li><a href="#art2">Prestations proposées</a></li>
+            <li><a href="#art3">Tarifs et carburant</a></li>
+            <li><a href="#art4">Options et suppléments</a></li>
+            <li><a href="#art5">Réservation et acompte</a></li>
+            <li><a href="#art6">Paiement du solde</a></li>
+            <li><a href="#art7">Modification par le client</a></li>
+            <li><a href="#art8">Annulation par le client</a></li>
+            <li><a href="#art9">Annulation pour météo</a></li>
+            <li><a href="#art10">Itinéraire et navigation</a></li>
+            <li><a href="#art11">Conditions d'embarquement</a></li>
+            <li><a href="#art12">Obligations du client</a></li>
+            <li><a href="#art13">Responsabilité</a></li>
+            <li><a href="#art14">Assurance</a></li>
+            <li><a href="#art15">Droit à l'image</a></li>
+            <li><a href="#art16">Données personnelles</a></li>
+            <li><a href="#art17">Propriété intellectuelle</a></li>
+            <li><a href="#art18">Droit applicable et litiges</a></li>
+            <li><a href="#art19">Dispositions diverses</a></li>
+            <li><a href="#art20">Contact</a></li>
+          </ol>
+        </nav>
+
+        <div class="legal-content">
 
           <!-- ARTICLE 1 -->
-          <article class="legal-article">
+          <article class="legal-article reveal" id="art1">
             <h2>Article 1 — Objet</h2>
-            <p>Les présentes Conditions Générales de Vente (ci-après « CGV ») régissent les relations contractuelles entre la société <strong>Prestige Charter AT</strong>, SAS de droit français (SIRET : [À COMPLÉTER]), dont le siège social est situé à [À COMPLÉTER], ci-après dénommée « le Prestataire », et toute personne physique ou morale effectuant une réservation, ci-après dénommée « le Client ».</p>
-            <p>Les opérations maritimes sont réalisées par <strong>Prestige Charter Operations Ltd</strong>, société de droit maltais (numéro d'enregistrement : [À COMPLÉTER]), ci-après dénommée « l'Opérateur ».</p>
-            <p>Les prestations consistent en la mise à disposition d'un yacht à moteur avec skipper professionnel au départ de Saint-Jean-Cap-Ferrat, Côte d'Azur, pour des sorties en mer privées selon les formules proposées par le Prestataire.</p>
+            <p>Les présentes Conditions Générales de Vente (ci-après « CGV ») régissent l'ensemble des prestations de charter nautique proposées par la société <strong>Prestige Charter AT</strong>, SAS immatriculée en France (SIRET : [À COMPLÉTER]), dont les opérations maritimes sont assurées par <strong>Prestige Charter Operations Ltd</strong>, société enregistrée à Malte ([À COMPLÉTER]).</p>
+            <p>Toute réservation implique l'acceptation pleine et entière des présentes CGV par le client.</p>
           </article>
 
           <!-- ARTICLE 2 -->
-          <article class="legal-article">
-            <h2>Article 2 — Prestations</h2>
-            <p>Le Prestataire propose les prestations suivantes à bord du yacht <strong>Artemis</strong> (Jeanneau Prestige 42S, 2018, 13 mètres) :</p>
-            <ul>
-              <li><strong>Sunset Experience</strong> — 3 heures (18h–21h) — 1 300 € TTC</li>
-              <li><strong>Journée en Mer</strong> — 8 heures (9h–17h) — 2 700 € TTC</li>
-              <li><strong>Pêche de Nuit</strong> — 6 heures (23h–5h) — 2 600 € TTC</li>
-            </ul>
-            <p>La capacité maximale est de <strong>11 passagers</strong> par sortie, en plus du skipper professionnel.</p>
-            <p>Chaque prestation inclut les services du skipper, l'équipement de loisirs ou de pêche selon l'offre choisie, le système audio Bluetooth et l'assurance responsabilité civile.</p>
+          <article class="legal-article reveal" id="art2">
+            <h2>Article 2 — Prestations proposées</h2>
+            <p>Prestige Charter AT propose des sorties en mer privatisées à bord du yacht <strong>Artemis</strong> (Jeanneau Prestige 42S, 2018, 13 mètres), au départ de <strong>Saint-Jean-Cap-Ferrat</strong>, Côte d'Azur. Trois formules sont proposées :</p>
+
+            <h3>2.1 — Sunset Experience</h3>
+            <p>Durée : 3 heures (18h–21h environ). Capacité : 11 passagers maximum + skipper professionnel. Inclus : skipper, paddle, SeaBob, kit snorkeling, son Bluetooth premium, assurance responsabilité civile.</p>
+
+            <h3>2.2 — Journée en Mer</h3>
+            <p>Durée : 8 heures (9h–17h). Capacité : 11 passagers maximum + skipper professionnel. Inclus : skipper, paddle, SeaBob, kit snorkeling, son Bluetooth premium, assurance responsabilité civile.</p>
+
+            <h3>2.3 — Pêche de Nuit</h3>
+            <p>Durée : 6 heures (23h–5h). Capacité : 11 passagers maximum + skipper professionnel. Inclus : skipper, équipement de pêche complet, apéritif, son Bluetooth premium, assurance responsabilité civile.</p>
           </article>
 
           <!-- ARTICLE 3 -->
-          <article class="legal-article">
-            <h2>Article 3 — Carburant</h2>
-            <p><strong>Le carburant n'est jamais inclus dans les tarifs affichés.</strong> Il est facturé au réel à la fin de chaque sortie :</p>
-            <ul>
-              <li>Sunset Experience : estimation ~100 à 150 €</li>
-              <li>Journée en Mer : estimation ~200 à 350 €</li>
-              <li>Pêche de Nuit : facturé au réel selon la navigation</li>
+          <article class="legal-article reveal" id="art3">
+            <h2>Article 3 — Tarifs et carburant</h2>
+
+            <h3>3.1 — Tarifs des prestations</h3>
+            <p>Les tarifs sont exprimés en euros, toutes taxes comprises (TTC), et sont identiques toute l'année :</p>
+            <table class="legal-table">
+              <thead>
+                <tr>
+                  <th>Prestation</th>
+                  <th>Tarif TTC</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Sunset Experience (3h)</td><td>1 300 €</td></tr>
+                <tr><td>Journée en Mer (8h)</td><td>2 700 €</td></tr>
+                <tr><td>Pêche de Nuit (6h)</td><td>2 600 €</td></tr>
+              </tbody>
+            </table>
+
+            <h3>3.2 — Carburant — NON INCLUS</h3>
+            <p><strong>⚠️ Le carburant n'est jamais inclus dans les tarifs.</strong> Il est facturé au réel en supplément, en fonction de l'itinéraire effectué :</p>
+            <ul class="legal-list-clean">
+              <li><strong>Sunset Experience :</strong> estimation ~100 à 150 €</li>
+              <li><strong>Journée en Mer :</strong> estimation ~200 à 350 €</li>
+              <li><strong>Pêche de Nuit :</strong> facturé au réel</li>
+              <li><strong>Option Saint-Tropez A/R :</strong> supplément carburant ~400 à 600 €</li>
             </ul>
-            <p>Un supplément carburant de 400 à 600 € est à prévoir pour un itinéraire aller-retour vers Saint-Tropez.</p>
-            <p>Ces estimations sont données à titre indicatif et peuvent varier en fonction des conditions de navigation et de l'itinéraire choisi.</p>
+            <p>Les estimations sont données à titre indicatif et peuvent varier selon les conditions de navigation, le parcours retenu et le cours du carburant.</p>
           </article>
 
           <!-- ARTICLE 4 -->
-          <article class="legal-article">
-            <h2>Article 4 — Options supplémentaires</h2>
-            <p>Le Client peut ajouter les options suivantes à toute prestation :</p>
-            <ul>
-              <li>Chef privé à bord : 500 €</li>
-              <li>Bouteille Dom Pérignon : 350 €</li>
-              <li>Photographe / Vidéaste professionnel : 800 €</li>
-            </ul>
-            <p>Les options doivent être réservées au minimum 72 heures avant la date de la prestation. Le montant des options est ajouté au solde total.</p>
+          <article class="legal-article reveal" id="art4">
+            <h2>Article 4 — Options et suppléments</h2>
+            <p>Des prestations optionnelles peuvent être ajoutées à toute formule, sur demande préalable :</p>
+            <table class="legal-table">
+              <thead>
+                <tr>
+                  <th>Option</th>
+                  <th>Tarif TTC</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Chef privé à bord</td><td>500 €</td></tr>
+                <tr><td>Bouteille Dom Pérignon</td><td>350 €</td></tr>
+                <tr><td>Photographe / Vidéaste</td><td>800 €</td></tr>
+              </tbody>
+            </table>
+            <p>Les options doivent être réservées au minimum 72 heures avant la prestation. Leur disponibilité ne peut être garantie en cas de demande tardive.</p>
           </article>
 
           <!-- ARTICLE 5 -->
-          <article class="legal-article">
-            <h2>Article 5 — Réservation</h2>
-            <p>Toute réservation est considérée comme ferme et définitive après :</p>
-            <ul>
-              <li>Réception du formulaire de réservation complété par le Client</li>
-              <li>Versement de l'acompte de <strong>30 % du montant total</strong> de la prestation</li>
-              <li>Confirmation écrite envoyée par le Prestataire par email</li>
-            </ul>
-            <p>Le Client recevra un récapitulatif détaillé de sa réservation incluant la date, l'horaire, l'offre choisie, le nombre de passagers et les options éventuelles.</p>
+          <article class="legal-article reveal" id="art5">
+            <h2>Article 5 — Réservation et acompte</h2>
+            <p>Toute réservation est confirmée par le versement d'un <strong>acompte de 30 % du montant total</strong> de la prestation (hors carburant et options non encore confirmées).</p>
+            <p>La réservation n'est considérée comme ferme et définitive qu'à réception effective de l'acompte. Prestige Charter AT se réserve le droit de libérer le créneau si l'acompte n'est pas reçu dans les 48 heures suivant la demande de réservation.</p>
+            <p>Un récapitulatif de réservation (date, formule, nombre de passagers, montant) est envoyé au client par email.</p>
           </article>
 
           <!-- ARTICLE 6 -->
-          <article class="legal-article">
-            <h2>Article 6 — Paiement</h2>
-            <p>Les modes de paiement acceptés sont :</p>
-            <ul>
+          <article class="legal-article reveal" id="art6">
+            <h2>Article 6 — Paiement du solde</h2>
+            <p>Le solde de la prestation (70 % restants) doit être réglé <strong>au minimum 48 heures avant</strong> la date prévue de la sortie en mer.</p>
+            <p>Moyens de paiement acceptés :</p>
+            <ul class="legal-list-clean">
               <li>Virement bancaire</li>
               <li>Carte bancaire</li>
               <li>Espèces</li>
             </ul>
-            <p><strong>Acompte :</strong> 30 % du montant total, dû à la réservation.</p>
-            <p><strong>Solde :</strong> les 70 % restants doivent être réglés au plus tard <strong>48 heures avant</strong> la date prévue de la prestation.</p>
-            <p>Le carburant et les éventuelles options non prévues initialement sont réglés à l'issue de la sortie.</p>
+            <p>Le carburant et les options commandées le jour même sont réglés sur place, le jour de la prestation.</p>
           </article>
 
           <!-- ARTICLE 7 -->
-          <article class="legal-article">
-            <h2>Article 7 — Annulation par le Client</h2>
-            <p>En cas d'annulation par le Client, les conditions suivantes s'appliquent :</p>
-            <table class="table-legal">
+          <article class="legal-article reveal" id="art7">
+            <h2>Article 7 — Modification par le client</h2>
+            <p>Toute demande de modification (date, formule, nombre de passagers) doit être adressée par email ou WhatsApp. Les modifications sont soumises à disponibilité et acceptation par Prestige Charter AT.</p>
+            <p>Un changement de formule entraînant une différence de tarif donnera lieu à un ajustement (complément ou remboursement partiel) selon les conditions d'annulation ci-dessous.</p>
+          </article>
+
+          <!-- ARTICLE 8 -->
+          <article class="legal-article reveal" id="art8">
+            <h2>Article 8 — Annulation par le client</h2>
+            <table class="legal-table">
               <thead>
                 <tr>
-                  <th data-fr="Délai d'annulation" data-en="Cancellation deadline">Délai d'annulation</th>
-                  <th data-fr="Conditions" data-en="Terms">Conditions</th>
+                  <th>Délai d'annulation</th>
+                  <th>Conséquence</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td data-fr="7 jours ou plus avant la date" data-en="7 days or more before">7 jours ou plus avant la date</td>
-                  <td data-fr="Remboursement intégral de l'acompte" data-en="Full refund of deposit">Remboursement intégral de l'acompte</td>
+                  <td><strong>7 jours ou plus</strong> avant la prestation</td>
+                  <td>Remboursement intégral de l'acompte</td>
                 </tr>
                 <tr>
-                  <td data-fr="Entre J-7 et J-3" data-en="Between D-7 and D-3">Entre J-7 et J-3</td>
-                  <td data-fr="Acompte conservé — report possible sous réserve de disponibilité" data-en="Deposit retained — rescheduling possible subject to availability">Acompte conservé — report possible sous réserve de disponibilité</td>
+                  <td><strong>Entre 7 et 3 jours</strong> avant la prestation</td>
+                  <td>Acompte conservé par Prestige Charter AT. Report possible sous réserve de disponibilité, dans un délai de 12 mois.</td>
                 </tr>
                 <tr>
-                  <td data-fr="Moins de 3 jours avant la date" data-en="Less than 3 days before">Moins de 3 jours avant la date</td>
-                  <td data-fr="Aucun remboursement" data-en="No refund">Aucun remboursement</td>
+                  <td><strong>Moins de 3 jours</strong> avant la prestation</td>
+                  <td>Aucun remboursement. Aucun report.</td>
                 </tr>
               </tbody>
             </table>
-            <p>Toute annulation doit être notifiée par écrit (email à prestigecharter06@gmail.com).</p>
-          </article>
-
-          <!-- ARTICLE 8 -->
-          <article class="legal-article">
-            <h2>Article 8 — Annulation pour conditions météorologiques</h2>
-            <p>Le skipper est seul juge des conditions de navigation. Si les conditions météorologiques ne permettent pas une sortie en mer dans des conditions de sécurité satisfaisantes, le skipper se réserve le droit d'annuler ou d'écourter la prestation.</p>
-            <p>En cas d'annulation par le skipper pour raisons météorologiques :</p>
-            <ul>
-              <li><strong>Report à une date ultérieure</strong> convenue entre les parties, sous réserve de disponibilité</li>
-              <li>Ou <strong>remboursement intégral</strong> de l'ensemble des sommes versées</li>
-            </ul>
-            <p>Le Client ne pourra prétendre à aucune indemnité complémentaire.</p>
+            <p>Toute annulation doit être notifiée par écrit (email à prestigecharter06@gmail.com). La date de réception de l'email fait foi.</p>
           </article>
 
           <!-- ARTICLE 9 -->
-          <article class="legal-article">
-            <h2>Article 9 — Itinéraire et navigation</h2>
-            <p>Le port de départ et de retour est <strong>Saint-Jean-Cap-Ferrat</strong>. Les itinéraires proposés couvrent la Côte d'Azur : Monaco, Èze-sur-Mer, Beaulieu-sur-Mer, Villefranche-sur-Mer, Antibes, Cap d'Antibes, Îles de Lérins, et Saint-Tropez (en journée complète).</p>
-            <p>Le Client peut exprimer ses souhaits d'itinéraire. Le skipper adapte le parcours en fonction des conditions météorologiques, de l'état de la mer et des contraintes de sécurité. L'itinéraire final est décidé par le skipper.</p>
+          <article class="legal-article reveal" id="art9">
+            <h2>Article 9 — Annulation pour conditions météorologiques</h2>
+            <p>Le skipper est seul décisionnaire en matière de sécurité. Si les conditions météorologiques ne permettent pas une navigation sûre et confortable, le skipper peut décider d'annuler la sortie.</p>
+            <p>En cas d'annulation météo par le skipper :</p>
+            <ul class="legal-list-clean">
+              <li><strong>Report gratuit</strong> à une date ultérieure convenue entre les parties, ou</li>
+              <li><strong>Remboursement intégral</strong> de l'ensemble des sommes versées (acompte et solde)</li>
+            </ul>
+            <p>La décision d'annulation météo est communiquée au client dans les meilleurs délais, au plus tard 3 heures avant l'heure d'embarquement prévue.</p>
           </article>
 
           <!-- ARTICLE 10 -->
-          <article class="legal-article">
-            <h2>Article 10 — Obligations du Client</h2>
-            <p>Le Client s'engage à :</p>
-            <ul>
-              <li>Communiquer des informations exactes lors de la réservation</li>
-              <li>Ne pas dépasser le nombre de <strong>11 passagers</strong> déclaré</li>
-              <li>Respecter les consignes de sécurité données par le skipper</li>
-              <li>Respecter le matériel et les équipements mis à disposition</li>
-              <li>Adopter un comportement approprié à bord</li>
-              <li>Signaler toute condition médicale particulière avant l'embarquement</li>
-            </ul>
-            <p>Le skipper se réserve le droit de refuser l'embarquement ou d'écourter la sortie en cas de comportement mettant en danger la sécurité des passagers ou du navire. Aucun remboursement ne sera dû dans ce cas.</p>
+          <article class="legal-article reveal" id="art10">
+            <h2>Article 10 — Itinéraire et navigation</h2>
+            <p>Le départ s'effectue depuis le port de <strong>Saint-Jean-Cap-Ferrat</strong>. Les itinéraires proposés couvrent la Côte d'Azur : Monaco, Èze-sur-Mer, Beaulieu-sur-Mer, Villefranche-sur-Mer, Antibes, Cap d'Antibes, Îles de Lérins, Saint-Tropez (journée complète).</p>
+            <p>Le client peut exprimer des préférences d'itinéraire. Toutefois, <strong>le skipper reste seul maître de la route</strong> et peut adapter ou modifier le parcours en fonction des conditions de mer, du vent, de la houle, du trafic maritime ou de toute considération liée à la sécurité.</p>
+            <p>Ces modifications ne sauraient donner lieu à un remboursement partiel ou total.</p>
           </article>
 
           <!-- ARTICLE 11 -->
-          <article class="legal-article">
-            <h2>Article 11 — Responsabilité</h2>
-            <p>Le Prestataire et l'Opérateur sont couverts par une assurance responsabilité civile professionnelle pour l'ensemble de leurs activités maritimes.</p>
-            <p>Le Prestataire ne saurait être tenu responsable :</p>
-            <ul>
-              <li>Des dommages résultant du non-respect des consignes de sécurité par le Client</li>
-              <li>Des modifications d'itinéraire imposées par les conditions météorologiques</li>
-              <li>De la perte ou de la détérioration d'effets personnels à bord</li>
-              <li>De tout cas de force majeure</li>
+          <article class="legal-article reveal" id="art11">
+            <h2>Article 11 — Conditions d'embarquement</h2>
+            <ul class="legal-list-clean">
+              <li>Capacité maximale : <strong>11 passagers</strong> + skipper. Aucune dérogation possible.</li>
+              <li>Les enfants sont sous la responsabilité exclusive de leurs parents ou accompagnants adultes.</li>
+              <li>Chaque passager doit être en mesure physique d'embarquer et de naviguer.</li>
+              <li>Le skipper se réserve le droit de refuser l'embarquement à toute personne dont le comportement présente un risque pour la sécurité (état d'ébriété avancé, comportement dangereux). Aucun remboursement ne sera dû dans ce cas.</li>
+              <li>Les passagers sont priés de se présenter au point d'embarquement <strong>15 minutes avant l'heure de départ</strong>.</li>
             </ul>
-            <p>Le Client est responsable de tout dommage qu'il causerait au navire, à ses équipements ou aux loisirs nautiques mis à disposition. Les réparations ou remplacements seront facturés au Client.</p>
           </article>
 
           <!-- ARTICLE 12 -->
-          <article class="legal-article">
-            <h2>Article 12 — Assurance</h2>
-            <p>Le yacht Artemis est assuré conformément à la réglementation maritime en vigueur. L'assurance couvre les dommages corporels et matériels dans le cadre normal de la prestation.</p>
-            <p>Il est recommandé au Client de souscrire une assurance individuelle complémentaire couvrant notamment les activités nautiques (paddle, SeaBob, snorkeling).</p>
+          <article class="legal-article reveal" id="art12">
+            <h2>Article 12 — Obligations du client</h2>
+            <p>Le client s'engage à :</p>
+            <ul class="legal-list-clean">
+              <li>Respecter les consignes de sécurité données par le skipper</li>
+              <li>Ne pas dépasser le nombre de passagers déclaré à la réservation (11 maximum)</li>
+              <li>Prendre soin du yacht et des équipements mis à disposition</li>
+              <li>Signaler immédiatement tout incident, dommage ou blessure</li>
+              <li>Ne pas introduire de substances illicites à bord</li>
+            </ul>
+            <p>Tout dommage causé au yacht ou aux équipements par le client ou ses invités fera l'objet d'une facturation au coût de réparation ou de remplacement. [À COMPLÉTER PAR AVOCAT : plafond éventuel, franchise, procédure de constat]</p>
           </article>
 
           <!-- ARTICLE 13 -->
-          <article class="legal-article">
-            <h2>Article 13 — Données personnelles</h2>
-            <p>Les données personnelles collectées lors de la réservation sont traitées conformément au Règlement Général sur la Protection des Données (RGPD). Elles sont utilisées exclusivement pour :</p>
-            <ul>
-              <li>La gestion de la réservation et de la prestation</li>
-              <li>La communication d'informations relatives à la sortie</li>
-              <li>L'envoi de communications commerciales si le Client y a consenti</li>
+          <article class="legal-article reveal" id="art13">
+            <h2>Article 13 — Responsabilité</h2>
+            <p>Prestige Charter AT met tout en œuvre pour assurer la sécurité et le confort de ses passagers. La société est responsable de la bonne exécution de la prestation conformément aux présentes CGV.</p>
+            <p>Prestige Charter AT ne saurait être tenue responsable :</p>
+            <ul class="legal-list-clean">
+              <li>Des aléas météorologiques entraînant une modification d'itinéraire ou une annulation</li>
+              <li>Des retards causés par des circonstances extérieures (trafic portuaire, événements maritimes)</li>
+              <li>De la perte ou du vol d'effets personnels à bord</li>
+              <li>Des dommages résultant du non-respect des consignes de sécurité par le client</li>
             </ul>
-            <p>Le Client peut exercer ses droits d'accès, de rectification et de suppression en contactant : <a href="mailto:prestigecharter06@gmail.com">prestigecharter06@gmail.com</a></p>
-            <p>Pour plus d'informations, consultez nos <a href="mentionslegales.html">Mentions légales</a>.</p>
+            <p>[À COMPLÉTER PAR AVOCAT : clause limitative de responsabilité, montant maximum, force majeure]</p>
           </article>
 
           <!-- ARTICLE 14 -->
-          <article class="legal-article">
-            <h2>Article 14 — Propriété intellectuelle</h2>
-            <p>L'ensemble des éléments du site www.prestigecharter.fr (textes, photographies, logos, vidéos, design) sont la propriété exclusive de Prestige Charter AT et sont protégés par les lois relatives à la propriété intellectuelle.</p>
-            <p>Toute reproduction, représentation ou diffusion, totale ou partielle, sans autorisation préalable écrite est interdite.</p>
+          <article class="legal-article reveal" id="art14">
+            <h2>Article 14 — Assurance</h2>
+            <p>Le yacht Artemis est couvert par une assurance responsabilité civile professionnelle couvrant les passagers pendant la durée de la prestation.</p>
+            <p>Il est recommandé aux clients de souscrire une assurance personnelle couvrant les activités nautiques (annulation de voyage, rapatriement, effets personnels).</p>
+            <p>[À COMPLÉTER PAR AVOCAT : nom de l'assureur, numéro de police, garanties détaillées]</p>
           </article>
 
           <!-- ARTICLE 15 -->
-          <article class="legal-article">
-            <h2>Article 15 — Litiges et droit applicable</h2>
-            <p>Les présentes CGV sont soumises au <strong>droit français</strong>.</p>
-            <p>En cas de litige, les parties s'engagent à rechercher une solution amiable avant toute action judiciaire. À défaut d'accord amiable, tout litige sera soumis aux tribunaux compétents de <strong>Nice (06)</strong>, France.</p>
-            <p>Conformément aux dispositions du Code de la consommation, le Client peut recourir à un médiateur de la consommation dont les coordonnées sont : [À COMPLÉTER].</p>
+          <article class="legal-article reveal" id="art15">
+            <h2>Article 15 — Droit à l'image</h2>
+            <p>Des photographies ou vidéos peuvent être réalisées pendant la prestation par l'équipage ou un photographe mandaté (option), à des fins de communication et de promotion de Prestige Charter AT.</p>
+            <p>[À COMPLÉTER PAR AVOCAT : clause d'autorisation, droit d'opposition, formulaire de consentement, mineur(s), durée d'utilisation, supports concernés]</p>
           </article>
 
           <!-- ARTICLE 16 -->
-          <article class="legal-article">
-            <h2>Article 16 — Dispositions diverses</h2>
-            <p>Si l'une des clauses des présentes CGV s'avérait nulle au regard d'une règle de droit en vigueur, elle serait réputée non écrite sans que cela n'affecte la validité des autres dispositions.</p>
-            <p>Le fait pour le Prestataire de ne pas exercer un droit prévu aux présentes CGV ne constitue pas une renonciation à ce droit.</p>
-            <p>Le Prestataire se réserve le droit de modifier les présentes CGV à tout moment. Les CGV applicables sont celles en vigueur au moment de la réservation.</p>
+          <article class="legal-article reveal" id="art16">
+            <h2>Article 16 — Données personnelles</h2>
+            <p>Les données personnelles collectées lors de la réservation (nom, email, téléphone) sont traitées conformément au Règlement Général sur la Protection des Données (RGPD) et à la loi Informatique et Libertés.</p>
+            <p>Ces données sont utilisées exclusivement pour :</p>
+            <ul class="legal-list-clean">
+              <li>La gestion des réservations et la relation client</li>
+              <li>L'envoi de communications liées à la prestation</li>
+              <li>Les communications du Yacht Club Prestige (avec consentement)</li>
+            </ul>
+            <p>Elles ne sont jamais cédées ou vendues à des tiers. Pour toute demande d'accès, rectification ou suppression : <a href="mailto:prestigecharter06@gmail.com">prestigecharter06@gmail.com</a>.</p>
+            <p>Pour plus d'informations, consultez nos <a href="mentionslegales.html">mentions légales</a>.</p>
           </article>
 
-          <!-- CONTACT -->
-          <article class="legal-article legal-article--contact">
-            <h2 data-fr="Contact" data-en="Contact">Contact</h2>
-            <p>
-              <strong>Prestige Charter AT</strong> — SAS<br>
-              SIRET : [À COMPLÉTER]<br>
-              Siège social : [À COMPLÉTER]<br>
-              Port d'attache : Saint-Jean-Cap-Ferrat, France<br><br>
-              Opérations : <strong>Prestige Charter Operations Ltd</strong><br>
-              Malte — N° enregistrement : [À COMPLÉTER]<br><br>
-              📞 <a href="tel:+33652192414">06 52 19 24 14</a><br>
-              ✉ <a href="mailto:prestigecharter06@gmail.com">prestigecharter06@gmail.com</a><br>
-              🌐 <a href="https://www.prestigecharter.fr">www.prestigecharter.fr</a>
-            </p>
+          <!-- ARTICLE 17 -->
+          <article class="legal-article reveal" id="art17">
+            <h2>Article 17 — Propriété intellectuelle</h2>
+            <p>L'ensemble des éléments du site www.prestigecharter.fr (textes, photographies, logo, design, marque « Prestige Charter ») sont la propriété exclusive de Prestige Charter AT et sont protégés par le droit de la propriété intellectuelle.</p>
+            <p>Toute reproduction, représentation ou diffusion, en tout ou partie, sans autorisation écrite préalable est interdite.</p>
           </article>
 
+          <!-- ARTICLE 18 -->
+          <article class="legal-article reveal" id="art18">
+            <h2>Article 18 — Droit applicable et litiges</h2>
+            <p>Les présentes CGV sont soumises au <strong>droit français</strong>.</p>
+            <p>En cas de litige relatif à la formation, l'exécution ou l'interprétation des présentes CGV, les parties s'efforceront de trouver une solution amiable. À défaut, le litige sera porté devant les <strong>tribunaux compétents de Nice</strong> (Alpes-Maritimes, France).</p>
+            <p>Conformément aux articles L.612-1 et suivants du Code de la consommation, le client consommateur a le droit de recourir gratuitement à un médiateur de la consommation. [À COMPLÉTER PAR AVOCAT : nom et coordonnées du médiateur désigné]</p>
+          </article>
+
+          <!-- ARTICLE 19 -->
+          <article class="legal-article reveal" id="art19">
+            <h2>Article 19 — Dispositions diverses</h2>
+            <p>Si l'une des clauses des présentes CGV s'avérait nulle au regard d'une règle de droit en vigueur ou d'une décision judiciaire, elle serait réputée non écrite sans pour autant entraîner la nullité des autres clauses.</p>
+            <p>Le fait pour Prestige Charter AT de ne pas se prévaloir d'un manquement du client à l'une quelconque des obligations prévues aux présentes ne saurait s'interpréter comme une renonciation à l'obligation en cause.</p>
+            <p>Les présentes CGV peuvent être mises à jour. La version applicable est celle en vigueur à la date de la réservation.</p>
+          </article>
+
+          <!-- ARTICLE 20 -->
+          <article class="legal-article reveal" id="art20">
+            <h2>Article 20 — Contact</h2>
+            <div class="legal-contact-box">
+              <p><strong>Prestige Charter AT</strong> — SAS</p>
+              <p>Port de Saint-Jean-Cap-Ferrat, Côte d'Azur</p>
+              <p>SIRET : [À COMPLÉTER]</p>
+              <p>📞 <a href="tel:+33652192414">06 52 19 24 14</a></p>
+              <p>✉ <a href="mailto:prestigecharter06@gmail.com">prestigecharter06@gmail.com</a></p>
+              <p>💬 <a href="https://wa.me/33652192414" target="_blank" rel="noopener">WhatsApp</a></p>
+              <p>🌐 <a href="https://www.prestigecharter.fr">www.prestigecharter.fr</a></p>
+            </div>
+          </article>
+
+          <p class="legal-update reveal"><strong>Dernière mise à jour :</strong> janvier 2025</p>
+
+        </div><!-- /.legal-content -->
+
+        <p class="text-center mt-24 reveal">
+          <a href="mentionslegales.html" class="link-gold" data-fr="Consulter les mentions légales →" data-en="View legal notices →">Consulter les mentions légales →</a>
+        </p>
+
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section section--dark">
+      <div class="container text-center">
+        <h2 class="reveal" data-fr="Une question sur nos conditions ?" data-en="Questions about our terms?">Une question sur nos conditions ?</h2>
+        <p class="subtitle reveal" data-fr="Notre équipe est à votre disposition." data-en="Our team is at your disposal.">Notre équipe est à votre disposition.</p>
+        <div class="cta-group reveal">
+          <a href="contact.html" class="btn btn--gold" data-fr="Nous contacter" data-en="Contact us">Nous contacter</a>
+          <a href="https://wa.me/33652192414?text=Bonjour%2C%20j%27ai%20une%20question%20concernant%20les%20CGV%20de%20Prestige%20Charter." target="_blank" rel="noopener" class="btn btn--outline" data-fr="WhatsApp" data-en="WhatsApp">WhatsApp</a>
         </div>
       </div>
     </section>
