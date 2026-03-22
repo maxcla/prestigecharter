@@ -1,381 +1,293 @@
+<!-- reservation.html -->
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Réservation — Prestige Charter AT</title>
-  <meta name="description" content="Réservez votre expérience nautique de luxe sur la Côte d'Azur. Yacht Artemis au départ de Saint-Jean-Cap-Ferrat." />
-  <link rel="canonical" href="https://www.prestigecharter.fr/reservation.html" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Réservation — Charter Privé Côte d'Azur | Prestige Charter</title>
+  <meta name="description" content="Réservez votre sortie en mer privée à bord de l'Artemis. Sunset Experience, Journée en Mer ou Pêche de Nuit depuis Saint-Jean-Cap-Ferrat.">
+  <meta property="og:title" content="Réservation — Prestige Charter">
+  <meta property="og:description" content="Réservez en quelques clics votre charter privé sur la Côte d'Azur.">
+  <meta property="og:image" content="images/Arrière%20V2.jpeg">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><path d='M16 2 L16 28 M10 26 Q16 22 22 26 M8 10 Q16 4 24 10 L16 8Z' fill='none' stroke='%23C9A84C' stroke-width='2'/></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<div id="scroll-progress"></div>
-<div id="pageTransition" class="page-transition active"></div>
-
-<a href="https://wa.me/33652192414" target="_blank" rel="noopener" class="whatsapp-float" aria-label="WhatsApp">
-  <svg viewBox="0 0 24 24" fill="currentColor" width="26" height="26">
-    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-    <path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.549 4.107 1.51 5.833L.057 23.215a.75.75 0 0 0 .916.916l5.382-1.453A11.954 11.954 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.73 9.73 0 0 1-4.964-1.358l-.356-.212-3.695.998.997-3.696-.211-.355A9.718 9.718 0 0 1 2.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/>
-  </svg>
-</a>
-
-<!-- NAV -->
-<nav>
-  <a href="index.html" class="logo">
-    <svg class="logo-anchor" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-         stroke-width="1.5" width="18" height="18" aria-hidden="true">
-      <circle cx="12" cy="5" r="2"/>
-      <line x1="12" y1="7" x2="12" y2="11"/>
-      <path d="M5 11h14M5 11C5 16 8 19 12 20M19 11C19 16 16 19 12 20"/>
-      <line x1="9" y1="20" x2="12" y2="22"/>
-      <line x1="15" y1="20" x2="12" y2="22"/>
+  <!-- PRELOADER -->
+  <div id="preloader" aria-hidden="true">
+    <svg class="preloader-anchor" viewBox="0 0 64 64" width="64" height="64">
+      <path d="M32 8a6 6 0 1 1 0 12 6 6 0 0 1 0-12Zm0 16v28M20 56q12-6 24 0M14 28q18-10 36 0" fill="none" stroke="#C9A84C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>
-    <span class="logo-prestige">PRESTIGE</span>
-    <span class="logo-charter">CHARTER</span>
-  </a>
-
-  <ul class="nav-links" id="navLinks">
-    <li><a href="index.html" data-fr="Accueil" data-en="Home">Accueil</a></li>
-    <li><a href="yacht.html" data-fr="Le Yacht" data-en="The Yacht">Le Yacht</a></li>
-    <li><a href="experiences.html" data-fr="Expériences" data-en="Experiences">Expériences</a></li>
-    <li><a href="tarifs.html" data-fr="Tarifs" data-en="Rates">Tarifs</a></li>
-    <li><a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a></li>
-    <li><a href="reservation.html" class="nav-cta active" data-fr="Réserver" data-en="Book">Réserver</a></li>
-  </ul>
-
-  <div class="nav-actions">
-    <button class="lang-toggle" id="langToggle" aria-label="Switch language">FR / EN</button>
-    <button class="burger" id="burgerBtn" aria-label="Menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
   </div>
-</nav>
 
-<!-- HERO -->
-<section class="page-hero" style="background-image:url('images/Arrière%20V2.jpeg');">
-  <div class="page-hero-overlay"></div>
-  <div class="page-hero-content">
-    <p class="section-label" data-fr="Réservation" data-en="Booking">Réservation</p>
-    <h1 data-fr="Réservez votre expérience" data-en="Book your experience">Réservez votre expérience</h1>
-    <p class="hero-sub" data-fr="Acompte de 30% à la réservation — Solde 48h avant le départ"
-                        data-en="30% deposit upon booking — Balance 48h before departure">
-      Acompte de 30% à la réservation — Solde 48h avant le départ
-    </p>
-  </div>
-</section>
-
-<!-- ÉTAPES -->
-<section class="section booking-steps-section">
-  <div class="container">
-    <p class="section-label" data-fr="Comment ça marche" data-en="How it works">Comment ça marche</p>
-    <h2 data-fr="En 3 étapes simples" data-en="In 3 simple steps">En 3 étapes simples</h2>
-    <div class="steps-grid">
-      <div class="step-card fade-in">
-        <div class="step-number">01</div>
-        <h3 data-fr="Choisissez votre offre" data-en="Choose your offer">Choisissez votre offre</h3>
-        <p data-fr="Sunset Experience, Journée en Mer ou Pêche de Nuit. Sélectionnez la date et le nombre de passagers."
-           data-en="Sunset Experience, Day at Sea or Night Fishing. Select your date and number of passengers.">
-          Sunset Experience, Journée en Mer ou Pêche de Nuit. Sélectionnez la date et le nombre de passagers.
-        </p>
-      </div>
-      <div class="step-card fade-in">
-        <div class="step-number">02</div>
-        <h3 data-fr="Confirmez & payez l'acompte" data-en="Confirm & pay deposit">Confirmez & payez l'acompte</h3>
-        <p data-fr="Un acompte de 30% confirme votre réservation. Règlement par virement, carte ou espèces."
-           data-en="A 30% deposit confirms your booking. Payment by transfer, card or cash.">
-          Un acompte de 30% confirme votre réservation. Règlement par virement, carte ou espèces.
-        </p>
-      </div>
-      <div class="step-card fade-in">
-        <div class="step-number">03</div>
-        <h3 data-fr="Embarquez & profitez" data-en="Board & enjoy">Embarquez & profitez</h3>
-        <p data-fr="Rendez-vous au port de Saint-Jean-Cap-Ferrat. Le solde est réglé 48h avant le départ."
-           data-en="Meet at Saint-Jean-Cap-Ferrat harbour. The balance is due 48h before departure.">
-          Rendez-vous au port de Saint-Jean-Cap-Ferrat. Le solde est réglé 48h avant le départ.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FORMULAIRE -->
-<section class="section booking-form-section">
-  <div class="container container-narrow">
-    <p class="section-label" data-fr="Demande de réservation" data-en="Booking request">Demande de réservation</p>
-    <h2 data-fr="Votre demande" data-en="Your request">Votre demande</h2>
-    <p class="section-intro" data-fr="Remplissez ce formulaire et nous vous répondons sous 2h pour confirmer la disponibilité."
-                             data-en="Fill in this form and we will reply within 2h to confirm availability.">
-      Remplissez ce formulaire et nous vous répondons sous 2h pour confirmer la disponibilité.
-    </p>
-
-    <form class="booking-form" id="bookingForm" novalidate>
-
-      <!-- Offre -->
-      <div class="form-group">
-        <label for="offre" data-fr="Offre souhaitée *" data-en="Desired offer *">Offre souhaitée *</label>
-        <select id="offre" name="offre" required>
-          <option value="" data-fr="— Sélectionnez une offre —" data-en="— Select an offer —">— Sélectionnez une offre —</option>
-          <option value="sunset" data-fr="Sunset Experience — 3h — 1 300 € TTC" data-en="Sunset Experience — 3h — 1,300 € incl. VAT">Sunset Experience — 3h — 1 300 € TTC</option>
-          <option value="journee" data-fr="Journée en Mer — 8h — 2 700 € TTC" data-en="Day at Sea — 8h — 2,700 € incl. VAT">Journée en Mer — 8h — 2 700 € TTC</option>
-          <option value="peche" data-fr="Pêche de Nuit — 6h — 2 600 € TTC" data-en="Night Fishing — 6h — 2,600 € incl. VAT">Pêche de Nuit — 6h — 2 600 € TTC</option>
-        </select>
-      </div>
-
-      <!-- Date -->
-      <div class="form-group">
-        <label for="date" data-fr="Date souhaitée *" data-en="Desired date *">Date souhaitée *</label>
-        <input type="date" id="date" name="date" required />
-      </div>
-
-      <!-- Passagers -->
-      <div class="form-group">
-        <label for="passagers" data-fr="Nombre de passagers *" data-en="Number of passengers *">Nombre de passagers *</label>
-        <select id="passagers" name="passagers" required>
-          <option value="">—</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-          <option value="7">7</option>
-          <option value="8">8</option>
-          <option value="9">9</option>
-          <option value="10">10</option>
-          <option value="11">11</option>
-        </select>
-      </div>
-
-      <!-- Nom -->
-      <div class="form-row">
-        <div class="form-group">
-          <label for="prenom" data-fr="Prénom *" data-en="First name *">Prénom *</label>
-          <input type="text" id="prenom" name="prenom" required
-                 data-placeholder-fr="Votre prénom" data-placeholder-en="Your first name"
-                 placeholder="Votre prénom" />
-        </div>
-        <div class="form-group">
-          <label for="nom" data-fr="Nom *" data-en="Last name *">Nom *</label>
-          <input type="text" id="nom" name="nom" required
-                 data-placeholder-fr="Votre nom" data-placeholder-en="Your last name"
-                 placeholder="Votre nom" />
-        </div>
-      </div>
-
-      <!-- Contact -->
-      <div class="form-row">
-        <div class="form-group">
-          <label for="email" data-fr="Email *" data-en="Email *">Email *</label>
-          <input type="email" id="email" name="email" required
-                 data-placeholder-fr="votre@email.com" data-placeholder-en="your@email.com"
-                 placeholder="votre@email.com" />
-        </div>
-        <div class="form-group">
-          <label for="telephone" data-fr="Téléphone *" data-en="Phone *">Téléphone *</label>
-          <input type="tel" id="telephone" name="telephone" required
-                 data-placeholder-fr="+33 6 XX XX XX XX" data-placeholder-en="+33 6 XX XX XX XX"
-                 placeholder="+33 6 XX XX XX XX" />
-        </div>
-      </div>
-
-      <!-- Itinéraire -->
-      <div class="form-group">
-        <label for="itineraire" data-fr="Itinéraire souhaité" data-en="Desired itinerary">Itinéraire souhaité</label>
-        <select id="itineraire" name="itineraire">
-          <option value="" data-fr="— Au choix / À discuter —" data-en="— To be discussed —">— Au choix / À discuter —</option>
-          <option value="monaco" data-fr="Monaco & Èze-sur-Mer" data-en="Monaco & Èze-sur-Mer">Monaco & Èze-sur-Mer</option>
-          <option value="villefranche" data-fr="Beaulieu / Villefranche-sur-Mer" data-en="Beaulieu / Villefranche-sur-Mer">Beaulieu / Villefranche-sur-Mer</option>
-          <option value="antibes" data-fr="Antibes / Cap d'Antibes" data-en="Antibes / Cap d'Antibes">Antibes / Cap d'Antibes</option>
-          <option value="lerins" data-fr="Îles de Lérins (Cannes)" data-en="Lérins Islands (Cannes)">Îles de Lérins (Cannes)</option>
-          <option value="sainttropez" data-fr="Saint-Tropez (journée complète)" data-en="Saint-Tropez (full day)">Saint-Tropez (journée complète)</option>
-        </select>
-      </div>
-
-      <!-- Options -->
-      <div class="form-group">
-        <label data-fr="Options (en supplément)" data-en="Extras (additional charge)">Options (en supplément)</label>
-        <div class="checkbox-group">
-          <label class="checkbox-label">
-            <input type="checkbox" name="options" value="chef" />
-            <span data-fr="Chef privé à bord — 500 €" data-en="Private chef on board — €500">Chef privé à bord — 500 €</span>
-          </label>
-          <label class="checkbox-label">
-            <input type="checkbox" name="options" value="champagne" />
-            <span data-fr="Bouteille Dom Pérignon — 350 €" data-en="Dom Pérignon bottle — €350">Bouteille Dom Pérignon — 350 €</span>
-          </label>
-          <label class="checkbox-label">
-            <input type="checkbox" name="options" value="photographe" />
-            <span data-fr="Photographe / Vidéaste — 800 €" data-en="Photographer / Videographer — €800">Photographe / Vidéaste — 800 €</span>
-          </label>
-        </div>
-      </div>
-
-      <!-- Message -->
-      <div class="form-group">
-        <label for="message" data-fr="Message / Demandes particulières" data-en="Message / Special requests">Message / Demandes particulières</label>
-        <textarea id="message" name="message" rows="4"
-                  data-placeholder-fr="Précisez vos souhaits : occasion spéciale, allergies, besoins particuliers..."
-                  data-placeholder-en="Share your wishes: special occasion, allergies, particular needs..."
-                  placeholder="Précisez vos souhaits : occasion spéciale, allergies, besoins particuliers..."></textarea>
-      </div>
-
-      <!-- Carburant notice -->
-      <div class="form-notice">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18">
-          <circle cx="12" cy="12" r="10"/>
-          <line x1="12" y1="8" x2="12" y2="12"/>
-          <line x1="12" y1="16" x2="12.01" y2="16"/>
+  <!-- HEADER -->
+  <header id="header" class="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" aria-label="Prestige Charter - Accueil">
+        <svg class="logo-anchor" viewBox="0 0 36 36" width="28" height="28" aria-hidden="true">
+          <path d="M18 4a4 4 0 1 1 0 8 4 4 0 0 1 0-8Zm0 10v16M11 32q7-4 14 0M8 14q10-6 20 0" fill="none" stroke="#C9A84C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
-        <p data-fr="Le carburant est facturé au réel selon l'itinéraire choisi. Le skipper vous communiquera une estimation avant le départ."
-           data-en="Fuel is billed at cost based on the chosen itinerary. The skipper will provide an estimate before departure.">
-          Le carburant est facturé au réel selon l'itinéraire choisi. Le skipper vous communiquera une estimation avant le départ.
-        </p>
-      </div>
-
-      <!-- CGV -->
-      <div class="form-group">
-        <label class="checkbox-label">
-          <input type="checkbox" name="cgv" id="cgv" required />
-          <span>
-            <span data-fr="J'accepte les" data-en="I accept the">J'accepte les</span>
-            <a href="cgv.html" target="_blank" data-fr="Conditions Générales de Vente" data-en="Terms & Conditions">Conditions Générales de Vente</a>
-            *
-          </span>
-        </label>
-      </div>
-
-      <!-- Submit -->
-      <button type="submit" class="btn btn-primary btn-full" id="submitBtn">
-        <span data-fr="Envoyer ma demande" data-en="Send my request">Envoyer ma demande</span>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18">
-          <line x1="5" y1="12" x2="19" y2="12"/>
-          <polyline points="12 5 19 12 12 19"/>
-        </svg>
-      </button>
-
-      <!-- Success / Error messages -->
-      <div class="form-success" id="formSuccess" style="display:none;">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24">
-          <polyline points="20 6 9 17 4 12"/>
-        </svg>
-        <p data-fr="Votre demande a bien été envoyée. Nous vous répondons sous 2h !"
-           data-en="Your request has been sent. We will reply within 2h!">
-          Votre demande a bien été envoyée. Nous vous répondons sous 2h !
-        </p>
-      </div>
-      <div class="form-error" id="formError" style="display:none;">
-        <p data-fr="Une erreur est survenue. Contactez-nous directement par WhatsApp."
-           data-en="An error occurred. Please contact us directly via WhatsApp.">
-          Une erreur est survenue. Contactez-nous directement par WhatsApp.
-        </p>
-      </div>
-
-    </form>
-  </div>
-</section>
-
-<!-- CONTACT DIRECT -->
-<section class="section contact-alt-section">
-  <div class="container">
-    <p class="section-label" data-fr="Préférez-vous nous contacter directement ?" data-en="Prefer to contact us directly?">
-      Préférez-vous nous contacter directement ?
-    </p>
-    <h2 data-fr="Nous sommes disponibles" data-en="We are available">Nous sommes disponibles</h2>
-    <div class="contact-alt-grid">
-      <a href="https://wa.me/33652192414" target="_blank" rel="noopener" class="contact-alt-card">
-        <svg viewBox="0 0 24 24" fill="currentColor" width="32" height="32">
-          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-          <path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.549 4.107 1.51 5.833L.057 23.215a.75.75 0 0 0 .916.916l5.382-1.453A11.954 11.954 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.73 9.73 0 0 1-4.964-1.358l-.356-.212-3.695.998.997-3.696-.211-.355A9.718 9.718 0 0 1 2.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/>
-        </svg>
-        <div>
-          <strong data-fr="WhatsApp" data-en="WhatsApp">WhatsApp</strong>
-          <span>06 52 19 24 14</span>
-        </div>
+        <span class="logo-text"><span class="logo-prestige">PRESTIGE</span> <span class="logo-charter">CHARTER</span></span>
       </a>
-      <a href="tel:+33652192414" class="contact-alt-card">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="32" height="32">
-          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.38 2 2 0 0 1 3.59 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.54a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
-        </svg>
-        <div>
-          <strong data-fr="Téléphone" data-en="Phone">Téléphone</strong>
-          <span>06 52 19 24 14</span>
-        </div>
-      </a>
-      <a href="mailto:prestigecharter06@gmail.com" class="contact-alt-card">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="32" height="32">
-          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-          <polyline points="22,6 12,13 2,6"/>
-        </svg>
-        <div>
-          <strong data-fr="Email" data-en="Email">Email</strong>
-          <span>prestigecharter06@gmail.com</span>
-        </div>
-      </a>
+      <nav class="nav-desktop" aria-label="Navigation principale">
+        <a href="index.html" data-fr="Accueil" data-en="Home">Accueil</a>
+        <a href="yacht.html" data-fr="Le Yacht" data-en="The Yacht">Le Yacht</a>
+        <a href="experiences.html" data-fr="Expériences" data-en="Experiences">Expériences</a>
+        <a href="histoire.html" data-fr="Notre Histoire" data-en="Our Story">Notre Histoire</a>
+        <a href="yachtclub.html" data-fr="Yacht Club" data-en="Yacht Club">Yacht Club</a>
+        <a href="tarifs.html" data-fr="Tarifs" data-en="Pricing">Tarifs</a>
+        <a href="reservation.html" class="active" data-fr="Réservation" data-en="Booking">Réservation</a>
+        <a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <button id="lang-toggle" class="lang-toggle" aria-label="Switch language">FR</button>
+        <button id="menu-toggle" class="menu-toggle" aria-label="Menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
-  </div>
-</section>
+  </header>
 
-<!-- FOOTER -->
-<footer>
-  <div class="footer-grid">
-    <div class="footer-col footer-brand">
-      <a href="index.html" class="logo">
-        <svg class="logo-anchor" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-             stroke-width="1.5" width="18" height="18" aria-hidden="true">
-          <circle cx="12" cy="5" r="2"/>
-          <line x1="12" y1="7" x2="12" y2="11"/>
-          <path d="M5 11h14M5 11C5 16 8 19 12 20M19 11C19 16 16 19 12 20"/>
-          <line x1="9" y1="20" x2="12" y2="22"/>
-          <line x1="15" y1="20" x2="12" y2="22"/>
-        </svg>
-        <span class="logo-prestige">PRESTIGE</span>
-        <span class="logo-charter">CHARTER</span>
-      </a>
-      <p class="footer-tagline" data-fr="L'excellence nautique sur la Côte d'Azur"
-                                data-en="Nautical excellence on the French Riviera">
-        L'excellence nautique sur la Côte d'Azur
-      </p>
-    </div>
-    <div class="footer-col">
-      <h4 data-fr="Navigation" data-en="Navigation">Navigation</h4>
-      <ul>
-        <li><a href="index.html" data-fr="Accueil" data-en="Home">Accueil</a></li>
-        <li><a href="yacht.html" data-fr="Le Yacht" data-en="The Yacht">Le Yacht</a></li>
-        <li><a href="experiences.html" data-fr="Expériences" data-en="Experiences">Expériences</a></li>
-        <li><a href="tarifs.html" data-fr="Tarifs" data-en="Rates">Tarifs</a></li>
-        <li><a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4 data-fr="Contact" data-en="Contact">Contact</h4>
-      <ul>
-        <li><a href="tel:+33652192414">06 52 19 24 14</a></li>
-        <li><a href="mailto:prestigecharter06@gmail.com">prestigecharter06@gmail.com</a></li>
-        <li><a href="https://wa.me/33652192414" target="_blank" rel="noopener">WhatsApp</a></li>
-        <li><a href="https://instagram.com/prestigecharter06" target="_blank" rel="noopener">@prestigecharter06</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4 data-fr="Informations" data-en="Information">Informations</h4>
-      <ul>
-        <li><a href="cgv.html" data-fr="CGV" data-en="Terms &amp; Conditions">CGV</a></li>
-        <li><a href="mentionslegales.html" data-fr="Mentions légales" data-en="Legal Notice">Mentions légales</a></li>
-        <li><a href="reservation.html" data-fr="Réserver" data-en="Book">Réserver</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <p data-fr="© 2025 Prestige Charter AT — SAS Prestige Charter AT / Prestige Charter Operations Ltd (Malte)"
-       data-en="© 2025 Prestige Charter AT — SAS Prestige Charter AT / Prestige Charter Operations Ltd (Malta)">
-      © 2025 Prestige Charter AT — SAS Prestige Charter AT / Prestige Charter Operations Ltd (Malte)
-    </p>
-  </div>
-</footer>
+  <!-- MOBILE NAV -->
+  <nav id="mobile-nav" class="mobile-nav" aria-hidden="true">
+    <a href="index.html" data-fr="Accueil" data-en="Home">Accueil</a>
+    <a href="yacht.html" data-fr="Le Yacht" data-en="The Yacht">Le Yacht</a>
+    <a href="experiences.html" data-fr="Expériences" data-en="Experiences">Expériences</a>
+    <a href="histoire.html" data-fr="Notre Histoire" data-en="Our Story">Notre Histoire</a>
+    <a href="yachtclub.html" data-fr="Yacht Club" data-en="Yacht Club">Yacht Club</a>
+    <a href="tarifs.html" data-fr="Tarifs" data-en="Pricing">Tarifs</a>
+    <a href="reservation.html" class="active" data-fr="Réservation" data-en="Booking">Réservation</a>
+    <a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a>
+  </nav>
 
-<script src="js/main.js"></script>
+  <main>
+
+    <!-- HERO BG -->
+    <section class="reservation-hero" style="background-image:url('images/Arrière%20V2.jpeg');">
+      <div class="reservation-hero-overlay"></div>
+      <div class="container reservation-hero-content">
+        <h1 class="reveal" data-fr="Réservez votre expérience" data-en="Book your experience">Réservez votre expérience</h1>
+        <p class="subtitle reveal" data-fr="Complétez le formulaire ci-dessous ou contactez-nous directement par WhatsApp" data-en="Fill out the form below or contact us directly via WhatsApp">Complétez le formulaire ci-dessous ou contactez-nous directement par WhatsApp</p>
+      </div>
+    </section>
+
+    <!-- RESERVATION FORM -->
+    <section class="section reservation-section">
+      <div class="container">
+        <div class="reservation-grid">
+
+          <!-- FORM -->
+          <div class="reservation-form-wrap reveal">
+            <form id="reservation-form" action="https://formspree.io/f/xpznqwqa" method="POST" class="form-prestige">
+
+              <div class="form-group">
+                <label for="res-name" data-fr="Nom complet" data-en="Full name">Nom complet</label>
+                <input type="text" id="res-name" name="name" required placeholder="Votre nom" data-fr-placeholder="Votre nom" data-en-placeholder="Your name">
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="res-email" data-fr="Email" data-en="Email">Email</label>
+                  <input type="email" id="res-email" name="email" required placeholder="votre@email.com">
+                </div>
+                <div class="form-group">
+                  <label for="res-tel" data-fr="Téléphone" data-en="Phone">Téléphone</label>
+                  <input type="tel" id="res-tel" name="phone" required placeholder="+33 6 00 00 00 00">
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="res-date" data-fr="Date souhaitée" data-en="Preferred date">Date souhaitée</label>
+                  <input type="date" id="res-date" name="date" required>
+                </div>
+                <div class="form-group">
+                  <label for="res-passengers" data-fr="Nombre de passagers" data-en="Number of guests">Nombre de passagers</label>
+                  <input type="number" id="res-passengers" name="passengers" min="1" max="11" required placeholder="1 à 11" data-fr-placeholder="1 à 11" data-en-placeholder="1 to 11">
+                  <small class="form-hint" data-fr="11 passagers maximum" data-en="11 guests maximum">11 passagers maximum</small>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="res-offre" data-fr="Expérience choisie" data-en="Chosen experience">Expérience choisie</label>
+                <select id="res-offre" name="experience" required>
+                  <option value="" disabled selected data-fr="— Sélectionnez une offre —" data-en="— Select an experience —">— Sélectionnez une offre —</option>
+                  <option value="Sunset Experience — 1 300€" data-fr="Sunset Experience — 3h — 1 300 € TTC" data-en="Sunset Experience — 3h — €1,300 incl. tax">Sunset Experience — 3h — 1 300 € TTC</option>
+                  <option value="Journée en Mer — 2 700€" data-fr="Journée en Mer — 8h — 2 700 € TTC" data-en="Full Day at Sea — 8h — €2,700 incl. tax">Journée en Mer — 8h — 2 700 € TTC</option>
+                  <option value="Pêche de Nuit — 2 600€" data-fr="Pêche de Nuit — 6h — 2 600 € TTC" data-en="Night Fishing — 6h — €2,600 incl. tax">Pêche de Nuit — 6h — 2 600 € TTC</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="res-options" data-fr="Options extras (facultatif)" data-en="Extra options (optional)">Options extras (facultatif)</label>
+                <div class="checkbox-group">
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="options" value="Chef privé (500€)">
+                    <span data-fr="Chef privé à bord — 500 €" data-en="Private chef on board — €500">Chef privé à bord — 500 €</span>
+                  </label>
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="options" value="Dom Pérignon (350€)">
+                    <span data-fr="Dom Pérignon — 350 €" data-en="Dom Pérignon — €350">Dom Pérignon — 350 €</span>
+                  </label>
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="options" value="Photographe/Vidéaste (800€)">
+                    <span data-fr="Photographe / Vidéaste — 800 €" data-en="Photographer / Videographer — €800">Photographe / Vidéaste — 800 €</span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="res-message" data-fr="Message (facultatif)" data-en="Message (optional)">Message (facultatif)</label>
+                <textarea id="res-message" name="message" rows="4" placeholder="Occasion spéciale, demande particulière, itinéraire souhaité…" data-fr-placeholder="Occasion spéciale, demande particulière, itinéraire souhaité…" data-en-placeholder="Special occasion, specific request, preferred itinerary…"></textarea>
+              </div>
+
+              <!-- Hidden fields -->
+              <input type="hidden" name="_subject" value="Nouvelle réservation — Prestige Charter">
+              <input type="hidden" name="_next" value="https://prestigecharter.fr/reservation.html?sent=true">
+
+              <div class="form-notice reveal">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4m0 4h.01"/></svg>
+                <span data-fr="Un acompte de 30 % sera demandé pour confirmer votre réservation. Le solde est dû 48h avant la prestation." data-en="A 30% deposit will be required to confirm your booking. The balance is due 48h before the experience.">Un acompte de 30 % sera demandé pour confirmer votre réservation. Le solde est dû 48h avant la prestation.</span>
+              </div>
+
+              <div class="form-actions">
+                <button type="submit" class="btn btn--full" data-fr="Envoyer ma demande" data-en="Send my request">Envoyer ma demande</button>
+              </div>
+
+            </form>
+
+            <!-- SUCCESS MESSAGE -->
+            <div id="reservation-success" class="form-success" style="display:none;">
+              <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-5"/></svg>
+              <h3 data-fr="Demande envoyée !" data-en="Request sent!">Demande envoyée !</h3>
+              <p data-fr="Merci pour votre demande. Nous vous recontacterons dans les plus brefs délais pour confirmer votre réservation." data-en="Thank you for your request. We will get back to you as soon as possible to confirm your booking.">Merci pour votre demande. Nous vous recontacterons dans les plus brefs délais pour confirmer votre réservation.</p>
+            </div>
+          </div>
+
+          <!-- SIDEBAR -->
+          <aside class="reservation-sidebar reveal">
+
+            <!-- WHATSAPP -->
+            <div class="sidebar-card">
+              <h3 data-fr="Réservation express" data-en="Express booking">Réservation express</h3>
+              <p data-fr="Vous préférez un contact direct ? Envoyez-nous un message WhatsApp et nous organisons tout." data-en="Prefer direct contact? Send us a WhatsApp message and we'll arrange everything.">Vous préférez un contact direct ? Envoyez-nous un message WhatsApp et nous organisons tout.</p>
+              <a id="whatsapp-link" href="https://wa.me/33652192414?text=Bonjour%2C%20je%20souhaite%20r%C3%A9server%20une%20sortie%20en%20mer." class="btn btn--whatsapp btn--full" target="_blank" rel="noopener">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347Z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.832-1.438A9.955 9.955 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2Z"/></svg>
+                WhatsApp
+              </a>
+              <p class="sidebar-phone">
+                <a href="tel:+33652192414">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+                  06 52 19 24 14
+                </a>
+              </p>
+            </div>
+
+            <!-- RÉSUMÉ TARIFS -->
+            <div class="sidebar-card">
+              <h3 data-fr="Rappel des tarifs" data-en="Pricing reminder">Rappel des tarifs</h3>
+              <ul class="sidebar-prices">
+                <li>
+                  <span data-fr="Sunset Experience · 3h" data-en="Sunset Experience · 3h">Sunset Experience · 3h</span>
+                  <strong>1 300 €</strong>
+                </li>
+                <li>
+                  <span data-fr="Journée en Mer · 8h" data-en="Full Day at Sea · 8h">Journée en Mer · 8h</span>
+                  <strong>2 700 €</strong>
+                </li>
+                <li>
+                  <span data-fr="Pêche de Nuit · 6h" data-en="Night Fishing · 6h">Pêche de Nuit · 6h</span>
+                  <strong>2 600 €</strong>
+                </li>
+              </ul>
+              <p class="sidebar-fuel" data-fr="⛽ Carburant toujours non inclus" data-en="⛽ Fuel always excluded">⛽ Carburant toujours non inclus</p>
+              <a href="tarifs.html" class="link-gold" data-fr="Voir tous les détails →" data-en="View full details →">Voir tous les détails →</a>
+            </div>
+
+            <!-- INCLUS -->
+            <div class="sidebar-card">
+              <h3 data-fr="Toujours inclus" data-en="Always included">Toujours inclus</h3>
+              <ul class="sidebar-included">
+                <li data-fr="✓ Skipper professionnel" data-en="✓ Professional skipper">✓ Skipper professionnel</li>
+                <li data-fr="✓ Assurance RC" data-en="✓ Liability insurance">✓ Assurance RC</li>
+                <li data-fr="✓ Son Bluetooth premium" data-en="✓ Premium Bluetooth sound">✓ Son Bluetooth premium</li>
+                <li data-fr="✓ Paddle · SeaBob · Snorkeling *" data-en="✓ Paddle · SeaBob · Snorkeling *">✓ Paddle · SeaBob · Snorkeling *</li>
+              </ul>
+              <small data-fr="* Sunset & Journée uniquement. Pêche de Nuit : équipement pêche + apéritif." data-en="* Sunset & Full Day only. Night Fishing: fishing gear + aperitif.">* Sunset & Journée uniquement. Pêche de Nuit : équipement pêche + apéritif.</small>
+            </div>
+
+            <!-- CONDITIONS -->
+            <div class="sidebar-card">
+              <h3 data-fr="Conditions" data-en="Terms">Conditions</h3>
+              <ul class="sidebar-conditions">
+                <li data-fr="Acompte 30 % à la réservation" data-en="30% deposit upon booking">Acompte 30 % à la réservation</li>
+                <li data-fr="Solde 48h avant la sortie" data-en="Balance due 48h before">Solde 48h avant la sortie</li>
+                <li data-fr="Paiement : virement, CB, espèces" data-en="Payment: transfer, card, cash">Paiement : virement, CB, espèces</li>
+                <li data-fr="Annulation météo : report ou remboursement" data-en="Weather cancellation: reschedule or refund">Annulation météo : report ou remboursement</li>
+              </ul>
+              <a href="cgv.html" class="link-gold" data-fr="CGV complètes →" data-en="Full T&Cs →">CGV complètes →</a>
+            </div>
+
+          </aside>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col footer-brand">
+          <a href="index.html" class="logo">
+            <svg class="logo-anchor" viewBox="0 0 36 36" width="28" height="28" aria-hidden="true">
+              <path d="M18 4a4 4 0 1 1 0 8 4 4 0 0 1 0-8Zm0 10v16M11 32q7-4 14 0M8 14q10-6 20 0" fill="none" stroke="#C9A84C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span class="logo-text"><span class="logo-prestige">PRESTIGE</span> <span class="logo-charter">CHARTER</span></span>
+          </a>
+          <p class="footer-address" data-fr="Saint-Jean-Cap-Ferrat · Côte d'Azur" data-en="Saint-Jean-Cap-Ferrat · French Riviera">Saint-Jean-Cap-Ferrat · Côte d'Azur</p>
+        </div>
+        <div class="footer-col">
+          <h4 data-fr="Navigation" data-en="Navigation">Navigation</h4>
+          <a href="yacht.html" data-fr="Le Yacht" data-en="The Yacht">Le Yacht</a>
+          <a href="experiences.html" data-fr="Expériences" data-en="Experiences">Expériences</a>
+          <a href="histoire.html" data-fr="Notre Histoire" data-en="Our Story">Notre Histoire</a>
+          <a href="tarifs.html" data-fr="Tarifs" data-en="Pricing">Tarifs</a>
+        </div>
+        <div class="footer-col">
+          <h4 data-fr="Contact" data-en="Contact">Contact</h4>
+          <a href="tel:+33652192414">06 52 19 24 14</a>
+          <a href="mailto:prestigecharter06@gmail.com">prestigecharter06@gmail.com</a>
+          <a href="https://wa.me/33652192414" target="_blank" rel="noopener">WhatsApp</a>
+          <a href="https://www.instagram.com/prestigecharter06" target="_blank" rel="noopener">Instagram</a>
+        </div>
+        <div class="footer-col">
+          <h4 data-fr="Légal" data-en="Legal">Légal</h4>
+          <a href="cgv.html" data-fr="CGV" data-en="T&Cs">CGV</a>
+          <a href="mentionslegales.html" data-fr="Mentions légales" data-en="Legal notices">Mentions légales</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Prestige Charter AT. <span data-fr="Tous droits réservés." data-en="All rights reserved.">Tous droits réservés.</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- LIGHTBOX -->
+  <div id="lightbox" class="lightbox" aria-hidden="true">
+    <button id="lb-close" class="lb-close" aria-label="Fermer">&times;</button>
+    <button id="lb-prev" class="lb-arrow lb-prev-arrow" aria-label="Précédent">&#10094;</button>
+    <img id="lb-img" src="" alt="">
+    <button id="lb-next" class="lb-arrow lb-next-arrow" aria-label="Suivant">&#10095;</button>
+    <span id="lb-counter" class="lb-counter"></span>
+  </div>
+
+  <script src="js/main.js"></script>
 </body>
 </html>
