@@ -1,294 +1,331 @@
+<!-- yacht.html -->
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Le Yacht Artemis — Prestige Charter AT</title>
-  <meta name="description" content="Découvrez l'Artemis, Jeanneau Prestige 42S 2018, 13 mètres, 11 passagers. Yacht de luxe au départ de Saint-Jean-Cap-Ferrat." />
-  <link rel="canonical" href="https://www.prestigecharter.fr/yacht.html" />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
-
-  <link rel="stylesheet" href="css/style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Le Yacht Artemis — Jeanneau Prestige 42S | Prestige Charter</title>
+  <meta name="description" content="Découvrez l'Artemis, Jeanneau Prestige 42S de 13 mètres. 11 passagers, 2×Volvo D6 370CV, équipements premium. Location yacht luxe Saint-Jean-Cap-Ferrat.">
+  <meta property="og:title" content="Le Yacht Artemis — Prestige Charter">
+  <meta property="og:description" content="Jeanneau Prestige 42S · 13m · 11 passagers · Équipements premium sur la Côte d'Azur.">
+  <meta property="og:image" content="images/yacht-1.jpg">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><path d='M16 2 L16 28 M10 26 Q16 22 22 26 M8 10 Q16 4 24 10 L16 8Z' fill='none' stroke='%23C9A84C' stroke-width='2'/></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<div id="scroll-progress"></div>
-<div id="pageTransition" class="page-transition active"></div>
-
-<!-- WhatsApp Flottant -->
-<a href="https://wa.me/33652192414" target="_blank" rel="noopener" class="whatsapp-float" aria-label="WhatsApp">
-  <svg viewBox="0 0 24 24" fill="currentColor" width="26" height="26">
-    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-    <path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.549 4.107 1.51 5.833L.057 23.215a.75.75 0 0 0 .916.916l5.382-1.453A11.954 11.954 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.73 9.73 0 0 1-4.964-1.358l-.356-.212-3.695.998.997-3.696-.211-.355A9.718 9.718 0 0 1 2.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/>
-  </svg>
-</a>
-
-<!-- ═══ NAV ═══ -->
-<nav>
-  <a href="index.html" class="logo">
-    <svg class="logo-anchor" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-         stroke-width="1.5" width="18" height="18" aria-hidden="true">
-      <circle cx="12" cy="5" r="2"/>
-      <line x1="12" y1="7" x2="12" y2="11"/>
-      <path d="M5 11h14M5 11C5 16 8 19 12 20M19 11C19 16 16 19 12 20"/>
-      <line x1="9" y1="20" x2="12" y2="22"/><line x1="15" y1="20" x2="12" y2="22"/>
+  <!-- PRELOADER -->
+  <div id="preloader" aria-hidden="true">
+    <svg class="preloader-anchor" viewBox="0 0 64 64" width="64" height="64">
+      <path d="M32 8a6 6 0 1 1 0 12 6 6 0 0 1 0-12Zm0 16v28M20 56q12-6 24 0M14 28q18-10 36 0" fill="none" stroke="#C9A84C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>
-    <span class="logo-prestige">PRESTIGE</span>
-    <span class="logo-charter">CHARTER</span>
-  </a>
-
-  <ul class="nav-links" id="navLinks">
-    <li><a href="index.html" data-fr="Accueil" data-en="Home">Accueil</a></li>
-    <li><a href="yacht.html" data-fr="Le Yacht" data-en="The Yacht">Le Yacht</a></li>
-    <li><a href="experiences.html" data-fr="Expériences" data-en="Experiences">Expériences</a></li>
-    <li><a href="tarifs.html" data-fr="Tarifs" data-en="Rates">Tarifs</a></li>
-    <li><a href="histoire.html" data-fr="Notre Histoire" data-en="Our Story">Notre Histoire</a></li>
-    <li><a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a></li>
-    <li><a href="reservation.html" class="nav-cta" data-fr="Réserver" data-en="Book">Réserver</a></li>
-  </ul>
-
-  <button class="lang-btn" id="langBtn" aria-label="Changer de langue">EN</button>
-  <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
-
-<!-- ═══ PAGE HERO ═══ -->
-<section class="page-hero">
-  <div class="page-hero-bg">
-    <img src="images/yacht-1.jpg" alt="Artemis — Jeanneau Prestige 42S" />
   </div>
-  <div class="page-hero-overlay"></div>
-  <div class="page-hero-content fade-in">
-    <span class="eyebrow" data-fr="Le Yacht" data-en="The Yacht">Le Yacht</span>
-    <h1>Artemis</h1>
-    <p data-fr="Jeanneau Prestige 42S · 2018 · 13 mètres" data-en="Jeanneau Prestige 42S · 2018 · 13 metres">
-      Jeanneau Prestige 42S · 2018 · 13 mètres
-    </p>
-  </div>
-</section>
 
-<!-- ═══ SPECS ═══ -->
-<section class="section-specs">
-  <div class="container">
-    <div class="section-header fade-in">
-      <span class="eyebrow" data-fr="Caractéristiques" data-en="Specifications">Caractéristiques</span>
-      <h2 data-fr="Un yacht d'exception" data-en="An exceptional yacht">Un yacht d'exception</h2>
-      <p class="gold-line center"></p>
-    </div>
-
-    <div class="specs-grid">
-      <div class="spec-card fade-in">
-        <span class="spec-icon">📏</span>
-        <span class="spec-value">13 m</span>
-        <span class="spec-label" data-fr="Longueur" data-en="Length">Longueur</span>
-      </div>
-      <div class="spec-card fade-in fade-in-delay-1">
-        <span class="spec-icon">👥</span>
-        <span class="spec-value">11</span>
-        <span class="spec-label" data-fr="Passagers max" data-en="Max passengers">Passagers max</span>
-      </div>
-      <div class="spec-card fade-in fade-in-delay-2">
-        <span class="spec-icon">⚡</span>
-        <span class="spec-value">2 × 370 CV</span>
-        <span class="spec-label" data-fr="Motorisation Volvo D6" data-en="Volvo D6 engines">Motorisation Volvo D6</span>
-      </div>
-      <div class="spec-card fade-in fade-in-delay-3">
-        <span class="spec-icon">🧭</span>
-        <span class="spec-value">22 nœuds</span>
-        <span class="spec-label" data-fr="Vitesse de croisière" data-en="Cruising speed">Vitesse de croisière</span>
-      </div>
-      <div class="spec-card fade-in">
-        <span class="spec-icon">🚀</span>
-        <span class="spec-value">33 nœuds</span>
-        <span class="spec-label" data-fr="Vitesse maximale" data-en="Top speed">Vitesse maximale</span>
-      </div>
-      <div class="spec-card fade-in fade-in-delay-1">
-        <span class="spec-icon">📅</span>
-        <span class="spec-value">2018</span>
-        <span class="spec-label" data-fr="Année de construction" data-en="Year built">Année de construction</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ DESCRIPTION ═══ -->
-<section class="section-desc">
-  <div class="container">
-    <div class="split-section reverse">
-      <div class="split-image fade-in">
-        <img src="images/yacht-2.webp" alt="Cockpit et pont de l'Artemis" loading="lazy" />
-      </div>
-      <div class="split-text fade-in fade-in-delay-1">
-        <span class="eyebrow" data-fr="À bord" data-en="On board">À bord</span>
-        <h2 data-fr="Confort &amp; élégance" data-en="Comfort &amp; elegance">Confort &amp; élégance</h2>
-        <p class="gold-line"></p>
-        <p data-fr="L'Artemis a été pensé pour offrir une expérience nautique de premier rang. Son cockpit spacieux et son bain de soleil arrière invitent à la détente, tandis que son salon climatisé assure confort et fraîcheur en toute circonstance." data-en="Artemis was designed to offer a top-tier nautical experience. Its spacious cockpit and aft sunbathing area invite relaxation, while its air-conditioned saloon ensures comfort in any weather.">
-          L'Artemis a été pensé pour offrir une expérience nautique de premier rang. Son cockpit spacieux et son bain de soleil arrière invitent à la détente, tandis que son salon climatisé assure confort et fraîcheur en toute circonstance.
-        </p>
-        <p data-fr="La cabine propriétaire avec lit double et sa salle d'eau privative offrent un espace intimiste et raffiné. La cuisine entièrement équipée permet de profiter d'une restauration à bord dans les meilleures conditions." data-en="The owner's cabin with double bed and private bathroom offers an intimate, refined space. The fully equipped galley allows on-board catering in the best conditions.">
-          La cabine propriétaire avec lit double et sa salle d'eau privative offrent un espace intimiste et raffiné. La cuisine entièrement équipée permet de profiter d'une restauration à bord dans les meilleures conditions.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ ÉQUIPEMENTS ═══ -->
-<section class="section-equipements">
-  <div class="container">
-    <div class="section-header fade-in">
-      <span class="eyebrow" data-fr="Équipements" data-en="Equipment">Équipements</span>
-      <h2 data-fr="Tout pour votre confort" data-en="Everything for your comfort">Tout pour votre confort</h2>
-      <p class="gold-line center"></p>
-    </div>
-
-    <div class="equip-grid">
-      <div class="equip-item fade-in">
-        <span class="equip-icon">🛖</span>
-        <h4 data-fr="Cockpit &amp; bain de soleil" data-en="Cockpit &amp; sunbathing">Cockpit &amp; bain de soleil</h4>
-        <p data-fr="Espace arrière aménagé pour la détente et la convivialité." data-en="Aft area fitted for relaxation and conviviality.">Espace arrière aménagé pour la détente et la convivialité.</p>
-      </div>
-      <div class="equip-item fade-in fade-in-delay-1">
-        <span class="equip-icon">❄️</span>
-        <h4 data-fr="Salon climatisé" data-en="Air-conditioned saloon">Salon climatisé</h4>
-        <p data-fr="Intérieur confortable et frais, idéal pour les journées chaudes." data-en="Comfortable and cool interior, ideal for hot days.">Intérieur confortable et frais, idéal pour les journées chaudes.</p>
-      </div>
-      <div class="equip-item fade-in fade-in-delay-2">
-        <span class="equip-icon">🛏️</span>
-        <h4 data-fr="Cabine propriétaire" data-en="Owner's cabin">Cabine propriétaire</h4>
-        <p data-fr="Lit double avec salle d'eau privative." data-en="Double bed with private bathroom.">Lit double avec salle d'eau privative.</p>
-      </div>
-      <div class="equip-item fade-in fade-in-delay-3">
-        <span class="equip-icon">🍳</span>
-        <h4 data-fr="Cuisine équipée" data-en="Equipped galley">Cuisine équipée</h4>
-        <p data-fr="Préparation de repas à bord possible." data-en="On-board meal preparation possible.">Préparation de repas à bord possible.</p>
-      </div>
-      <div class="equip-item fade-in">
-        <span class="equip-icon">🎵</span>
-        <h4 data-fr="Son Bluetooth premium" data-en="Premium Bluetooth sound">Son Bluetooth premium</h4>
-        <p data-fr="Ambiance musicale personnalisée tout au long de la sortie." data-en="Personalised music throughout your trip.">Ambiance musicale personnalisée tout au long de la sortie.</p>
-      </div>
-      <div class="equip-item fade-in fade-in-delay-1">
-        <span class="equip-icon">🚿</span>
-        <h4 data-fr="Douche de pont" data-en="Deck shower">Douche de pont</h4>
-        <p data-fr="Rinçage après baignade ou sports nautiques." data-en="Rinse off after swimming or water sports.">Rinçage après baignade ou sports nautiques.</p>
-      </div>
-      <div class="equip-item fade-in fade-in-delay-2">
-        <span class="equip-icon">🌊</span>
-        <h4 data-fr="Plateforme hydraulique" data-en="Hydraulic platform">Plateforme hydraulique</h4>
-        <p data-fr="Accès direct à l'eau depuis la plateforme de bain arrière." data-en="Direct water access from the aft swim platform.">Accès direct à l'eau depuis la plateforme de bain arrière.</p>
-      </div>
-      <div class="equip-item fade-in fade-in-delay-3">
-        <span class="equip-icon">🏄</span>
-        <h4 data-fr="Loisirs inclus" data-en="Included leisure">Loisirs inclus</h4>
-        <p data-fr="Paddle, SeaBob, kit snorkeling (masques + tubas)." data-en="Paddle, SeaBob, snorkeling kit (masks + snorkels).">Paddle, SeaBob, kit snorkeling (masques + tubas).</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ GALERIE ═══ -->
-<section class="section-galerie">
-  <div class="container">
-    <div class="section-header fade-in">
-      <span class="eyebrow" data-fr="Galerie" data-en="Gallery">Galerie</span>
-      <h2 data-fr="L'Artemis en images" data-en="Artemis in pictures">L'Artemis en images</h2>
-      <p class="gold-line center"></p>
-    </div>
-
-    <div class="galerie-grid">
-      <div class="galerie-item fade-in">
-        <img src="images/yacht-1.jpg" alt="Vue extérieure Artemis" loading="lazy" />
-      </div>
-      <div class="galerie-item fade-in fade-in-delay-1">
-        <img src="images/yacht-2.webp" alt="Cockpit Artemis" loading="lazy" />
-      </div>
-      <div class="galerie-item fade-in fade-in-delay-2">
-        <img src="images/yacht-3.webp" alt="Navigation au coucher du soleil" loading="lazy" />
-      </div>
-      <div class="galerie-item fade-in fade-in-delay-3">
-        <img src="images/yacht-4.pnj" alt="Intérieur Artemis" loading="lazy" />
-      </div>
-      <div class="galerie-item fade-in">
-        <img src="images/Arrière%20V2.jpeg" alt="Plateforme arrière Artemis" loading="lazy" />
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ CTA ═══ -->
-<section class="section-cta">
-  <div class="container text-center fade-in">
-    <h2 data-fr="Montez à bord de l'Artemis" data-en="Come aboard Artemis">Montez à bord de l'Artemis</h2>
-    <p data-fr="Réservez votre sortie en mer dès aujourd'hui." data-en="Book your sea trip today.">
-      Réservez votre sortie en mer dès aujourd'hui.
-    </p>
-    <div class="cta-btns">
-      <a href="reservation.html" class="btn-gold" data-fr="Réserver" data-en="Book">Réserver</a>
-      <a href="tarifs.html" class="btn-outline" data-fr="Voir les tarifs" data-en="See rates">Voir les tarifs</a>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ FOOTER ═══ -->
-<footer>
-  <div class="footer-inner">
-    <div class="footer-col">
-      <a href="index.html" class="logo">
-        <svg class="logo-anchor" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-             stroke-width="1.5" width="18" height="18" aria-hidden="true">
-          <circle cx="12" cy="5" r="2"/>
-          <line x1="12" y1="7" x2="12" y2="11"/>
-          <path d="M5 11h14M5 11C5 16 8 19 12 20M19 11C19 16 16 19 12 20"/>
-          <line x1="9" y1="20" x2="12" y2="22"/><line x1="15" y1="20" x2="12" y2="22"/>
+  <!-- HEADER -->
+  <header id="header" class="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" aria-label="Prestige Charter - Accueil">
+        <svg class="logo-anchor" viewBox="0 0 36 36" width="28" height="28" aria-hidden="true">
+          <path d="M18 4a4 4 0 1 1 0 8 4 4 0 0 1 0-8Zm0 10v16M11 32q7-4 14 0M8 14q10-6 20 0" fill="none" stroke="#C9A84C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
-        <span class="logo-prestige">PRESTIGE</span>
-        <span class="logo-charter">CHARTER</span>
+        <span class="logo-text"><span class="logo-prestige">PRESTIGE</span> <span class="logo-charter">CHARTER</span></span>
       </a>
-      <p class="footer-tagline" data-fr="L'excellence nautique sur la Côte d'Azur" data-en="Nautical excellence on the French Riviera">
-        L'excellence nautique sur la Côte d'Azur
-      </p>
+      <nav class="nav-desktop" aria-label="Navigation principale">
+        <a href="index.html" data-fr="Accueil" data-en="Home">Accueil</a>
+        <a href="yacht.html" class="active" data-fr="Le Yacht" data-en="The Yacht">Le Yacht</a>
+        <a href="experiences.html" data-fr="Expériences" data-en="Experiences">Expériences</a>
+        <a href="histoire.html" data-fr="Notre Histoire" data-en="Our Story">Notre Histoire</a>
+        <a href="yachtclub.html" data-fr="Yacht Club" data-en="Yacht Club">Yacht Club</a>
+        <a href="tarifs.html" data-fr="Tarifs" data-en="Pricing">Tarifs</a>
+        <a href="reservation.html" data-fr="Réservation" data-en="Booking">Réservation</a>
+        <a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a>
+      </nav>
+      <button id="lang-toggle" class="btn-lang" aria-label="Switch language">EN</button>
+      <button id="burger" class="burger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
-    <div class="footer-col">
-      <h4 data-fr="Navigation" data-en="Navigation">Navigation</h4>
-      <ul>
-        <li><a href="index.html" data-fr="Accueil" data-en="Home">Accueil</a></li>
-        <li><a href="yacht.html" data-fr="Le Yacht" data-en="The Yacht">Le Yacht</a></li>
-        <li><a href="experiences.html" data-fr="Expériences" data-en="Experiences">Expériences</a></li>
-        <li><a href="tarifs.html" data-fr="Tarifs" data-en="Rates">Tarifs</a></li>
-        <li><a href="histoire.html" data-fr="Notre Histoire" data-en="Our Story">Notre Histoire</a></li>
-        <li><a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4 data-fr="Contact" data-en="Contact">Contact</h4>
-      <ul>
-        <li><a href="tel:+33652192414">06 52 19 24 14</a></li>
-        <li><a href="mailto:prestigecharter06@gmail.com">prestigecharter06@gmail.com</a></li>
-        <li><a href="https://wa.me/33652192414" target="_blank" rel="noopener">WhatsApp</a></li>
-        <li><a href="https://instagram.com/prestigecharter06" target="_blank" rel="noopener">@prestigecharter06</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4 data-fr="Informations" data-en="Information">Informations</h4>
-      <ul>
-        <li><a href="cgv.html" data-fr="CGV" data-en="Terms &amp; Conditions">CGV</a></li>
-        <li><a href="mentionslegales.html" data-fr="Mentions légales" data-en="Legal Notice">Mentions légales</a></li>
-        <li><a href="reservation.html" data-fr="Réserver" data-en="Book">Réserver</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <p data-fr="© 2025 Prestige Charter AT — SAS Prestige Charter AT / Prestige Charter Operations Ltd (Malte)" data-en="© 2025 Prestige Charter AT — SAS Prestige Charter AT / Prestige Charter Operations Ltd (Malta)">
-      © 2025 Prestige Charter AT — SAS Prestige Charter AT / Prestige Charter Operations Ltd (Malte)
-    </p>
-  </div>
-</footer>
+  </header>
 
-<script src="js/main.js"></script>
+  <!-- MOBILE NAV -->
+  <nav id="mobile-nav" class="mobile-nav" aria-label="Navigation mobile">
+    <a href="index.html" data-fr="Accueil" data-en="Home">Accueil</a>
+    <a href="yacht.html" data-fr="Le Yacht" data-en="The Yacht">Le Yacht</a>
+    <a href="experiences.html" data-fr="Expériences" data-en="Experiences">Expériences</a>
+    <a href="histoire.html" data-fr="Notre Histoire" data-en="Our Story">Notre Histoire</a>
+    <a href="yachtclub.html" data-fr="Yacht Club" data-en="Yacht Club">Yacht Club</a>
+    <a href="tarifs.html" data-fr="Tarifs" data-en="Pricing">Tarifs</a>
+    <a href="reservation.html" data-fr="Réservation" data-en="Booking">Réservation</a>
+    <a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a>
+    <button id="lang-toggle-mobile" class="btn-lang mt-24" aria-label="Switch language">EN</button>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero" style="background-image:url('images/yacht-1.jpg')">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <span class="overline" data-fr="Le Yacht" data-en="The Yacht">Le Yacht</span>
+      <h1 data-fr="Artemis" data-en="Artemis">Artemis</h1>
+      <p class="hero-sub" data-fr="Jeanneau Prestige 42S · 13 mètres · 2018" data-en="Jeanneau Prestige 42S · 13 metres · 2018">Jeanneau Prestige 42S · 13 mètres · 2018</p>
+    </div>
+  </section>
+
+  <main>
+
+    <!-- GALERIE -->
+    <section class="section" id="galerie">
+      <div class="container">
+        <span class="overline text-center reveal" data-fr="Galerie" data-en="Gallery">Galerie</span>
+        <h2 class="text-center reveal" data-fr="Découvrez l'Artemis" data-en="Discover the Artemis">Découvrez l'Artemis</h2>
+        <div class="gallery mt-48 reveal">
+          <a href="images/yacht-1.jpg" class="gallery-item" data-lightbox>
+            <img src="images/yacht-1.jpg" alt="Artemis - Vue extérieure du yacht" loading="lazy">
+          </a>
+          <a href="images/yacht-2.webp" class="gallery-item" data-lightbox>
+            <img src="images/yacht-2.webp" alt="Artemis - Cockpit et espace détente" loading="lazy">
+          </a>
+          <a href="images/yacht-3.webp" class="gallery-item" data-lightbox>
+            <img src="images/yacht-3.webp" alt="Artemis - Navigation en mer" loading="lazy">
+          </a>
+          <a href="images/yacht-4.pnj" class="gallery-item" data-lightbox>
+            <img src="images/yacht-4.pnj" alt="Artemis - Intérieur salon" loading="lazy">
+          </a>
+          <a href="images/Arrière%20V2.jpeg" class="gallery-item" data-lightbox>
+            <img src="images/Arrière%20V2.jpeg" alt="Artemis - Vue arrière plateforme bain" loading="lazy">
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SPECS -->
+    <section class="section section-dark" id="specs">
+      <div class="container">
+        <div class="split reveal">
+          <div class="split-text">
+            <span class="overline" data-fr="Caractéristiques" data-en="Specifications">Caractéristiques</span>
+            <h2 data-fr="Fiche technique" data-en="Technical Specs">Fiche technique</h2>
+            <div class="specs-table">
+              <table>
+                <tbody>
+                  <tr>
+                    <td data-fr="Modèle" data-en="Model">Modèle</td>
+                    <td>Jeanneau Prestige 42S</td>
+                  </tr>
+                  <tr>
+                    <td data-fr="Année" data-en="Year">Année</td>
+                    <td>2018</td>
+                  </tr>
+                  <tr>
+                    <td data-fr="Longueur" data-en="Length">Longueur</td>
+                    <td>13 m</td>
+                  </tr>
+                  <tr>
+                    <td data-fr="Capacité" data-en="Capacity">Capacité</td>
+                    <td data-fr="11 passagers + skipper" data-en="11 guests + skipper">11 passagers + skipper</td>
+                  </tr>
+                  <tr>
+                    <td data-fr="Motorisation" data-en="Engines">Motorisation</td>
+                    <td>2 × Volvo D6 370 CV</td>
+                  </tr>
+                  <tr>
+                    <td data-fr="Vitesse croisière" data-en="Cruising speed">Vitesse croisière</td>
+                    <td data-fr="22 nœuds" data-en="22 knots">22 nœuds</td>
+                  </tr>
+                  <tr>
+                    <td data-fr="Vitesse max" data-en="Max speed">Vitesse max</td>
+                    <td data-fr="33 nœuds" data-en="33 knots">33 nœuds</td>
+                  </tr>
+                  <tr>
+                    <td data-fr="Port d'attache" data-en="Home port">Port d'attache</td>
+                    <td>Saint-Jean-Cap-Ferrat</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="split-img">
+            <img src="images/Arrière%20V2.jpeg" alt="Artemis - Vue arrière avec plateforme de bain hydraulique" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ÉQUIPEMENTS -->
+    <section class="section" id="equipements">
+      <div class="container">
+        <span class="overline text-center reveal" data-fr="Équipements" data-en="Amenities">Équipements</span>
+        <h2 class="text-center reveal" data-fr="Le confort en mer" data-en="Comfort at sea">Le confort en mer</h2>
+        <div class="equip-grid mt-48">
+
+          <div class="equip-card reveal">
+            <div class="equip-icon">
+              <svg viewBox="0 0 48 48" width="48" height="48"><circle cx="24" cy="24" r="20" fill="none" stroke="#C9A84C" stroke-width="1.5"/><path d="M16 24h16M24 16v16" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+            <h3 data-fr="Cockpit spacieux" data-en="Spacious cockpit">Cockpit spacieux</h3>
+            <p data-fr="Espace extérieur généreux pour vos moments de convivialité en mer." data-en="Generous outdoor space for your convivial moments at sea.">Espace extérieur généreux pour vos moments de convivialité en mer.</p>
+          </div>
+
+          <div class="equip-card reveal">
+            <div class="equip-icon">
+              <svg viewBox="0 0 48 48" width="48" height="48"><circle cx="24" cy="24" r="20" fill="none" stroke="#C9A84C" stroke-width="1.5"/><path d="M14 28q5-8 10 0t10 0" fill="none" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round"/><circle cx="24" cy="18" r="4" fill="none" stroke="#C9A84C" stroke-width="1.5"/></svg>
+            </div>
+            <h3 data-fr="Bain de soleil arrière" data-en="Aft sunbed">Bain de soleil arrière</h3>
+            <p data-fr="Large bain de soleil à l'arrière pour se prélasser face au large." data-en="Large aft sunbed to lounge facing the open sea.">Large bain de soleil à l'arrière pour se prélasser face au large.</p>
+          </div>
+
+          <div class="equip-card reveal">
+            <div class="equip-icon">
+              <svg viewBox="0 0 48 48" width="48" height="48"><circle cx="24" cy="24" r="20" fill="none" stroke="#C9A84C" stroke-width="1.5"/><rect x="16" y="18" width="16" height="12" rx="2" fill="none" stroke="#C9A84C" stroke-width="1.5"/><path d="M20 18v-4h8v4" fill="none" stroke="#C9A84C" stroke-width="1.5"/></svg>
+            </div>
+            <h3 data-fr="Salon climatisé" data-en="Air-conditioned lounge">Salon climatisé</h3>
+            <p data-fr="Intérieur élégant et climatisé pour un confort absolu." data-en="Elegant, air-conditioned interior for absolute comfort.">Intérieur élégant et climatisé pour un confort absolu.</p>
+          </div>
+
+          <div class="equip-card reveal">
+            <div class="equip-icon">
+              <svg viewBox="0 0 48 48" width="48" height="48"><circle cx="24" cy="24" r="20" fill="none" stroke="#C9A84C" stroke-width="1.5"/><rect x="15" y="20" width="18" height="10" rx="2" fill="none" stroke="#C9A84C" stroke-width="1.5"/><path d="M18 20v-2a6 6 0 0 1 12 0v2" fill="none" stroke="#C9A84C" stroke-width="1.5"/></svg>
+            </div>
+            <h3 data-fr="Cabine propriétaire" data-en="Owner's cabin">Cabine propriétaire</h3>
+            <p data-fr="Cabine avec lit double, salle d'eau privative et rangements." data-en="Cabin with double bed, private bathroom and storage.">Cabine avec lit double, salle d'eau privative et rangements.</p>
+          </div>
+
+          <div class="equip-card reveal">
+            <div class="equip-icon">
+              <svg viewBox="0 0 48 48" width="48" height="48"><circle cx="24" cy="24" r="20" fill="none" stroke="#C9A84C" stroke-width="1.5"/><path d="M18 32V20l12-4v16" fill="none" stroke="#C9A84C" stroke-width="1.5" stroke-linejoin="round"/><circle cx="18" cy="32" r="3" fill="none" stroke="#C9A84C" stroke-width="1.5"/><circle cx="30" cy="28" r="3" fill="none" stroke="#C9A84C" stroke-width="1.5"/></svg>
+            </div>
+            <h3 data-fr="Son Bluetooth premium" data-en="Premium Bluetooth sound">Son Bluetooth premium</h3>
+            <p data-fr="Système audio haut de gamme pour ambiance musicale à bord." data-en="High-end audio system for the perfect onboard soundtrack.">Système audio haut de gamme pour ambiance musicale à bord.</p>
+          </div>
+
+          <div class="equip-card reveal">
+            <div class="equip-icon">
+              <svg viewBox="0 0 48 48" width="48" height="48"><circle cx="24" cy="24" r="20" fill="none" stroke="#C9A84C" stroke-width="1.5"/><path d="M24 14v10l6 6" fill="none" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3 data-fr="Plateforme hydraulique" data-en="Hydraulic platform">Plateforme hydraulique</h3>
+            <p data-fr="Plateforme de bain hydraulique pour un accès facile à la mer." data-en="Hydraulic swim platform for easy access to the sea.">Plateforme de bain hydraulique pour un accès facile à la mer.</p>
+          </div>
+
+          <div class="equip-card reveal">
+            <div class="equip-icon">
+              <svg viewBox="0 0 48 48" width="48" height="48"><circle cx="24" cy="24" r="20" fill="none" stroke="#C9A84C" stroke-width="1.5"/><path d="M16 30q4-6 8 0t8 0M16 24q4-6 8 0t8 0" fill="none" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+            <h3 data-fr="Douche de pont" data-en="Deck shower">Douche de pont</h3>
+            <p data-fr="Douche d'eau douce sur le pont pour se rincer après la baignade." data-en="Freshwater deck shower to rinse off after swimming.">Douche d'eau douce sur le pont pour se rincer après la baignade.</p>
+          </div>
+
+          <div class="equip-card reveal">
+            <div class="equip-icon">
+              <svg viewBox="0 0 48 48" width="48" height="48"><circle cx="24" cy="24" r="20" fill="none" stroke="#C9A84C" stroke-width="1.5"/><path d="M16 28h16M20 22h8M22 16h4" fill="none" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+            <h3 data-fr="Cuisine équipée" data-en="Equipped kitchen">Cuisine équipée</h3>
+            <p data-fr="Cuisine fonctionnelle pour préparer collations et rafraîchissements." data-en="Functional kitchen for snacks and refreshments.">Cuisine fonctionnelle pour préparer collations et rafraîchissements.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- LOISIRS -->
+    <section class="section section-dark" id="loisirs">
+      <div class="container">
+        <span class="overline text-center reveal" data-fr="Loisirs inclus" data-en="Included activities">Loisirs inclus</span>
+        <h2 class="text-center reveal" data-fr="Vos activités à bord" data-en="Your onboard activities">Vos activités à bord</h2>
+        <div class="cards-3 mt-48">
+
+          <div class="card card-compact reveal">
+            <div class="card-body text-center">
+              <svg viewBox="0 0 64 64" width="56" height="56" class="loisir-icon"><path d="M32 8v48M28 8h8M22 56h20" fill="none" stroke="#C9A84C" stroke-width="2" stroke-linecap="round"/></svg>
+              <h3 data-fr="Paddle" data-en="Paddle">Paddle</h3>
+              <p data-fr="Stand-up paddle pour explorer les criques en toute sérénité." data-en="Stand-up paddle to explore coves in total serenity.">Stand-up paddle pour explorer les criques en toute sérénité.</p>
+            </div>
+          </div>
+
+          <div class="card card-compact reveal">
+            <div class="card-body text-center">
+              <svg viewBox="0 0 64 64" width="56" height="56" class="loisir-icon"><ellipse cx="32" cy="32" rx="18" ry="8" fill="none" stroke="#C9A84C" stroke-width="2"/><path d="M14 32q9-16 18 0t18 0" fill="none" stroke="#C9A84C" stroke-width="2"/></svg>
+              <h3 data-fr="SeaBob" data-en="SeaBob">SeaBob</h3>
+              <p data-fr="Propulseur sous-marin pour des sensations uniques sous la surface." data-en="Underwater scooter for unique sensations beneath the surface.">Propulseur sous-marin pour des sensations uniques sous la surface.</p>
+            </div>
+          </div>
+
+          <div class="card card-compact reveal">
+            <div class="card-body text-center">
+              <svg viewBox="0 0 64 64" width="56" height="56" class="loisir-icon"><circle cx="32" cy="22" r="10" fill="none" stroke="#C9A84C" stroke-width="2"/><path d="M22 22h20M32 12v20M26 48l6-16 6 16" fill="none" stroke="#C9A84C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <h3 data-fr="Kit Snorkeling" data-en="Snorkeling Kit">Kit Snorkeling</h3>
+              <p data-fr="Masques, tubas et palmes pour découvrir les fonds marins." data-en="Masks, snorkels and fins to discover the seabed.">Masques, tubas et palmes pour découvrir les fonds marins.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section section-cta" style="background-image:url('images/yacht-3.webp')">
+      <div class="hero-overlay"></div>
+      <div class="container text-center" style="position:relative;z-index:2;">
+        <h2 class="reveal" data-fr="Montez à bord de l'Artemis" data-en="Step aboard the Artemis">Montez à bord de l'Artemis</h2>
+        <p class="section-desc reveal" data-fr="Réservez dès maintenant votre expérience privée au départ de Saint-Jean-Cap-Ferrat." data-en="Book now your private experience departing from Saint-Jean-Cap-Ferrat.">Réservez dès maintenant votre expérience privée au départ de Saint-Jean-Cap-Ferrat.</p>
+        <div class="cta-buttons reveal mt-24">
+          <a href="reservation.html" class="btn btn-gold" data-fr="Réserver" data-en="Book now">Réserver</a>
+          <a href="https://wa.me/33652192414" target="_blank" rel="noopener" class="btn btn-outline">WhatsApp</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="index.html" class="logo footer-logo" aria-label="Prestige Charter">
+            <svg class="logo-anchor" viewBox="0 0 36 36" width="24" height="24" aria-hidden="true">
+              <path d="M18 4a4 4 0 1 1 0 8 4 4 0 0 1 0-8Zm0 10v16M11 32q7-4 14 0M8 14q10-6 20 0" fill="none" stroke="#C9A84C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span class="logo-text"><span class="logo-prestige">PRESTIGE</span> <span class="logo-charter">CHARTER</span></span>
+          </a>
+          <p class="footer-address" data-fr="Saint-Jean-Cap-Ferrat · Côte d'Azur" data-en="Saint-Jean-Cap-Ferrat · French Riviera">Saint-Jean-Cap-Ferrat · Côte d'Azur</p>
+        </div>
+        <div class="footer-col">
+          <h4 data-fr="Navigation" data-en="Navigation">Navigation</h4>
+          <a href="yacht.html" data-fr="Le Yacht" data-en="The Yacht">Le Yacht</a>
+          <a href="experiences.html" data-fr="Expériences" data-en="Experiences">Expériences</a>
+          <a href="histoire.html" data-fr="Notre Histoire" data-en="Our Story">Notre Histoire</a>
+          <a href="tarifs.html" data-fr="Tarifs" data-en="Pricing">Tarifs</a>
+        </div>
+        <div class="footer-col">
+          <h4 data-fr="Contact" data-en="Contact">Contact</h4>
+          <a href="tel:+33652192414">06 52 19 24 14</a>
+          <a href="mailto:prestigecharter06@gmail.com">prestigecharter06@gmail.com</a>
+          <a href="https://wa.me/33652192414" target="_blank" rel="noopener">WhatsApp</a>
+          <a href="https://www.instagram.com/prestigecharter06" target="_blank" rel="noopener">Instagram</a>
+        </div>
+        <div class="footer-col">
+          <h4 data-fr="Légal" data-en="Legal">Légal</h4>
+          <a href="cgv.html" data-fr="CGV" data-en="T&Cs">CGV</a>
+          <a href="mentionslegales.html" data-fr="Mentions légales" data-en="Legal notices">Mentions légales</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Prestige Charter AT. <span data-fr="Tous droits réservés." data-en="All rights reserved.">Tous droits réservés.</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- LIGHTBOX -->
+  <div id="lightbox" class="lightbox" aria-hidden="true">
+    <button id="lb-close" class="lb-close" aria-label="Fermer">&times;</button>
+    <button id="lb-prev" class="lb-arrow lb-prev-arrow" aria-label="Précédent">&#10094;</button>
+    <img id="lb-img" src="" alt="">
+    <button id="lb-next" class="lb-arrow lb-next-arrow" aria-label="Suivant">&#10095;</button>
+    <span id="lb-counter" class="lb-counter"></span>
+  </div>
+
+  <script src="js/main.js"></script>
 </body>
 </html>
