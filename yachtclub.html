@@ -1,0 +1,282 @@
+<!-- yachtclub.html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yacht Club — Cercle Privé | Prestige Charter</title>
+  <meta name="description" content="Rejoignez le cercle privé Prestige Charter. Trois niveaux d'adhésion : Silver, Gold, Platinum. Avantages exclusifs, événements privés, réductions privilégiées.">
+  <meta property="og:title" content="Yacht Club — Prestige Charter">
+  <meta property="og:description" content="Un cercle privé pour nos navigateurs les plus fidèles. Privilèges, événements, excellence.">
+  <meta property="og:image" content="images/yacht-2.webp">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><path d='M16 2 L16 28 M10 26 Q16 22 22 26 M8 10 Q16 4 24 10 L16 8Z' fill='none' stroke='%23C9A84C' stroke-width='2'/></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- PRELOADER -->
+  <div id="preloader" aria-hidden="true">
+    <svg class="preloader-anchor" viewBox="0 0 64 64" width="64" height="64">
+      <path d="M32 8a6 6 0 1 1 0 12 6 6 0 0 1 0-12Zm0 16v28M20 56q12-6 24 0M14 28q18-10 36 0" fill="none" stroke="#C9A84C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
+
+  <!-- HEADER -->
+  <header id="header" class="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" aria-label="Prestige Charter - Accueil">
+        <svg class="logo-anchor" viewBox="0 0 36 36" width="28" height="28" aria-hidden="true">
+          <path d="M18 4a4 4 0 1 1 0 8 4 4 0 0 1 0-8Zm0 10v16M11 32q7-4 14 0M8 14q10-6 20 0" fill="none" stroke="#C9A84C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="logo-text"><span class="logo-prestige">PRESTIGE</span> <span class="logo-charter">CHARTER</span></span>
+      </a>
+      <nav class="nav-desktop" aria-label="Navigation principale">
+        <a href="index.html" data-fr="Accueil" data-en="Home">Accueil</a>
+        <a href="yacht.html" data-fr="Le Yacht" data-en="The Yacht">Le Yacht</a>
+        <a href="experiences.html" data-fr="Expériences" data-en="Experiences">Expériences</a>
+        <a href="histoire.html" data-fr="Notre Histoire" data-en="Our Story">Notre Histoire</a>
+        <a href="yachtclub.html" class="active" data-fr="Yacht Club" data-en="Yacht Club">Yacht Club</a>
+        <a href="tarifs.html" data-fr="Tarifs" data-en="Pricing">Tarifs</a>
+        <a href="reservation.html" data-fr="Réservation" data-en="Booking">Réservation</a>
+        <a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a>
+      </nav>
+      <button id="lang-toggle" class="btn-lang" aria-label="Switch language">EN</button>
+      <button id="burger" class="burger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- MOBILE NAV -->
+  <nav id="mobile-nav" class="mobile-nav" aria-label="Navigation mobile">
+    <a href="index.html" data-fr="Accueil" data-en="Home">Accueil</a>
+    <a href="yacht.html" data-fr="Le Yacht" data-en="The Yacht">Le Yacht</a>
+    <a href="experiences.html" data-fr="Expériences" data-en="Experiences">Expériences</a>
+    <a href="histoire.html" data-fr="Notre Histoire" data-en="Our Story">Notre Histoire</a>
+    <a href="yachtclub.html" data-fr="Yacht Club" data-en="Yacht Club">Yacht Club</a>
+    <a href="tarifs.html" data-fr="Tarifs" data-en="Pricing">Tarifs</a>
+    <a href="reservation.html" data-fr="Réservation" data-en="Booking">Réservation</a>
+    <a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a>
+    <button id="lang-toggle-mobile" class="btn-lang mt-24" aria-label="Switch language">EN</button>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero" style="background-image:url('images/yacht-2.webp')">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <!-- EMBLÈME SVG -->
+      <svg class="yc-emblem" viewBox="0 0 120 120" width="100" height="100" aria-hidden="true">
+        <circle cx="60" cy="60" r="54" fill="none" stroke="#C9A84C" stroke-width="1.5"/>
+        <circle cx="60" cy="60" r="48" fill="none" stroke="#C9A84C" stroke-width=".5"/>
+        <path d="M60 20a8 8 0 1 1 0 16 8 8 0 0 1 0-16Zm0 20v44M46 88q14-6 28 0M38 42q22-12 44 0" fill="none" stroke="#C9A84C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <text x="60" y="112" text-anchor="middle" fill="#C9A84C" font-family="Playfair Display,serif" font-size="8" letter-spacing="3">YACHT CLUB</text>
+      </svg>
+      <span class="overline" data-fr="Cercle Privé" data-en="Private Circle">Cercle Privé</span>
+      <h1 data-fr="Le Yacht Club Prestige" data-en="The Prestige Yacht Club">Le Yacht Club Prestige</h1>
+      <p class="hero-sub" data-fr="Un cercle d'exception réservé à ceux qui ont navigué avec nous." data-en="An exclusive circle reserved for those who have sailed with us.">Un cercle d'exception réservé à ceux qui ont navigué avec nous.</p>
+    </div>
+  </section>
+
+  <main>
+
+    <!-- CONCEPT -->
+    <section class="section">
+      <div class="container text-center">
+        <span class="overline reveal" data-fr="Le concept" data-en="The concept">Le concept</span>
+        <h2 class="reveal" data-fr="Bien plus qu'un programme de fidélité" data-en="Much more than a loyalty programme">Bien plus qu'un programme de fidélité</h2>
+        <p class="section-desc reveal mt-24" data-fr="Le Yacht Club Prestige est un cercle privé, accessible sur invitation après votre première navigation à bord de l'Artemis. Il réunit ceux qui partagent notre passion pour la mer, l'excellence et l'art de vivre sur l'eau. Chaque sortie vous rapproche du niveau suivant. Chaque niveau débloque des privilèges exclusifs." data-en="The Prestige Yacht Club is a private circle, accessible by invitation after your first voyage aboard the Artemis. It brings together those who share our passion for the sea, excellence and the art of living on the water. Each outing brings you closer to the next level. Each level unlocks exclusive privileges.">Le Yacht Club Prestige est un cercle privé, accessible sur invitation après votre première navigation à bord de l'Artemis. Il réunit ceux qui partagent notre passion pour la mer, l'excellence et l'art de vivre sur l'eau. Chaque sortie vous rapproche du niveau suivant. Chaque niveau débloque des privilèges exclusifs.</p>
+      </div>
+    </section>
+
+    <!-- 3 NIVEAUX -->
+    <section class="section section-dark">
+      <div class="container">
+        <div class="text-center">
+          <span class="overline reveal" data-fr="Trois niveaux" data-en="Three tiers">Trois niveaux</span>
+          <h2 class="reveal" data-fr="Votre fidélité, nos privilèges" data-en="Your loyalty, our privileges">Votre fidélité, nos privilèges</h2>
+        </div>
+
+        <div class="cards-3 mt-48">
+
+          <!-- SILVER -->
+          <div class="card yc-card reveal">
+            <div class="card-body text-center">
+              <svg class="yc-badge" viewBox="0 0 80 80" width="72" height="72" aria-hidden="true">
+                <circle cx="40" cy="40" r="36" fill="none" stroke="#A8A8A8" stroke-width="2"/>
+                <circle cx="40" cy="40" r="30" fill="none" stroke="#A8A8A8" stroke-width=".5"/>
+                <path d="M40 18a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 14v24M32 60q8-4 16 0M26 32q14-8 28 0" fill="none" stroke="#A8A8A8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <text x="40" y="74" text-anchor="middle" fill="#A8A8A8" font-family="Playfair Display,serif" font-size="6" letter-spacing="2">SILVER</text>
+              </svg>
+              <h3 data-fr="Silver" data-en="Silver">Silver</h3>
+              <p class="yc-condition" data-fr="Dès votre 1ère sortie" data-en="From your 1st outing">Dès votre 1ère sortie</p>
+              <ul class="yc-perks">
+                <li data-fr="✦ Priorité de réservation [À VALIDER]" data-en="✦ Booking priority [TO CONFIRM]">✦ Priorité de réservation [À VALIDER]</li>
+                <li data-fr="✦ Newsletter spots secrets [À VALIDER]" data-en="✦ Secret spots newsletter [TO CONFIRM]">✦ Newsletter spots secrets [À VALIDER]</li>
+                <li data-fr="✦ Accueil personnalisé à bord" data-en="✦ Personalised welcome on board">✦ Accueil personnalisé à bord</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- GOLD -->
+          <div class="card yc-card yc-card-gold reveal">
+            <div class="card-body text-center">
+              <svg class="yc-badge" viewBox="0 0 80 80" width="72" height="72" aria-hidden="true">
+                <circle cx="40" cy="40" r="36" fill="none" stroke="#C9A84C" stroke-width="2"/>
+                <circle cx="40" cy="40" r="30" fill="none" stroke="#C9A84C" stroke-width=".5"/>
+                <path d="M40 18a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 14v24M32 60q8-4 16 0M26 32q14-8 28 0" fill="none" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <text x="40" y="74" text-anchor="middle" fill="#C9A84C" font-family="Playfair Display,serif" font-size="6" letter-spacing="2">GOLD</text>
+              </svg>
+              <h3 class="text-gold" data-fr="Gold" data-en="Gold">Gold</h3>
+              <p class="yc-condition" data-fr="À partir de 3 sorties" data-en="From 3 outings">À partir de 3 sorties</p>
+              <ul class="yc-perks">
+                <li data-fr="✦ Tous les avantages Silver" data-en="✦ All Silver benefits">✦ Tous les avantages Silver</li>
+                <li data-fr="✦ -10% sur toutes les offres [À VALIDER]" data-en="✦ -10% on all experiences [TO CONFIRM]">✦ -10% sur toutes les offres [À VALIDER]</li>
+                <li data-fr="✦ Accès événements privés [À VALIDER]" data-en="✦ Private events access [TO CONFIRM]">✦ Accès événements privés [À VALIDER]</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- PLATINUM -->
+          <div class="card yc-card yc-card-platinum reveal">
+            <div class="card-body text-center">
+              <svg class="yc-badge" viewBox="0 0 80 80" width="72" height="72" aria-hidden="true">
+                <circle cx="40" cy="40" r="36" fill="none" stroke="#E5E4E2" stroke-width="2"/>
+                <circle cx="40" cy="40" r="30" fill="none" stroke="#E5E4E2" stroke-width=".5"/>
+                <path d="M40 18a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 14v24M32 60q8-4 16 0M26 32q14-8 28 0" fill="none" stroke="#E5E4E2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <text x="40" y="74" text-anchor="middle" fill="#E5E4E2" font-family="Playfair Display,serif" font-size="6" letter-spacing="1">PLATINUM</text>
+              </svg>
+              <h3 data-fr="Platinum" data-en="Platinum">Platinum</h3>
+              <p class="yc-condition" data-fr="À partir de 6 sorties" data-en="From 6 outings">À partir de 6 sorties</p>
+              <ul class="yc-perks">
+                <li data-fr="✦ Tous les avantages Gold" data-en="✦ All Gold benefits">✦ Tous les avantages Gold</li>
+                <li data-fr="✦ -15% parrainage parrain + filleul [À VALIDER]" data-en="✦ -15% referral for both parties [TO CONFIRM]">✦ -15% parrainage parrain + filleul [À VALIDER]</li>
+                <li data-fr="✦ Upgrade anniversaire offert [À VALIDER]" data-en="✦ Complimentary birthday upgrade [TO CONFIRM]">✦ Upgrade anniversaire offert [À VALIDER]</li>
+                <li data-fr="✦ Accès prioritaire nouvelles offres [À VALIDER]" data-en="✦ Priority access to new experiences [TO CONFIRM]">✦ Accès prioritaire nouvelles offres [À VALIDER]</li>
+              </ul>
+            </div>
+          </div>
+
+        </div><!-- /.cards-3 -->
+      </div>
+    </section>
+
+    <!-- COMMENT ÇA MARCHE -->
+    <section class="section">
+      <div class="container">
+        <div class="text-center">
+          <span class="overline reveal" data-fr="Comment ça marche" data-en="How it works">Comment ça marche</span>
+          <h2 class="reveal" data-fr="Trois étapes vers l'excellence" data-en="Three steps to excellence">Trois étapes vers l'excellence</h2>
+        </div>
+        <div class="cards-3 mt-48">
+          <div class="card reveal">
+            <div class="card-body text-center">
+              <span class="step-number">01</span>
+              <h3 data-fr="Naviguez" data-en="Sail">Naviguez</h3>
+              <p data-fr="Réservez votre première expérience à bord de l'Artemis. Sunset, journée en mer ou pêche de nuit — le choix vous appartient." data-en="Book your first experience aboard the Artemis. Sunset, full day or night fishing — the choice is yours.">Réservez votre première expérience à bord de l'Artemis. Sunset, journée en mer ou pêche de nuit — le choix vous appartient.</p>
+            </div>
+          </div>
+          <div class="card reveal">
+            <div class="card-body text-center">
+              <span class="step-number">02</span>
+              <h3 data-fr="Rejoignez" data-en="Join">Rejoignez</h3>
+              <p data-fr="Après votre première sortie, recevez votre invitation personnelle au Yacht Club Prestige. Bienvenue dans le cercle." data-en="After your first outing, receive your personal invitation to the Prestige Yacht Club. Welcome to the circle.">Après votre première sortie, recevez votre invitation personnelle au Yacht Club Prestige. Bienvenue dans le cercle.</p>
+            </div>
+          </div>
+          <div class="card reveal">
+            <div class="card-body text-center">
+              <span class="step-number">03</span>
+              <h3 data-fr="Progressez" data-en="Progress">Progressez</h3>
+              <p data-fr="Chaque navigation vous rapproche du niveau supérieur. Silver, Gold, Platinum — vos privilèges grandissent avec votre fidélité." data-en="Each voyage brings you closer to the next level. Silver, Gold, Platinum — your privileges grow with your loyalty.">Chaque navigation vous rapproche du niveau supérieur. Silver, Gold, Platinum — vos privilèges grandissent avec votre fidélité.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- IMAGE SECTION -->
+    <section class="section section-dark">
+      <div class="container">
+        <div class="split-content reveal">
+          <div class="split-image">
+            <img src="images/Arri%C3%A8re%20V2.jpeg" alt="L'Artemis vu de l'arrière — yacht de prestige" loading="lazy">
+          </div>
+          <div class="split-text">
+            <span class="overline" data-fr="L'esprit du club" data-en="The club spirit">L'esprit du club</span>
+            <h2 data-fr="Naviguer entre privilégiés" data-en="Sailing among the privileged">Naviguer entre privilégiés</h2>
+            <p data-fr="Le Yacht Club Prestige n'est pas qu'un programme d'avantages. C'est une communauté de passionnés qui partagent le même goût de l'excellence, le même amour de la Méditerranée, la même exigence du détail." data-en="The Prestige Yacht Club is not just a benefits programme. It's a community of enthusiasts who share the same taste for excellence, the same love of the Mediterranean, the same attention to detail.">Le Yacht Club Prestige n'est pas qu'un programme d'avantages. C'est une communauté de passionnés qui partagent le même goût de l'excellence, le même amour de la Méditerranée, la même exigence du détail.</p>
+            <p data-fr="Des événements exclusifs rythmeront la saison : sorties réservées aux membres, dégustations à bord, sunset privés dans des criques accessibles uniquement par la mer. [À VALIDER]" data-en="Exclusive events will punctuate the season: members-only outings, tastings on board, private sunsets in coves accessible only by sea. [TO CONFIRM]">Des événements exclusifs rythmeront la saison : sorties réservées aux membres, dégustations à bord, sunset privés dans des criques accessibles uniquement par la mer. [À VALIDER]</p>
+            <a href="reservation.html" class="btn btn-gold mt-24" data-fr="Réserver votre première sortie" data-en="Book your first outing">Réserver votre première sortie</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="section section-cta" style="background-image:url('images/yacht-2.webp')">
+      <div class="hero-overlay"></div>
+      <div class="container text-center" style="position:relative;z-index:2;">
+        <h2 class="reveal" data-fr="Votre première sortie est votre invitation" data-en="Your first outing is your invitation">Votre première sortie est votre invitation</h2>
+        <p class="section-desc reveal" data-fr="Embarquez à bord de l'Artemis et rejoignez le cercle des navigateurs Prestige Charter." data-en="Step aboard the Artemis and join the circle of Prestige Charter navigators.">Embarquez à bord de l'Artemis et rejoignez le cercle des navigateurs Prestige Charter.</p>
+        <div class="cta-buttons reveal mt-24">
+          <a href="reservation.html" class="btn btn-gold" data-fr="Réserver maintenant" data-en="Book now">Réserver maintenant</a>
+          <a href="https://wa.me/33652192414" class="btn btn-outline" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="index.html" class="logo footer-logo" aria-label="Prestige Charter">
+            <svg class="logo-anchor" viewBox="0 0 36 36" width="24" height="24" aria-hidden="true">
+              <path d="M18 4a4 4 0 1 1 0 8 4 4 0 0 1 0-8Zm0 10v16M11 32q7-4 14 0M8 14q10-6 20 0" fill="none" stroke="#C9A84C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span class="logo-text"><span class="logo-prestige">PRESTIGE</span> <span class="logo-charter">CHARTER</span></span>
+          </a>
+          <p class="footer-address" data-fr="Saint-Jean-Cap-Ferrat · Côte d'Azur" data-en="Saint-Jean-Cap-Ferrat · French Riviera">Saint-Jean-Cap-Ferrat · Côte d'Azur</p>
+        </div>
+        <div class="footer-col">
+          <h4 data-fr="Navigation" data-en="Navigation">Navigation</h4>
+          <a href="yacht.html" data-fr="Le Yacht" data-en="The Yacht">Le Yacht</a>
+          <a href="experiences.html" data-fr="Expériences" data-en="Experiences">Expériences</a>
+          <a href="histoire.html" data-fr="Notre Histoire" data-en="Our Story">Notre Histoire</a>
+          <a href="tarifs.html" data-fr="Tarifs" data-en="Pricing">Tarifs</a>
+        </div>
+        <div class="footer-col">
+          <h4 data-fr="Contact" data-en="Contact">Contact</h4>
+          <a href="tel:+33652192414">06 52 19 24 14</a>
+          <a href="mailto:prestigecharter06@gmail.com">prestigecharter06@gmail.com</a>
+          <a href="https://wa.me/33652192414" target="_blank" rel="noopener">WhatsApp</a>
+          <a href="https://www.instagram.com/prestigecharter06" target="_blank" rel="noopener">Instagram</a>
+        </div>
+        <div class="footer-col">
+          <h4 data-fr="Légal" data-en="Legal">Légal</h4>
+          <a href="cgv.html" data-fr="CGV" data-en="T&Cs">CGV</a>
+          <a href="mentionslegales.html" data-fr="Mentions légales" data-en="Legal notices">Mentions légales</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Prestige Charter AT. <span data-fr="Tous droits réservés." data-en="All rights reserved.">Tous droits réservés.</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- LIGHTBOX -->
+  <div id="lightbox" class="lightbox" aria-hidden="true">
+    <button id="lb-close" class="lb-close" aria-label="Fermer">&times;</button>
+    <button id="lb-prev" class="lb-arrow lb-prev-arrow" aria-label="Précédent">&#10094;</button>
+    <img id="lb-img" src="" alt="">
+    <button id="lb-next" class="lb-arrow lb-next-arrow" aria-label="Suivant">&#10095;</button>
+    <span id="lb-counter" class="lb-counter"></span>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
