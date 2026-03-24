@@ -1,0 +1,94 @@
+Crée le fichier js/main.js pour un site de charter nautique ultra-luxe (10 pages HTML statiques). Un seul fichier JS pour tout le site. Voici TOUTES les fonctionnalités à coder :
+
+1. PRELOADER
+- Au load de la page, après 800ms minimum, ajoute la classe .hidden sur #preloader
+- Après la transition (500ms), display none
+
+2. SCROLL PROGRESS BAR
+- Élément #scroll-progress en haut de page
+- Au scroll, calcule le % scrollé et applique width en %
+- Utilise requestAnimationFrame pour la perf
+
+3. HEADER (TOUJOURS OPAQUE, PAS DE CHANGEMENT AU SCROLL)
+- Le header est TOUJOURS fixe et opaque, ne change JAMAIS
+- PAS de classe scrolled, PAS de transparent→opaque
+- Ne touche PAS au style du header au scroll
+
+4. HAMBURGER MENU MOBILE
+- Sélecteur : .hamburger et .mobile-menu
+- Au clic sur .hamburger : toggle classe .active sur les deux
+- Toggle overflow hidden sur body
+- Au clic sur un lien dans .mobile-menu : ferme le menu (retire .active, retire overflow hidden)
+
+5. SCROLL REVEAL (Intersection Observer)
+- Observe tous les éléments avec classe .reveal
+- Options : threshold 0.15, rootMargin "0px 0px -50px 0px"
+- Quand visible : ajoute classe .visible
+- unobserve après révélation
+
+6. SMOOTH SCROLL
+- Intercepte tous les clics sur a[href^="#"]
+- preventDefault, scrollIntoView smooth
+- Offset de var(--header-h) (80px)
+
+7. LIGHTBOX GALERIE (yacht.html)
+- Sélecteurs : .gallery-grid img, .lightbox, .lightbox-img, .lightbox-close, .lightbox-prev, .lightbox-next
+- Si .gallery-grid existe sur la page :
+  - Collecte toutes les images dans un tableau (src + alt)
+  - Au clic sur une image : ouvre la lightbox (classe .active), affiche l'image correspondante
+  - Flèche suivante/précédente : change l'index, boucle
+  - Bouton close : retire .active
+  - Clic sur le fond (pas sur l'image) : ferme
+  - Touche Escape : ferme
+  - Touche ArrowLeft/ArrowRight : navigation
+  - Empêche le scroll du body quand lightbox ouverte
+
+8. TOGGLE LANGUE FR/EN
+- Sélecteur : .lang-toggle
+- Par défaut la page est en FR
+- Au clic sur .lang-toggle :
+  - Toggle entre FR et EN
+  - Change le texte du bouton : "EN" quand on est en FR, "FR" quand on est en EN
+  - Sur TOUS les éléments qui ont data-fr ET data-en :
+    - Si FR actif : textContent = valeur de data-fr
+    - Si EN actif : textContent = valeur de data-en
+  - Sauvegarde le choix dans localStorage clé "lang"
+  - Au chargement, vérifie localStorage et applique la bonne langue
+
+9. FORMULAIRE RESERVATION (reservation.html)
+- Si le formulaire #reservation-form existe :
+  - Au submit : validation basique (champs required remplis)
+  - Vérifie que le nombre de passagers est entre 1 et 11
+  - Si invalide : empêche l'envoi, affiche un message d'erreur stylé
+  - Si valide : laisse Formspree gérer l'envoi (action du form)
+
+10. BOUTON WHATSAPP PRÉ-REMPLI (reservation.html)
+- Si #whatsapp-btn existe :
+  - Au clic, récupère les valeurs du formulaire (nom, date, offre, passagers)
+  - Compose le message : "Bonjour, je souhaite réserver [offre] le [date] pour [nb] passagers. [nom]"
+  - Ouvre https://wa.me/33652192414?text=[message encodé]
+
+11. SCROLL TO TOP
+- Sélecteur : .scroll-top
+- Apparaît après 500px de scroll (opacity 1, pointer-events auto)
+- Caché avant (opacity 0, pointer-events none)
+- Au clic : scroll smooth vers le haut
+
+12. COUNTER ANIMATION (index.html, optionnel)
+- Si des éléments .counter existent :
+  - Intersection Observer
+  - Quand visible : anime le nombre de 0 à la valeur de data-target
+  - Durée 2s, easing
+
+13. PARALLAX LÉGER (hero)
+- Si .hero img existe :
+  - Au scroll, translate l'image en Y de scroll * 0.3
+  - Uniquement si window.innerWidth > 768 (pas sur mobile)
+  - requestAnimationFrame
+
+Le code doit être :
+- Vanilla JS pur, pas de jQuery, pas de librairie
+- Tout dans un DOMContentLoaded
+- Bien commenté
+- Robuste : vérifie l'existence de chaque élément avant d'agir (if existe)
+- Performant : requestAnimationFrame pour scroll, passive listeners

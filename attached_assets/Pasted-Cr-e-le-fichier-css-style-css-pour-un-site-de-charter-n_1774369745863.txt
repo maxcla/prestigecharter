@@ -1,0 +1,52 @@
+Crée le fichier css/style.css pour un site de charter nautique ultra-luxe. Voici les specs exactes :
+
+VARIABLES :
+:root {
+  --gold: #C9A84C;
+  --gold-dim: rgba(201,168,76,.15);
+  --dark: #070F1B;
+  --darker: #050B14;
+  --white: #F4F0EB;
+  --gray: #9A968E;
+  --header-h: 80px;
+}
+
+FONTS : Google Fonts Playfair Display (titres) + Inter (corps)
+
+STYLE : fond noir (--dark), texte blanc cassé (--white), accents or (--gold). Ultra-premium, minimaliste.
+
+COMPOSANTS À INCLURE (tous dans ce seul fichier) :
+
+1. RESET complet (*, html, body, a, img, button, input)
+2. TYPOGRAPHY : h1 clamp(2rem,5vw,4rem), h2 clamp(1.6rem,4vw,3rem), h3 clamp(1.2rem,3vw,2rem). Titres = Playfair Display serif. Corps = Inter sans-serif weight 300. Paragraphes color var(--gray).
+3. UTILITY : .container (90% width, max 1200px, margin auto), .section (padding 100px 0), .section-sub (uppercase, letter-spacing 3px, gold, 0.85rem), .separator (60px width, 2px height, gold, margin auto), .gold (color gold), .text-center, .grid-2/.grid-3/.grid-4 (CSS grid gap 2rem, 1 col mobile, multi col desktop)
+4. PRELOADER : #preloader fixed fullscreen, background --darker, z-index 10000, flex center, transition opacity. .hidden = opacity 0 pointer-events none. SVG 60px spin animation.
+5. SCROLL PROGRESS : #scroll-progress fixed top 0, height 3px, gradient gold, z-index 9999
+6. HEADER : .header fixed, height var(--header-h), background var(--dark) TOUJOURS OPAQUE, border-bottom 1px solid rgba(201,168,76,.2), z-index 9000, flex center. .header-inner = flex, justify space-between, align center, container width. Logo : .logo-text span Playfair Display, "PRESTIGE" blanc, "CHARTER" bold gold.
+7. NAV : .nav = flex gap 2rem. .nav a = Inter 0.85rem uppercase letter-spacing 2px, hover gold, transition. .hamburger = display none par défaut, flex sur mobile (<1024px). 3 spans 25px x 2px background white, gap 6px, transition. .hamburger.active premier span rotate 45deg, deuxième opacity 0, troisième rotate -45deg.
+8. MOBILE MENU : .mobile-menu fixed inset 0, background rgba(7,15,27,.97), z-index 8999, flex column center, transform translateX(100%), transition .4s. .mobile-menu.active translateX(0). Liens : Playfair 1.5rem, margin 1rem, hover gold.
+9. LANG TOGGLE : .lang-toggle border 1px solid gold, padding 4px 12px, border-radius 20px, font-size 0.75rem, uppercase, cursor pointer, hover background gold color dark.
+10. HERO : .hero = position relative, min-height 100vh, display flex align center justify center, text-align center, padding-top var(--header-h). .hero-overlay = absolute inset 0, background linear-gradient(to bottom, rgba(7,15,27,.5), rgba(7,15,27,.8)), z-index 1. .hero img = absolute inset 0, width 100%, height 100%, object-fit cover. .hero-content = position relative z-index 2. .hero h1 margin-bottom 1rem, .hero p font-size 1.2rem margin-bottom 2rem. .hero-scroll = absolute bottom 30px, animation bounce 2s infinite.
+11. BUTTONS : .btn = inline-block padding 14px 40px, background linear-gradient(135deg, var(--gold), #e8d48b), color var(--dark), font-weight 600, text-transform uppercase, letter-spacing 2px, font-size 0.85rem, border-radius 0, transition, position relative overflow hidden. .btn:hover transform translateY(-2px) box-shadow 0 10px 30px rgba(201,168,76,.3). .btn::after = content "", absolute top 0 left -100%, width 100% height 100%, background linear-gradient(90deg, transparent, rgba(255,255,255,.3), transparent), transition .5s. .btn:hover::after left 100% (shine effect). .btn-outline = background transparent, border 1px solid gold, color gold. .btn-outline:hover background gold color dark.
+12. CARDS : .card background rgba(255,255,255,.03), border 1px solid rgba(201,168,76,.1), padding 2.5rem, transition .3s. .card:hover transform translateY(-5px) scale(1.03), box-shadow 0 20px 40px rgba(201,168,76,.1).
+13. PRICING CARDS : .pricing-card same as card but text-center. .pricing-card .price font-size 2.5rem Playfair bold gold. .pricing-card .duration uppercase letter-spacing gray 0.85rem. .pricing-card ul margin 2rem 0, li padding 0.5rem 0 border-bottom dotted. .pricing-featured = border-color gold, position relative. .pricing-featured::before content "POPULAIRE" absolute top -12px left 50% transform translateX(-50%) background gold color dark padding 4px 20px font-size 0.7rem.
+14. IMAGE CONTAINERS : .img-wrap = overflow hidden, border-radius 4px, position relative. .img-wrap img transition transform .5s ease. .img-wrap:hover img transform scale(1.05).
+15. GALLERY : .gallery-grid = grid gap 1rem, 1 col mobile, 3 cols desktop.
+16. LIGHTBOX : .lightbox fixed inset 0, background rgba(0,0,0,.95), z-index 10000, display none, flex center. .lightbox.active display flex. .lightbox img max-width 90% max-height 85vh object-fit contain. .lightbox-close absolute top 20px right 20px, font-size 2rem, gold, cursor pointer. .lightbox-prev/.lightbox-next absolute top 50% transform translateY(-50%), font-size 2rem gold cursor pointer padding 1rem. prev left 20px, next right 20px.
+17. EXPERIENCE BLOCKS : .experience-block grid 1col mobile 2col desktop, gap 3rem, align center, margin-bottom 5rem. .experience-block:nth-child(even) direction rtl on desktop then > * direction ltr.
+18. TIMELINE : .timeline position relative, padding 2rem 0. .timeline::before content "" absolute left 20px desktop left 50%, width 2px height 100% background rgba(201,168,76,.2). .timeline-item position relative, padding-left 60px, margin-bottom 4rem. .timeline-dot absolute left 12px (desktop adapts), width 18px height 18px, border-radius 50%, border 2px solid gold, background dark. .timeline-content padding 2rem, background rgba(255,255,255,.02), border-left 2px solid rgba(201,168,76,.2). Desktop: items alternate left/right (odd = left text-align right padding-right 60px, even = margin-left 55% padding-left 60px).
+19. YACHT CLUB : .club-tier card style, text-align center. .club-badge width 80px height 80px margin auto 1.5rem, border-radius 50%, border 2px solid gold, display flex center, SVG 40px.
+20. FORM : .form-group margin-bottom 1.5rem. .form-group label display block margin-bottom 0.5rem, font-size 0.85rem uppercase letter-spacing 2px gold. .form-group input/select/textarea width 100%, padding 14px 20px, background rgba(255,255,255,.05), border 1px solid rgba(201,168,76,.15), color white, transition. Focus border-color gold. textarea min-height 150px resize vertical.
+21. TESTIMONIALS : .testimonial card style, position relative. .testimonial::before content open-quote, font-size 4rem, Playfair, gold, opacity 0.3, absolute top 10px left 20px. .testimonial p font-style italic. .testimonial-author margin-top 1rem, gold, font-weight 600.
+22. CONTACT INFO : .contact-info li flex align center gap 1rem, padding 1rem 0, border-bottom 1px solid rgba gold .05. SVG/icon gold.
+23. MAP : .map-wrap border-radius 4px, overflow hidden, border 1px solid rgba gold .1. iframe width 100% height 400px.
+24. FUEL WARNING : .fuel-warning background rgba(201,168,76,.08), border-left 3px solid gold, padding 1rem 1.5rem, margin 1.5rem 0, font-size 0.9rem.
+25. BADGE [À VALIDER] : .badge-validate display inline-block, background rgba gold .1, color gold, padding 2px 10px, border-radius 3px, font-size 0.75rem.
+26. INSTAGRAM SECTION : .ig-grid grid 4 cols desktop 2 mobile, gap 0.5rem. .ig-link hover opacity 0.7.
+27. FOOTER : .footer background --darker, border-top 1px solid rgba gold .1, padding 60px 0 30px. .footer-grid = grid 1col mobile, 4col desktop, gap 3rem. .footer h4 gold. .footer links gray hover gold. .footer-bottom text-center, border-top, padding-top 2rem, font-size 0.8rem.
+28. REVEAL : .reveal opacity 0, transform translateY(30px), transition .7s. .reveal.visible opacity 1 translateY(0).
+29. LEGAL : .legal-content padding-top calc(header-h + 40px). h2 gold 1.3rem. p/li gray 0.9rem line-height 1.8.
+30. RESPONSIVE : Mobile (<768px) : section padding 60px 0, header-h 65px, hero min-height 500px. Tablet (768px+) : grids activate. Desktop (1024px+) : hamburger hidden, nav flex.
+31. PRINT : hide preloader, header, footer, buttons.
+
+Le fichier doit être COMPLET et prêt à l'emploi. Un seul fichier CSS, bien commenté par sections.
