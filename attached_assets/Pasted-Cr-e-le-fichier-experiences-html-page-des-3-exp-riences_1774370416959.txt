@@ -1,0 +1,126 @@
+Crée le fichier experiences.html — page des 3 expériences du site prestigecharter.fr. Charter nautique ultra-luxe, Côte d'Azur. Fichier COMPLET.
+
+RÈGLES ABSOLUES :
+- Photos UNIQUEMENT en <img>, JAMAIS en background-image
+- Photos cette page : images/yacht-3.webp, images/hero.jpg, images/yacht-2.webp
+- TOUTES loading="lazy"
+- JAMAIS nom/prénom du dirigeant
+- JAMAIS Corse/Calvi
+- Carburant TOUJOURS NON INCLUS mentionné à chaque offre
+- Header TOUJOURS fixe opaque #070F1B
+- AUCUN prix/durée/détail inventé
+
+STRUCTURE :
+
+<head> :
+- title : "Nos Expériences — Sunset, Journée, Pêche de Nuit | Prestige Charter"
+- meta description : "Trois expériences uniques en mer : Sunset Experience, Journée en Mer et Pêche de Nuit. Au départ de Saint-Jean-Cap-Ferrat, à bord du yacht Artemis."
+- Open Graph, favicon, fonts, CSS identiques aux autres pages
+
+<body> :
+
+1. PRELOADER identique
+2. SCROLL PROGRESS identique
+3. HEADER identique (lien "Expériences" avec .active)
+
+4. HERO PAGE (60vh) :
+- <img src="images/yacht-3.webp" loading="lazy" alt="Yacht Artemis au coucher du soleil sur la Côte d'Azur">
+- Overlay sombre
+- <p class="section-sub" data-fr="Nos Expériences" data-en="Our Experiences">Nos Expériences</p>
+- <h1 data-fr="Des moments d'exception" data-en="Exceptional moments">Des moments d'exception</h1>
+- <p data-fr="Trois façons uniques de vivre la Méditerranée" data-en="Three unique ways to experience the Mediterranean">Trois façons uniques de vivre la Méditerranée</p>
+
+5. SECTION SUNSET EXPERIENCE (.section, reveal, id="sunset") :
+- Grid 2 colonnes : image gauche + texte droite
+- <img src="images/hero.jpg" loading="lazy" alt="Sunset Experience — croisière au coucher du soleil">
+- Contenu :
+  - <p class="section-sub" data-fr="Offre 1" data-en="Experience 1">Offre 1</p>
+  - <h2 data-fr="Sunset Experience" data-en="Sunset Experience">Sunset Experience</h2>
+  - .separator
+  - Prix : <span class="price-tag">1 300 € TTC</span>
+  - Paragraphe FR : "Embarquez pour 3 heures de navigation au crépuscule, de 18h à 21h. Le soleil plonge lentement derrière l'Estérel tandis que l'Artemis glisse le long des côtes les plus prestigieuses de la Méditerranée. Un moment suspendu entre ciel et mer, sublimé par la lumière dorée du couchant."
+  - data-en : "Embark on a 3-hour twilight cruise, from 6pm to 9pm. The sun slowly dips behind the Estérel as the Artemis glides along the most prestigious coastline of the Mediterranean. A suspended moment between sky and sea, enhanced by the golden light of sunset."
+  - Liste "Inclus" avec icônes check dorées :
+    ✓ Skipper professionnel
+    ✓ Paddle
+    ✓ SeaBob
+    ✓ Kit snorkeling
+    ✓ Son Bluetooth premium
+    ✓ Assurance RC
+  - ⛽ Encart carburant (fond rgba gold .05, bordure gold) :
+    data-fr="Carburant non inclus — estimé ~100–150 €"
+    data-en="Fuel not included — estimated ~€100–150"
+  - Infos : "11 passagers max + skipper · Durée : 3h · Horaires : 18h–21h"
+  - Bouton CTA → reservation.html data-fr="Réserver cette expérience" data-en="Book this experience"
+
+6. SECTION JOURNÉE EN MER (.section, reveal, fond --darker, id="journee") :
+- Grid 2 colonnes INVERSÉES : texte gauche + image droite
+- <img src="images/yacht-2.webp" loading="lazy" alt="Journée en Mer — charter privé 8 heures">
+- Contenu :
+  - <p class="section-sub" data-fr="Offre 2" data-en="Experience 2">Offre 2</p>
+  - <h2 data-fr="Journée en Mer" data-en="Full Day at Sea">Journée en Mer</h2>
+  - .separator
+  - Prix : <span class="price-tag">2 700 € TTC</span>
+  - Paragraphe FR : "Une journée entière de 9h à 17h pour explorer la Côte d'Azur dans son intégralité. Mouillages secrets, baignade en eaux cristallines, sports nautiques entre amis ou en famille. L'Artemis devient votre villa flottante privée pour 8 heures d'évasion absolue."
+  - data-en : "A full day from 9am to 5pm to explore the entire French Riviera. Secret anchorages, swimming in crystal-clear waters, water sports with friends or family. The Artemis becomes your private floating villa for 8 hours of absolute escape."
+  - Liste inclus identique à Sunset (mêmes 6 items)
+  - ⛽ Encart carburant :
+    data-fr="Carburant non inclus — estimé ~200–350 €"
+    data-en="Fuel not included — estimated ~€200–350"
+  - Note Saint-Tropez : data-fr="Option Saint-Tropez A/R : supplément carburant ~400–600 €" data-en="Saint-Tropez round trip option: fuel supplement ~€400–600"
+  - Infos : "11 passagers max + skipper · Durée : 8h · Horaires : 9h–17h"
+  - Bouton CTA → reservation.html
+
+7. SECTION PÊCHE DE NUIT (.section, reveal, id="peche") :
+- Grid 2 colonnes : image gauche + texte droite
+- <img src="images/yacht-3.webp" loading="lazy" alt="Pêche de Nuit — expérience nocturne en mer">
+- Contenu :
+  - <p class="section-sub" data-fr="Offre 3" data-en="Experience 3">Offre 3</p>
+  - <h2 data-fr="Pêche de Nuit" data-en="Night Fishing">Pêche de Nuit</h2>
+  - .separator
+  - Prix : <span class="price-tag">2 600 € TTC</span>
+  - Paragraphe FR : "Une aventure nocturne unique de 23h à 5h. Sous les étoiles de la Méditerranée, vivez l'expérience ancestrale de la pêche en mer avec un équipement professionnel complet. Le silence de la nuit, le frisson de la touche, un apéritif sous la voûte céleste — une expérience que peu connaîtront."
+  - data-en : "A unique nocturnal adventure from 11pm to 5am. Under the Mediterranean stars, experience the ancestral art of sea fishing with complete professional equipment. The silence of the night, the thrill of the bite, an aperitif under the celestial vault — an experience few will ever know."
+  - Liste inclus avec icônes check dorées :
+    ✓ Skipper professionnel
+    ✓ Équipement de pêche complet
+    ✓ Apéritif
+    ✓ Son Bluetooth premium
+    ✓ Assurance RC
+  - ⛽ Encart carburant :
+    data-fr="Carburant non inclus — facturé au réel"
+    data-en="Fuel not included — charged at actual cost"
+  - Infos : "11 passagers max + skipper · Durée : 6h · Horaires : 23h–5h"
+  - Bouton CTA → reservation.html
+
+8. SECTION OPTIONS EXTRAS (.section, reveal, fond --darker) :
+- <h2 data-fr="Sublimez votre expérience" data-en="Elevate your experience">Sublimez votre expérience</h2>
+- .separator
+- 3 cards en grid :
+  - Card 1 : icône SVG toque dorée · "Chef privé à bord" · "500 €" · data-fr="Un chef étoilé prépare un menu d'exception à bord" data-en="A starred chef prepares an exceptional menu on board"
+  - Card 2 : icône SVG champagne dorée · "Dom Pérignon" · "350 €" · data-fr="Une bouteille de Dom Pérignon servie à bord" data-en="A bottle of Dom Pérignon served on board"
+  - Card 3 : icône SVG caméra dorée · "Photographe / Vidéaste" · "800 €" · data-fr="Immortalisez chaque instant de votre sortie en mer" data-en="Capture every moment of your sea outing"
+
+9. SECTION CTA FINALE (.section, reveal) :
+- <h2 data-fr="Prêt à embarquer ?" data-en="Ready to embark?">Prêt à embarquer ?</h2>
+- .separator
+- <p data-fr="Réservez votre expérience et laissez-nous créer un moment inoubliable." data-en="Book your experience and let us create an unforgettable moment.">
+- Deux boutons : Réserver (btn-gold → reservation.html) + WhatsApp (btn-outline → https://wa.me/33652192414)
+
+10. FOOTER identique
+11. SCROLL TOP BUTTON identique
+12. <script src="js/main.js"></script>
+
+STYLE DES ÉLÉMENTS SPÉCIFIQUES :
+- .price-tag : font Playfair Display, taille 2rem, couleur --gold, font-weight 700
+- Encart carburant : padding 1rem, background rgba(201,168,76,.05), border-left 3px solid var(--gold), border-radius 8px, icône ⛽ devant
+- Cards options : fond rgba(201,168,76,.05), bordure rgba(201,168,76,.1), border-radius 16px, padding 2rem, hover scale 1.03 + box-shadow doré
+- Grids alternent image gauche/droite entre sections
+- Sur mobile : grids passent en 1 colonne, image au-dessus du texte
+
+DÉCORATIONS SVG/CSS :
+- Vague SVG dorée entre chaque section offre
+- Ancre SVG subtile en filigrane dans le hero
+- Séparateurs dorés stylisés
+
+Toutes les sections ont .reveal. Bilingue FR/EN complet. Fichier COMPLET prêt à copier.
