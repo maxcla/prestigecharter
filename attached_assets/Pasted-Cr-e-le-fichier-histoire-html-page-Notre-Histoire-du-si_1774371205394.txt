@@ -1,0 +1,139 @@
+Crée le fichier histoire.html — page "Notre Histoire" du site prestigecharter.fr. C'est le CŒUR NARRATIF du site. Ton épique, émotionnel, cinématographique. Charter nautique ultra-luxe, Côte d'Azur. Fichier COMPLET.
+
+RÈGLES ABSOLUES :
+- Photos UNIQUEMENT en <img>, JAMAIS en background-image
+- Photos cette page : images/yacht-1.jpg, images/yacht-3.webp
+- TOUTES loading="lazy"
+- ⛔ JAMAIS de nom ou prénom du dirigeant — utiliser "le grand-père", "le père", "le fondateur", "la famille"
+- ⛔ JAMAIS Corse/Calvi
+- Header TOUJOURS fixe opaque #070F1B
+
+CONTENU NARRATIF (source validée, ne rien modifier ni inventer) :
+
+GÉNÉRATION 1 — LE GRAND-PÈRE
+- Métier : Patron de senneurs thoniers
+- Port : Concarneau, Bretagne
+- Contexte : L'homme qui a mis la mer dans le sang de la lignée
+- Ambiance : Les campagnes au thon, le port breton à l'aube, l'odeur du sel et du gasoil au petit matin, les filets que l'on répare, la solidarité entre marins
+- Transmission : Le respect de la mer, la discipline, le goût de l'effort
+
+GÉNÉRATION 2 — LE PÈRE
+- Métier : Patron de chalutiers hauturiers
+- Port de départ : Roscoff, Bretagne
+- Zones de pêche : Atlantique Nord, eaux à l'ouest du sud de l'Angleterre
+- Transition : Après la pêche, 4 ans dans le yachting de luxe sur la Côte d'Azur
+- Rôle narratif : Le pont entre deux mondes — la rudesse de la pêche hauturière et le raffinement du yachting méditerranéen
+
+GÉNÉRATION 3 — LE FONDATEUR
+- Parcours : Élevé entre filets et embruns
+- Pêche hauturière avec son père depuis Roscoff, mêmes eaux atlantiques, mêmes côtes anglaises
+- 1 an dans le yachting de luxe
+- Fonde Prestige Charter : la synthèse de l'héritage familial, sublimé sur la Méditerranée
+- Vision : Offrir une expérience en mer authentique portée par 3 générations de savoir-faire
+
+ARC NARRATIF : Bretagne brute → Côte d'Azur raffinée. La mer comme fil de transmission. Chaque vague porte trois générations.
+
+STRUCTURE HTML :
+
+<head> :
+- title : "Notre Histoire — 3 Générations de Marins | Prestige Charter"
+- meta description : "Trois générations de marins bretons, de Concarneau à Saint-Jean-Cap-Ferrat. Découvrez l'héritage familial qui fait l'âme de Prestige Charter."
+- Open Graph, favicon, fonts, CSS identiques
+
+<body> :
+
+1. PRELOADER identique
+2. SCROLL PROGRESS identique
+3. HEADER identique (lien "Notre Histoire" avec .active)
+
+4. HERO PAGE (60vh) :
+- <img src="images/yacht-1.jpg" loading="lazy" alt="Héritage maritime — trois générations de marins bretons">
+- Overlay sombre
+- <p class="section-sub" data-fr="Notre Histoire" data-en="Our Story">Notre Histoire</p>
+- <h1 data-fr="Trois générations, une même mer" data-en="Three generations, one sea">Trois générations, une même mer</h1>
+- <p data-fr="De Concarneau à Saint-Jean-Cap-Ferrat, la mer coule dans nos veines" data-en="From Concarneau to Saint-Jean-Cap-Ferrat, the sea runs in our veins">De Concarneau à Saint-Jean-Cap-Ferrat, la mer coule dans nos veines</p>
+
+5. SECTION INTRODUCTION (.section, reveal) :
+- Texte centré, max-width 800px, ton cinématographique :
+  - data-fr="Il y a des familles où la mer n'est pas un choix. C'est un héritage. Une évidence transmise de père en fils, forgée par les tempêtes de l'Atlantique, polie par le sel et les années. L'histoire de Prestige Charter ne commence pas dans un bureau. Elle commence sur le pont d'un senneur thonier, quelque part au large de Concarneau, il y a plus d'un demi-siècle."
+  - data-en="There are families where the sea is not a choice. It is a legacy. An instinct passed from father to son, forged by Atlantic storms, polished by salt and years. The story of Prestige Charter does not begin in an office. It begins on the deck of a tuna seiner, somewhere off Concarneau, more than half a century ago."
+
+6. TIMELINE VERTICALE — L'ÉLÉMENT CENTRAL :
+
+Structure CSS :
+- Ligne verticale dorée centrale (2px, var(--gold), opacity .3)
+- Points/cercles dorés sur la ligne (12px, border 2px solid var(--gold), fond --dark)
+- Contenu alterne gauche/droite sur desktop
+- Sur mobile : tout à gauche, ligne à gauche
+- Animation : chaque bloc apparaît au scroll via .reveal avec délai progressif
+- Classe .timeline-container > .timeline-item (alternance .left / .right)
+
+TIMELINE ITEM 1 — LE GRAND-PÈRE :
+- Badge doré : SVG ancre + texte "Génération I"
+- Lieu : "Concarneau, Bretagne"
+- <h3 data-fr="Le Grand-Père — Patron de Senneurs" data-en="The Grandfather — Tuna Seiner Captain">Le Grand-Père — Patron de Senneurs</h3>
+- Paragraphe FR : "À Concarneau, quand les premiers rayons percent la brume du port, un homme prépare son senneur pour une nouvelle campagne au thon. Patron respecté, il connaît chaque courant, chaque humeur de l'Atlantique. Ses mains tannées par le sel racontent mille marées. L'odeur du gasoil se mêle à celle des embruns. Sur le quai, les filets attendent d'être réparés. Entre marins, on ne parle pas beaucoup — mais on se comprend. C'est lui qui a mis la mer dans le sang de la lignée. Le respect de l'océan, la discipline du large, le goût de l'effort : voilà ce qu'il transmet, sans un mot de trop, à ceux qui viendront après."
+- data-en : "In Concarneau, when the first rays pierce the harbour mist, a man prepares his seiner for another tuna campaign. A respected captain, he knows every current, every mood of the Atlantic. His salt-tanned hands tell the story of a thousand tides. The smell of diesel mingles with sea spray. On the quay, nets await mending. Among fishermen, few words are spoken — but everything is understood. He is the one who put the sea in the bloodline. Respect for the ocean, the discipline of the open water, the taste for effort: this is what he passes on, without a word too many, to those who will follow."
+- Image : <img src="images/yacht-1.jpg" loading="lazy" alt="Héritage maritime breton — Concarneau"> dans un cadre avec bordure dorée subtile
+
+TIMELINE ITEM 2 — LE PÈRE :
+- Badge doré : SVG gouvernail + texte "Génération II"
+- Lieu : "Roscoff → Côte d'Azur"
+- <h3 data-fr="Le Père — Du Hauturier au Yachting" data-en="The Father — From Deep Sea to Yachting">Le Père — Du Hauturier au Yachting</h3>
+- Paragraphe FR : "Le fils prend la mer depuis Roscoff. Patron de chalutiers hauturiers, il affronte l'Atlantique Nord et les eaux redoutables à l'ouest du sud de l'Angleterre. Des campagnes de plusieurs jours, la houle qui ne pardonne pas, le poisson qu'on arrache à l'océan. Mais un jour, le Sud l'appelle. Pendant quatre ans, il découvre un autre visage de la mer : le yachting de luxe sur la Côte d'Azur. Le pont entre deux mondes. La même exigence, la même lecture des éléments, mais au service d'une clientèle qui attend l'excellence. Il comprend alors que le savoir-faire du marin hauturier est le plus beau des atouts dans l'univers du charter premium."
+- data-en : "The son takes to sea from Roscoff. A deep-sea trawler captain, he faces the North Atlantic and the fearsome waters west of southern England. Multi-day campaigns, unforgiving swells, fish wrested from the ocean. But one day, the South calls. For four years, he discovers another face of the sea: luxury yachting on the French Riviera. The bridge between two worlds. The same rigour, the same reading of the elements, but in service of a clientele that expects excellence. He then understands that the deep-sea fisherman's expertise is the finest asset in the world of premium charter."
+- Pas d'image sur cet item (décoration SVG compas à la place)
+
+TIMELINE ITEM 3 — LE FONDATEUR :
+- Badge doré : SVG étoile/boussole + texte "Génération III"
+- Lieu : "Saint-Jean-Cap-Ferrat"
+- <h3 data-fr="Le Fondateur — L'Héritage Sublimé" data-en="The Founder — A Legacy Elevated">Le Fondateur — L'Héritage Sublimé</h3>
+- Paragraphe FR : "Élevé entre filets et embruns, il n'a jamais connu d'autre horizon que celui de la mer. Très jeune, il embarque avec son père depuis Roscoff. Mêmes eaux atlantiques, mêmes côtes anglaises, même sel sur la peau. La pêche hauturière est son école. Puis vient le yachting — un an à naviguer sur les plus beaux yachts de la Méditerranée. La synthèse se fait naturellement. Il fonde Prestige Charter à Saint-Jean-Cap-Ferrat : l'authenticité du marin breton au service de l'excellence méditerranéenne. Chaque sortie en mer porte l'empreinte de trois générations. Chaque vague raconte une histoire de famille. L'héritage n'est pas un mot — c'est une manière de tenir la barre."
+- data-en : "Raised between nets and sea spray, he never knew any horizon other than the sea. From a young age, he embarked with his father from Roscoff. Same Atlantic waters, same English coasts, same salt on the skin. Deep-sea fishing was his school. Then came yachting — a year navigating the finest yachts of the Mediterranean. The synthesis came naturally. He founded Prestige Charter in Saint-Jean-Cap-Ferrat: the authenticity of the Breton sailor in service of Mediterranean excellence. Every sea outing bears the imprint of three generations. Every wave tells a family story. Heritage is not a word — it is a way of holding the helm."
+- Image : <img src="images/yacht-3.webp" loading="lazy" alt="Le fondateur de Prestige Charter — Saint-Jean-Cap-Ferrat"> dans cadre bordure dorée
+
+7. SECTION CITATION / TRANSITION (.section, reveal, fond --darker) :
+- Grande citation centrée, Playfair Display italic, taille 1.8rem :
+  - data-fr="« La mer ne s'apprend pas dans les livres. Elle se transmet. »"
+  - data-en=""The sea cannot be learned from books. It is passed down.""
+- Dessous : data-fr="— Trois générations de marins" data-en="— Three generations of sailors"
+- Décoration : guillemets SVG dorés géants en filigrane derrière
+
+8. SECTION VALEURS (.section, reveal) :
+- <h2 data-fr="Ce que la mer nous a appris" data-en="What the sea taught us">Ce que la mer nous a appris</h2>
+- .separator
+- Grid 3 colonnes, 3 cards :
+  - Card 1 : icône SVG ancre dorée · data-fr="Authenticité" data-en="Authenticity" · data-fr="Trois générations de marins, pas de marketing. Notre savoir-faire se transmet sur le pont, pas sur les réseaux." data-en="Three generations of sailors, not marketing. Our expertise is passed on the deck, not on social media."
+  - Card 2 : icône SVG vague dorée · data-fr="Excellence" data-en="Excellence" · data-fr="L'exigence du hauturier appliquée au service premium. Chaque détail compte, chaque passager est unique." data-en="The rigour of the deep-sea fisherman applied to premium service. Every detail matters, every passenger is unique."
+  - Card 3 : icône SVG boussole dorée · data-fr="Transmission" data-en="Legacy" · data-fr="Ce que le grand-père a bâti, le père a enrichi, le fondateur a sublimé. La mer est notre héritage commun." data-en="What the grandfather built, the father enriched, the founder elevated. The sea is our shared heritage."
+
+9. SECTION CTA FINALE (.section, reveal) :
+- <h2 data-fr="Vivez notre histoire en mer" data-en="Experience our story at sea">Vivez notre histoire en mer</h2>
+- .separator
+- <p data-fr="Embarquez à bord de l'Artemis et laissez trois générations de passion vous guider." data-en="Come aboard the Artemis and let three generations of passion guide you.">
+- Deux boutons : Réserver (btn-gold → reservation.html) + Découvrir le yacht (btn-outline → yacht.html)
+
+10. FOOTER identique
+11. SCROLL TOP BUTTON identique
+12. <script src="js/main.js"></script>
+
+STYLE TIMELINE SPÉCIFIQUE :
+- .timeline-container : position relative, padding 2rem 0
+- Ligne centrale : &::before pseudo-element, position absolute, left 50%, width 2px, height 100%, background var(--gold), opacity .3
+- .timeline-item : position relative, width 45%, margin-bottom 4rem
+- .timeline-item.left : margin-right auto, text-align right
+- .timeline-item.right : margin-left auto, text-align left
+- Points sur la ligne : pseudo-element ::after sur chaque item, position absolute, 12px cercle, border 2px solid var(--gold), background var(--dark), top 20px, sur la ligne centrale
+- Mobile : ligne à gauche (left 20px), tous les items à droite avec padding-left 50px, text-align left
+- Badge génération : display inline-flex, background rgba(201,168,76,.1), border 1px solid rgba(201,168,76,.3), border-radius 20px, padding 4px 16px, font-size .8rem, color var(--gold), margin-bottom 1rem
+- Lieu : font Inter, color var(--gray), font-size .85rem, margin-bottom .5rem
+
+DÉCORATIONS SVG/CSS :
+- Rose des vents SVG dorée grande en filigrane (opacity .03) centrée derrière la timeline
+- Vagues SVG entre les sections
+- Ancres, gouvernails, compas en SVG inline dans les badges
+- Lignes décoratives dorées subtiles
+
+Ton du texte : épique, émotionnel, cinématographique. Phrases courtes et longues alternées. Rythme littéraire. PAS de ton corporate.
+
+Toutes les sections ont .reveal. Bilingue FR/EN complet. Fichier COMPLET prêt à copier.

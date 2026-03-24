@@ -1,0 +1,132 @@
+Crée le fichier reservation.html — page de réservation du site prestigecharter.fr. Formulaire élégant avec fond image, envoi Formspree + WhatsApp. Charter nautique ultra-luxe, Côte d'Azur. Fichier COMPLET.
+
+RÈGLES ABSOLUES :
+- Photos UNIQUEMENT en <img>, JAMAIS en background-image
+- Photo cette page : images/Arrière%20V2.jpeg UNIQUEMENT
+- loading="lazy"
+- ⛔ JAMAIS nom/prénom du dirigeant
+- ⛔ JAMAIS Corse/Calvi
+- ⛔ Carburant TOUJOURS mentionné non inclus
+- ⛔ AUCUN prix inventé
+- Header TOUJOURS fixe opaque #070F1B
+
+DONNÉES (source validée) :
+- 3 offres : Sunset Experience 1 300€ | Journée en Mer 2 700€ | Pêche de Nuit 2 600€
+- Capacité max : 11 passagers
+- Acompte 30% à la réservation
+- Solde 48h avant
+- Paiement : virement, CB, espèces
+- Carburant NON INCLUS (toujours)
+- Contact : 06 52 19 24 14 / prestigecharter06@gmail.com
+- WhatsApp : https://wa.me/33652192414
+- Base : Saint-Jean-Cap-Ferrat
+
+STRUCTURE HTML :
+
+<head> :
+- title : "Réservation — Réservez Votre Expérience en Mer | Prestige Charter"
+- meta description : "Réservez votre charter privé au départ de Saint-Jean-Cap-Ferrat. Sunset Experience, Journée en Mer ou Pêche de Nuit à bord du yacht Artemis."
+- Open Graph (og:image → images/hero.jpg), favicon, fonts, CSS identiques
+
+<body> :
+
+1. PRELOADER identique
+2. SCROLL PROGRESS identique
+3. HEADER identique (lien "Réservation" avec .active)
+
+4. HERO-SECTION RÉSERVATION (position relative, min-height 100vh, display flex, align center) :
+- Structure spéciale : image en fond via positionnement CSS (mais en <img> !) :
+  - <img src="images/Arrière%20V2.jpeg" loading="lazy" alt="Vue arrière yacht Artemis — réservation charter Côte d'Azur" class="reservation-bg-img">
+  - .reservation-bg-img : position absolute, inset 0, width 100%, height 100%, object-fit cover, z-index 0
+  - Overlay div : position absolute, inset 0, background linear-gradient(180deg, rgba(7,15,27,.85) 0%, rgba(7,15,27,.92) 100%), z-index 1
+  - Contenu du formulaire : position relative, z-index 2
+
+- Contenu centré (max-width 700px, margin auto, padding 2rem) :
+
+  a) En-tête :
+  - <p class="section-sub" data-fr="Réservation" data-en="Booking">Réservation</p>
+  - <h1 data-fr="Réservez votre expérience" data-en="Book your experience">Réservez votre expérience</h1>
+  - .separator
+  - <p data-fr="Complétez le formulaire ci-dessous ou contactez-nous directement par WhatsApp. Nous vous répondons sous 2 heures." data-en="Fill out the form below or contact us directly via WhatsApp. We respond within 2 hours.">
+
+  b) FORMULAIRE (form#reservation-form, action="https://formspree.io/f/[À COMPLÉTER]", method="POST") :
+
+  Chaque champ dans un .form-group :
+
+  - Champ 1 : label data-fr="Nom complet" data-en="Full name" · input type="text" name="name" required placeholder data-fr="Votre nom et prénom" data-en="Your full name"
+
+  - Champ 2 : label data-fr="Email" data-en="Email" · input type="email" name="email" required placeholder data-fr="votre@email.com" data-en="your@email.com"
+
+  - Champ 3 : label data-fr="Téléphone" data-en="Phone" · input type="tel" name="phone" required placeholder data-fr="+33 6 00 00 00 00" data-en="+33 6 00 00 00 00"
+
+  - Champ 4 : label data-fr="Date souhaitée" data-en="Preferred date" · input type="date" name="date" required · min="today" (JS)
+
+  - Champ 5 : label data-fr="Expérience choisie" data-en="Chosen experience" · select name="experience" required :
+    - option value="" disabled selected data-fr="— Choisissez une offre —" data-en="— Choose an offer —"
+    - option value="sunset" data-fr="Sunset Experience — 1 300 € TTC" data-en="Sunset Experience — €1,300 incl. VAT"
+    - option value="journee" data-fr="Journée en Mer — 2 700 € TTC" data-en="Full Day at Sea — €2,700 incl. VAT"
+    - option value="peche" data-fr="Pêche de Nuit — 2 600 € TTC" data-en="Night Fishing — €2,600 incl. VAT"
+
+  - Champ 6 : label data-fr="Nombre de passagers" data-en="Number of passengers" · input type="number" name="passengers" min="1" max="11" required placeholder data-fr="11 maximum" data-en="11 maximum"
+
+  - Champ 7 : label data-fr="Options souhaitées" data-en="Desired options" · 3 checkboxes :
+    - checkbox name="option_chef" · data-fr="Chef privé (+500 €)" data-en="Private Chef (+€500)"
+    - checkbox name="option_champagne" · data-fr="Dom Pérignon (+350 €)" data-en="Dom Pérignon (+€350)"
+    - checkbox name="option_photo" · data-fr="Photographe / Vidéaste (+800 €)" data-en="Photographer / Videographer (+€800)"
+
+  - Champ 8 : label data-fr="Message (optionnel)" data-en="Message (optional)" · textarea name="message" rows="4" placeholder data-fr="Demandes particulières, itinéraire souhaité..." data-en="Special requests, preferred itinerary..."
+
+  - Champ hidden : input type="hidden" name="_subject" value="Nouvelle réservation — Prestige Charter"
+
+  - Bouton submit : <button type="submit" class="btn-gold" data-fr="Envoyer ma demande" data-en="Send my request">Envoyer ma demande</button>
+
+  c) ENCART RAPPEL sous le formulaire :
+  - Fond rgba(201,168,76,.08), border 1px solid rgba(201,168,76,.15), border-radius 12px, padding 1.5rem
+  - Icône ℹ️ SVG dorée
+  - <p data-fr="Un acompte de 30% sera demandé pour confirmer votre réservation. Le solde est dû 48h avant la prestation. Le carburant n'est pas inclus et sera facturé au réel." data-en="A 30% deposit will be required to confirm your booking. The balance is due 48h before the experience. Fuel is not included and will be charged at cost.">
+
+  d) SÉPARATEUR "OU" :
+  - Ligne horizontale avec "ou" / "or" centré (style élégant, trait doré de chaque côté)
+
+  e) BOUTON WHATSAPP :
+  - <a href="https://wa.me/33652192414?text=Bonjour%2C%20je%20souhaite%20r%C3%A9server%20une%20exp%C3%A9rience%20avec%20Prestige%20Charter.%20" class="btn-whatsapp" target="_blank" rel="noopener">
+  - Icône WhatsApp SVG + data-fr="Réserver par WhatsApp" data-en="Book via WhatsApp"
+  - Style : fond #25D366, couleur blanche, border-radius 12px, padding 1rem 2rem, font Inter 600, hover brightness 1.1, width 100%, text-align center
+
+  f) CONTACT DIRECT :
+  - <p data-fr="Ou appelez-nous directement :" data-en="Or call us directly:">
+  - <a href="tel:+33652192414">06 52 19 24 14</a>
+  - <a href="mailto:prestigecharter06@gmail.com">prestigecharter06@gmail.com</a>
+
+STYLE FORMULAIRE :
+- .form-group : margin-bottom 1.5rem
+- label : display block, font Inter 500, color var(--white), margin-bottom .5rem, font-size .9rem
+- input, select, textarea :
+  - width 100%, padding 1rem 1.2rem
+  - background rgba(255,255,255,.05)
+  - border 1px solid rgba(201,168,76,.2)
+  - border-radius 10px
+  - color var(--white)
+  - font Inter 400, font-size 1rem
+  - transition border .3s
+  - &:focus : border-color var(--gold), outline none, box-shadow 0 0 0 3px rgba(201,168,76,.15)
+- select option : background var(--dark), color var(--white)
+- .checkbox-group : display flex, flex-wrap wrap, gap 1rem
+- checkbox label : display inline-flex, align-items center, gap .5rem, cursor pointer, font-size .9rem
+- checkbox input : accent-color var(--gold), width 18px, height 18px
+
+JS SPÉCIFIQUE (ajouter dans le HTML ou dans main.js) :
+- Au chargement : date input min = today (new Date().toISOString().split('T')[0])
+- Validation : si passengers > 11, alert et empêcher submit
+- Après submit Formspree : afficher message de confirmation stylisé (remplacer le formulaire par un message de succès doré)
+
+5. FOOTER identique
+6. SCROLL TOP BUTTON identique
+7. <script src="js/main.js"></script>
+
+DÉCORATIONS SVG/CSS :
+- Ancre SVG dorée subtile en filigrane derrière le formulaire (opacity .02)
+- Vague SVG dorée sous le hero
+- Séparateurs dorés entre les sections du formulaire
+
+PAS de .reveal sur la section formulaire (visible immédiatement). Bilingue FR/EN complet. Fichier COMPLET prêt à copier.

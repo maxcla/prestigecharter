@@ -1,0 +1,158 @@
+Crée le fichier tarifs.html — page des tarifs du site prestigecharter.fr. Tableau comparatif clair et élégant des 3 offres + options + conditions. Charter nautique ultra-luxe, Côte d'Azur. Fichier COMPLET.
+
+RÈGLES ABSOLUES :
+- Photos UNIQUEMENT en <img>, JAMAIS en background-image
+- Photo cette page : images/yacht-1.jpg UNIQUEMENT
+- loading="lazy"
+- ⛔ JAMAIS nom/prénom du dirigeant
+- ⛔ JAMAIS Corse/Calvi
+- ⛔ Carburant TOUJOURS NON INCLUS mentionné clairement à chaque offre ET dans un encart dédié
+- ⛔ AUCUN prix inventé — uniquement les tarifs validés ci-dessous
+- Header TOUJOURS fixe opaque #070F1B
+
+DONNÉES TARIFS (source validée, RIEN modifier) :
+
+TARIF UNIQUE TOUTE L'ANNÉE :
+
+| | Sunset Experience | Journée en Mer | Pêche de Nuit |
+|---|---|---|---|
+| Durée | 3h (18h–21h) | 8h (9h–17h) | 6h (23h–5h) |
+| Tarif | 1 300 € TTC | 2 700 € TTC | 2 600 € TTC |
+| Capacité | 11 passagers max | 11 passagers max | 11 passagers max |
+| Skipper | Inclus | Inclus | Inclus |
+| Paddle | ✓ | ✓ | ✗ |
+| SeaBob | ✓ | ✓ | ✗ |
+| Snorkeling | ✓ | ✓ | ✗ |
+| Équipement pêche | ✗ | ✗ | ✓ Complet |
+| Apéritif | ✗ | ✗ | ✓ |
+| Bluetooth | ✓ | ✓ | ✓ |
+| Assurance RC | ✓ | ✓ | ✓ |
+| Carburant | NON INCLUS ~100-150€ | NON INCLUS ~200-350€ | NON INCLUS au réel |
+
+Supplément Saint-Tropez A/R : ~400-600 € (carburant)
+
+OPTIONS EXTRAS (toutes offres) :
+- Chef privé à bord : 500 €
+- Bouteille Dom Pérignon : 350 €
+- Photographe / Vidéaste : 800 €
+
+CONDITIONS :
+- Acompte 30% à la réservation
+- Solde 48h avant la prestation
+- Paiement : virement bancaire, carte bancaire, espèces
+- Annulation ≥ J-7 : remboursement intégral acompte
+- Annulation J-7 à J-3 : acompte conservé, report possible selon disponibilité
+- Annulation < J-3 : aucun remboursement
+- Annulation météo (décision skipper) : report ou remboursement intégral
+
+STRUCTURE HTML :
+
+<head> :
+- title : "Tarifs — Nos Offres Charter Yacht Côte d'Azur | Prestige Charter"
+- meta description : "Découvrez nos tarifs : Sunset Experience 1 300€, Journée en Mer 2 700€, Pêche de Nuit 2 600€. Tarif unique toute l'année au départ de Saint-Jean-Cap-Ferrat."
+- Open Graph, favicon, fonts, CSS identiques
+
+<body> :
+
+1. PRELOADER identique
+2. SCROLL PROGRESS identique
+3. HEADER identique (lien "Tarifs" avec .active)
+
+4. HERO PAGE (60vh) :
+- <img src="images/yacht-1.jpg" loading="lazy" alt="Yacht Artemis — tarifs charter Côte d'Azur">
+- Overlay sombre
+- <p class="section-sub" data-fr="Nos Tarifs" data-en="Our Rates">Nos Tarifs</p>
+- <h1 data-fr="Transparence & Excellence" data-en="Transparency & Excellence">Transparence & Excellence</h1>
+- <p data-fr="Tarif unique toute l'année — Pas de surprises, que du plaisir" data-en="Fixed rate all year round — No surprises, only pleasure">Tarif unique toute l'année — Pas de surprises, que du plaisir</p>
+
+5. SECTION TABLEAU COMPARATIF (.section, reveal) :
+- <h2 data-fr="Comparez nos expériences" data-en="Compare our experiences">Comparez nos expériences</h2>
+- .separator
+- Tableau comparatif responsive :
+
+Sur DESKTOP : tableau HTML <table> élégant
+- <thead> : 4 colonnes — vide | Sunset Experience | Journée en Mer | Pêche de Nuit
+- En-têtes colonnes : nom offre + prix en gros (Playfair, --gold, 1.8rem) + durée en dessous (Inter, --gray, .85rem)
+- <tbody> rangées :
+  Ligne "Capacité" : 11 pax | 11 pax | 11 pax
+  Ligne "Skipper" : ✓ | ✓ | ✓
+  Ligne "Paddle" : ✓ | ✓ | —
+  Ligne "SeaBob" : ✓ | ✓ | —
+  Ligne "Kit Snorkeling" : ✓ | ✓ | —
+  Ligne "Équipement pêche" : — | — | ✓
+  Ligne "Apéritif" : — | — | ✓
+  Ligne "Son Bluetooth" : ✓ | ✓ | ✓
+  Ligne "Assurance RC" : ✓ | ✓ | ✓
+  Ligne "Carburant" (mise en évidence) : ~100-150€ | ~200-350€ | Au réel
+  → Cette ligne a un fond rgba(201,168,76,.08) et une icône ⛽
+
+- Bilingue : data-fr et data-en sur chaque label de ligne
+  FR : Capacité, Skipper, Paddle, SeaBob, Kit Snorkeling, Équipement pêche complet, Apéritif, Son Bluetooth, Assurance RC, Carburant (non inclus)
+  EN : Capacity, Skipper, Paddle, SeaBob, Snorkeling Kit, Full fishing equipment, Appetizer, Bluetooth Sound, Liability Insurance, Fuel (not included)
+
+- Style tableau :
+  - Fond : transparent
+  - Bordures : 1px solid rgba(201,168,76,.1) entre lignes
+  - Texte : --white
+  - ✓ = couleur var(--gold)
+  - — = couleur var(--gray), opacity .5
+  - Hover ligne : background rgba(201,168,76,.03)
+  - Border-radius 16px sur le conteneur
+
+Sur MOBILE : tableau caché, remplacé par 3 cards empilées (une par offre) avec toutes les infos. Cards identiques au style experiences.html.
+
+6. ENCART CARBURANT (.section, reveal, fond --darker) :
+- Icône ⛽ SVG dorée grande
+- <h3 data-fr="À propos du carburant" data-en="About fuel">À propos du carburant</h3>
+- <p data-fr="Le carburant n'est pas inclus dans nos tarifs et est facturé au réel après chaque sortie. Les estimations indiquées sont données à titre indicatif selon les itinéraires habituels." data-en="Fuel is not included in our rates and is charged at cost after each trip. Estimates shown are indicative based on usual itineraries.">
+- <p data-fr="Supplément Saint-Tropez aller-retour : environ 400 à 600 € de carburant." data-en="Saint-Tropez round trip supplement: approximately €400 to €600 in fuel.">
+- Style : padding 2rem, background rgba(201,168,76,.05), border 1px solid rgba(201,168,76,.15), border-radius 16px, max-width 800px, margin auto
+
+7. SECTION OPTIONS EXTRAS (.section, reveal) :
+- <h2 data-fr="Sublimez votre expérience" data-en="Elevate your experience">Sublimez votre expérience</h2>
+- .separator
+- Grid 3 colonnes, 3 cards :
+  - Card 1 : icône SVG toque dorée · "Chef Privé" / "Private Chef" · "500 €" · data-fr="Un chef étoilé prépare un menu d'exception à bord" data-en="A starred chef prepares an exceptional menu on board"
+  - Card 2 : icône SVG champagne dorée · "Dom Pérignon" · "350 €" · data-fr="Une bouteille de Dom Pérignon servie à bord" data-en="A bottle of Dom Pérignon served on board"
+  - Card 3 : icône SVG caméra dorée · "Photographe / Vidéaste" / "Photographer / Videographer" · "800 €" · data-fr="Immortalisez chaque instant de votre sortie en mer" data-en="Capture every moment of your sea outing"
+- Style cards : fond rgba(255,255,255,.02), bordure rgba(201,168,76,.1), border-radius 16px, padding 2rem, hover scale(1.03) + box-shadow doré
+
+8. SECTION CONDITIONS (.section, reveal, fond --darker) :
+- <h2 data-fr="Conditions de réservation" data-en="Booking conditions">Conditions de réservation</h2>
+- .separator
+- Grid 2 colonnes :
+
+Colonne gauche — PAIEMENT :
+- <h3 data-fr="Paiement" data-en="Payment">
+- Liste :
+  ✦ data-fr="Acompte de 30% à la réservation" data-en="30% deposit upon booking"
+  ✦ data-fr="Solde 48h avant la prestation" data-en="Balance due 48h before the experience"
+  ✦ data-fr="Virement bancaire · Carte bancaire · Espèces" data-en="Bank transfer · Credit card · Cash"
+
+Colonne droite — ANNULATION :
+- <h3 data-fr="Politique d'annulation" data-en="Cancellation policy">
+- Liste :
+  ✦ data-fr="≥ 7 jours avant : remboursement intégral de l'acompte" data-en="≥ 7 days before: full deposit refund"
+  ✦ data-fr="7 à 3 jours avant : acompte conservé, report possible" data-en="7 to 3 days before: deposit retained, rescheduling possible"
+  ✦ data-fr="< 3 jours avant : aucun remboursement" data-en="< 3 days before: no refund"
+  ✦ data-fr="Annulation météo (décision skipper) : report ou remboursement intégral" data-en="Weather cancellation (skipper's decision): rescheduling or full refund"
+
+- Lien vers CGV : data-fr="Consultez nos Conditions Générales de Vente" data-en="View our Terms and Conditions" → cgv.html
+
+9. SECTION CTA FINALE (.section, reveal) :
+- <h2 data-fr="Prêt à réserver ?" data-en="Ready to book?">Prêt à réserver ?</h2>
+- .separator
+- <p data-fr="Choisissez votre expérience et embarquez pour un moment inoubliable sur la Côte d'Azur." data-en="Choose your experience and embark on an unforgettable moment on the French Riviera.">
+- Deux boutons : Réserver (btn-gold → reservation.html) + WhatsApp (btn-outline → https://wa.me/33652192414)
+
+10. FOOTER identique
+11. SCROLL TOP BUTTON identique
+12. <script src="js/main.js"></script>
+
+DÉCORATIONS SVG/CSS :
+- Ancre SVG dorée en filigrane derrière le tableau (opacity .02)
+- Vagues SVG entre les sections
+- Séparateurs dorés stylisés
+- Icônes SVG inline pour chaque ligne du tableau (ancre pour skipper, vague pour paddle, etc.)
+
+Toutes les sections ont .reveal. Bilingue FR/EN complet. Fichier COMPLET prêt à copier.

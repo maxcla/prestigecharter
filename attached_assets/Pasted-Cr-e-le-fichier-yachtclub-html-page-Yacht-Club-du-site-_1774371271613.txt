@@ -1,0 +1,146 @@
+Crée le fichier yachtclub.html — page "Yacht Club" du site prestigecharter.fr. Cercle privé exclusif, accès sur invitation après 1ère navigation. Charter nautique ultra-luxe, Côte d'Azur. Fichier COMPLET.
+
+RÈGLES ABSOLUES :
+- Photos UNIQUEMENT en <img>, JAMAIS en background-image
+- Photos cette page : images/yacht-2.webp, images/Arrière%20V2.jpeg
+- TOUTES loading="lazy"
+- ⛔ JAMAIS nom/prénom du dirigeant
+- ⛔ JAMAIS Corse/Calvi
+- Header TOUJOURS fixe opaque #070F1B
+- Chaque avantage marqué [À VALIDER]
+
+DONNÉES YACHT CLUB (source validée) :
+
+Concept : Club privé, accès sur invitation après une première navigation avec Prestige Charter. Exclusivité, fidélité récompensée, communauté de passionnés.
+
+3 NIVEAUX :
+
+SILVER (après 1ère sortie) :
+- Priorité de réservation
+- Newsletter spots secrets de navigation
+[À VALIDER]
+
+GOLD (après 3 sorties) :
+- -10% sur toutes les offres
+- Invitations événements privés
+[À VALIDER]
+
+PLATINUM (après 6 sorties) :
+- -15% parrainage (parrain + filleul)
+- Upgrade anniversaire offert
+[À VALIDER]
+
+STRUCTURE HTML :
+
+<head> :
+- title : "Yacht Club — Cercle Privé Exclusif | Prestige Charter"
+- meta description : "Rejoignez le Yacht Club Prestige Charter : un cercle privé réservé à nos navigateurs. Avantages exclusifs, événements privés et privilèges sur la Côte d'Azur."
+- Open Graph, favicon, fonts, CSS identiques
+
+<body> :
+
+1. PRELOADER identique
+2. SCROLL PROGRESS identique
+3. HEADER identique (lien "Yacht Club" avec .active)
+
+4. HERO PAGE (60vh) :
+- <img src="images/yacht-2.webp" loading="lazy" alt="Yacht Club Prestige Charter — cercle privé exclusif Côte d'Azur">
+- Overlay sombre
+- <p class="section-sub" data-fr="Cercle Privé" data-en="Private Circle">Cercle Privé</p>
+- <h1 data-fr="Yacht Club Prestige Charter" data-en="Prestige Charter Yacht Club">Yacht Club Prestige Charter</h1>
+- <p data-fr="Un club exclusif pour ceux qui ont goûté à l'excellence" data-en="An exclusive club for those who have tasted excellence">Un club exclusif pour ceux qui ont goûté à l'excellence</p>
+
+5. SECTION CONCEPT (.section, reveal) :
+- Grid 2 colonnes : texte gauche + emblème droite
+- Texte :
+  - <h2 data-fr="L'excellence se mérite" data-en="Excellence is earned">L'excellence se mérite</h2>
+  - .separator
+  - Paragraphe FR : "Le Yacht Club Prestige Charter n'est pas un programme de fidélité ordinaire. C'est un cercle privé, accessible uniquement sur invitation, après votre première navigation à bord de l'Artemis. Chaque membre partage la même passion pour la mer et la même exigence d'excellence. Bienvenue dans un monde à part."
+  - data-en : "The Prestige Charter Yacht Club is not an ordinary loyalty programme. It is a private circle, accessible by invitation only, after your first voyage aboard the Artemis. Every member shares the same passion for the sea and the same demand for excellence. Welcome to a world apart."
+- Emblème droite : SVG inline GRAND (200x200), créé par toi :
+  - Cercle extérieur fin doré
+  - Ancre dorée centrée stylisée
+  - Texte circulaire "PRESTIGE CHARTER YACHT CLUB" en haut et "EST. 2025" en bas
+  - Étoile ou compas au sommet
+  - Couleur : var(--gold), fond transparent
+  - Style : héraldique maritime élégant
+
+6. SECTION NIVEAUX (.section, reveal, fond --darker) :
+- <h2 data-fr="Trois niveaux de privilèges" data-en="Three tiers of privileges">Trois niveaux de privilèges</h2>
+- .separator
+- <p centré data-fr="Chaque navigation vous rapproche du niveau supérieur" data-en="Each voyage brings you closer to the next level">
+- Grid 3 colonnes, 3 cards premium :
+
+CARD SILVER :
+- Badge SVG : cercle avec ancre, couleur #C0C0C0 (argent)
+- <h3>Silver</h3>
+- Sous-titre : data-fr="Dès votre 1ère sortie" data-en="From your 1st voyage"
+- Liste avantages :
+  ✦ data-fr="Priorité de réservation [À VALIDER]" data-en="Booking priority [TO CONFIRM]"
+  ✦ data-fr="Newsletter spots secrets [À VALIDER]" data-en="Secret spots newsletter [TO CONFIRM]"
+- Bordure : 1px solid rgba(192,192,192,.3)
+- Icône ✦ couleur #C0C0C0
+
+CARD GOLD :
+- Badge SVG : cercle avec ancre, couleur var(--gold)
+- <h3>Gold</h3>
+- Sous-titre : data-fr="Après 3 sorties" data-en="After 3 voyages"
+- Liste avantages :
+  ✦ data-fr="Tous les avantages Silver" data-en="All Silver benefits"
+  ✦ data-fr="-10% sur toutes les offres [À VALIDER]" data-en="-10% on all experiences [TO CONFIRM]"
+  ✦ data-fr="Invitations événements privés [À VALIDER]" data-en="Private event invitations [TO CONFIRM]"
+- Bordure : 1px solid rgba(201,168,76,.3)
+- Icône ✦ couleur var(--gold)
+- Tag "POPULAIRE" / "POPULAR" en coin supérieur droit
+
+CARD PLATINUM :
+- Badge SVG : cercle avec ancre + étoile, couleur #E5E4E2 (platine lumineux)
+- <h3>Platinum</h3>
+- Sous-titre : data-fr="Après 6 sorties" data-en="After 6 voyages"
+- Liste avantages :
+  ✦ data-fr="Tous les avantages Gold" data-en="All Gold benefits"
+  ✦ data-fr="-15% parrainage parrain + filleul [À VALIDER]" data-en="-15% referral for both sponsor & guest [TO CONFIRM]"
+  ✦ data-fr="Upgrade anniversaire offert [À VALIDER]" data-en="Complimentary birthday upgrade [TO CONFIRM]"
+- Bordure : 1px solid rgba(229,228,226,.3)
+- Icône ✦ couleur #E5E4E2
+- Background : léger gradient sombre premium, glow subtil
+
+Style des cards :
+- Fond rgba(255,255,255,.02)
+- Border-radius 20px
+- Padding 2.5rem
+- Hover : scale(1.03) + box-shadow 0 20px 60px rgba(201,168,76,.15)
+- Transition .4s ease
+- Badge SVG en haut centré (60x60)
+
+7. SECTION COMMENT REJOINDRE (.section, reveal) :
+- <h2 data-fr="Comment rejoindre le club" data-en="How to join the club">Comment rejoindre le club</h2>
+- .separator
+- 3 étapes en ligne (grid 3 cols) avec numéros dorés :
+  - Étape 1 : Numéro "01" doré grand · data-fr="Naviguez avec nous" data-en="Sail with us" · data-fr="Réservez votre première expérience à bord de l'Artemis" data-en="Book your first experience aboard the Artemis"
+  - Étape 2 : Numéro "02" doré grand · data-fr="Recevez votre invitation" data-en="Receive your invitation" · data-fr="Après votre sortie, une invitation personnelle vous sera envoyée" data-en="After your voyage, a personal invitation will be sent to you"
+  - Étape 3 : Numéro "03" doré grand · data-fr="Profitez de vos privilèges" data-en="Enjoy your privileges" · data-fr="Accédez à des avantages exclusifs et montez en niveau" data-en="Access exclusive benefits and climb the tiers"
+
+8. SECTION IMAGE + CITATION (.section, reveal, fond --darker) :
+- <img src="images/Arrière%20V2.jpeg" loading="lazy" alt="Vue arrière du yacht Artemis — Yacht Club Prestige Charter">
+- Citation superposée (pas en bg, image en <img> avec overlay texte positionné) :
+  - data-fr="« L'exclusivité n'est pas un privilège. C'est une reconnaissance. »"
+  - data-en=""Exclusivity is not a privilege. It is a recognition.""
+
+9. SECTION CTA FINALE (.section, reveal) :
+- <h2 data-fr="Votre première navigation vous attend" data-en="Your first voyage awaits">Votre première navigation vous attend</h2>
+- .separator
+- <p data-fr="Réservez votre expérience et ouvrez les portes du Yacht Club Prestige Charter." data-en="Book your experience and open the doors to the Prestige Charter Yacht Club.">
+- Deux boutons : Réserver (btn-gold → reservation.html) + WhatsApp (btn-outline → https://wa.me/33652192414)
+
+10. FOOTER identique
+11. SCROLL TOP BUTTON identique
+12. <script src="js/main.js"></script>
+
+DÉCORATIONS SVG/CSS :
+- Emblème yacht club en filigrane (opacity .02) répété en fond de la section niveaux
+- Lignes dorées décoratives entre les étapes
+- Étoiles/ancres SVG subtiles dans les cards
+- Vagues SVG entre sections
+
+Toutes les sections ont .reveal. Bilingue FR/EN complet. Fichier COMPLET prêt à copier.

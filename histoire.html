@@ -1,275 +1,500 @@
-<!-- histoire.html -->
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Notre Histoire — Trois Générations de Marins | Prestige Charter</title>
-  <meta name="description" content="De Concarneau à Saint-Jean-Cap-Ferrat, trois générations de marins. Des senneurs thoniers bretons au charter de luxe sur la Côte d'Azur. Découvrez l'histoire de Prestige Charter.">
-  <meta property="og:title" content="Notre Histoire — Prestige Charter">
-  <meta property="og:description" content="Trois générations. Un même océan. De la Bretagne brute à la Côte d'Azur raffinée.">
-  <meta property="og:image" content="images/yacht-1.jpg">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><path d='M16 2 L16 28 M10 26 Q16 22 22 26 M8 10 Q16 4 24 10 L16 8Z' fill='none' stroke='%23C9A84C' stroke-width='2'/></svg>">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Notre Histoire — 3 Générations de Marins | Prestige Charter</title>
+  <meta name="description" content="Trois générations de marins bretons, de Concarneau à Saint-Jean-Cap-Ferrat. Découvrez l'héritage familial qui fait l'âme de Prestige Charter." />
+  <meta property="og:title" content="Notre Histoire — 3 Générations de Marins | Prestige Charter" />
+  <meta property="og:description" content="Trois générations de marins bretons, de Concarneau à Saint-Jean-Cap-Ferrat. Découvrez l'héritage familial qui fait l'âme de Prestige Charter." />
+  <meta property="og:image" content="images/yacht-1.jpg" />
+  <meta property="og:url" content="https://www.prestigecharter.fr/histoire.html" />
+  <meta property="og:type" content="website" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='26'>⚓</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .page-hero { position:relative; height:60vh; min-height:380px; overflow:hidden; display:flex; align-items:center; justify-content:center; text-align:center; }
+    .page-hero img.hero-bg { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:0; }
+    .page-hero-overlay { position:absolute; inset:0; background:linear-gradient(to bottom,rgba(7,15,27,.5),rgba(7,15,27,.85)); z-index:1; }
+    .page-hero-content { position:relative; z-index:2; padding:var(--header-h) 1rem 2rem; }
+    .page-hero-content h1 { font-size:clamp(2rem,5.5vw,4rem); margin-bottom:.6rem; }
+    .page-hero-content .hero-tagline { font-size:.85rem; letter-spacing:2.5px; text-transform:uppercase; color:var(--gray); margin:0; font-weight:300; }
+    .wave-sep { width:100%; overflow:hidden; line-height:0; margin:0; }
+    .wave-sep svg { display:block; width:100%; }
+    .section-alt { background:var(--darker); }
+    .text-intro { max-width:800px; margin:0 auto; text-align:center; }
+    .text-intro p { font-size:1.1rem; line-height:1.9; color:var(--gray); font-style:italic; }
+
+    /* ---- Timeline ---- */
+    .timeline-container {
+      position: relative;
+      padding: 2rem 0;
+    }
+    .timeline-container::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: var(--gold);
+      opacity: .3;
+      transform: translateX(-50%);
+    }
+    .timeline-item {
+      position: relative;
+      width: 44%;
+      margin-bottom: 4.5rem;
+    }
+    .timeline-item.left { margin-right: auto; text-align: right; padding-right: 3.5rem; }
+    .timeline-item.right { margin-left: auto; text-align: left; padding-left: 3.5rem; }
+    .timeline-item.left::after {
+      content: '';
+      position: absolute;
+      right: -7px;
+      top: 22px;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      border: 2px solid var(--gold);
+      background: var(--dark);
+      box-shadow: 0 0 12px rgba(201,168,76,.3);
+    }
+    .timeline-item.right::after {
+      content: '';
+      position: absolute;
+      left: -7px;
+      top: 22px;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      border: 2px solid var(--gold);
+      background: var(--dark);
+      box-shadow: 0 0 12px rgba(201,168,76,.3);
+    }
+    .gen-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      background: rgba(201,168,76,.1);
+      border: 1px solid rgba(201,168,76,.3);
+      border-radius: 20px;
+      padding: 4px 14px;
+      font-size: .78rem;
+      color: var(--gold);
+      margin-bottom: .75rem;
+      letter-spacing: 1px;
+    }
+    .timeline-lieu {
+      font-size: .82rem;
+      color: var(--gray);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: .5rem;
+      font-family: 'Inter', sans-serif;
+    }
+    .timeline-item h3 { font-size: 1.25rem; margin-bottom: 1rem; }
+    .timeline-item p { color: var(--gray); font-size: .92rem; line-height: 1.8; margin-bottom: 1rem; }
+    .timeline-img-frame {
+      margin-top: 1.25rem;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid rgba(201,168,76,.15);
+      box-shadow: 0 8px 32px rgba(0,0,0,.4);
+      aspect-ratio: 16/9;
+    }
+    .timeline-img-frame img { width:100%; height:100%; object-fit:cover; }
+    .compas-decor {
+      width: 120px;
+      height: 120px;
+      margin: 2rem auto;
+      opacity: .15;
+    }
+
+    /* Rose des vents filigrane derrière timeline */
+    .timeline-filigrane {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%,-50%);
+      width: 500px;
+      height: 500px;
+      opacity: .025;
+      pointer-events: none;
+    }
+
+    /* Mobile timeline */
+    @media(max-width:768px) {
+      .timeline-container::before { left: 20px; }
+      .timeline-item { width: 100%; padding-left: 50px !important; padding-right: 0 !important; text-align: left !important; }
+      .timeline-item.left::after, .timeline-item.right::after { left: 14px; right: auto; }
+    }
+
+    /* ---- Quote section ---- */
+    .quote-section { position: relative; overflow: hidden; text-align: center; }
+    .quote-marks {
+      position: absolute;
+      font-size: 20rem;
+      font-family: 'Playfair Display', serif;
+      color: var(--gold);
+      opacity: .03;
+      line-height: 1;
+      top: -2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      pointer-events: none;
+      white-space: nowrap;
+    }
+    .quote-text {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.3rem,2.5vw,1.8rem);
+      font-style: italic;
+      color: var(--white);
+      max-width: 700px;
+      margin: 0 auto 1rem;
+      line-height: 1.6;
+      position: relative;
+      z-index: 1;
+    }
+    .quote-attr { color: var(--gray); font-size: .85rem; letter-spacing: 2px; }
+
+    /* ---- Values cards ---- */
+    .value-card {
+      background: rgba(201,168,76,.04);
+      border: 1px solid rgba(201,168,76,.1);
+      border-radius: 12px;
+      padding: 2rem;
+      text-align: center;
+      transition: transform .3s, box-shadow .3s;
+    }
+    .value-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(201,168,76,.1); }
+    .value-card svg { display: block; margin: 0 auto 1rem; }
+    .value-card h3 { margin-bottom: .75rem; }
+    .value-card p { color: var(--gray); font-size: .9rem; line-height: 1.7; margin: 0; }
+
+    /* ---- CTA ---- */
+    .cta-buttons { display:flex; align-items:center; justify-content:center; gap:1.5rem; flex-wrap:wrap; margin-top:2rem; }
+    .scroll-top { position:fixed; bottom:24px; right:24px; width:48px; height:48px; background:var(--gold); color:var(--dark); border-radius:50%; display:flex; align-items:center; justify-content:center; cursor:pointer; z-index:8000; border:none; box-shadow:0 4px 20px rgba(201,168,76,.4); transition:transform .3s,box-shadow .3s; }
+    .scroll-top:hover { transform:translateY(-3px); box-shadow:0 8px 30px rgba(201,168,76,.5); }
+  </style>
 </head>
 <body>
 
-  <!-- PRELOADER -->
-  <div id="preloader" aria-hidden="true">
-    <svg class="preloader-anchor" viewBox="0 0 64 64" width="64" height="64">
-      <path d="M32 8a6 6 0 1 1 0 12 6 6 0 0 1 0-12Zm0 16v28M20 56q12-6 24 0M14 28q18-10 36 0" fill="none" stroke="#C9A84C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <div id="preloader">
+    <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" width="60" height="60">
+      <circle cx="30" cy="30" r="26" stroke="#C9A84C" stroke-width="2" stroke-dasharray="40 120" stroke-linecap="round"/>
+      <path d="M30 10 L30 50 M20 20 Q30 26 40 20 M20 40 Q30 34 40 40" stroke="#C9A84C" stroke-width="2" stroke-linecap="round"/>
     </svg>
   </div>
+  <div id="scroll-progress"></div>
 
-  <!-- HEADER -->
-  <header id="header" class="header">
-    <div class="container header-inner">
-      <a href="index.html" class="logo" aria-label="Prestige Charter - Accueil">
-        <svg class="logo-anchor" viewBox="0 0 36 36" width="28" height="28" aria-hidden="true">
-          <path d="M18 4a4 4 0 1 1 0 8 4 4 0 0 1 0-8Zm0 10v16M11 32q7-4 14 0M8 14q10-6 20 0" fill="none" stroke="#C9A84C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <header class="header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
+          <circle cx="15" cy="7" r="3" stroke="#C9A84C" stroke-width="1.5"/>
+          <line x1="15" y1="10" x2="15" y2="26" stroke="#C9A84C" stroke-width="1.5"/>
+          <path d="M7 18 Q15 24 23 18" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+          <line x1="5" y1="26" x2="25" y2="26" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round"/>
         </svg>
-        <span class="logo-text"><span class="logo-prestige">PRESTIGE</span> <span class="logo-charter">CHARTER</span></span>
+        <span class="logo-text"><span class="logo-prestige">PRESTIGE</span><span class="logo-charter">CHARTER</span></span>
       </a>
-      <nav class="nav-desktop" aria-label="Navigation principale">
+      <nav class="nav">
         <a href="index.html" data-fr="Accueil" data-en="Home">Accueil</a>
         <a href="yacht.html" data-fr="Le Yacht" data-en="The Yacht">Le Yacht</a>
         <a href="experiences.html" data-fr="Expériences" data-en="Experiences">Expériences</a>
         <a href="histoire.html" class="active" data-fr="Notre Histoire" data-en="Our Story">Notre Histoire</a>
         <a href="yachtclub.html" data-fr="Yacht Club" data-en="Yacht Club">Yacht Club</a>
-        <a href="tarifs.html" data-fr="Tarifs" data-en="Pricing">Tarifs</a>
+        <a href="tarifs.html" data-fr="Tarifs" data-en="Rates">Tarifs</a>
         <a href="reservation.html" data-fr="Réservation" data-en="Booking">Réservation</a>
         <a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a>
       </nav>
-      <button id="lang-toggle" class="btn-lang" aria-label="Switch language">EN</button>
-      <button id="burger" class="burger" aria-label="Menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
+      <div style="display:flex;align-items:center;gap:1rem;">
+        <button class="lang-toggle">EN</button>
+        <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+      </div>
     </div>
   </header>
 
-  <!-- MOBILE NAV -->
-  <nav id="mobile-nav" class="mobile-nav" aria-label="Navigation mobile">
+  <div class="mobile-menu">
     <a href="index.html" data-fr="Accueil" data-en="Home">Accueil</a>
     <a href="yacht.html" data-fr="Le Yacht" data-en="The Yacht">Le Yacht</a>
     <a href="experiences.html" data-fr="Expériences" data-en="Experiences">Expériences</a>
     <a href="histoire.html" data-fr="Notre Histoire" data-en="Our Story">Notre Histoire</a>
     <a href="yachtclub.html" data-fr="Yacht Club" data-en="Yacht Club">Yacht Club</a>
-    <a href="tarifs.html" data-fr="Tarifs" data-en="Pricing">Tarifs</a>
+    <a href="tarifs.html" data-fr="Tarifs" data-en="Rates">Tarifs</a>
     <a href="reservation.html" data-fr="Réservation" data-en="Booking">Réservation</a>
     <a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a>
-    <button id="lang-toggle-mobile" class="btn-lang mt-24" aria-label="Switch language">EN</button>
-  </nav>
-
-  <!-- PAGE HERO -->
-  <section class="page-hero" style="background-image:url('images/yacht-1.jpg')">
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <span class="overline" data-fr="Notre Histoire" data-en="Our Story">Notre Histoire</span>
-      <h1 data-fr="Trois générations, un même horizon" data-en="Three generations, one horizon">Trois générations, un même horizon</h1>
-      <p class="hero-sub" data-fr="De la Bretagne brute à la Côte d'Azur raffinée. La mer coule dans nos veines." data-en="From rugged Brittany to the refined Côte d'Azur. The sea runs in our veins.">De la Bretagne brute à la Côte d'Azur raffinée. La mer coule dans nos veines.</p>
-    </div>
-  </section>
+    <button class="lang-toggle" style="margin-top:1.5rem;">EN</button>
+  </div>
 
   <main>
 
-    <!-- INTRO -->
-    <section class="section">
-      <div class="container text-center">
-        <blockquote class="histoire-quote reveal">
-          <p data-fr="« Chaque vague porte trois générations. Chaque escale est un hommage à ceux qui ont navigué avant nous. »" data-en="'Every wave carries three generations. Every port of call is a tribute to those who sailed before us.'">"Chaque vague porte trois générations. Chaque escale est un hommage à ceux qui ont navigué avant nous."</p>
-        </blockquote>
-        <p class="section-desc reveal mt-48" data-fr="L'histoire de Prestige Charter ne commence pas dans un bureau. Elle commence sur le pont d'un senneur thonier, au large de Concarneau, quand l'aube n'était qu'une lueur grise sur l'Atlantique. Elle se poursuit dans les tempêtes du golfe de Gascogne, dans le silence des nuits de pêche hauturière, dans l'odeur du sel et du gasoil mêlés. Elle s'achève — ou plutôt, elle renaît — sous le soleil de la Méditerranée, là où l'héritage familial trouve sa forme la plus accomplie." data-en="The story of Prestige Charter doesn't begin in an office. It begins on the deck of a tuna seiner, off Concarneau, when dawn was just a grey glow over the Atlantic. It continues through the storms of the Bay of Biscay, in the silence of deep-sea fishing nights, in the smell of salt and diesel intertwined. It ends — or rather, it is reborn — under the Mediterranean sun, where the family legacy finds its most accomplished form.">L'histoire de Prestige Charter ne commence pas dans un bureau. Elle commence sur le pont d'un senneur thonier, au large de Concarneau, quand l'aube n'était qu'une lueur grise sur l'Atlantique. Elle se poursuit dans les tempêtes du golfe de Gascogne, dans le silence des nuits de pêche hauturière, dans l'odeur du sel et du gasoil mêlés. Elle s'achève — ou plutôt, elle renaît — sous le soleil de la Méditerranée, là où l'héritage familial trouve sa forme la plus accomplie.</p>
+    <!-- HERO -->
+    <section class="page-hero">
+      <img class="hero-bg" src="images/yacht-1.jpg" loading="lazy" alt="Héritage maritime — trois générations de marins bretons" />
+      <div class="page-hero-overlay"></div>
+      <div class="page-hero-content">
+        <p class="section-sub" data-fr="Notre Histoire" data-en="Our Story">Notre Histoire</p>
+        <h1 data-fr="Trois générations, une même mer" data-en="Three generations, one sea">Trois générations, une même mer</h1>
+        <p class="hero-tagline" data-fr="De Concarneau à Saint-Jean-Cap-Ferrat, la mer coule dans nos veines" data-en="From Concarneau to Saint-Jean-Cap-Ferrat, the sea runs in our veins">De Concarneau à Saint-Jean-Cap-Ferrat, la mer coule dans nos veines</p>
       </div>
     </section>
+
+    <!-- INTRODUCTION -->
+    <section class="section reveal">
+      <div class="container">
+        <div class="text-intro">
+          <p data-fr="Il y a des familles où la mer n'est pas un choix. C'est un héritage. Une évidence transmise de père en fils, forgée par les tempêtes de l'Atlantique, polie par le sel et les années. L'histoire de Prestige Charter ne commence pas dans un bureau. Elle commence sur le pont d'un senneur thonier, quelque part au large de Concarneau, il y a plus d'un demi-siècle." data-en="There are families where the sea is not a choice. It is a legacy. An instinct passed from father to son, forged by Atlantic storms, polished by salt and years. The story of Prestige Charter does not begin in an office. It begins on the deck of a tuna seiner, somewhere off Concarneau, more than half a century ago.">Il y a des familles où la mer n'est pas un choix. C'est un héritage. Une évidence transmise de père en fils, forgée par les tempêtes de l'Atlantique, polie par le sel et les années. L'histoire de Prestige Charter ne commence pas dans un bureau. Elle commence sur le pont d'un senneur thonier, quelque part au large de Concarneau, il y a plus d'un demi-siècle.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- WAVE -->
+    <div class="wave-sep">
+      <svg viewBox="0 0 1440 40" preserveAspectRatio="none" height="40">
+        <path d="M0,20 C360,40 720,0 1080,20 C1260,30 1380,15 1440,20 L1440,40 L0,40 Z" fill="var(--darker)"/>
+      </svg>
+    </div>
 
     <!-- TIMELINE -->
-    <section class="section section-dark" id="timeline-section">
+    <section class="section section-alt reveal">
       <div class="container">
-        <div class="text-center">
-          <span class="overline reveal" data-fr="La Lignée" data-en="The Lineage">La Lignée</span>
-          <h2 class="reveal" data-fr="Du sel dans le sang" data-en="Salt in the blood">Du sel dans le sang</h2>
+        <div class="timeline-container" style="position:relative;">
+
+          <!-- Rose des vents filigrane -->
+          <svg class="timeline-filigrane" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="100" cy="100" r="92" stroke="#C9A84C" stroke-width="1"/>
+            <circle cx="100" cy="100" r="60" stroke="#C9A84C" stroke-width=".5"/>
+            <circle cx="100" cy="100" r="8" stroke="#C9A84C" stroke-width="1"/>
+            <polygon points="100,4 108,92 100,82 92,92" fill="#C9A84C"/>
+            <polygon points="100,196 108,108 100,118 92,108" fill="#C9A84C" opacity=".4"/>
+            <polygon points="4,100 92,108 82,100 92,92" fill="#C9A84C" opacity=".4"/>
+            <polygon points="196,100 108,108 118,100 108,92" fill="#C9A84C" opacity=".4"/>
+            <line x1="100" y1="8" x2="100" y2="192" stroke="#C9A84C" stroke-width=".4" opacity=".4"/>
+            <line x1="8" y1="100" x2="192" y2="100" stroke="#C9A84C" stroke-width=".4" opacity=".4"/>
+            <text x="100" y="22" text-anchor="middle" font-size="10" fill="#C9A84C" font-family="serif">N</text>
+            <text x="100" y="185" text-anchor="middle" font-size="10" fill="#C9A84C" font-family="serif">S</text>
+            <text x="182" y="104" text-anchor="middle" font-size="10" fill="#C9A84C" font-family="serif">E</text>
+            <text x="18" y="104" text-anchor="middle" font-size="10" fill="#C9A84C" font-family="serif">O</text>
+          </svg>
+
+          <!-- GÉNÉRATION I -->
+          <div class="timeline-item left reveal">
+            <div class="gen-badge">
+              <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+                <circle cx="9" cy="4" r="2" stroke="#C9A84C" stroke-width="1.2"/>
+                <line x1="9" y1="6" x2="9" y2="14" stroke="#C9A84C" stroke-width="1.2"/>
+                <path d="M5 10 Q9 13 13 10" stroke="#C9A84C" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+                <line x1="3" y1="14" x2="15" y2="14" stroke="#C9A84C" stroke-width="1.2" stroke-linecap="round"/>
+              </svg>
+              <span data-fr="Génération I" data-en="Generation I">Génération I</span>
+            </div>
+            <p class="timeline-lieu" data-fr="Concarneau, Bretagne" data-en="Concarneau, Brittany">Concarneau, Bretagne</p>
+            <h3 data-fr="Le Grand-Père — Patron de Senneurs" data-en="The Grandfather — Tuna Seiner Captain">Le Grand-Père — Patron de Senneurs</h3>
+            <p data-fr="À Concarneau, quand les premiers rayons percent la brume du port, un homme prépare son senneur pour une nouvelle campagne au thon. Patron respecté, il connaît chaque courant, chaque humeur de l'Atlantique. Ses mains tannées par le sel racontent mille marées. L'odeur du gasoil se mêle à celle des embruns." data-en="In Concarneau, when the first rays pierce the harbour mist, a man prepares his seiner for another tuna campaign. A respected captain, he knows every current, every mood of the Atlantic. His salt-tanned hands tell the story of a thousand tides. The smell of diesel mingles with sea spray.">À Concarneau, quand les premiers rayons percent la brume du port, un homme prépare son senneur pour une nouvelle campagne au thon. Patron respecté, il connaît chaque courant, chaque humeur de l'Atlantique. Ses mains tannées par le sel racontent mille marées. L'odeur du gasoil se mêle à celle des embruns.</p>
+            <p data-fr="Sur le quai, les filets attendent d'être réparés. Entre marins, on ne parle pas beaucoup — mais on se comprend. C'est lui qui a mis la mer dans le sang de la lignée. Le respect de l'océan, la discipline du travail, le goût de l'effort. Des valeurs qui ne s'écrivent pas, mais qui se transmettent. De quai en quai, de marée en marée." data-en="On the quay, nets await mending. Among fishermen, few words are spoken — but everything is understood. He is the one who put the sea in the bloodline. Respect for the ocean, the discipline of hard work, the taste for effort. Values that are not written down, but passed on. From quay to quay, tide to tide.">Sur le quai, les filets attendent d'être réparés. Entre marins, on ne parle pas beaucoup — mais on se comprend. C'est lui qui a mis la mer dans le sang de la lignée. Le respect de l'océan, la discipline du travail, le goût de l'effort. Des valeurs qui ne s'écrivent pas, mais qui se transmettent.</p>
+            <div class="timeline-img-frame">
+              <img src="images/yacht-1.jpg" loading="lazy" alt="Héritage maritime breton — Concarneau" />
+            </div>
+          </div>
+
+          <!-- GÉNÉRATION II -->
+          <div class="timeline-item right reveal">
+            <div class="gen-badge">
+              <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+                <circle cx="9" cy="9" r="6" stroke="#C9A84C" stroke-width="1.2"/>
+                <line x1="9" y1="3" x2="9" y2="15" stroke="#C9A84C" stroke-width="1" stroke-linecap="round"/>
+                <line x1="3" y1="9" x2="15" y2="9" stroke="#C9A84C" stroke-width="1" stroke-linecap="round"/>
+                <circle cx="9" cy="9" r="2" stroke="#C9A84C" stroke-width="1"/>
+              </svg>
+              <span data-fr="Génération II" data-en="Generation II">Génération II</span>
+            </div>
+            <p class="timeline-lieu" data-fr="Roscoff → Côte d'Azur" data-en="Roscoff → French Riviera">Roscoff → Côte d'Azur</p>
+            <h3 data-fr="Le Père — Du Hauturier au Yachting" data-en="The Father — From Deep Sea to Yachting">Le Père — Du Hauturier au Yachting</h3>
+            <p data-fr="Le fils prend la mer depuis Roscoff. Patron de chalutiers hauturiers, il affronte l'Atlantique Nord et les eaux redoutables à l'ouest du sud de l'Angleterre. Des campagnes de plusieurs jours, la houle qui ne pardonne pas, le poisson qu'on arrache à l'océan. La mer n'est pas un décor. C'est une adversaire. Un miroir." data-en="The son takes to sea from Roscoff. A deep-sea trawler captain, he faces the North Atlantic and the fearsome waters west of southern England. Multi-day campaigns, unforgiving swells, fish wrested from the ocean. The sea is not a backdrop. It is an adversary. A mirror.">Le fils prend la mer depuis Roscoff. Patron de chalutiers hauturiers, il affronte l'Atlantique Nord et les eaux redoutables à l'ouest du sud de l'Angleterre. Des campagnes de plusieurs jours, la houle qui ne pardonne pas, le poisson qu'on arrache à l'océan. La mer n'est pas un décor. C'est une adversaire. Un miroir.</p>
+            <p data-fr="Mais un jour, le Sud l'appelle. Pendant quatre ans, il découvre un autre visage de la mer : le yachting de luxe sur la Côte d'Azur. Le pont entre deux mondes. La même exigence, la même lecture des éléments — mais en service d'une clientèle qui attend l'excellence. Il a tout compris, tout vécu. Il en a fait un héritage." data-en="But one day, the South calls. For four years, he discovers another face of the sea: luxury yachting on the French Riviera. The bridge between two worlds. The same rigour, the same reading of the elements — but in service of a clientele that expects excellence. He understood everything, lived everything. He made it a legacy.">Mais un jour, le Sud l'appelle. Pendant quatre ans, il découvre un autre visage de la mer : le yachting de luxe sur la Côte d'Azur. Le pont entre deux mondes. La même exigence, la même lecture des éléments — mais en service d'une clientèle qui attend l'excellence.</p>
+            <!-- Compas décoratif -->
+            <div style="margin-top:1.5rem;">
+              <svg class="compas-decor" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="60" cy="60" r="55" stroke="#C9A84C" stroke-width="1.5" opacity=".4"/>
+                <circle cx="60" cy="60" r="38" stroke="#C9A84C" stroke-width="1" opacity=".3"/>
+                <circle cx="60" cy="60" r="5" stroke="#C9A84C" stroke-width="1.5" opacity=".6"/>
+                <polygon points="60,8 65,55 60,50 55,55" fill="#C9A84C" opacity=".8"/>
+                <polygon points="60,112 65,65 60,70 55,65" fill="#C9A84C" opacity=".3"/>
+                <polygon points="8,60 55,65 50,60 55,55" fill="#C9A84C" opacity=".3"/>
+                <polygon points="112,60 65,65 70,60 65,55" fill="#C9A84C" opacity=".3"/>
+                <text x="60" y="20" text-anchor="middle" font-size="8" fill="#C9A84C" opacity=".7" font-family="serif">N</text>
+              </svg>
+            </div>
+          </div>
+
+          <!-- GÉNÉRATION III -->
+          <div class="timeline-item left reveal">
+            <div class="gen-badge">
+              <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+                <polygon points="9,2 11,7 17,7 12,11 14,17 9,13 4,17 6,11 1,7 7,7" stroke="#C9A84C" stroke-width="1" fill="none"/>
+              </svg>
+              <span data-fr="Génération III" data-en="Generation III">Génération III</span>
+            </div>
+            <p class="timeline-lieu" data-fr="Saint-Jean-Cap-Ferrat" data-en="Saint-Jean-Cap-Ferrat">Saint-Jean-Cap-Ferrat</p>
+            <h3 data-fr="Le Fondateur — L'Héritage Sublimé" data-en="The Founder — A Legacy Elevated">Le Fondateur — L'Héritage Sublimé</h3>
+            <p data-fr="Élevé entre filets et embruns, il n'a jamais connu d'autre horizon que celui de la mer. Très jeune, il embarque avec son père depuis Roscoff. Mêmes eaux atlantiques, mêmes côtes anglaises, même sel sur la peau. La pêche hauturière est son école. Rigueur, instinct, respect — des mots gravés par l'Atlantique." data-en="Raised between nets and sea spray, he never knew any horizon other than the sea. From a young age, he embarked with his father from Roscoff. Same Atlantic waters, same English coasts, same salt on the skin. Deep-sea fishing was his school. Rigour, instinct, respect — words engraved by the Atlantic.">Élevé entre filets et embruns, il n'a jamais connu d'autre horizon que celui de la mer. Très jeune, il embarque avec son père depuis Roscoff. Mêmes eaux atlantiques, mêmes côtes anglaises, même sel sur la peau. La pêche hauturière est son école. Rigueur, instinct, respect — des mots gravés par l'Atlantique.</p>
+            <p data-fr="Puis vient le yachting — un an à naviguer sur les plus beaux yachts de la Méditerranée. La synthèse se fait naturellement. Il fonde Prestige Charter à Saint-Jean-Cap-Ferrat : l'authenticité du marin breton au service de l'élégance méditerranéenne. Trois générations condensées en une même vision. Chaque vague porte un héritage." data-en="Then came yachting — a year navigating the finest yachts of the Mediterranean. The synthesis came naturally. He founded Prestige Charter in Saint-Jean-Cap-Ferrat: the authenticity of the Breton sailor in service of Mediterranean elegance. Three generations condensed into a single vision. Every wave carries a legacy.">Puis vient le yachting — un an à naviguer sur les plus beaux yachts de la Méditerranée. La synthèse se fait naturellement. Il fonde Prestige Charter à Saint-Jean-Cap-Ferrat : l'authenticité du marin breton au service de l'élégance méditerranéenne. Trois générations condensées en une même vision.</p>
+            <div class="timeline-img-frame">
+              <img src="images/yacht-3.webp" loading="lazy" alt="Le fondateur de Prestige Charter — Saint-Jean-Cap-Ferrat" />
+            </div>
+          </div>
+
         </div>
-
-        <div class="timeline mt-48">
-          <div class="timeline-line" id="timeline-line"></div>
-
-          <!-- GÉNÉRATION 1 — LE GRAND-PÈRE -->
-          <div class="timeline-item timeline-left reveal">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <div class="timeline-era" data-fr="Première génération" data-en="First generation">Première génération</div>
-              <h3 data-fr="Le Grand-Père" data-en="The Grandfather">Le Grand-Père</h3>
-              <h4 class="text-gold" data-fr="Patron de senneurs thoniers — Concarneau" data-en="Tuna seiner captain — Concarneau">Patron de senneurs thoniers — Concarneau</h4>
-              <p data-fr="Avant l'aube, quand le port de Concarneau dort encore sous la brume, un homme est déjà debout. Les mains tannées par le sel, le regard ancré dans l'horizon, il commande ses senneurs comme on dirige un orchestre — avec précision, avec autorité, avec cette noblesse silencieuse des hommes de mer." data-en="Before dawn, when the port of Concarneau still sleeps under the mist, a man is already standing. Hands tanned by salt, gaze anchored on the horizon, he commands his seiners like one conducts an orchestra — with precision, with authority, with the silent nobility of men of the sea.">Avant l'aube, quand le port de Concarneau dort encore sous la brume, un homme est déjà debout. Les mains tannées par le sel, le regard ancré dans l'horizon, il commande ses senneurs comme on dirige un orchestre — avec précision, avec autorité, avec cette noblesse silencieuse des hommes de mer.</p>
-              <p data-fr="Les campagnes au thon sont des épopées. Des semaines au large, à traquer les bancs dans l'Atlantique, à lire les courants comme d'autres lisent les cartes. Le grand-père ne parle pas beaucoup. Il n'en a pas besoin. La mer parle pour lui, et chaque retour au port est une victoire sur les éléments." data-en="The tuna campaigns are epics. Weeks at sea, tracking schools across the Atlantic, reading currents as others read maps. The grandfather doesn't speak much. He doesn't need to. The sea speaks for him, and every return to port is a victory over the elements.">Les campagnes au thon sont des épopées. Des semaines au large, à traquer les bancs dans l'Atlantique, à lire les courants comme d'autres lisent les cartes. Le grand-père ne parle pas beaucoup. Il n'en a pas besoin. La mer parle pour lui, et chaque retour au port est une victoire sur les éléments.</p>
-              <p data-fr="C'est lui qui met la mer dans le sang de la lignée. C'est lui qui allume la flamme que ni les tempêtes ni les années n'éteindront. L'odeur du gasoil au petit matin, le grincement des filets, le cri des mouettes à l'approche du banc — tout commence ici, sur les quais de Concarneau." data-en="He is the one who puts the sea in the bloodline. He is the one who lights the flame that neither storms nor years will extinguish. The smell of diesel at dawn, the creaking of nets, the cry of gulls as the school approaches — it all begins here, on the quays of Concarneau.">C'est lui qui met la mer dans le sang de la lignée. C'est lui qui allume la flamme que ni les tempêtes ni les années n'éteindront. L'odeur du gasoil au petit matin, le grincement des filets, le cri des mouettes à l'approche du banc — tout commence ici, sur les quais de Concarneau.</p>
-              <img src="images/yacht-1.jpg" alt="Hommage à la tradition maritime bretonne" loading="lazy" class="timeline-img">
-            </div>
-          </div>
-
-          <!-- GÉNÉRATION 2 — LE PÈRE -->
-          <div class="timeline-item timeline-right reveal">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <div class="timeline-era" data-fr="Deuxième génération" data-en="Second generation">Deuxième génération</div>
-              <h3 data-fr="Le Père" data-en="The Father">Le Père</h3>
-              <h4 class="text-gold" data-fr="Chalutiers hauturiers — Roscoff & Côte d'Azur" data-en="Deep-sea trawlers — Roscoff & Côte d'Azur">Chalutiers hauturiers — Roscoff & Côte d'Azur</h4>
-              <p data-fr="Le fils du patron thonier ne choisit pas la mer — elle le choisit. Dès qu'il sait marcher, il connaît le roulis. Dès qu'il sait lire, il déchiffre les cartes marines. Le port de Roscoff devient son territoire, les chalutiers hauturiers son école." data-en="The tuna captain's son doesn't choose the sea — it chooses him. As soon as he can walk, he knows the rolling of the waves. As soon as he can read, he deciphers nautical charts. The port of Roscoff becomes his territory, deep-sea trawlers his school.">Le fils du patron thonier ne choisit pas la mer — elle le choisit. Dès qu'il sait marcher, il connaît le roulis. Dès qu'il sait lire, il déchiffre les cartes marines. Le port de Roscoff devient son territoire, les chalutiers hauturiers son école.</p>
-              <p data-fr="Les campagnes en Atlantique sont rudes. Cap à l'ouest, vers les eaux anglaises, là où la houle ne pardonne pas. Les nuits de pêche sont longues, les retours incertains, mais chaque marée forge un peu plus le caractère de cet homme qui porte en lui l'héritage de son père et la promesse de quelque chose de nouveau." data-en="The Atlantic campaigns are harsh. Heading west, towards English waters, where the swell shows no mercy. The fishing nights are long, the returns uncertain, but each tide further forges the character of this man who carries within him his father's legacy and the promise of something new.">Les campagnes en Atlantique sont rudes. Cap à l'ouest, vers les eaux anglaises, là où la houle ne pardonne pas. Les nuits de pêche sont longues, les retours incertains, mais chaque marée forge un peu plus le caractère de cet homme qui porte en lui l'héritage de son père et la promesse de quelque chose de nouveau.</p>
-              <p data-fr="Car le père fait le choix audacieux du changement. Quatre années dans le yachting de luxe sur la Côte d'Azur. Du pont des chalutiers aux ponts en teck des yachts. De l'odeur du poisson à celle de l'ambre solaire. Le même océan, une autre vie. Il devient le pont entre deux mondes — celui de la pêche brute et celui du luxe maritime. Sans le savoir, il trace le chemin que son fils empruntera." data-en="For the father makes the bold choice of change. Four years in luxury yachting on the Côte d'Azur. From trawler decks to the teak decks of yachts. From the smell of fish to that of sunscreen. The same ocean, another life. He becomes the bridge between two worlds — that of raw fishing and that of maritime luxury. Without knowing it, he charts the path his son will follow.">Car le père fait le choix audacieux du changement. Quatre années dans le yachting de luxe sur la Côte d'Azur. Du pont des chalutiers aux ponts en teck des yachts. De l'odeur du poisson à celle de l'ambre solaire. Le même océan, une autre vie. Il devient le pont entre deux mondes — celui de la pêche brute et celui du luxe maritime. Sans le savoir, il trace le chemin que son fils empruntera.</p>
-            </div>
-          </div>
-
-          <!-- GÉNÉRATION 3 — LE FONDATEUR -->
-          <div class="timeline-item timeline-left reveal">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <div class="timeline-era" data-fr="Troisième génération" data-en="Third generation">Troisième génération</div>
-              <h3 data-fr="Le Fondateur" data-en="The Founder">Le Fondateur</h3>
-              <h4 class="text-gold" data-fr="De l'Atlantique à la Méditerranée — Prestige Charter" data-en="From the Atlantic to the Mediterranean — Prestige Charter">De l'Atlantique à la Méditerranée — Prestige Charter</h4>
-              <p data-fr="Élevé entre filets et embruns, le fondateur de Prestige Charter a grandi avec le ressac comme berceuse et l'horizon comme terrain de jeu. Enfant, il accompagne son père sur les chalutiers au départ de Roscoff. Les mêmes eaux que son père, les mêmes routes que son grand-père — l'Atlantique, les côtes anglaises, le large qui ne ment jamais." data-en="Raised between nets and sea spray, the founder of Prestige Charter grew up with the surf as a lullaby and the horizon as a playground. As a child, he joins his father on trawlers departing from Roscoff. The same waters as his father, the same routes as his grandfather — the Atlantic, the English coast, the open sea that never lies.">Élevé entre filets et embruns, le fondateur de Prestige Charter a grandi avec le ressac comme berceuse et l'horizon comme terrain de jeu. Enfant, il accompagne son père sur les chalutiers au départ de Roscoff. Les mêmes eaux que son père, les mêmes routes que son grand-père — l'Atlantique, les côtes anglaises, le large qui ne ment jamais.</p>
-              <p data-fr="La pêche hauturière lui enseigne la patience, l'humilité face aux éléments, la lecture instinctive de la mer. Puis vient l'appel du Sud. Une année dans le yachting, sur les traces de son père. Une année qui confirme ce qu'il sait depuis toujours : la mer n'est pas seulement un métier, c'est un art de vivre. Et cet art mérite d'être partagé." data-en="Deep-sea fishing teaches him patience, humility before the elements, the instinctive reading of the sea. Then comes the call of the South. A year in yachting, following in his father's footsteps. A year that confirms what he has always known: the sea is not just a profession, it's a way of life. And this art deserves to be shared.">La pêche hauturière lui enseigne la patience, l'humilité face aux éléments, la lecture instinctive de la mer. Puis vient l'appel du Sud. Une année dans le yachting, sur les traces de son père. Une année qui confirme ce qu'il sait depuis toujours : la mer n'est pas seulement un métier, c'est un art de vivre. Et cet art mérite d'être partagé.</p>
-              <p data-fr="Prestige Charter naît de cette conviction. De Concarneau à Saint-Jean-Cap-Ferrat, de l'Atlantique à la Méditerranée, trois générations convergent dans une seule vision : offrir l'excellence nautique, portée par l'authenticité d'une famille de marins. Chaque sortie à bord de l'Artemis est un hommage aux hommes qui ont navigué avant. Chaque vague porte leur mémoire. Chaque coucher de soleil sur la Riviera raconte leur histoire." data-en="Prestige Charter is born from this conviction. From Concarneau to Saint-Jean-Cap-Ferrat, from the Atlantic to the Mediterranean, three generations converge in a single vision: offering nautical excellence, carried by the authenticity of a family of sailors. Every outing aboard the Artemis is a tribute to the men who sailed before. Every wave carries their memory. Every sunset over the Riviera tells their story.">Prestige Charter naît de cette conviction. De Concarneau à Saint-Jean-Cap-Ferrat, de l'Atlantique à la Méditerranée, trois générations convergent dans une seule vision : offrir l'excellence nautique, portée par l'authenticité d'une famille de marins. Chaque sortie à bord de l'Artemis est un hommage aux hommes qui ont navigué avant. Chaque vague porte leur mémoire. Chaque coucher de soleil sur la Riviera raconte leur histoire.</p>
-              <img src="images/yacht-3.webp" alt="L'Artemis au large de Saint-Jean-Cap-Ferrat, héritage de trois générations" loading="lazy" class="timeline-img">
-            </div>
-          </div>
-
-        </div><!-- /.timeline -->
       </div>
     </section>
 
-    <!-- ARC NARRATIF -->
-    <section class="section">
+    <!-- WAVE -->
+    <div class="wave-sep">
+      <svg viewBox="0 0 1440 40" preserveAspectRatio="none" height="40">
+        <path d="M0,20 C360,0 720,40 1080,20 C1260,10 1380,25 1440,20 L1440,0 L0,0 Z" fill="var(--darker)"/>
+      </svg>
+    </div>
+
+    <!-- CITATION -->
+    <section class="section quote-section reveal">
       <div class="container">
-        <div class="histoire-arc reveal">
-          <div class="arc-item">
-            <div class="arc-icon">
-              <svg viewBox="0 0 64 64" width="48" height="48"><path d="M12 48c8-4 16-20 20-32M32 16c4 12 12 28 20 32M32 16v-6M26 48h12" fill="none" stroke="#C9A84C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </div>
-            <h3 data-fr="Bretagne" data-en="Brittany">Bretagne</h3>
-            <p data-fr="Le sel, la tempête, l'endurance. Là où tout a commencé." data-en="Salt, storm, endurance. Where it all began.">Le sel, la tempête, l'endurance. Là où tout a commencé.</p>
-          </div>
-          <div class="arc-arrow">
-            <svg viewBox="0 0 48 24" width="48" height="24"><path d="M4 12h36M36 4l8 8-8 8" fill="none" stroke="#C9A84C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <div class="arc-item">
-            <div class="arc-icon">
-              <svg viewBox="0 0 64 64" width="48" height="48"><path d="M8 40c6-2 10-8 14-16s8-14 14-16M36 8c6 2 10 8 14 16s2 14-2 16M32 4v8M20 44h24" fill="none" stroke="#C9A84C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </div>
-            <h3 data-fr="Atlantique" data-en="Atlantic">Atlantique</h3>
-            <p data-fr="La traversée, le pont entre deux mondes." data-en="The crossing, the bridge between two worlds.">La traversée, le pont entre deux mondes.</p>
-          </div>
-          <div class="arc-arrow">
-            <svg viewBox="0 0 48 24" width="48" height="24"><path d="M4 12h36M36 4l8 8-8 8" fill="none" stroke="#C9A84C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <div class="arc-item">
-            <div class="arc-icon">
-              <svg viewBox="0 0 64 64" width="48" height="48"><circle cx="32" cy="20" r="10" fill="none" stroke="#C9A84C" stroke-width="2"/><path d="M32 30v8M24 48c0-6 8-10 8-10s8 4 8 10" fill="none" stroke="#C9A84C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M22 30l-6 8M42 30l6 8" fill="none" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round"/></svg>
-            </div>
-            <h3 data-fr="Méditerranée" data-en="Mediterranean">Méditerranée</h3>
-            <p data-fr="La lumière, l'excellence, l'héritage sublimé." data-en="Light, excellence, the legacy elevated.">La lumière, l'excellence, l'héritage sublimé.</p>
-          </div>
-        </div>
+        <div class="quote-marks">"</div>
+        <p class="quote-text" data-fr="« La mer ne s'apprend pas dans les livres. Elle se transmet. »" data-en=""The sea cannot be learned from books. It is passed down."">« La mer ne s'apprend pas dans les livres. Elle se transmet. »</p>
+        <p class="quote-attr" data-fr="— Trois générations de marins" data-en="— Three generations of sailors">— Trois générations de marins</p>
       </div>
     </section>
+
+    <!-- WAVE -->
+    <div class="wave-sep">
+      <svg viewBox="0 0 1440 40" preserveAspectRatio="none" height="40">
+        <path d="M0,20 C360,40 720,0 1080,20 C1260,30 1380,15 1440,20 L1440,40 L0,40 Z" fill="var(--darker)"/>
+      </svg>
+    </div>
 
     <!-- VALEURS -->
-    <section class="section section-dark">
-      <div class="container text-center">
-        <span class="overline reveal" data-fr="Nos valeurs" data-en="Our values">Nos valeurs</span>
-        <h2 class="reveal" data-fr="Ce que la mer nous a enseigné" data-en="What the sea taught us">Ce que la mer nous a enseigné</h2>
-        <div class="cards-3 mt-48">
-          <div class="card reveal">
-            <div class="card-body text-center">
-              <svg viewBox="0 0 64 64" width="48" height="48" class="loisir-icon"><path d="M32 12v40M18 20l14-8 14 8M18 32l14-8 14 8M18 44l14-8 14 8" fill="none" stroke="#C9A84C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              <h3 data-fr="Authenticité" data-en="Authenticity">Authenticité</h3>
-              <p data-fr="Pas de marketing creux. Une famille de marins, un yacht, la Méditerranée. La vérité de la mer." data-en="No empty marketing. A family of sailors, a yacht, the Mediterranean. The truth of the sea.">Pas de marketing creux. Une famille de marins, un yacht, la Méditerranée. La vérité de la mer.</p>
-            </div>
+    <section class="section section-alt reveal">
+      <div class="container">
+        <div class="text-center" style="margin-bottom:3rem;">
+          <h2 data-fr="Ce que la mer nous a appris" data-en="What the sea taught us">Ce que la mer nous a appris</h2>
+          <div class="separator"></div>
+        </div>
+        <div class="grid-3">
+
+          <div class="value-card">
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
+              <circle cx="22" cy="8" r="4" stroke="#C9A84C" stroke-width="1.5"/>
+              <line x1="22" y1="12" x2="22" y2="34" stroke="#C9A84C" stroke-width="1.5"/>
+              <path d="M10 24 Q22 32 34 24" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+              <line x1="6" y1="34" x2="38" y2="34" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            <h3 data-fr="Authenticité" data-en="Authenticity">Authenticité</h3>
+            <p data-fr="Trois générations de marins, pas de marketing. Notre savoir-faire se transmet sur le pont, pas sur les réseaux." data-en="Three generations of sailors, not marketing. Our expertise is passed on the deck, not on social media.">Trois générations de marins, pas de marketing. Notre savoir-faire se transmet sur le pont, pas sur les réseaux.</p>
           </div>
-          <div class="card reveal">
-            <div class="card-body text-center">
-              <svg viewBox="0 0 64 64" width="48" height="48" class="loisir-icon"><path d="M32 8l6 12 14 2-10 10 2 14-12-6-12 6 2-14-10-10 14-2z" fill="none" stroke="#C9A84C" stroke-width="2" stroke-linejoin="round"/></svg>
-              <h3 data-fr="Excellence" data-en="Excellence">Excellence</h3>
-              <p data-fr="Chaque détail compte. Du yacht aux itinéraires, de l'accueil au coucher de soleil. Rien n'est laissé au hasard." data-en="Every detail matters. From the yacht to the itineraries, from the welcome to the sunset. Nothing is left to chance.">Chaque détail compte. Du yacht aux itinéraires, de l'accueil au coucher de soleil. Rien n'est laissé au hasard.</p>
-            </div>
+
+          <div class="value-card">
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
+              <path d="M6 30 Q12 20 22 24 Q32 28 38 18" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+              <path d="M6 36 Q12 26 22 30 Q32 34 38 24" stroke="#C9A84C" stroke-width="1.2" stroke-linecap="round" fill="none" opacity=".4"/>
+            </svg>
+            <h3 data-fr="Excellence" data-en="Excellence">Excellence</h3>
+            <p data-fr="L'exigence du hauturier appliquée au service premium. Chaque détail compte, chaque passager est unique." data-en="The rigour of the deep-sea fisherman applied to premium service. Every detail matters, every passenger is unique.">L'exigence du hauturier appliquée au service premium. Chaque détail compte, chaque passager est unique.</p>
           </div>
-          <div class="card reveal">
-            <div class="card-body text-center">
-              <svg viewBox="0 0 64 64" width="48" height="48" class="loisir-icon"><path d="M12 32c0-12 20-24 20-12s20 0 20 12c0 14-20 24-20 24S12 46 12 32z" fill="none" stroke="#C9A84C" stroke-width="2" stroke-linejoin="round"/></svg>
-              <h3 data-fr="Transmission" data-en="Legacy">Transmission</h3>
-              <p data-fr="Trois générations de savoir-faire. La mer se transmet comme un héritage, avec respect et passion." data-en="Three generations of expertise. The sea is passed down like an inheritance, with respect and passion.">Trois générations de savoir-faire. La mer se transmet comme un héritage, avec respect et passion.</p>
-            </div>
+
+          <div class="value-card">
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
+              <circle cx="22" cy="22" r="16" stroke="#C9A84C" stroke-width="1.5"/>
+              <circle cx="22" cy="22" r="5" stroke="#C9A84C" stroke-width="1.5"/>
+              <line x1="22" y1="6" x2="22" y2="38" stroke="#C9A84C" stroke-width="1" opacity=".4"/>
+              <line x1="6" y1="22" x2="38" y2="22" stroke="#C9A84C" stroke-width="1" opacity=".4"/>
+              <polygon points="22,9 24,20 22,18 20,20" fill="#C9A84C"/>
+            </svg>
+            <h3 data-fr="Transmission" data-en="Legacy">Transmission</h3>
+            <p data-fr="Ce que le grand-père a bâti, le père a enrichi, le fondateur a sublimé. La mer est notre héritage commun." data-en="What the grandfather built, the father enriched, the founder elevated. The sea is our shared heritage.">Ce que le grand-père a bâti, le père a enrichi, le fondateur a sublimé. La mer est notre héritage commun.</p>
           </div>
+
         </div>
       </div>
     </section>
 
-    <!-- CTA FINAL -->
-    <section class="section section-cta" style="background-image:url('images/yacht-3.webp')">
-      <div class="hero-overlay"></div>
-      <div class="container text-center" style="position:relative;z-index:2;">
-        <h2 class="reveal" data-fr="Écrivez le prochain chapitre" data-en="Write the next chapter">Écrivez le prochain chapitre</h2>
-        <p class="section-desc reveal" data-fr="Embarquez à bord de l'Artemis et vivez l'héritage de trois générations de marins." data-en="Step aboard the Artemis and experience the legacy of three generations of sailors.">Embarquez à bord de l'Artemis et vivez l'héritage de trois générations de marins.</p>
-        <div class="cta-buttons reveal mt-24">
+    <!-- WAVE -->
+    <div class="wave-sep">
+      <svg viewBox="0 0 1440 40" preserveAspectRatio="none" height="40">
+        <path d="M0,20 C360,0 720,40 1080,20 C1260,10 1380,25 1440,20 L1440,0 L0,0 Z" fill="var(--darker)"/>
+      </svg>
+    </div>
+
+    <!-- CTA -->
+    <section class="section reveal" style="text-align:center;">
+      <div class="container">
+        <h2 data-fr="Vivez notre histoire en mer" data-en="Experience our story at sea">Vivez notre histoire en mer</h2>
+        <div class="separator"></div>
+        <p data-fr="Embarquez à bord de l'Artemis et laissez trois générations de passion vous guider." data-en="Come aboard the Artemis and let three generations of passion guide you.">Embarquez à bord de l'Artemis et laissez trois générations de passion vous guider.</p>
+        <div class="cta-buttons">
           <a href="reservation.html" class="btn btn-gold" data-fr="Réserver" data-en="Book now">Réserver</a>
-          <a href="experiences.html" class="btn btn-outline" data-fr="Nos expériences" data-en="Our experiences">Nos expériences</a>
+          <a href="yacht.html" class="btn btn-outline" data-fr="Découvrir le yacht" data-en="Discover the yacht">Découvrir le yacht</a>
         </div>
       </div>
     </section>
 
   </main>
 
-  <!-- FOOTER -->
   <footer class="footer">
     <div class="container">
       <div class="footer-grid">
-        <div class="footer-col">
-          <a href="index.html" class="logo footer-logo" aria-label="Prestige Charter">
-            <svg class="logo-anchor" viewBox="0 0 36 36" width="24" height="24" aria-hidden="true">
-              <path d="M18 4a4 4 0 1 1 0 8 4 4 0 0 1 0-8Zm0 10v16M11 32q7-4 14 0M8 14q10-6 20 0" fill="none" stroke="#C9A84C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <div>
+          <a href="index.html" class="logo" style="margin-bottom:1rem;display:inline-flex;">
+            <svg width="24" height="24" viewBox="0 0 30 30" fill="none">
+              <circle cx="15" cy="7" r="3" stroke="#C9A84C" stroke-width="1.5"/>
+              <line x1="15" y1="10" x2="15" y2="26" stroke="#C9A84C" stroke-width="1.5"/>
+              <path d="M7 18 Q15 24 23 18" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+              <line x1="5" y1="26" x2="25" y2="26" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round"/>
             </svg>
-            <span class="logo-text"><span class="logo-prestige">PRESTIGE</span> <span class="logo-charter">CHARTER</span></span>
+            <span class="logo-text" style="margin-left:.6rem;"><span class="logo-prestige" style="font-size:.85rem;">PRESTIGE</span><span class="logo-charter" style="font-size:.85rem;">CHARTER</span></span>
           </a>
-          <p class="footer-address" data-fr="Saint-Jean-Cap-Ferrat · Côte d'Azur" data-en="Saint-Jean-Cap-Ferrat · French Riviera">Saint-Jean-Cap-Ferrat · Côte d'Azur</p>
+          <p>Prestige Charter AT</p><p>Saint-Jean-Cap-Ferrat</p>
         </div>
-        <div class="footer-col">
+        <div>
           <h4 data-fr="Navigation" data-en="Navigation">Navigation</h4>
-          <a href="yacht.html" data-fr="Le Yacht" data-en="The Yacht">Le Yacht</a>
-          <a href="experiences.html" data-fr="Expériences" data-en="Experiences">Expériences</a>
-          <a href="histoire.html" data-fr="Notre Histoire" data-en="Our Story">Notre Histoire</a>
-          <a href="tarifs.html" data-fr="Tarifs" data-en="Pricing">Tarifs</a>
+          <ul>
+            <li><a href="yacht.html" data-fr="Le Yacht" data-en="The Yacht">Le Yacht</a></li>
+            <li><a href="experiences.html" data-fr="Expériences" data-en="Experiences">Expériences</a></li>
+            <li><a href="histoire.html" data-fr="Notre Histoire" data-en="Our Story">Notre Histoire</a></li>
+            <li><a href="yachtclub.html">Yacht Club</a></li>
+            <li><a href="tarifs.html" data-fr="Tarifs" data-en="Rates">Tarifs</a></li>
+          </ul>
         </div>
-        <div class="footer-col">
-          <h4 data-fr="Contact" data-en="Contact">Contact</h4>
-          <a href="tel:+33652192414">06 52 19 24 14</a>
-          <a href="mailto:prestigecharter06@gmail.com">prestigecharter06@gmail.com</a>
-          <a href="https://wa.me/33652192414" target="_blank" rel="noopener">WhatsApp</a>
-          <a href="https://www.instagram.com/prestigecharter06" target="_blank" rel="noopener">Instagram</a>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:0652192414">📞 06 52 19 24 14</a></li>
+            <li><a href="mailto:prestigecharter06@gmail.com">✉ prestigecharter06@gmail.com</a></li>
+            <li>📍 Saint-Jean-Cap-Ferrat</li>
+          </ul>
         </div>
-        <div class="footer-col">
-          <h4 data-fr="Légal" data-en="Legal">Légal</h4>
-          <a href="cgv.html" data-fr="CGV" data-en="T&Cs">CGV</a>
-          <a href="mentionslegales.html" data-fr="Mentions légales" data-en="Legal notices">Mentions légales</a>
+        <div>
+          <h4 data-fr="Suivez-nous" data-en="Follow us">Suivez-nous</h4>
+          <ul>
+            <li><a href="https://instagram.com/prestigecharter06" target="_blank" rel="noopener">Instagram @prestigecharter06</a></li>
+            <li><a href="https://wa.me/33652192414" target="_blank" rel="noopener">WhatsApp</a></li>
+          </ul>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>© 2025 Prestige Charter AT. <span data-fr="Tous droits réservés." data-en="All rights reserved.">Tous droits réservés.</span></p>
+        <p>© 2025 Prestige Charter AT — <a href="cgv.html">CGV</a> · <a href="mentionslegales.html" data-fr="Mentions légales" data-en="Legal notice">Mentions légales</a></p>
       </div>
     </div>
   </footer>
 
-  <!-- LIGHTBOX -->
-  <div id="lightbox" class="lightbox" aria-hidden="true">
-    <button id="lb-close" class="lb-close" aria-label="Fermer">&times;</button>
-    <button id="lb-prev" class="lb-arrow lb-prev-arrow" aria-label="Précédent">&#10094;</button>
-    <img id="lb-img" src="" alt="">
-    <button id="lb-next" class="lb-arrow lb-next-arrow" aria-label="Suivant">&#10095;</button>
-    <span id="lb-counter" class="lb-counter"></span>
-  </div>
-
+  <button class="scroll-top" aria-label="Retour en haut">
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+      <path d="M10 16 L10 4 M5 9 L10 4 L15 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
   <script src="js/main.js"></script>
 </body>
 </html>
