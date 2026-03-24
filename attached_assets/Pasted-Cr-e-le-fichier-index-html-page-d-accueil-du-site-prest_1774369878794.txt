@@ -1,0 +1,161 @@
+Crée le fichier index.html — page d'accueil du site prestigecharter.fr. Charter nautique ultra-luxe, Côte d'Azur. Le fichier doit être COMPLET, prêt à l'emploi.
+
+RÈGLES ABSOLUES :
+- Photos UNIQUEMENT en balise <img>, JAMAIS en background-image
+- Seules photos autorisées sur cette page : images/hero.jpg, images/yacht-1.jpg, images/yacht-3.webp
+- hero.jpg N'A PAS loading="lazy" (LCP), les autres OUI
+- JAMAIS de nom/prénom du dirigeant
+- Carburant TOUJOURS mentionné comme non inclus
+- JAMAIS Corse ou Calvi
+- Header TOUJOURS fixe et opaque background #070F1B
+
+STRUCTURE HTML :
+
+<!DOCTYPE html> lang="fr"
+
+<head> :
+- charset utf-8, viewport
+- title : "Prestige Charter — Location Yacht avec Skipper | Côte d'Azur"
+- meta description : "Charter nautique ultra-luxe au départ de Saint-Jean-Cap-Ferrat. Yacht Jeanneau Prestige 42S avec skipper. Sunset, journée en mer, pêche de nuit."
+- Open Graph : og:title, og:description, og:image (images/hero.jpg), og:url (https://www.prestigecharter.fr)
+- Favicon SVG inline : ancre dorée simple dans un <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,...">
+- Google Fonts : Playfair Display 400;500;600;700 + Inter 300;400;500;600
+- <link rel="stylesheet" href="css/style.css">
+- Schema.org LocalBusiness JSON-LD : name "Prestige Charter AT", image hero.jpg, telephone "0652192414", email "prestigecharter06@gmail.com", address Saint-Jean-Cap-Ferrat 06230 France, url, priceRange "€€€€"
+
+<body> :
+
+1. PRELOADER (#preloader) :
+- Div fixed fullscreen fond #050B14
+- SVG ancre dorée (#C9A84C) centrée, 60px, animation spin
+
+2. SCROLL PROGRESS (#scroll-progress) :
+- Div fixed top 0, height 3px
+
+3. HEADER (.header) :
+- <header class="header">
+- Div .header-inner contient :
+  - Logo <a href="index.html" class="logo"> contenant :
+    - SVG ancre dorée inline (30px)
+    - <span class="logo-text"><span>PRESTIGE</span> <span>CHARTER</span></span>
+  - <nav class="nav"> avec liens : Accueil (index.html, classe active), Le Yacht (yacht.html), Expériences (experiences.html), Notre Histoire (histoire.html), Yacht Club (yachtclub.html), Tarifs (tarifs.html), Réservation (reservation.html), Contact (contact.html)
+  - Chaque lien nav a data-fr et data-en : Accueil/Home, Le Yacht/The Yacht, Expériences/Experiences, Notre Histoire/Our Story, Yacht Club/Yacht Club, Tarifs/Rates, Réservation/Booking, Contact/Contact
+  - <button class="lang-toggle">EN</button>
+  - <button class="hamburger"><span></span><span></span><span></span></button>
+- Menu mobile : <div class="mobile-menu"> avec mêmes liens + lang toggle
+
+4. HERO (.hero) :
+- Section plein écran min-height 100vh, position relative, overflow hidden
+- <img src="images/hero.jpg" alt="Yacht Artemis en navigation sur la Côte d'Azur"> (PAS de loading lazy, classe hero-img, object-fit cover, position absolute)
+- Overlay sombre en CSS (::after ou div)
+- Contenu centré :
+  - <p class="section-sub" data-fr="Saint-Jean-Cap-Ferrat" data-en="Saint-Jean-Cap-Ferrat">Saint-Jean-Cap-Ferrat</p>
+  - <h1 data-fr="L'excellence nautique sur la Côte d'Azur" data-en="Nautical excellence on the French Riviera">L'excellence nautique sur la Côte d'Azur</h1>
+  - <p data-fr="Embarquez à bord de l'Artemis pour une expérience maritime d'exception" data-en="Step aboard the Artemis for an exceptional maritime experience">Embarquez à bord de l'Artemis pour une expérience maritime d'exception</p>
+  - <a href="reservation.html" class="btn btn-gold" data-fr="Réserver" data-en="Book Now">Réserver</a>
+- SVG vagues décoratives animées en bas du hero (ondulations dorées subtiles)
+
+5. SECTION YACHT TEASER (.section, reveal) :
+- Séparateur décoratif SVG (compas ou ancre doré petit)
+- <p class="section-sub" data-fr="Le Yacht" data-en="The Yacht">Le Yacht</p>
+- <h2 data-fr="L'Artemis" data-en="The Artemis">L'Artemis</h2>
+- Séparateur .separator
+- Grid 2 colonnes :
+  - Colonne image : <img src="images/yacht-1.jpg" alt="Yacht Artemis - Jeanneau Prestige 42S" loading="lazy"> dans un .img-wrap (overflow hidden, border-radius)
+  - Colonne texte :
+    - data-fr="Jeanneau Prestige 42S de 13 mètres, millésime 2018. Bi-motorisation Volvo D6 370CV, 22 nœuds de croisière. Jusqu'à 11 passagers dans un cadre d'exception. Cockpit spacieux, salon climatisé, cabine propriétaire, plateforme bain hydraulique." + version data-en
+    - Liste specs rapides : 13m · 11 pax · 33 nœuds max · 2×Volvo D6
+    - <a href="yacht.html" class="btn btn-outline" data-fr="Découvrir le yacht" data-en="Discover the yacht">Découvrir le yacht</a>
+
+6. SECTION 3 OFFRES (.section, reveal, fond légèrement différent --darker) :
+- <p class="section-sub" data-fr="Nos Expériences" data-en="Our Experiences">Nos Expériences</p>
+- <h2 data-fr="Trois façons de vivre la mer" data-en="Three ways to experience the sea">Trois façons de vivre la mer</h2>
+- .separator
+- Grid 3 colonnes, chaque = card .offer-card :
+
+  CARD 1 — Sunset Experience :
+  - Icône SVG inline (coucher de soleil doré)
+  - <h3>Sunset Experience</h3>
+  - <p data-fr="3h · 18h–21h" data-en="3h · 6PM–9PM">3h · 18h–21h</p>
+  - <p class="price">1 300 €</p>
+  - <p data-fr="Skipper, Paddle, SeaBob, Snorkeling, Bluetooth" data-en="Skipper, Paddle, SeaBob, Snorkeling, Bluetooth">Skipper, Paddle, SeaBob, Snorkeling, Bluetooth</p>
+  - <p class="fuel-warning" data-fr="⛽ Carburant non inclus (~100-150€)" data-en="⛽ Fuel not included (~€100-150)">⛽ Carburant non inclus (~100-150€)</p>
+  - <a href="reservation.html" class="btn btn-gold">Réserver</a>
+
+  CARD 2 — Journée en Mer :
+  - Icône SVG inline (soleil doré)
+  - <h3 data-fr="Journée en Mer" data-en="Full Day at Sea">Journée en Mer</h3>
+  - <p data-fr="8h · 9h–17h" data-en="8h · 9AM–5PM">8h · 9h–17h</p>
+  - <p class="price">2 700 €</p>
+  - <p data-fr="Skipper, Paddle, SeaBob, Snorkeling, Bluetooth" data-en="Skipper, Paddle, SeaBob, Snorkeling, Bluetooth">Skipper, Paddle, SeaBob, Snorkeling, Bluetooth</p>
+  - <p class="fuel-warning" data-fr="⛽ Carburant non inclus (~200-350€)" data-en="⛽ Fuel not included (~€200-350)">⛽ Carburant non inclus (~200-350€)</p>
+  - <a href="reservation.html" class="btn btn-gold">Réserver</a>
+
+  CARD 3 — Pêche de Nuit :
+  - Icône SVG inline (lune/étoile dorée)
+  - <h3 data-fr="Pêche de Nuit" data-en="Night Fishing">Pêche de Nuit</h3>
+  - <p data-fr="6h · 23h–5h" data-en="6h · 11PM–5AM">6h · 23h–5h</p>
+  - <p class="price">2 600 €</p>
+  - <p data-fr="Skipper, Équipement pêche complet, Apéritif, Bluetooth" data-en="Skipper, Full fishing gear, Aperitif, Bluetooth">Skipper, Équipement pêche complet, Apéritif, Bluetooth</p>
+  - <p class="fuel-warning" data-fr="⛽ Carburant non inclus (au réel)" data-en="⛽ Fuel not included (actual cost)">⛽ Carburant non inclus (au réel)</p>
+  - <a href="reservation.html" class="btn btn-gold">Réserver</a>
+
+7. SECTION HISTOIRE TEASER (.section, reveal) :
+- <p class="section-sub" data-fr="Notre Histoire" data-en="Our Story">Notre Histoire</p>
+- <h2 data-fr="Trois générations de marins" data-en="Three generations of sailors">Trois générations de marins</h2>
+- .separator
+- Grid 2 colonnes :
+  - Image : <img src="images/yacht-3.webp" alt="Héritage maritime - trois générations" loading="lazy">
+  - Texte : data-fr="De Concarneau à Saint-Jean-Cap-Ferrat, notre famille navigue depuis trois générations. Du grand-père patron de senneurs thoniers en Bretagne au fondateur de Prestige Charter, chaque vague porte l'héritage d'une passion transmise." + data-en
+  - <a href="histoire.html" class="btn btn-outline" data-fr="Découvrir notre histoire" data-en="Discover our story">Découvrir notre histoire</a>
+
+8. SECTION TÉMOIGNAGES (.section, reveal, fond --darker) :
+- <p class="section-sub" data-fr="Témoignages" data-en="Testimonials">Témoignages</p>
+- <h2 data-fr="Ce qu'ils en disent" data-en="What they say">Ce qu'ils en disent</h2>
+- .separator
+- Grid 3 colonnes, chaque = .testimonial card :
+  - Témoignage 1 : data-fr="Une expérience inoubliable. Le skipper connaît chaque crique, chaque secret de la côte. Le coucher de soleil depuis le large de Villefranche restera gravé." data-en="An unforgettable experience...". Auteur : "Sophie & Marc" — "Sunset Experience"
+  - Témoignage 2 : data-fr="Journée parfaite entre amis. Le SeaBob est incroyable, le yacht est magnifique. Service impeccable du début à la fin." data-en="Perfect day with friends...". Auteur : "Famille D." — data-fr="Journée en Mer" data-en="Full Day at Sea"
+  - Témoignage 3 : data-fr="La pêche de nuit est une expérience unique. L'ambiance, les étoiles, les prises... On a déjà rebooked pour cet été." data-en="Night fishing is a unique experience...". Auteur : "Thomas R." — data-fr="Pêche de Nuit" data-en="Night Fishing"
+
+9. SECTION YACHT CLUB TEASER (.section, reveal) :
+- <p class="section-sub">Yacht Club</p>
+- <h2 data-fr="Rejoignez le cercle privé" data-en="Join the private circle">Rejoignez le cercle privé</h2>
+- .separator
+- Texte centré : data-fr="Un club exclusif réservé à ceux qui ont navigué avec nous. Avantages, événements privés et tarifs privilégiés." data-en="An exclusive club for those who have sailed with us. Benefits, private events and preferential rates."
+- <a href="yachtclub.html" class="btn btn-outline" data-fr="En savoir plus" data-en="Learn more">En savoir plus</a>
+
+10. SECTION INSTAGRAM (.section, reveal) :
+- <p class="section-sub">Instagram</p>
+- <h2>@prestigecharter06</h2>
+- .separator
+- Grid 4 colonnes .ig-grid : 4 divs placeholder (fond rgba gold .05, ratio 1:1, bordure gold .1, texte centré "📸") — PAS d'images inventées
+- <a href="https://instagram.com/prestigecharter06" target="_blank" class="btn btn-outline">Suivre sur Instagram</a>
+
+11. SECTION CTA FINAL (.section, reveal, fond --darker) :
+- <h2 data-fr="Prêt à lever l'ancre ?" data-en="Ready to set sail?">Prêt à lever l'ancre ?</h2>
+- .separator
+- Deux boutons côte à côte :
+  - <a href="reservation.html" class="btn btn-gold" data-fr="Réserver maintenant" data-en="Book now">Réserver maintenant</a>
+  - <a href="https://wa.me/33652192414" target="_blank" class="btn btn-outline">WhatsApp</a>
+
+12. FOOTER (.footer) :
+- Grid 4 colonnes :
+  - Col 1 : Logo (même que header), texte "Prestige Charter AT" + "Saint-Jean-Cap-Ferrat"
+  - Col 2 : h4 "Navigation", liens : Le Yacht, Expériences, Notre Histoire, Yacht Club, Tarifs
+  - Col 3 : h4 "Contact", <ul> : 📞 06 52 19 24 14, ✉ prestigecharter06@gmail.com, 📍 Saint-Jean-Cap-Ferrat
+  - Col 4 : h4 data-fr="Suivez-nous" data-en="Follow us", lien Instagram @prestigecharter06, lien WhatsApp
+- Footer bottom : <p>© 2025 Prestige Charter AT — <a href="cgv.html">CGV</a> · <a href="mentionslegales.html" data-fr="Mentions légales" data-en="Legal notice">Mentions légales</a></p>
+
+13. SCROLL TOP BUTTON (.scroll-top) :
+- Bouton fixe bas droite avec SVG flèche vers le haut
+
+14. <script src="js/main.js"></script> avant </body>
+
+ÉLÉMENTS DÉCORATIFS SVG/CSS à inclure :
+- Vagues SVG animées en bas du hero
+- Petite ancre SVG dorée comme séparateur entre certaines sections
+- Rose des vents SVG subtile en filigrane dans la section histoire
+
+Toutes les sections ont la classe .reveal pour l'animation d'apparition au scroll.
+Le fichier doit être COMPLET et prêt à l'emploi.

@@ -1,1243 +1,607 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prestige Charter — Location Yacht avec Skipper | Côte d'Azur</title>
+  <meta name="description" content="Charter nautique ultra-luxe au départ de Saint-Jean-Cap-Ferrat. Yacht Jeanneau Prestige 42S avec skipper. Sunset, journée en mer, pêche de nuit." />
 
-  <title>Prestige Charter AT — Service de charter nautique de luxe | Saint-Jean-Cap-Ferrat</title>
-  <meta name="description" content="Prestige Charter AT, charter nautique de luxe basé à Saint-Jean-Cap-Ferrat. Découvrez l’Artemis et nos 3 expériences : Sunset Experience, Journée en Mer, Journée Prestige. Carburant non inclus." />
-
-  <meta property="og:title" content="Prestige Charter AT — Service de charter nautique de luxe | Saint-Jean-Cap-Ferrat" />
-  <meta property="og:description" content="3 expériences sur le yacht Artemis : Sunset Experience, Journée en Mer, Journée Prestige. Carburant non inclus." />
+  <!-- Open Graph -->
+  <meta property="og:title" content="Prestige Charter — Location Yacht avec Skipper | Côte d'Azur" />
+  <meta property="og:description" content="Charter nautique ultra-luxe au départ de Saint-Jean-Cap-Ferrat. Yacht Jeanneau Prestige 42S avec skipper. Sunset, journée en mer, pêche de nuit." />
   <meta property="og:image" content="images/hero.jpg" />
   <meta property="og:url" content="https://www.prestigecharter.fr" />
   <meta property="og:type" content="website" />
 
-  <!-- Favicon: ancre dorée sur fond noir (SVG inline) -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2032%2032%27%3E%3Crect%20width%3D%2732%27%20height%3D%2732%27%20fill%3D%27%23070F1B%27/%3E%3Ccircle%20cx%3D%2716%27%20cy%3D%276%27%20r%3D%273%27%20fill%3D%27%23C9A84C%27/%3E%3Cpath%20d%3D%27M16%207%20V24%27%20stroke%3D%27%23C9A84C%27%20stroke-width%3D%272%27%20stroke-linecap%3D%27round%27/%3E%3Cpath%20d%3D%27M8%2014%20c0%201%204%205%208%205%20s8-4%208-5%27%20stroke%3D%27%23C9A84C%27%20stroke-width%3D%272%27%20fill%3D%27none%27/%3E%3Cpath%20d%3D%27M8%2014%20l-4%20-2%20M24%2014%20l4%20-2%27%20stroke%3D%27%23C9A84C%27%20stroke-width%3D%272%27%20stroke-linecap%3D%27round%27/%3E%3Cpath%20d%3D%27M13%2020%20L19%2020%27%20stroke%3D%27%23C9A84C%27%20stroke-width%3D%272%27%20stroke-linecap%3D%27round%27/%3E%3C/svg%3E" />
+  <!-- Favicon ancre dorée SVG -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='26'>⚓</text></svg>" />
 
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Schema.org LocalBusiness -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "Prestige Charter AT",
-    "description": "Charter nautique de luxe basé à Saint-Jean-Cap-Ferrat.",
-    "url": "https://www.prestigecharter.fr",
-    "telephone": "+33652192414",
+    "image": "https://www.prestigecharter.fr/images/hero.jpg",
+    "telephone": "0652192414",
     "email": "prestigecharter06@gmail.com",
     "address": {
       "@type": "PostalAddress",
-      "addressLocality": "Saint-Jean-Cap-Ferrat",
-      "postalCode": "[À COMPLÉTER]",
+      "streetAddress": "Saint-Jean-Cap-Ferrat",
+      "postalCode": "06230",
       "addressCountry": "FR"
-    }
+    },
+    "url": "https://www.prestigecharter.fr",
+    "priceRange": "€€€€"
   }
   </script>
 
   <style>
-    :root{
-      --gold:#C9A84C;
-      --gold-dim:rgba(201,168,76,.15);
-      --dark:#070F1B;
-      --darker:#050B14;
-      --white:#F4F0EB;
-      --gray:#9A968E;
-
-      --radius:18px;
-      --radius-sm:14px;
-      --shadow: 0 18px 45px rgba(0,0,0,.45);
-      --shadow-soft: 0 10px 30px rgba(0,0,0,.35);
-
-      --container: 1120px;
-      --header-h: 78px;
-    }
-
-    *{ box-sizing: border-box; }
-    html, body{ height: 100%; }
-
-    body{
-      margin:0;
-      background: linear-gradient(180deg, var(--darker) 0%, var(--dark) 100%);
-      color: var(--white);
-      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      line-height: 1.6;
-    }
-
-    a{ color: inherit; text-decoration: none; }
-    img{ display:block; max-width:100%; }
-
-    .container{
-      width: min(92vw, var(--container));
-      margin: 0 auto;
-    }
-
-    /* Header */
-    .site-header{
-      position: fixed;
-      top:0; left:0; right:0;
-      z-index: 60;
-      height: var(--header-h);
-      display:flex;
-      align-items:center;
-      background: rgba(7,15,27,.72);
-      border-bottom: 1px solid rgba(201,168,76,.14);
-      backdrop-filter: blur(10px);
-    }
-
-    .header-inner{
-      display:flex;
-      align-items:center;
-      justify-content: space-between;
-      gap: 14px;
-    }
-
-    .logo{
-      display:flex;
-      align-items:center;
-      gap: 10px;
-      min-width: 220px;
-    }
-
-    .logo-text{
-      display:flex;
-      flex-direction: column;
-      line-height:1;
-    }
-
-    .logo-prestige{
-      font-family: "Playfair Display", serif;
-      font-weight: 400;
-      letter-spacing: .02em;
-      font-size: 18px;
-      color: var(--white);
-    }
-
-    .logo-charter{
-      font-family: "Playfair Display", serif;
-      font-weight: 700;
-      letter-spacing: .05em;
-      font-size: 18px;
-      color: var(--gold);
-      margin-top: 1px;
-    }
-
-    nav{
-      display:flex;
-      align-items:center;
-      gap: 10px;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-    }
-
-    .nav-link{
-      font-size: 14px;
-      padding: 10px 10px;
-      border-radius: 14px;
-      color: rgba(244,240,235,.92);
-      border: 1px solid rgba(201,168,76,.10);
-      background: rgba(201,168,76,.05);
-      transition: transform .2s ease, border-color .2s ease, background .2s ease, color .2s ease;
-      white-space: nowrap;
-    }
-
-    .nav-link:hover{
-      transform: translateY(-1px);
-      border-color: rgba(201,168,76,.42);
-      background: rgba(201,168,76,.10);
-      color: rgba(244,240,235,.98);
-    }
-
-    .nav-cta{
-      border-color: rgba(201,168,76,.35);
-      background: linear-gradient(180deg, rgba(201,168,76,.18), rgba(201,168,76,.07));
-    }
-
-    /* Language toggle */
-    .lang-toggle{
-      border-radius: 999px;
-      border: 1px solid rgba(201,168,76,.28);
-      background: rgba(201,168,76,.08);
-      padding: 10px 12px;
-      cursor:pointer;
-      color: rgba(244,240,235,.98);
-      display:flex;
-      align-items:center;
-      gap: 10px;
-      font-size: 13px;
-      transition: transform .2s ease, border-color .2s ease, background .2s ease;
-      white-space: nowrap;
-    }
-
-    .lang-toggle:hover{
-      transform: translateY(-1px);
-      border-color: rgba(201,168,76,.52);
-      background: rgba(201,168,76,.12);
-    }
-
-    .lang-option{
-      font-weight: 650;
-      letter-spacing:.02em;
-      opacity: .62;
-    }
-    .lang-option.active{
-      opacity: 1;
-      color: var(--gold);
-    }
-
-    .lang-sep{
-      opacity: .35;
-      font-weight: 800;
-    }
-
-    /* Main spacing */
-    main{
-      padding-top: calc(var(--header-h) + 12px);
-    }
-
-    /* Hero */
-    .hero{
-      position: relative;
-      min-height: calc(100vh - var(--header-h) - 12px);
-      display:flex;
-      align-items: stretch;
-      overflow: hidden;
-      border-bottom: 1px solid rgba(201,168,76,.10);
-    }
-
-    .hero-img{
-      position:absolute;
-      inset:0;
-    }
-
-    .hero-img img{
-      width:100%;
-      height:100%;
-      object-fit: cover;
-      transform: translateY(0px);
-      will-change: transform;
-      filter: saturate(1.04) contrast(1.02);
-    }
-
-    .hero-img::after{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:
-        linear-gradient(90deg, rgba(5,11,20,.92) 0%, rgba(5,11,20,.55) 45%, rgba(5,11,20,.94) 100%),
-        radial-gradient(1100px 600px at 20% 20%, rgba(201,168,76,.18), transparent 55%),
-        radial-gradient(900px 500px at 80% 35%, rgba(201,168,76,.12), transparent 60%);
-      pointer-events: none;
-    }
-
-    .hero-content{
-      position: relative;
-      width: 100%;
-      display:flex;
-      align-items: center;
-      padding: 64px 0 52px;
-    }
-
-    .hero-wrap{
-      max-width: 720px;
-      display:flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-
-    .hero-title{
-      font-family: "Playfair Display", serif;
-      font-weight: 700;
-      font-size: clamp(34px, 5.3vw, 62px);
-      letter-spacing: .01em;
-      line-height: 1.04;
-      margin:0;
-    }
-
-    .hero-actions{
-      display:flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      padding-top: 8px;
-    }
-
-    /* Buttons */
-    .btn-gold{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      padding: 12px 18px;
-      border-radius: 16px;
-      border: 1px solid rgba(201,168,76,.42);
-      background: linear-gradient(180deg, rgba(201,168,76,.22), rgba(201,168,76,.08));
-      color: var(--white);
-      font-weight: 800;
-      letter-spacing:.02em;
-      box-shadow: 0 10px 24px rgba(0,0,0,.22);
-      transition: transform .2s ease, border-color .2s ease, background .2s ease, box-shadow .2s ease;
-    }
-
-    .btn-gold:hover{
-      transform: translateY(-2px);
-      border-color: rgba(201,168,76,.78);
-      background: linear-gradient(180deg, rgba(201,168,76,.30), rgba(201,168,76,.10));
-      box-shadow: 0 18px 40px rgba(0,0,0,.30);
-    }
-
-    .btn-outline{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      padding: 12px 18px;
-      border-radius: 16px;
-      border: 1px solid rgba(201,168,76,.22);
-      background: rgba(201,168,76,.06);
-      color: rgba(244,240,235,.95);
-      font-weight: 750;
-      letter-spacing:.01em;
-      transition: transform .2s ease, border-color .2s ease, background .2s ease;
-    }
-
-    .btn-outline:hover{
-      transform: translateY(-2px);
-      border-color: rgba(201,168,76,.55);
-      background: rgba(201,168,76,.12);
-    }
-
-    /* Sections */
-    .section{
-      padding: 64px 0;
-    }
-
-    .reveal{
-      opacity: 0;
-      transform: translateY(14px);
-      transition: opacity .7s ease, transform .7s ease;
-    }
-
-    .reveal.is-visible{
-      opacity: 1;
-      transform: translateY(0px);
-    }
-
-    .section-header{
-      display:flex;
-      flex-direction: column;
-      gap: 10px;
-      margin-bottom: 22px;
-    }
-
-    .section-label{
-      color: rgba(201,168,76,.95);
-      font-weight: 850;
-      letter-spacing:.10em;
-      text-transform: uppercase;
-      font-size: 12px;
-    }
-
-    .section-title{
-      font-family: "Playfair Display", serif;
-      font-size: clamp(22px, 3.5vw, 34px);
-      margin:0;
-      line-height: 1.2;
-      letter-spacing:.01em;
-    }
-
-    .section-note{
-      margin:0;
-      color: rgba(244,240,235,.86);
-      max-width: 74ch;
-    }
-
-    .grid-2{
-      display:grid;
-      grid-template-columns: 1fr;
-      gap: 18px;
-      align-items: center;
-    }
-
-    .card{
-      border-radius: var(--radius);
-      border: 1px solid rgba(201,168,76,.14);
-      background: rgba(7,15,27,.30);
-      box-shadow: var(--shadow-soft);
-    }
-
-    .yacht-card{
-      padding: 18px;
-    }
-
-    .yacht-facts{
-      list-style:none;
-      padding:0;
-      margin: 14px 0 0;
-      display:grid;
-      gap: 10px;
-    }
-
-    .fact{
-      display:flex;
-      align-items:flex-start;
-      gap: 12px;
-      padding: 12px 12px;
-      border-radius: var(--radius-sm);
-      background: rgba(201,168,76,.05);
+    /* Styles spécifiques index.html */
+    .offer-card {
+      background: rgba(255,255,255,.03);
       border: 1px solid rgba(201,168,76,.12);
-    }
-
-    .fact strong{
-      display:block;
-      font-size: 14px;
-      letter-spacing:.01em;
-    }
-
-    .fact span{
-      display:block;
-      font-size: 13.5px;
-      color: rgba(154,150,142,.98);
-      margin-top: 2px;
-    }
-
-    /* Offers */
-    .offers-top{
-      display:grid;
-      grid-template-columns: 1fr;
-      gap: 18px;
-      align-items: center;
-      margin-bottom: 22px;
-    }
-
-    .offers-media{
-      border-radius: var(--radius);
-      overflow:hidden;
-      border: 1px solid rgba(201,168,76,.16);
-      background: rgba(201,168,76,.05);
-      box-shadow: var(--shadow-soft);
-    }
-
-    .offers-media img{
-      width:100%;
-      height:100%;
-      object-fit: cover;
-      aspect-ratio: 16/10;
-    }
-
-    .offers-grid{
-      display:grid;
-      grid-template-columns: 1fr;
-      gap: 18px;
-    }
-
-    .offer{
-      padding: 18px;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      transition: transform .3s, box-shadow .3s;
       position: relative;
-      overflow:hidden;
-    }
-
-    .offer::before{
-      content:"";
-      position:absolute;
-      inset:-1px;
-      background: radial-gradient(620px 260px at 15% 0%, rgba(201,168,76,.20), transparent 60%);
-      opacity: .9;
-      pointer-events: none;
-    }
-    .offer > *{ position: relative; }
-
-    .offer-head{
-      display:flex;
-      align-items:flex-start;
-      justify-content: space-between;
-      gap: 12px;
-      margin-bottom: 10px;
-    }
-
-    .offer-badge{
-      display:inline-flex;
-      align-items:center;
-      gap: 8px;
-      font-weight: 900;
-      letter-spacing:.08em;
-      text-transform: uppercase;
-      font-size: 12px;
-      color: rgba(201,168,76,.95);
-    }
-
-    .price{
-      font-family: "Playfair Display", serif;
-      font-weight: 700;
-      font-size: 34px;
-      letter-spacing:.01em;
-      white-space: nowrap;
-    }
-
-    .meta{
-      display:flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin: 10px 0 12px;
-    }
-
-    .pill{
-      padding: 8px 10px;
-      border-radius: 999px;
-      border: 1px solid rgba(201,168,76,.14);
-      background: rgba(201,168,76,.06);
-      color: rgba(244,240,235,.92);
-      font-weight: 750;
-      font-size: 13.5px;
-    }
-
-    .offer-list{
-      list-style:none;
-      padding:0;
-      margin:0;
-      display:grid;
-      gap: 10px;
-    }
-
-    .offer-list li{
-      display:flex;
-      align-items:flex-start;
-      gap: 10px;
-      padding: 10px 12px;
-      border-radius: var(--radius-sm);
-      border: 1px solid rgba(201,168,76,.12);
-      background: rgba(201,168,76,.04);
-    }
-
-    .offer-list span{
-      color: rgba(244,240,235,.94);
-      font-weight: 650;
-      font-size: 14px;
-    }
-
-    .fuel-note{
-      margin-top: 14px;
-      padding: 12px 12px;
-      border-radius: var(--radius-sm);
-      border: 1px solid rgba(201,168,76,.20);
-      background: rgba(201,168,76,.08);
-      display:flex;
-      gap: 10px;
-      align-items:flex-start;
-      font-weight: 700;
-      color: rgba(244,240,235,.94);
-    }
-
-    .offer-actions{
-      margin-top: 16px;
-      display:flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    /* Instagram */
-    .instagram-card{
-      padding: 18px;
-      display:flex;
-      align-items:center;
-      justify-content: space-between;
-      gap: 12px;
-    }
-
-    .instagram-link{
-      display:inline-flex;
-      align-items:center;
-      gap: 10px;
-      padding: 12px 14px;
-      border-radius: 16px;
-      border: 1px solid rgba(201,168,76,.22);
-      background: rgba(201,168,76,.06);
-      font-weight: 850;
-      transition: transform .2s ease, border-color .2s ease, background .2s ease;
-    }
-
-    .instagram-link:hover{
-      transform: translateY(-2px);
-      border-color: rgba(201,168,76,.55);
-      background: rgba(201,168,76,.12);
-    }
-
-    /* Testimonials placeholder */
-    .testimonials-grid{
-      display:grid;
-      grid-template-columns: 1fr;
-      gap: 18px;
-    }
-
-    /* CTA final */
-    .cta-final{
-      padding: 18px;
-      display:flex;
+      display: flex;
       flex-direction: column;
-      gap: 14px;
-      align-items:flex-start;
+      gap: .75rem;
     }
-
-    .cta-actions{
-      display:flex;
-      flex-wrap: wrap;
-      gap: 12px;
+    .offer-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 50px rgba(201,168,76,.12);
     }
-
-    /* WhatsApp floating */
-    .whatsapp-float{
-      position: fixed;
-      right: 16px;
-      bottom: 16px;
-      z-index: 70;
+    .offer-card .offer-icon {
       width: 56px;
       height: 56px;
-      border-radius: 20px;
-      border: 1px solid rgba(201,168,76,.45);
-      background: rgba(201,168,76,.14);
-      box-shadow: var(--shadow);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      transition: transform .2s ease, border-color .2s ease, background .2s ease;
+      margin: 0 auto .5rem;
     }
-
-    .whatsapp-float:hover{
-      transform: translateY(-2px);
-      border-color: rgba(201,168,76,.78);
-      background: rgba(201,168,76,.20);
-    }
-
-    /* Footer */
-    footer{
-      padding: 42px 0 30px;
-      border-top: 1px solid rgba(201,168,76,.14);
-      background: rgba(5,11,20,.20);
-    }
-
-    .footer-grid{
-      display:grid;
-      grid-template-columns: 1fr;
-      gap: 18px;
-      align-items:start;
-    }
-
-    .footer-col{
-      padding: 18px;
-      border-radius: var(--radius);
-      border: 1px solid rgba(201,168,76,.12);
-      background: rgba(7,15,27,.25);
-    }
-
-    .footer-title{
-      color: rgba(201,168,76,.95);
-      font-size: 13px;
-      font-weight: 900;
-      letter-spacing:.10em;
-      text-transform: uppercase;
-      margin:0 0 12px;
-    }
-
-    .footer-links{
-      list-style:none;
-      margin:0;
-      padding:0;
-      display:grid;
-      gap: 10px;
-    }
-
-    .footer-links a{
-      display:inline-block;
-      padding: 10px 12px;
-      border-radius: 14px;
-      border: 1px solid rgba(201,168,76,.10);
-      background: rgba(201,168,76,.04);
+    .offer-card .price {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
       font-weight: 700;
-      color: rgba(244,240,235,.92);
-      transition: transform .2s ease, border-color .2s ease, background .2s ease;
+      color: var(--gold);
+      margin: 0;
+    }
+    .offer-card .fuel-warning {
+      background: rgba(201,168,76,.08);
+      border-left: 3px solid var(--gold);
+      padding: .6rem 1rem;
+      font-size: .8rem;
+      color: var(--gray);
+      text-align: left;
+      margin: .25rem 0;
+    }
+    .offer-card .btn { margin-top: auto; }
+
+    /* Hero waves */
+    .hero-waves {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      z-index: 3;
+      pointer-events: none;
+    }
+    .hero-waves path {
+      animation: waveMove 6s ease-in-out infinite alternate;
+      transform-origin: center bottom;
+    }
+    .hero-waves path:nth-child(2) {
+      animation-delay: -2s;
+      animation-duration: 8s;
+    }
+    @keyframes waveMove {
+      from { d: path("M0,30 C200,60 400,0 600,30 C800,60 1000,0 1200,30 C1400,60 1600,0 1800,30 L1800,80 L0,80 Z"); }
+      to   { d: path("M0,50 C200,20 400,60 600,40 C800,20 1000,55 1200,35 C1400,15 1600,50 1800,30 L1800,80 L0,80 Z"); }
     }
 
-    .footer-links a:hover{
-      transform: translateY(-2px);
-      border-color: rgba(201,168,76,.35);
-      background: rgba(201,168,76,.10);
+    /* Anchor section divider */
+    .anchor-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      margin: 1rem 0;
+    }
+    .anchor-divider::before,
+    .anchor-divider::after {
+      content: '';
+      flex: 1;
+      max-width: 80px;
+      height: 1px;
+      background: rgba(201,168,76,.3);
     }
 
-    .footer-bottom{
-      margin-top: 16px;
-      display:flex;
+    /* Histoire rose des vents filigrane */
+    .histoire-section { position: relative; overflow: hidden; }
+    .rose-des-vents {
+      position: absolute;
+      right: -60px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 300px;
+      height: 300px;
+      opacity: .04;
+      pointer-events: none;
+    }
+
+    /* IG placeholders */
+    .ig-placeholder {
+      aspect-ratio: 1;
+      background: rgba(201,168,76,.05);
+      border: 1px solid rgba(201,168,76,.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      color: rgba(201,168,76,.4);
+      border-radius: 4px;
+    }
+
+    /* CTA section */
+    .cta-section {
+      background: rgba(201,168,76,.04);
+      border-top: 1px solid rgba(201,168,76,.08);
+      border-bottom: 1px solid rgba(201,168,76,.08);
+      text-align: center;
+    }
+    .cta-buttons {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
       flex-wrap: wrap;
-      gap: 12px;
-      align-items:center;
-      justify-content: space-between;
-      color: rgba(154,150,142,.98);
-      font-size: 13px;
+      margin-top: 2rem;
     }
 
-    @media (min-width: 900px){
-      :root{ --header-h: 84px; }
-      main{ padding-top: calc(var(--header-h) + 18px); }
-      .offers-top{ grid-template-columns: 1.2fr .8fr; }
-      .offers-grid{ grid-template-columns: repeat(3, 1fr); }
-      .grid-2{ grid-template-columns: 1fr 1fr; }
-      .testimonials-grid{ grid-template-columns: repeat(2, 1fr); }
-      .footer-grid{ grid-template-columns: 1.1fr .7fr .7fr; }
+    /* Scroll top */
+    .scroll-top {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      width: 48px;
+      height: 48px;
+      background: var(--gold);
+      color: var(--dark);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 8000;
+      border: none;
+      box-shadow: 0 4px 20px rgba(201,168,76,.4);
+      transition: transform .3s, box-shadow .3s;
+    }
+    .scroll-top:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(201,168,76,.5);
     }
 
-    @media (prefers-reduced-motion: reduce){
-      .reveal{ transition:none; opacity:1; transform:none; }
-      .btn-gold, .btn-outline, .nav-link, .whatsapp-float, .instagram-link{ transition:none; }
+    /* Section alternée fond */
+    .section-alt { background: var(--darker); }
+
+    /* Specs rapides yacht */
+    .yacht-specs-quick {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .75rem;
+      margin: 1.25rem 0 2rem;
     }
+    .yacht-specs-quick span {
+      background: rgba(201,168,76,.1);
+      border: 1px solid rgba(201,168,76,.2);
+      color: var(--gold);
+      padding: 4px 14px;
+      border-radius: 20px;
+      font-size: .82rem;
+      font-family: 'Inter', sans-serif;
+      letter-spacing: 1px;
+    }
+
+    /* Testimonial grid */
+    .testimonial p { margin-bottom: 0; }
   </style>
 </head>
 
 <body>
-  <a href="#main" style="position:absolute; left:-999px; top:8px; background:#0B1426; color:var(--white); padding:10px 14px; border-radius:12px; border:1px solid rgba(201,168,76,.35); z-index:9999;">
-    <span data-fr="Aller au contenu" data-en="Go to content">Aller au contenu</span>
-  </a>
 
-  <!-- Navigation fixe -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <a href="index.html" class="logo" aria-label="Prestige Charter — Accueil">
-        <!-- Anchor gold SVG -->
-        <svg viewBox="0 0 24 24" width="28" height="28" fill="none" aria-hidden="true">
-          <circle cx="12" cy="5" r="2" stroke="#C9A84C" stroke-width="1.6"/>
-          <line x1="12" y1="7" x2="12" y2="22" stroke="#C9A84C" stroke-width="1.6"/>
-          <path d="M5 15 C5 21 19 21 19 15" stroke="#C9A84C" stroke-width="1.6" fill="none"/>
-          <line x1="5" y1="15" x2="2.2" y2="13.1" stroke="#C9A84C" stroke-width="1.6" stroke-linecap="round"/>
-          <line x1="19" y1="15" x2="21.8" y2="13.1" stroke="#C9A84C" stroke-width="1.6" stroke-linecap="round"/>
-          <line x1="9" y1="7.2" x2="15" y2="7.2" stroke="#C9A84C" stroke-width="1.6" stroke-linecap="round"/>
+  <!-- PRELOADER -->
+  <div id="preloader">
+    <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" width="60" height="60">
+      <circle cx="30" cy="30" r="26" stroke="#C9A84C" stroke-width="2" stroke-dasharray="40 120" stroke-linecap="round"/>
+      <path d="M30 10 L30 50 M20 20 Q30 26 40 20 M20 40 Q30 34 40 40" stroke="#C9A84C" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+  </div>
+
+  <!-- SCROLL PROGRESS -->
+  <div id="scroll-progress"></div>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-inner">
+
+      <a href="index.html" class="logo">
+        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="15" cy="7" r="3" stroke="#C9A84C" stroke-width="1.5"/>
+          <line x1="15" y1="10" x2="15" y2="26" stroke="#C9A84C" stroke-width="1.5"/>
+          <path d="M7 18 Q15 24 23 18" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+          <line x1="5" y1="26" x2="25" y2="26" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round"/>
         </svg>
-        <div class="logo-text" aria-hidden="true">
+        <span class="logo-text">
           <span class="logo-prestige">PRESTIGE</span>
           <span class="logo-charter">CHARTER</span>
-        </div>
+        </span>
       </a>
 
-      <nav aria-label="Navigation principale">
-        <a class="nav-link" href="yacht.html" data-fr="Yacht" data-en="Yacht">Yacht</a>
-        <a class="nav-link" href="experiences.html" data-fr="Expériences" data-en="Experiences">Expériences</a>
-        <a class="nav-link" href="tarifs.html" data-fr="Tarifs" data-en="Rates">Tarifs</a>
-        <a class="nav-link nav-cta" href="reservation.html" data-fr="Réservation" data-en="Booking">Réservation</a>
-        <a class="nav-link" href="contact.html" data-fr="Contact" data-en="Contact">Contact</a>
-
-        <button class="lang-toggle" id="lang-toggle" type="button" aria-label="Changer la langue">
-          <span class="lang-option active" id="lang-fr" data-lang="fr" data-fr="FR" data-en="FR">FR</span>
-          <span class="lang-sep" aria-hidden="true">|</span>
-          <span class="lang-option" id="lang-en" data-lang="en" data-fr="EN" data-en="EN">EN</span>
-        </button>
+      <nav class="nav">
+        <a href="index.html" class="active" data-fr="Accueil" data-en="Home">Accueil</a>
+        <a href="yacht.html" data-fr="Le Yacht" data-en="The Yacht">Le Yacht</a>
+        <a href="experiences.html" data-fr="Expériences" data-en="Experiences">Expériences</a>
+        <a href="histoire.html" data-fr="Notre Histoire" data-en="Our Story">Notre Histoire</a>
+        <a href="yachtclub.html" data-fr="Yacht Club" data-en="Yacht Club">Yacht Club</a>
+        <a href="tarifs.html" data-fr="Tarifs" data-en="Rates">Tarifs</a>
+        <a href="reservation.html" data-fr="Réservation" data-en="Booking">Réservation</a>
+        <a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a>
       </nav>
+
+      <div style="display:flex;align-items:center;gap:1rem;">
+        <button class="lang-toggle">EN</button>
+        <button class="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+
     </div>
   </header>
 
-  <a class="whatsapp-float" href="https://wa.me/33652192414" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
-    <svg viewBox="0 0 24 24" width="26" height="26" fill="none" aria-hidden="true">
-      <circle cx="12" cy="12" r="10" stroke="#C9A84C" stroke-width="1.8"/>
-      <path d="M8 12.5c.5 1.5 2 3 3.5 3.5l1.5-1.5-2-1-1 .5C9.5 14 10 13 10.5 12l-.5-2L8.5 9 8 12.5z" fill="#C9A84C"/>
-    </svg>
-  </a>
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu">
+    <a href="index.html" data-fr="Accueil" data-en="Home">Accueil</a>
+    <a href="yacht.html" data-fr="Le Yacht" data-en="The Yacht">Le Yacht</a>
+    <a href="experiences.html" data-fr="Expériences" data-en="Experiences">Expériences</a>
+    <a href="histoire.html" data-fr="Notre Histoire" data-en="Our Story">Notre Histoire</a>
+    <a href="yachtclub.html" data-fr="Yacht Club" data-en="Yacht Club">Yacht Club</a>
+    <a href="tarifs.html" data-fr="Tarifs" data-en="Rates">Tarifs</a>
+    <a href="reservation.html" data-fr="Réservation" data-en="Booking">Réservation</a>
+    <a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a>
+    <button class="lang-toggle" style="margin-top:1.5rem;">EN</button>
+  </div>
 
-  <main id="main">
-    <!-- Hero plein écran -->
-    <section class="hero" aria-label="Accueil">
-      <div class="hero-img" aria-hidden="true">
-        <img id="hero-img" src="images/hero.jpg" alt="Yacht Artemis au coucher du soleil" />
+  <main>
+
+    <!-- HERO -->
+    <section class="hero">
+      <img src="images/hero.jpg" alt="Yacht Artemis en navigation sur la Côte d'Azur" class="hero-img" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;" />
+      <div class="hero-overlay"></div>
+
+      <div class="hero-content">
+        <p class="section-sub" data-fr="Saint-Jean-Cap-Ferrat" data-en="Saint-Jean-Cap-Ferrat">Saint-Jean-Cap-Ferrat</p>
+        <h1 data-fr="L'excellence nautique sur la Côte d'Azur" data-en="Nautical excellence on the French Riviera">L'excellence nautique sur la Côte d'Azur</h1>
+        <p data-fr="Embarquez à bord de l'Artemis pour une expérience maritime d'exception" data-en="Step aboard the Artemis for an exceptional maritime experience">Embarquez à bord de l'Artemis pour une expérience maritime d'exception</p>
+        <a href="reservation.html" class="btn btn-gold" data-fr="Réserver" data-en="Book Now">Réserver</a>
       </div>
 
-      <div class="container hero-content">
-        <div class="hero-wrap">
-          <h1 class="hero-title" data-fr="L'excellence nautique<br>sur la Côte d'Azur" data-en="Nautical excellence on the French Riviera">
-            L'excellence nautique<br>sur la Côte d'Azur
-          </h1>
-
-          <div class="hero-actions">
-            <a class="btn-gold" href="reservation.html" data-fr="Réservation" data-en="[À COMPLÉTER]">Réservation</a>
-          </div>
-        </div>
+      <div class="hero-scroll">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <path d="M10 4 L10 16 M5 11 L10 16 L15 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
       </div>
+
+      <!-- Vagues SVG animées -->
+      <svg class="hero-waves" viewBox="0 0 1800 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,40 C300,70 600,10 900,40 C1200,70 1500,10 1800,40 L1800,80 L0,80 Z" fill="rgba(7,15,27,.6)"/>
+        <path d="M0,55 C300,30 600,65 900,45 C1200,25 1500,60 1800,40 L1800,80 L0,80 Z" fill="rgba(7,15,27,.8)"/>
+      </svg>
     </section>
 
-    <!-- Résumé yacht -->
-    <section class="section">
-      <div class="container grid-2">
-        <div class="card yacht-card reveal">
-          <div class="section-header" style="margin-bottom:10px;">
-            <span class="section-label" data-fr="Le Yacht" data-en="The Yacht">Le Yacht</span>
-            <h2 class="section-title" data-fr="Artemis" data-en="Artemis">Artemis</h2>
-          </div>
-
-          <ul class="yacht-facts" aria-label="Fiche rapide du yacht">
-            <li class="fact">
-              <svg viewBox="0 0 20 20" width="16" height="16" fill="none" aria-hidden="true">
-                <path d="M10 2L10 18M2 10H18" stroke="#C9A84C" stroke-width="1.6" stroke-linecap="round"/>
-              </svg>
-              <div>
-                <strong data-fr="Modèle" data-en="[À COMPLÉTER]">Modèle</strong>
-                <span data-fr="Jeanneau Prestige 42S (2018)" data-en="[À COMPLÉTER]">Jeanneau Prestige 42S (2018)</span>
-              </div>
-            </li>
-
-            <li class="fact">
-              <svg viewBox="0 0 20 20" width="16" height="16" fill="none" aria-hidden="true">
-                <path d="M3 10c2-5 12-5 14 0" stroke="#C9A84C" stroke-width="1.6" stroke-linecap="round"/>
-                <path d="M6 10c1-2.7 7-2.7 8 0" stroke="#C9A84C" stroke-width="1.6" stroke-linecap="round"/>
-                <circle cx="10" cy="12" r="1.2" fill="#C9A84C"/>
-              </svg>
-              <div>
-                <strong data-fr="Longueur" data-en="[À COMPLÉTER]">Longueur</strong>
-                <span data-fr="13 mètres" data-en="[À COMPLÉTER]">13 mètres</span>
-              </div>
-            </li>
-
-            <li class="fact">
-              <svg viewBox="0 0 20 20" width="16" height="16" fill="none" aria-hidden="true">
-                <path d="M10 2l6 4v8l-6 4-6-4V6l6-4z" stroke="#C9A84C" stroke-width="1.6"/>
-              </svg>
-              <div>
-                <strong data-fr="Capacité" data-en="[À COMPLÉTER]">Capacité</strong>
-                <span data-fr="11 passagers max + skipper" data-en="[À COMPLÉTER]">11 passagers max + skipper</span>
-              </div>
-            </li>
-
-            <li class="fact">
-              <svg viewBox="0 0 20 20" width="16" height="16" fill="none" aria-hidden="true">
-                <path d="M5 10l3 3 7-8" stroke="#C9A84C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-              <div>
-                <strong data-fr="Loisirs inclus" data-en="[À COMPLÉTER]">Loisirs inclus</strong>
-                <span data-fr="Paddle · SeaBob · Kit snorkeling (masques + tubas)" data-en="[À COMPLÉTER]">Paddle · SeaBob · Kit snorkeling (masques + tubas)</span>
-              </div>
-            </li>
-          </ul>
-        </div>
-
-        <div class="offers-media card reveal" aria-label="Image du yacht">
-          <img src="images/yacht-1.jpg" alt="Vue extérieure du yacht Artemis" loading="lazy" decoding="async" />
-        </div>
-      </div>
-    </section>
-
-    <!-- Section 3 offres -->
-    <section class="section">
+    <!-- SECTION YACHT TEASER -->
+    <section class="section reveal">
       <div class="container">
-        <div class="section-header reveal">
-          <span class="section-label" data-fr="Nos Expériences" data-en="Our Experiences">Nos Expériences</span>
-          <h2 class="section-title" data-fr="Choisissez votre aventure" data-en="Choose your adventure">Choisissez votre aventure</h2>
-          <p class="section-note" data-fr="3 offres. Tarif unique toute l'année. Carburant non inclus (facturé au réel selon itinéraire)." data-en="[À COMPLÉTER]">
-            3 offres. Tarif unique toute l'année. Carburant non inclus (facturé au réel selon itinéraire).
-          </p>
+
+        <div class="anchor-divider">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <circle cx="12" cy="5" r="2.5" stroke="#C9A84C" stroke-width="1.2"/>
+            <line x1="12" y1="7.5" x2="12" y2="20" stroke="#C9A84C" stroke-width="1.2"/>
+            <path d="M6 14 Q12 19 18 14" stroke="#C9A84C" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+            <line x1="4" y1="20" x2="20" y2="20" stroke="#C9A84C" stroke-width="1.2" stroke-linecap="round"/>
+          </svg>
         </div>
 
-        <div class="offers-top">
-          <div class="reveal" style="padding-top: 6px;">
-            <div class="offers-grid">
-              <!-- OFFRE 1 -->
-              <article class="card offer reveal">
-                <div class="offer-head">
-                  <div>
-                    <div class="offer-badge" data-fr="SUNSET EXPERIENCE" data-en="[À COMPLÉTER]">SUNSET EXPERIENCE</div>
-                    <div class="meta">
-                      <span class="pill" data-fr="Durée : 3h (18h-21h ou selon coucher du soleil)" data-en="[À COMPLÉTER]">Durée : 3h (18h-21h ou selon coucher du soleil)</span>
-                      <span class="pill" data-fr="Capacité : 11 pax max" data-en="[À COMPLÉTER]">Capacité : 11 pax max</span>
-                    </div>
-                  </div>
-                  <div class="price"><span data-fr="1 300" data-en="1 300">1 300</span><span style="font-size:14px; font-family:Inter; opacity:.9; font-weight:650; margin-left:6px;" data-fr="€ TTC" data-en="€ TTC">€ TTC</span></div>
-                </div>
+        <div class="text-center" style="margin-bottom:3rem;">
+          <p class="section-sub" data-fr="Le Yacht" data-en="The Yacht">Le Yacht</p>
+          <h2 data-fr="L'Artemis" data-en="The Artemis">L'Artemis</h2>
+          <div class="separator"></div>
+        </div>
 
-                <ul class="offer-list" aria-label="Inclus">
-                  <li>
-                    <svg viewBox="0 0 20 20" width="16" height="16" fill="none" aria-hidden="true">
-                      <path d="M5 10l3 3 7-8" stroke="#C9A84C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                    <span data-fr="Skipper professionnel" data-en="[À COMPLÉTER]">Skipper professionnel</span>
-                  </li>
-                  <li>
-                    <svg viewBox="0 0 20 20" width="16" height="16" fill="none" aria-hidden="true">
-                      <path d="M5 10l3 3 7-8" stroke="#C9A84C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                    <span data-fr="Paddle" data-en="[À COMPLÉTER]">Paddle</span>
-                  </li>
-                  <li>
-                    <svg viewBox="0 0 20 20" width="16" height="16" fill="none" aria-hidden="true">
-                      <path d="M5 10l3 3 7-8" stroke="#C9A84C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                    <span data-fr="SeaBob" data-en="[À COMPLÉTER]">SeaBob</span>
-                  </li>
-                  <li>
-                    <svg viewBox="0 0 20 20" width="16" height="16" fill="none" aria-hidden="true">
-                      <path d="M5 10l3 3 7-8" stroke="#C9A84C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                    <span data-fr="Snorkeling" data-en="[À COMPLÉTER]">Snorkeling</span>
-                  </li>
-                  <li>
-                    <svg viewBox="0 0 20 20" width="16" height="16" fill="none" aria-hidden="true">
-                      <path d="M5 10l3 3 7-8" stroke="#C9A84C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                    <span data-fr="Son Bluetooth premium" data-en="[À COMPLÉTER]">Son Bluetooth premium</span>
-                  </li>
-                  <li>
-                    <svg viewBox="0 0 20 20" width="16" height="16" fill="none" aria-hidden="true">
-                      <path d="M5 10l3 3 7-8" stroke="#C9A84C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                    <span data-fr="Assurance RC" data-en="[À COMPLÉTER]">Assurance RC</span>
-                  </li>
-                </ul>
-
-                <div class="fuel-note" role="note" aria-label="Carburant">
-                  <svg viewBox="0 0 16 16" width="16" height="16" fill="none" aria-hidden="true">
-                    <path d="M8 2L14 13H2L8 2Z" stroke="#C9A84C" stroke-width="1.2"/>
-                    <line x1="8" y1="7" x2="8" y2="10" stroke="#C9A84C" stroke-width="1.2" stroke-linecap="round"/>
-                    <circle cx="8" cy="11.5" r="0.5" fill="#C9A84C"/>
-                  </svg>
-                  <span data-fr="Carburant non inclus · Estimation indicative : ~100-150 €. Le skipper informe le client avant le départ." data-en="[À COMPLÉTER]">
-                    Carburant non inclus · Estimation indicative : ~100-150 €. Le skipper informe le client avant le départ.
-                  </span>
-                </div>
-
-                <div class="offer-actions">
-                  <a class="btn-gold" href="reservation.html" data-fr="Réserver" data-en="[À COMPLÉTER]">Réserver</a>
-                </div>
-              </article>
-
-              <!-- OFFRE 2 -->
-              <article class="card offer reveal">
-                <div class="offer-head">
-                  <div>
-                    <div class="offer-badge" data-fr="JOURNÉE EN MER" data-en="[À COMPLÉTER]">JOURNÉE EN MER</div>
-                    <div class="meta">
-                      <span class="pill" data-fr="Durée : 8h (9h-17h)" data-en="[À COMPLÉTER]">Durée : 8h (9h-17h)</span>
-                      <span class="pill" data-fr="Capacité : 11 pax max" data-en="[À COMPLÉTER]">Capacité : 11 pax max</span>
-                    </div>
-                  </div>
-                  <div class="price"><span data-fr="2 700" data-en="2 700">2 700</span><span style="font-size:14px; font-family:Inter; opacity:.9; font-weight:650; margin-left:6px;" data-fr="€ TTC" data-en="€ TTC">€ TTC</span></div>
-                </div>
-
-                <ul class="offer-list" aria-label="Inclus">
-                  <li>
-                    <svg viewBox="0 0 20 20" width="16" height="16" fill="none" aria-hidden="true">
-                      <path d="M5 10l3 3 7-8" stroke="#C9A84C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                    <span data-fr="Skipper professionnel" data-en="[À COMPLÉTER]">Skipper professionnel</span>
-                  </li>
-                  <li>
-                    <svg viewBox="0 0 20 20" width="16" height="16" fill="none" aria-hidden="true">
-                      <path d="M5 10l3 3 7-8" stroke="#C9A84C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                    <span data-fr="Paddle" data-en="[À COMPLÉTER]">Paddle</span>
-                  </li>
-                  <li>
-                    <svg viewBox="0 0 20 20" width="16" height="16" fill="none" aria-hidden="true">
-                      <path d="M5 10l3 3 7-8" stroke="#C9A84C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                    <span data-fr="SeaBob" data-en="[À COMPLÉTER]">SeaBob</span>
-                  </li>
-                  <li>
-                    <svg viewBox="0 0 20 20" width="16" height="16" fill="none" aria-hidden="true">
-                      <path d="M5 10l3 3 7-8" stroke="#C9A84C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                    <span data-fr="Snorkeling" data-en="[À COMPLÉTER]">Snorkeling</span>
-                  </li>
-                  <li>
-                    <svg viewBox="0 0 20 20" width="16" height="16" fill="none" aria-hidden="true">
-                      <path d="M5 10l3 3 7-8" stroke="#C9A84C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                    <span data-fr="Son Bluetooth premium" data-en="[À COMPLÉTER]">Son Bluetooth premium</span>
-                  </li>
-                  <li>
-                    <svg viewBox="0 0 20 20" width="16" height="16" fill="none" aria-hidden="true">
-                      <path d="M5 10l3 3 7-8" stroke="#C9A84C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                    <span data-fr="Assurance RC" data-en="[À COMPLÉTER]">Assurance RC</span>
-                  </li>
-                </ul>
-
-                <div class="fuel-note" role="note" aria-label="Carburant">
-                  <svg viewBox="0 0 16 16" width="16" height="16" fill="none" aria-hidden="true">
-                    <path d="M8 2L14 13H2L8 2Z" stroke="#C9A84C" stroke-width="1.2"/>
-                    <line x1="8" y1="7" x2="8" y2="10" stroke="#C9A84C" stroke-width="1.2" stroke-linecap="round"/>
-                    <circle cx="8" cy="11.5" r="0.5" fill="#C9A84C"/>
-                  </svg>
-                  <span data-fr="Carburant non inclus · Estimation indicative : ~200-350 €. Le skipper informe le client avant le départ." data-en="[À COMPLÉTER]">
-                    Carburant non inclus · Estimation indicative : ~200-350 €. Le skipper informe le client avant le départ.
-                  </span>
-                </div>
-
-                <div class="offer-actions">
-                  <a class="btn-gold" href="reservation.html" data-fr="Réserver" data-en="[À COMPLÉTER]">Réserver</a>
-                </div>
-              </article>
-
-              <!-- OFFRE 3 -->
-              <article class="card offer reveal">
-                <div class="offer-head">
-                  <div>
-                    <div class="offer-badge" data-fr="JOURNÉE PRESTIGE" data-en="[À COMPLÉTER]">JOURNÉE PRESTIGE</div>
-                    <div class="meta">
-                      <span class="pill" data-fr="Durée : 10h (9h-19h)" data-en="[À COMPLÉTER]">Durée : 10h (9h-19h)</span>
-                      <span class="pill" data-fr="Capacité : 11 pax max" data-en="[À COMPLÉTER]">Capacité : 11 pax max</span>
-                    </div>
-                  </div>
-                  <div class="price"><span data-fr="3 800" data-en="3 800">3 800</span><span style="font-size:14px; font-family:Inter; opacity:.9; font-weight:650; margin-left:6px;" data-fr="€ TTC" data-en="€ TTC">€ TTC</span></div>
-                </div>
-
-                <ul class="offer-list" aria-label="Inclus">
-                  <li>
-                    <svg viewBox="0 0 20 20" width="16" height="16" fill="none" aria-hidden="true">
-                      <path d="M5 10l3 3 7-8" stroke="#C9A84C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                    <span data-fr="Skipper professionnel" data-en="[À COMPLÉTER]">Skipper professionnel</span>
-                  </li>
-                  <li>
-                    <svg viewBox="0 0 20 20" width="16" height="16" fill="none" aria-hidden="true">
-                      <path d="M5 10l3 3 7-8" stroke="#C9A84C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                    <span data-fr="Paddle" data-en="[À COMPLÉTER]">Paddle</span>
-                  </li>
-                  <li>
-                    <svg viewBox="0 0 20 20" width="16" height="16" fill="none" aria-hidden="true">
-                      <path d="M5 10l3 3 7-8" stroke="#C9A84C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                    <span data-fr="SeaBob" data-en="[À COMPLÉTER]">SeaBob</span>
-                  </li>
-                  <li>
-                    <svg viewBox="0 0 20 20" width="16" height="16" fill="none" aria-hidden="true">
-                      <path d="M5 10l3 3 7-8" stroke="#C9A84C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                    <span data-fr="Snorkeling" data-en="[À COMPLÉTER]">Snorkeling</span>
-                  </li>
-                  <li>
-                    <svg viewBox="0 0 20 20" width="16" height="16" fill="none" aria-hidden="true">
-                      <path d="M5 10l3 3 7-8" stroke="#C9A84C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                    <span data-fr="Son Bluetooth premium" data-en="[À COMPLÉTER]">Son Bluetooth premium</span>
-                  </li>
-                  <li>
-                    <svg viewBox="0 0 20 20" width="16" height="16" fill="none" aria-hidden="true">
-                      <path d="M5 10l3 3 7-8" stroke="#C9A84C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                    <span data-fr="Assurance RC" data-en="[À COMPLÉTER]">Assurance RC</span>
-                  </li>
-                </ul>
-
-                <div class="fuel-note" role="note" aria-label="Carburant">
-                  <svg viewBox="0 0 16 16" width="16" height="16" fill="none" aria-hidden="true">
-                    <path d="M8 2L14 13H2L8 2Z" stroke="#C9A84C" stroke-width="1.2"/>
-                    <line x1="8" y1="7" x2="8" y2="10" stroke="#C9A84C" stroke-width="1.2" stroke-linecap="round"/>
-                    <circle cx="8" cy="11.5" r="0.5" fill="#C9A84C"/>
-                  </svg>
-                  <span data-fr="Carburant non inclus · Estimation indicative : ~400-600 €. Le skipper informe le client avant le départ." data-en="[À COMPLÉTER]">
-                    Carburant non inclus · Estimation indicative : ~400-600 €. Le skipper informe le client avant le départ.
-                  </span>
-                </div>
-
-                <div class="offer-actions">
-                  <a class="btn-gold" href="reservation.html" data-fr="Réserver" data-en="[À COMPLÉTER]">Réserver</a>
-                </div>
-              </article>
-            </div>
+        <div class="grid-2" style="align-items:center;gap:4rem;">
+          <div class="img-wrap" style="aspect-ratio:4/3;">
+            <img src="images/yacht-1.jpg" alt="Yacht Artemis - Jeanneau Prestige 42S" loading="lazy" style="width:100%;height:100%;object-fit:cover;" />
           </div>
-
-          <!-- Image section expériences (attribution index.html) -->
-          <div class="offers-media card reveal" aria-label="Illustration des expériences">
-            <img src="images/yacht-3.webp" alt="Navigation du yacht Artemis au coucher du soleil" loading="lazy" decoding="async" />
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Témoignages (placeholder) -->
-    <section class="section">
-      <div class="container">
-        <div class="section-header reveal">
-          <span class="section-label" data-fr="Ils nous font confiance" data-en="[À COMPLÉTER]">Ils nous font confiance</span>
-          <h2 class="section-title" data-fr="Expériences vécues" data-en="[À COMPLÉTER]">Expériences vécues</h2>
-        </div>
-
-        <div class="testimonials-grid">
-          <article class="card offer reveal" style="padding:18px;">
-            <p style="margin:0; font-weight:700; color: rgba(244,240,235,.92);" data-fr="[À COMPLÉTER]" data-en="[À COMPLÉTER]">[À COMPLÉTER]</p>
-          </article>
-          <article class="card offer reveal" style="padding:18px;">
-            <p style="margin:0; font-weight:700; color: rgba(244,240,235,.92);" data-fr="[À COMPLÉTER]" data-en="[À COMPLÉTER]">[À COMPLÉTER]</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Instagram -->
-    <section class="section">
-      <div class="container">
-        <div class="section-header reveal">
-          <span class="section-label" data-fr="Instagram" data-en="[À COMPLÉTER]">Instagram</span>
-          <h2 class="section-title" data-fr="Suivez nos aventures" data-en="[À COMPLÉTER]">Suivez nos aventures</h2>
-        </div>
-
-        <div class="card instagram-card reveal">
           <div>
-            <p style="margin:0; font-weight:800;" data-fr="Lien" data-en="[À COMPLÉTER]">Lien</p>
-            <p style="margin:6px 0 0; color: rgba(244,240,235,.86);" data-fr="@prestigecharter06" data-en="@prestigecharter06">@prestigecharter06</p>
+            <p data-fr="Jeanneau Prestige 42S de 13 mètres, millésime 2018. Bi-motorisation Volvo D6 370CV, 22 nœuds de croisière. Jusqu'à 11 passagers dans un cadre d'exception. Cockpit spacieux, salon climatisé, cabine propriétaire, plateforme bain hydraulique." data-en="13-metre Jeanneau Prestige 42S, 2018 vintage. Twin Volvo D6 370HP engines, 22-knot cruising speed. Up to 11 passengers in exceptional surroundings. Spacious cockpit, air-conditioned saloon, owner's cabin, hydraulic swimming platform.">Jeanneau Prestige 42S de 13 mètres, millésime 2018. Bi-motorisation Volvo D6 370CV, 22 nœuds de croisière. Jusqu'à 11 passagers dans un cadre d'exception. Cockpit spacieux, salon climatisé, cabine propriétaire, plateforme bain hydraulique.</p>
+            <div class="yacht-specs-quick">
+              <span>13 m</span>
+              <span>11 pax</span>
+              <span>33 nœuds max</span>
+              <span>2 × Volvo D6</span>
+            </div>
+            <a href="yacht.html" class="btn btn-outline" data-fr="Découvrir le yacht" data-en="Discover the yacht">Découvrir le yacht</a>
           </div>
-
-          <a class="instagram-link" href="https://www.instagram.com/prestigecharter06" target="_blank" rel="noopener noreferrer">
-            <span data-fr="@prestigecharter06" data-en="@prestigecharter06">@prestigecharter06</span>
-          </a>
         </div>
+
       </div>
     </section>
 
-    <!-- CTA final -->
-    <section class="section">
+    <!-- SECTION 3 OFFRES -->
+    <section class="section section-alt reveal">
       <div class="container">
-        <div class="card cta-final reveal">
-          <span class="section-label" data-fr="Prêt à prendre la mer ?" data-en="[À COMPLÉTER]">Prêt à prendre la mer ?</span>
-          <h2 class="section-title" data-fr="Réservez votre expérience" data-en="[À COMPLÉTER]">Réservez votre expérience</h2>
+        <div class="text-center" style="margin-bottom:3rem;">
+          <p class="section-sub" data-fr="Nos Expériences" data-en="Our Experiences">Nos Expériences</p>
+          <h2 data-fr="Trois façons de vivre la mer" data-en="Three ways to experience the sea">Trois façons de vivre la mer</h2>
+          <div class="separator"></div>
+        </div>
 
-          <div class="cta-actions">
-            <a class="btn-outline" href="https://wa.me/33652192414" target="_blank" rel="noopener noreferrer" data-fr="WhatsApp" data-en="[À COMPLÉTER]">WhatsApp</a>
-            <a class="btn-gold" href="reservation.html" data-fr="Réservation" data-en="[À COMPLÉTER]">Réservation</a>
+        <div class="grid-3">
+
+          <!-- Sunset -->
+          <div class="offer-card">
+            <svg class="offer-icon" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="28" cy="22" r="10" stroke="#C9A84C" stroke-width="1.5"/>
+              <line x1="28" y1="6" x2="28" y2="2" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="44" y1="22" x2="48" y2="22" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="12" y1="22" x2="8" y2="22" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="39.3" y1="10.7" x2="42.1" y2="7.9" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="13.9" y1="36.1" x2="11.1" y2="38.9" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="42.1" y1="36.1" x2="44.9" y2="38.9" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="8" y1="36" x2="48" y2="36" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M16 44 Q28 38 40 44" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+              <path d="M10 50 Q28 42 46 50" stroke="#C9A84C" stroke-width="1" stroke-linecap="round" fill="none" opacity=".5"/>
+            </svg>
+            <h3>Sunset Experience</h3>
+            <p data-fr="3h · 18h–21h" data-en="3h · 6PM–9PM">3h · 18h–21h</p>
+            <p class="price">1 300 €</p>
+            <p data-fr="Skipper, Paddle, SeaBob, Snorkeling, Bluetooth" data-en="Skipper, Paddle, SeaBob, Snorkeling, Bluetooth">Skipper, Paddle, SeaBob, Snorkeling, Bluetooth</p>
+            <p class="fuel-warning" data-fr="⛽ Carburant non inclus (~100-150€)" data-en="⛽ Fuel not included (~€100-150)">⛽ Carburant non inclus (~100-150€)</p>
+            <a href="reservation.html" class="btn btn-gold" data-fr="Réserver" data-en="Book">Réserver</a>
           </div>
+
+          <!-- Journée -->
+          <div class="offer-card">
+            <svg class="offer-icon" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="28" cy="28" r="12" stroke="#C9A84C" stroke-width="1.5"/>
+              <line x1="28" y1="8" x2="28" y2="4" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="28" y1="52" x2="28" y2="48" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="48" y1="28" x2="52" y2="28" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="8" y1="28" x2="4" y2="28" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="42.1" y1="13.9" x2="45" y2="11" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="11" y1="45" x2="13.9" y2="42.1" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="42.1" y1="42.1" x2="45" y2="45" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="11" y1="11" x2="13.9" y2="13.9" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            <h3 data-fr="Journée en Mer" data-en="Full Day at Sea">Journée en Mer</h3>
+            <p data-fr="8h · 9h–17h" data-en="8h · 9AM–5PM">8h · 9h–17h</p>
+            <p class="price">2 700 €</p>
+            <p data-fr="Skipper, Paddle, SeaBob, Snorkeling, Bluetooth" data-en="Skipper, Paddle, SeaBob, Snorkeling, Bluetooth">Skipper, Paddle, SeaBob, Snorkeling, Bluetooth</p>
+            <p class="fuel-warning" data-fr="⛽ Carburant non inclus (~200-350€)" data-en="⛽ Fuel not included (~€200-350)">⛽ Carburant non inclus (~200-350€)</p>
+            <a href="reservation.html" class="btn btn-gold" data-fr="Réserver" data-en="Book">Réserver</a>
+          </div>
+
+          <!-- Pêche de Nuit -->
+          <div class="offer-card">
+            <svg class="offer-icon" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M38 18 C38 30 30 38 18 38 C18 26 26 18 38 18 Z" stroke="#C9A84C" stroke-width="1.5" stroke-linejoin="round" fill="none"/>
+              <circle cx="40" cy="12" r="2" stroke="#C9A84C" stroke-width="1.2"/>
+              <circle cx="46" cy="18" r="1.5" stroke="#C9A84C" stroke-width="1.2"/>
+              <circle cx="44" cy="8" r="1" fill="#C9A84C"/>
+              <line x1="10" y1="44" x2="46" y2="44" stroke="#C9A84C" stroke-width="1.2" stroke-linecap="round" opacity=".4"/>
+              <path d="M8 48 Q28 42 48 48" stroke="#C9A84C" stroke-width="1.2" stroke-linecap="round" fill="none" opacity=".4"/>
+            </svg>
+            <h3 data-fr="Pêche de Nuit" data-en="Night Fishing">Pêche de Nuit</h3>
+            <p data-fr="6h · 23h–5h" data-en="6h · 11PM–5AM">6h · 23h–5h</p>
+            <p class="price">2 600 €</p>
+            <p data-fr="Skipper, Équipement pêche complet, Apéritif, Bluetooth" data-en="Skipper, Full fishing gear, Aperitif, Bluetooth">Skipper, Équipement pêche complet, Apéritif, Bluetooth</p>
+            <p class="fuel-warning" data-fr="⛽ Carburant non inclus (au réel)" data-en="⛽ Fuel not included (actual cost)">⛽ Carburant non inclus (au réel)</p>
+            <a href="reservation.html" class="btn btn-gold" data-fr="Réserver" data-en="Book">Réserver</a>
+          </div>
+
         </div>
       </div>
     </section>
+
+    <!-- SECTION HISTOIRE TEASER -->
+    <section class="section histoire-section reveal">
+      <div class="container">
+
+        <!-- Rose des vents filigrane -->
+        <svg class="rose-des-vents" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="100" cy="100" r="90" stroke="#C9A84C" stroke-width="1"/>
+          <circle cx="100" cy="100" r="60" stroke="#C9A84C" stroke-width="0.5"/>
+          <circle cx="100" cy="100" r="8" stroke="#C9A84C" stroke-width="1"/>
+          <polygon points="100,5 108,95 100,85 92,95" fill="#C9A84C" opacity=".6"/>
+          <polygon points="100,195 108,105 100,115 92,105" fill="#C9A84C" opacity=".3"/>
+          <polygon points="5,100 95,108 85,100 95,92" fill="#C9A84C" opacity=".3"/>
+          <polygon points="195,100 105,108 115,100 105,92" fill="#C9A84C" opacity=".3"/>
+          <line x1="100" y1="10" x2="100" y2="190" stroke="#C9A84C" stroke-width="0.5" opacity=".3"/>
+          <line x1="10" y1="100" x2="190" y2="100" stroke="#C9A84C" stroke-width="0.5" opacity=".3"/>
+          <line x1="30" y1="30" x2="170" y2="170" stroke="#C9A84C" stroke-width="0.3" opacity=".2"/>
+          <line x1="170" y1="30" x2="30" y2="170" stroke="#C9A84C" stroke-width="0.3" opacity=".2"/>
+        </svg>
+
+        <div class="text-center" style="margin-bottom:3rem;">
+          <p class="section-sub" data-fr="Notre Histoire" data-en="Our Story">Notre Histoire</p>
+          <h2 data-fr="Trois générations de marins" data-en="Three generations of sailors">Trois générations de marins</h2>
+          <div class="separator"></div>
+        </div>
+
+        <div class="grid-2" style="align-items:center;gap:4rem;">
+          <div class="img-wrap" style="aspect-ratio:4/3;">
+            <img src="images/yacht-3.webp" alt="Héritage maritime - trois générations" loading="lazy" style="width:100%;height:100%;object-fit:cover;" />
+          </div>
+          <div>
+            <p data-fr="De Concarneau à Saint-Jean-Cap-Ferrat, notre famille navigue depuis trois générations. Du grand-père patron de senneurs thoniers en Bretagne au fondateur de Prestige Charter, chaque vague porte l'héritage d'une passion transmise." data-en="From Concarneau to Saint-Jean-Cap-Ferrat, our family has sailed for three generations. From grandfather, skipper of Breton tuna seiners, to the founder of Prestige Charter, every wave carries the legacy of a passion passed down.">De Concarneau à Saint-Jean-Cap-Ferrat, notre famille navigue depuis trois générations. Du grand-père patron de senneurs thoniers en Bretagne au fondateur de Prestige Charter, chaque vague porte l'héritage d'une passion transmise.</p>
+            <a href="histoire.html" class="btn btn-outline" data-fr="Découvrir notre histoire" data-en="Discover our story">Découvrir notre histoire</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION TÉMOIGNAGES -->
+    <section class="section section-alt reveal">
+      <div class="container">
+        <div class="text-center" style="margin-bottom:3rem;">
+          <p class="section-sub" data-fr="Témoignages" data-en="Testimonials">Témoignages</p>
+          <h2 data-fr="Ce qu'ils en disent" data-en="What they say">Ce qu'ils en disent</h2>
+          <div class="separator"></div>
+        </div>
+
+        <div class="grid-3">
+
+          <div class="testimonial">
+            <p data-fr="Une expérience inoubliable. Le skipper connaît chaque crique, chaque secret de la côte. Le coucher de soleil depuis le large de Villefranche restera gravé." data-en="An unforgettable experience. The skipper knows every cove, every secret of the coast. The sunset from the waters off Villefranche will stay with us forever.">Une expérience inoubliable. Le skipper connaît chaque crique, chaque secret de la côte. Le coucher de soleil depuis le large de Villefranche restera gravé.</p>
+            <p class="testimonial-author">Sophie &amp; Marc — <em>Sunset Experience</em></p>
+          </div>
+
+          <div class="testimonial">
+            <p data-fr="Journée parfaite entre amis. Le SeaBob est incroyable, le yacht est magnifique. Service impeccable du début à la fin." data-en="A perfect day with friends. The SeaBob is incredible, the yacht is magnificent. Impeccable service from start to finish.">Journée parfaite entre amis. Le SeaBob est incroyable, le yacht est magnifique. Service impeccable du début à la fin.</p>
+            <p class="testimonial-author">Famille D. — <em data-fr="Journée en Mer" data-en="Full Day at Sea">Journée en Mer</em></p>
+          </div>
+
+          <div class="testimonial">
+            <p data-fr="La pêche de nuit est une expérience unique. L'ambiance, les étoiles, les prises... On a déjà rebooked pour cet été." data-en="Night fishing is a unique experience. The atmosphere, the stars, the catches… We've already rebooked for this summer.">La pêche de nuit est une expérience unique. L'ambiance, les étoiles, les prises... On a déjà rebooked pour cet été.</p>
+            <p class="testimonial-author">Thomas R. — <em data-fr="Pêche de Nuit" data-en="Night Fishing">Pêche de Nuit</em></p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION YACHT CLUB TEASER -->
+    <section class="section reveal" style="text-align:center;">
+      <div class="container">
+        <p class="section-sub">Yacht Club</p>
+        <h2 data-fr="Rejoignez le cercle privé" data-en="Join the private circle">Rejoignez le cercle privé</h2>
+        <div class="separator"></div>
+        <p style="max-width:600px;margin:0 auto 2rem;" data-fr="Un club exclusif réservé à ceux qui ont navigué avec nous. Avantages, événements privés et tarifs privilégiés." data-en="An exclusive club for those who have sailed with us. Benefits, private events and preferential rates.">Un club exclusif réservé à ceux qui ont navigué avec nous. Avantages, événements privés et tarifs privilégiés.</p>
+        <a href="yachtclub.html" class="btn btn-outline" data-fr="En savoir plus" data-en="Learn more">En savoir plus</a>
+      </div>
+    </section>
+
+    <!-- SECTION INSTAGRAM -->
+    <section class="section section-alt reveal" style="text-align:center;">
+      <div class="container">
+        <p class="section-sub">Instagram</p>
+        <h2>@prestigecharter06</h2>
+        <div class="separator"></div>
+
+        <div class="ig-grid" style="max-width:800px;margin:2rem auto;">
+          <div class="ig-placeholder">📸</div>
+          <div class="ig-placeholder">📸</div>
+          <div class="ig-placeholder">📸</div>
+          <div class="ig-placeholder">📸</div>
+        </div>
+
+        <a href="https://instagram.com/prestigecharter06" target="_blank" rel="noopener" class="btn btn-outline">Suivre sur Instagram</a>
+      </div>
+    </section>
+
+    <!-- SECTION CTA FINAL -->
+    <section class="section cta-section reveal">
+      <div class="container">
+        <h2 data-fr="Prêt à lever l'ancre ?" data-en="Ready to set sail?">Prêt à lever l'ancre ?</h2>
+        <div class="separator"></div>
+        <div class="cta-buttons">
+          <a href="reservation.html" class="btn btn-gold" data-fr="Réserver maintenant" data-en="Book now">Réserver maintenant</a>
+          <a href="https://wa.me/33652192414" target="_blank" rel="noopener" class="btn btn-outline">WhatsApp</a>
+        </div>
+      </div>
+    </section>
+
   </main>
 
-  <!-- Footer -->
-  <footer>
+  <!-- FOOTER -->
+  <footer class="footer">
     <div class="container">
       <div class="footer-grid">
-        <div class="footer-col reveal">
-          <div class="logo" style="min-width:auto; margin-bottom:10px;">
-            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" aria-hidden="true">
-              <circle cx="12" cy="5" r="2" stroke="#C9A84C" stroke-width="1.6"/>
-              <line x1="12" y1="7" x2="12" y2="22" stroke="#C9A84C" stroke-width="1.6"/>
-              <path d="M5 15 C5 21 19 21 19 15" stroke="#C9A84C" stroke-width="1.6" fill="none"/>
-              <line x1="5" y1="15" x2="2.2" y2="13.1" stroke="#C9A84C" stroke-width="1.6" stroke-linecap="round"/>
-              <line x1="19" y1="15" x2="21.8" y2="13.1" stroke="#C9A84C" stroke-width="1.6" stroke-linecap="round"/>
-              <line x1="9" y1="7.2" x2="15" y2="7.2" stroke="#C9A84C" stroke-width="1.6" stroke-linecap="round"/>
+
+        <!-- Col 1 : Logo + adresse -->
+        <div>
+          <a href="index.html" class="logo" style="margin-bottom:1rem;display:inline-flex;">
+            <svg width="24" height="24" viewBox="0 0 30 30" fill="none">
+              <circle cx="15" cy="7" r="3" stroke="#C9A84C" stroke-width="1.5"/>
+              <line x1="15" y1="10" x2="15" y2="26" stroke="#C9A84C" stroke-width="1.5"/>
+              <path d="M7 18 Q15 24 23 18" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+              <line x1="5" y1="26" x2="25" y2="26" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round"/>
             </svg>
-            <div class="logo-text" aria-hidden="true">
-              <span class="logo-prestige">PRESTIGE</span>
-              <span class="logo-charter">CHARTER</span>
-            </div>
-          </div>
-
-          <div style="display:grid; gap: 10px;">
-            <div class="footer-title" style="margin:0;" data-fr="Réseaux" data-en="[À COMPLÉTER]">Réseaux</div>
-            <div style="display:flex; flex-wrap:wrap; gap:12px;">
-              <a href="https://www.instagram.com/prestigecharter06" target="_blank" rel="noopener noreferrer" class="nav-link" style="padding:10px 12px;" data-fr="Instagram" data-en="[À COMPLÉTER]">Instagram</a>
-              <a href="https://wa.me/33652192414" target="_blank" rel="noopener noreferrer" class="nav-link" style="padding:10px 12px;" data-fr="WhatsApp" data-en="[À COMPLÉTER]">WhatsApp</a>
-            </div>
-          </div>
+            <span class="logo-text" style="margin-left:.6rem;">
+              <span class="logo-prestige" style="font-size:.85rem;">PRESTIGE</span>
+              <span class="logo-charter" style="font-size:.85rem;">CHARTER</span>
+            </span>
+          </a>
+          <p>Prestige Charter AT</p>
+          <p>Saint-Jean-Cap-Ferrat</p>
         </div>
 
-        <div class="footer-col reveal">
-          <h3 class="footer-title" data-fr="Liens" data-en="[À COMPLÉTER]">Liens</h3>
-          <ul class="footer-links">
-            <li><a href="cgv.html" data-fr="CGV" data-en="[À COMPLÉTER]">CGV</a></li>
-            <li><a href="mentionslegales.html" data-fr="Mentions légales" data-en="[À COMPLÉTER]">Mentions légales</a></li>
+        <!-- Col 2 : Navigation -->
+        <div>
+          <h4 data-fr="Navigation" data-en="Navigation">Navigation</h4>
+          <ul>
+            <li><a href="yacht.html" data-fr="Le Yacht" data-en="The Yacht">Le Yacht</a></li>
+            <li><a href="experiences.html" data-fr="Expériences" data-en="Experiences">Expériences</a></li>
+            <li><a href="histoire.html" data-fr="Notre Histoire" data-en="Our Story">Notre Histoire</a></li>
+            <li><a href="yachtclub.html">Yacht Club</a></li>
+            <li><a href="tarifs.html" data-fr="Tarifs" data-en="Rates">Tarifs</a></li>
           </ul>
         </div>
 
-        <div class="footer-col reveal">
-          <h3 class="footer-title" data-fr="Informations" data-en="[À COMPLÉTER]">Informations</h3>
-          <ul class="footer-links">
-            <li><a href="contact.html" data-fr="Contact" data-en="[À COMPLÉTER]">Contact</a></li>
+        <!-- Col 3 : Contact -->
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:0652192414">📞 06 52 19 24 14</a></li>
+            <li><a href="mailto:prestigecharter06@gmail.com">✉ prestigecharter06@gmail.com</a></li>
+            <li>📍 Saint-Jean-Cap-Ferrat</li>
           </ul>
         </div>
+
+        <!-- Col 4 : Réseaux -->
+        <div>
+          <h4 data-fr="Suivez-nous" data-en="Follow us">Suivez-nous</h4>
+          <ul>
+            <li><a href="https://instagram.com/prestigecharter06" target="_blank" rel="noopener">Instagram @prestigecharter06</a></li>
+            <li><a href="https://wa.me/33652192414" target="_blank" rel="noopener">WhatsApp</a></li>
+          </ul>
+        </div>
+
       </div>
 
       <div class="footer-bottom">
-        <div>
-          <span data-fr="© 2025 Prestige Charter AT — Tous droits réservés." data-en="[À COMPLÉTER]">© 2025 Prestige Charter AT — Tous droits réservés.</span>
-        </div>
-        <div class="footer-legal-links" style="display:flex; gap:12px; align-items:center;">
-          <a href="cgv.html" data-fr="CGV" data-en="[À COMPLÉTER]" style="border-bottom:1px solid rgba(201,168,76,.25); padding-bottom:2px;">CGV</a>
-          <a href="mentionslegales.html" data-fr="Mentions légales" data-en="[À COMPLÉTER]" style="border-bottom:1px solid rgba(201,168,76,.25); padding-bottom:2px;">Mentions légales</a>
-        </div>
+        <p>© 2025 Prestige Charter AT —
+          <a href="cgv.html">CGV</a> ·
+          <a href="mentionslegales.html" data-fr="Mentions légales" data-en="Legal notice">Mentions légales</a>
+        </p>
       </div>
     </div>
   </footer>
 
-  <script>
-    (function(){
-      const root = document.documentElement;
-      const toggle = document.getElementById('lang-toggle');
-      const langFr = document.getElementById('lang-fr');
-      const langEn = document.getElementById('lang-en');
+  <!-- SCROLL TOP -->
+  <button class="scroll-top" aria-label="Retour en haut">
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+      <path d="M10 16 L10 4 M5 9 L10 4 L15 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
 
-      function setActive(lang){
-        const isEn = lang === 'en';
-        if(langFr && langEn){
-          langFr.classList.toggle('active', !isEn);
-          langEn.classList.toggle('active', isEn);
-        }
-      }
-
-      function applyLanguage(lang){
-        root.setAttribute('data-lang', lang);
-        document.querySelectorAll('[data-fr][data-en]').forEach(el => {
-          const fr = el.getAttribute('data-fr');
-          const en = el.getAttribute('data-en');
-          const next = (lang === 'en') ? en : fr;
-          if(next != null){
-            // Supports <br> when needed by using innerHTML
-            el.innerHTML = next;
-          }
-        });
-        setActive(lang);
-      }
-
-      function getInitialLang(){
-        const saved = localStorage.getItem('pc_lang');
-        if(saved === 'en' || saved === 'fr') return saved;
-        return 'fr';
-      }
-
-      const initialLang = getInitialLang();
-      applyLanguage(initialLang);
-
-      toggle.addEventListener('click', () => {
-        const current = root.getAttribute('data-lang') === 'en' ? 'en' : 'fr';
-        const next = current === 'en' ? 'fr' : 'en';
-        localStorage.setItem('pc_lang', next);
-        applyLanguage(next);
-      });
-
-      // Fade-in on scroll
-      const revealEls = Array.from(document.querySelectorAll('.reveal'));
-      const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      if(!reduceMotion && 'IntersectionObserver' in window){
-        const io = new IntersectionObserver((entries) => {
-          for(const entry of entries){
-            if(entry.isIntersecting){
-              entry.target.classList.add('is-visible');
-              io.unobserve(entry.target);
-            }
-          }
-        }, { threshold: 0.14 });
-        revealEls.forEach(el => io.observe(el));
-      }else{
-        revealEls.forEach(el => el.classList.add('is-visible'));
-      }
-
-      // Hero parallax léger
-      const heroImg = document.getElementById('hero-img');
-      if(heroImg && !reduceMotion){
-        let ticking = false;
-        const onScroll = () => {
-          if(ticking) return;
-          ticking = true;
-          window.requestAnimationFrame(() => {
-            const y = window.scrollY || 0;
-            const translate = Math.max(-18, Math.min(18, y * 0.04));
-            heroImg.style.transform = 'translateY(' + translate + 'px)';
-            ticking = false;
-          });
-        };
-        window.addEventListener('scroll', onScroll, { passive: true });
-      }
-    })();
-  </script>
+  <script src="js/main.js"></script>
 </body>
 </html>
