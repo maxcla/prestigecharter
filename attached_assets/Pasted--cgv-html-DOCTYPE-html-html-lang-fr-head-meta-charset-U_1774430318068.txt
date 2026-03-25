@@ -1,3 +1,4 @@
+<!-- cgv.html -->
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -91,7 +92,7 @@
         <section class="legal-hero">
             <div class="container">
                 <span class="section-label" data-fr="Juridique" data-en="Legal">Juridique</span>
-                <h1 data-fr="Conditions Générales de Vente" data-en="General Terms &amp; Conditions">Conditions Générales de Vente</h1>
+                <h1 data-fr="Conditions Générales de Vente" data-en="General Terms & Conditions">Conditions Générales de Vente</h1>
                 <p class="legal-updated" data-fr="Dernière mise à jour : janvier 2025" data-en="Last updated: January 2025">Dernière mise à jour : janvier 2025</p>
             </div>
         </section>
@@ -101,6 +102,7 @@
             <div class="container">
                 <div class="legal-body">
 
+                    <!-- ARTICLE 1 -->
                     <article class="legal-article reveal">
                         <h2>Article 1 — Objet</h2>
                         <p>Les présentes Conditions Générales de Vente (CGV) régissent les relations contractuelles entre la société <strong>Prestige Charter AT</strong>, SAS de droit français, dont le siège social est situé à Saint-Jean-Cap-Ferrat (06230), ci-après « le Prestataire », et toute personne physique ou morale effectuant une réservation, ci-après « le Client ».</p>
@@ -108,6 +110,7 @@
                         <p><em>SIRET : [À COMPLÉTER]</em></p>
                     </article>
 
+                    <!-- ARTICLE 2 -->
                     <article class="legal-article reveal">
                         <h2>Article 2 — Prestations</h2>
                         <p>Le Prestataire propose les expériences suivantes à bord du yacht <strong>Artemis</strong> (Jeanneau Prestige 42S, 2018, 13 mètres) :</p>
@@ -153,6 +156,7 @@
                         </ul>
                     </article>
 
+                    <!-- ARTICLE 3 -->
                     <article class="legal-article reveal">
                         <h2>Article 3 — Options supplémentaires</h2>
                         <p>Le Client peut souscrire aux options suivantes, en supplément de toute offre :</p>
@@ -164,6 +168,7 @@
                         <p>Les options doivent être réservées au minimum 72 heures avant la date de la prestation, sous réserve de disponibilité.</p>
                     </article>
 
+                    <!-- ARTICLE 4 -->
                     <article class="legal-article reveal">
                         <h2>Article 4 — Réservation</h2>
                         <p>Toute réservation est effectuée via le formulaire en ligne sur le site www.prestigecharter.fr, par email à prestigecharter06@gmail.com, par téléphone ou WhatsApp au 06 52 19 24 14.</p>
@@ -175,6 +180,7 @@
                         <p>Le nombre maximum de passagers est strictement limité à <strong>11 personnes</strong> (hors skipper). Tout dépassement entraînera le refus d'embarquement sans remboursement.</p>
                     </article>
 
+                    <!-- ARTICLE 5 -->
                     <article class="legal-article reveal">
                         <h2>Article 5 — Tarifs et paiement</h2>
                         <p>Les tarifs sont exprimés en euros TTC. Ils sont identiques toute l'année (pas de distinction haute/basse saison).</p>
@@ -193,6 +199,7 @@
                         <p>En l'absence de règlement du solde dans les délais impartis, le Prestataire se réserve le droit d'annuler la réservation sans remboursement de l'acompte.</p>
                     </article>
 
+                    <!-- ARTICLE 6 -->
                     <article class="legal-article reveal">
                         <h2>Article 6 — Annulation par le Client</h2>
                         <div class="legal-highlight">
@@ -212,6 +219,7 @@
                         <p>Toute demande d'annulation doit être formulée par écrit (email ou message).</p>
                     </article>
 
+                    <!-- ARTICLE 7 -->
                     <article class="legal-article reveal">
                         <h2>Article 7 — Annulation par le Prestataire (météo)</h2>
                         <p>La sécurité des passagers est la priorité absolue. Le skipper professionnel est seul habilité à décider de l'annulation ou de la modification de la sortie en cas de :</p>
@@ -227,6 +235,7 @@
                         </ul>
                     </article>
 
+                    <!-- ARTICLE 8 -->
                     <article class="legal-article reveal">
                         <h2>Article 8 — Déroulement de la prestation</h2>
                         <p>Le Client s'engage à :</p>
@@ -241,6 +250,7 @@
                         <p>Tout retard imputable au Client ne pourra donner lieu à une prolongation de la prestation ni à un remboursement partiel.</p>
                     </article>
 
+                    <!-- ARTICLE 9 -->
                     <article class="legal-article reveal">
                         <h2>Article 9 — Responsabilité</h2>
                         <p>Le Prestataire est assuré en responsabilité civile professionnelle pour l'exercice de son activité de charter nautique.</p>
@@ -254,23 +264,27 @@
                         <p>Le Client est responsable des dommages causés par lui-même ou les membres de son groupe au navire et à ses équipements. Toute dégradation sera facturée au coût de remplacement ou de réparation.</p>
                     </article>
 
+                    <!-- ARTICLE 10 -->
                     <article class="legal-article reveal">
                         <h2>Article 10 — Assurance</h2>
                         <p>Le yacht Artemis est assuré tous risques, valeur agréée, auprès d'une compagnie d'assurance agréée. L'assurance responsabilité civile couvre les passagers pendant la durée de la prestation.</p>
                         <p>Il est recommandé au Client de souscrire une assurance voyage / annulation individuelle couvrant les frais en cas d'annulation de son fait.</p>
                     </article>
 
+                    <!-- ARTICLE 11 -->
                     <article class="legal-article reveal">
                         <h2>Article 11 — Droit à l'image</h2>
                         <p>Le Prestataire peut être amené à prendre des photographies ou vidéos pendant la prestation à des fins promotionnelles. Le Client en sera informé et pourra s'y opposer à tout moment. Aucune utilisation ne sera faite sans accord préalable du Client.</p>
                     </article>
 
+                    <!-- ARTICLE 12 -->
                     <article class="legal-article reveal">
                         <h2>Article 12 — Protection des données personnelles</h2>
                         <p>Les données personnelles collectées lors de la réservation (nom, email, téléphone) sont traitées conformément au Règlement Général sur la Protection des Données (RGPD). Elles sont utilisées exclusivement pour la gestion de la réservation et la relation client.</p>
                         <p>Le Client dispose d'un droit d'accès, de rectification, de suppression et de portabilité de ses données. Toute demande est à adresser à : <a href="mailto:prestigecharter06@gmail.com">prestigecharter06@gmail.com</a></p>
                     </article>
 
+                    <!-- ARTICLE 13 -->
                     <article class="legal-article reveal">
                         <h2>Article 13 — Litiges et droit applicable</h2>
                         <p>Les présentes CGV sont soumises au droit français.</p>
@@ -278,6 +292,7 @@
                         <p>Conformément aux dispositions du Code de la consommation, le Client est informé qu'il peut recourir à un médiateur de la consommation. Le médiateur compétent est [À COMPLÉTER]. Le Client peut également déposer sa réclamation sur la plateforme européenne de résolution en ligne des litiges : <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener">ec.europa.eu/consumers/odr</a></p>
                     </article>
 
+                    <!-- ARTICLE 14 -->
                     <article class="legal-article reveal">
                         <h2>Article 14 — Dispositions diverses</h2>
                         <p>Si l'une des clauses des présentes CGV est déclarée nulle, les autres clauses restent applicables.</p>
@@ -285,6 +300,7 @@
                         <p>Les présentes CGV sont consultables à tout moment sur le site www.prestigecharter.fr et peuvent être modifiées sans préavis. Les CGV applicables sont celles en vigueur à la date de la réservation.</p>
                     </article>
 
+                    <!-- COORDONNÉES -->
                     <article class="legal-article legal-contact-box reveal">
                         <h2>Contact</h2>
                         <p>
@@ -459,6 +475,7 @@
         color: var(--white);
     }
 
+    /* Table */
     .legal-table-wrapper {
         overflow-x: auto;
         margin: 1.2rem 0;
@@ -492,6 +509,7 @@
         background: rgba(201,168,76,.03);
     }
 
+    /* Highlight box (annulation) */
     .legal-highlight {
         background: rgba(201,168,76,.05);
         border: 1px solid rgba(201,168,76,.15);
@@ -538,6 +556,7 @@
         }
     }
 
+    /* Contact box */
     .legal-contact-box {
         background: rgba(201,168,76,.04);
         border: 1px solid rgba(201,168,76,.12);

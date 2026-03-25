@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
      4. HAMBURGER MENU MOBILE
      ========================================== */
   const hamburger = document.querySelector('.hamburger');
-  const mobileMenu = document.querySelector('.mobile-menu');
+  const mobileMenu = document.querySelector('.mobile-menu') || document.querySelector('.mobile-nav');
 
   if (hamburger && mobileMenu) {
     hamburger.addEventListener('click', () => {

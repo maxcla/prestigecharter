@@ -1,0 +1,156 @@
+<!-- mentionslegales.html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentions Légales — Prestige Charter</title>
+    <meta name="description" content="Mentions légales du site prestigecharter.fr. Éditeur, hébergeur, propriété intellectuelle, RGPD.">
+    <meta property="og:title" content="Mentions Légales — Prestige Charter">
+    <meta property="og:description" content="Mentions légales de Prestige Charter AT.">
+    <meta property="og:image" content="images/hero.jpg">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚓</text></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- PRELOADER -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-inner">
+            <svg class="preloader-anchor" viewBox="0 0 64 64" width="48" height="48">
+                <g fill="none" stroke="#C9A84C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="32" y1="6" x2="32" y2="54"/>
+                    <circle cx="32" cy="10" r="4"/>
+                    <line x1="22" y1="18" x2="42" y2="18"/>
+                    <path d="M18 42 C18 54, 32 58, 32 54 C32 58, 46 54, 46 42"/>
+                    <path d="M26 54 L22 60"/>
+                    <path d="M38 54 L42 60"/>
+                </g>
+            </svg>
+        </div>
+    </div>
+
+    <!-- SCROLL PROGRESS -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- HEADER -->
+    <header class="header" id="header">
+        <div class="header-inner container">
+            <a href="index.html" class="logo">
+                <svg class="logo-anchor" viewBox="0 0 64 64" width="28" height="28">
+                    <g fill="none" stroke="#C9A84C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="32" y1="6" x2="32" y2="54"/>
+                        <circle cx="32" cy="10" r="4"/>
+                        <line x1="22" y1="18" x2="42" y2="18"/>
+                        <path d="M18 42 C18 54, 32 58, 32 54 C32 58, 46 54, 46 42"/>
+                        <path d="M26 54 L22 60"/>
+                        <path d="M38 54 L42 60"/>
+                    </g>
+                </svg>
+                <div class="logo-text">
+                    <span class="logo-prestige">PRESTIGE</span>
+                    <span class="logo-charter">CHARTER</span>
+                </div>
+            </a>
+            <nav class="nav-desktop" id="navDesktop">
+                <a href="index.html" data-fr="Accueil" data-en="Home">Accueil</a>
+                <a href="yacht.html" data-fr="Le Yacht" data-en="The Yacht">Le Yacht</a>
+                <a href="experiences.html" data-fr="Expériences" data-en="Experiences">Expériences</a>
+                <a href="histoire.html" data-fr="Notre Histoire" data-en="Our Story">Notre Histoire</a>
+                <a href="yachtclub.html" data-fr="Yacht Club" data-en="Yacht Club">Yacht Club</a>
+                <a href="tarifs.html" data-fr="Tarifs" data-en="Pricing">Tarifs</a>
+                <a href="reservation.html" data-fr="Réservation" data-en="Booking">Réservation</a>
+                <a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a>
+            </nav>
+            <div class="header-actions">
+                <button class="lang-toggle" id="langToggle" aria-label="Toggle language">FR / EN</button>
+                <button class="hamburger" id="hamburger" aria-label="Menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- MOBILE NAV -->
+    <div class="mobile-nav" id="mobileNav">
+        <nav>
+            <a href="index.html" data-fr="Accueil" data-en="Home">Accueil</a>
+            <a href="yacht.html" data-fr="Le Yacht" data-en="The Yacht">Le Yacht</a>
+            <a href="experiences.html" data-fr="Expériences" data-en="Experiences">Expériences</a>
+            <a href="histoire.html" data-fr="Notre Histoire" data-en="Our Story">Notre Histoire</a>
+            <a href="yachtclub.html" data-fr="Yacht Club" data-en="Yacht Club">Yacht Club</a>
+            <a href="tarifs.html" data-fr="Tarifs" data-en="Pricing">Tarifs</a>
+            <a href="reservation.html" data-fr="Réservation" data-en="Booking">Réservation</a>
+            <a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a>
+        </nav>
+    </div>
+
+    <main>
+
+        <!-- HERO -->
+        <section class="legal-hero">
+            <div class="container">
+                <span class="section-label" data-fr="Juridique" data-en="Legal">Juridique</span>
+                <h1 data-fr="Mentions Légales" data-en="Legal Notice">Mentions Légales</h1>
+                <p class="legal-updated" data-fr="Dernière mise à jour : janvier 2025" data-en="Last updated: January 2025">Dernière mise à jour : janvier 2025</p>
+            </div>
+        </section>
+
+        <!-- CONTENT -->
+        <section class="legal-content section">
+            <div class="container">
+                <div class="legal-body">
+
+                    <!-- 1 ÉDITEUR -->
+                    <article class="legal-article reveal">
+                        <h2>1. Éditeur du site</h2>
+                        <p>Le site <strong>www.prestigecharter.fr</strong> est édité par :</p>
+                        <div class="legal-contact-box" style="margin-top:1rem;">
+                            <p>
+                                <strong>Prestige Charter AT</strong><br>
+                                Société par Actions Simplifiée (SAS)<br>
+                                Capital social : 40 000 €<br>
+                                Siège social : Saint-Jean-Cap-Ferrat, 06230, France<br>
+                                RCS Nice — SIRET : [À COMPLÉTER]<br>
+                                N° TVA intracommunautaire : [À COMPLÉTER]<br><br>
+                                Opérations internationales : <strong>Prestige Charter Operations Ltd</strong><br>
+                                Immatriculation Malte : [À COMPLÉTER]<br><br>
+                                Directeur de la publication : Le Président de la SAS Prestige Charter AT<br><br>
+                                Téléphone : <a href="tel:+33652192414">06 52 19 24 14</a><br>
+                                Email : <a href="mailto:prestigecharter06@gmail.com">prestigecharter06@gmail.com</a>
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- 2 HÉBERGEUR -->
+                    <article class="legal-article reveal">
+                        <h2>2. Hébergeur</h2>
+                        <p>Le site est hébergé par :</p>
+                        <p>
+                            <strong>GitHub, Inc.</strong><br>
+                            88 Colin P. Kelly Jr. Street<br>
+                            San Francisco, CA 94107, États-Unis<br>
+                            Site : <a href="https://github.com" target="_blank" rel="noopener">github.com</a>
+                        </p>
+                        <p>Service d'hébergement : GitHub Pages</p>
+                    </article>
+
+                    <!-- 3 PROPRIÉTÉ INTELLECTUELLE -->
+                    <article class="legal-article reveal">
+                        <h2>3. Propriété intellectuelle</h2>
+                        <p>L'ensemble des contenus présents sur le site www.prestigecharter.fr — incluant, de manière non limitative, les textes, photographies, illustrations, graphismes, logos, icônes, design, mise en page, structure et code source — sont la propriété exclusive de Prestige Charter AT ou de ses partenaires et sont protégés par le droit de la propriété intellectuelle.</p>
+                        <p>Toute reproduction, représentation, modification, publication, adaptation de tout ou partie des éléments du site, quel que soit le moyen ou le procédé utilisé, est interdite sans autorisation écrite préalable de Prestige Charter AT.</p>
+                        <p>La marque <strong>Prestige Charter</strong>, le logo et les éléments graphiques associés sont des marques déposées [À COMPLÉTER — dépôt INPI]. Toute utilisation non autorisée constitue une contrefaçon sanctionnée par le Code de la propriété intellectuelle.</p>
+                    </article>
+
+                    <!-- 4 DONNÉES PERSONNELLES -->
+                    <article class="legal-article reveal">
+                        <h2>4. Protection des données personnelles (RGPD)</h2>
+                        <p>Conformément au Règlement Général sur la Protection des Données (UE) 2016/679, Prestige Charter AT s'engage à protéger les données personnelles des utilisateurs de son site.</p>
+
+                        <h3 style="color:var(--white); font-family:'Playfair Display',serif; font-size:1.1rem; margin:1.5rem 0 .8rem;">4.1. Responsable du traitement</h3>
+                        <p>
+                            Prestige Charter AT — SAS<br>
+                            Saint-Jean-Cap-Ferrat, 06230<br>
+                            Email DPO : <a href="mailto:prestigecharter06@gmail.com">prestigecharter06@gmail.com</a>

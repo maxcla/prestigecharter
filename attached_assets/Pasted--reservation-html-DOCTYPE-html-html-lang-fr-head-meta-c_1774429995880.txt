@@ -1,3 +1,4 @@
+<!-- reservation.html -->
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -333,7 +334,7 @@
             <div class="footer-bottom">
                 <p>© 2025 Prestige Charter AT — <span data-fr="Tous droits réservés" data-en="All rights reserved">Tous droits réservés</span></p>
                 <div class="footer-legal">
-                    <a href="cgv.html" data-fr="CGV" data-en="T&amp;C">CGV</a>
+                    <a href="cgv.html" data-fr="CGV" data-en="T&C">CGV</a>
                     <a href="mentionslegales.html" data-fr="Mentions légales" data-en="Legal notice">Mentions légales</a>
                 </div>
             </div>
@@ -348,12 +349,15 @@
     <script src="js/main.js"></script>
 
     <script>
+    // Reservation-specific JS
     (function() {
+        // Set min date to today
         const dateInput = document.getElementById('date');
         if (dateInput) {
             dateInput.min = new Date().toISOString().split('T')[0];
         }
 
+        // Validate passengers max 11
         const passInput = document.getElementById('passengers');
         if (passInput) {
             passInput.addEventListener('change', function() {
@@ -367,6 +371,7 @@
             });
         }
 
+        // Form submission with Formspree
         const form = document.getElementById('reservationForm');
         const wrapper = document.getElementById('reservationFormWrapper');
         const success = document.getElementById('reservationSuccess');
@@ -398,6 +403,7 @@
     </script>
 
     <style>
+    /* Reservation-specific styles */
     .reservation-hero {
         position: relative;
         min-height: 100vh;
