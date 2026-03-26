@@ -1,0 +1,158 @@
+# Prompt Replit — Refonte Visuelle Complète
+
+```
+Tu es le directeur artistique et développeur front-end du site prestigecharter.fr (charter yacht luxe, Côte d'Azur). Le site est déjà codé en HTML/CSS/JS statique.
+
+---
+
+## MISSION
+
+Refonte complète des visuels. TOUTES les images actuelles du dossier images/ sont à SUPPRIMER et REMPLACER. Aucune photo existante n'est conservée. Tu repars de zéro côté visuel.
+
+Tu dois :
+1. Sourcer des photos RÉELLES depuis Unsplash (URLs directes : https://images.unsplash.com/photo-XXXX?w=1200&q=80)
+2. Remplacer chaque <img> existante dans chaque page HTML
+3. Adapter les layouts CSS pour les mettre en valeur
+4. Supprimer toute référence aux anciens fichiers (hero.jpg, yacht-1.jpg, etc.)
+
+---
+
+## PHOTOS À SOURCER SUR UNSPLASH — Brief par page et emplacement
+
+### INDEX.HTML
+
+HERO (fullscreen, premier élément visible) :
+→ Chercher : "luxury yacht mediterranean aerial golden hour"
+→ Yacht blanc en mer turquoise, lumière dorée, vue aérienne ou semi-aérienne
+
+SECTION YACHT TEASER :
+→ Chercher : "yacht interior cockpit teak luxury"
+→ Intérieur yacht élégant, bois teck, cuir, lumière naturelle
+
+SECTION SUNSET EXPERIENCE :
+→ Chercher : "yacht sunset mediterranean silhouette"
+→ Yacht au coucher du soleil, silhouettes, ciel ambré
+
+SECTION JOURNÉE EN MER :
+→ Chercher : "turquoise cove yacht anchored drone"
+→ Vue drone, crique turquoise, yacht ancré
+
+SECTION TÉMOIGNAGES :
+→ Chercher : "luxury yacht deck couple lifestyle"
+→ Ambiance lifestyle, pont de yacht, lumière chaude
+
+SECTION INSTAGRAM (grille 4 photos carrées) :
+→ Chercher : "yacht drone turquoise", "champagne deck sea", "underwater swimming yacht", "nautical rope detail gold"
+→ 4 photos cohérentes, feed IG luxe, ambiance dorée/turquoise
+
+### YACHT.HTML
+
+GALERIE (5 photos, lightbox) :
+→ Photo 1 : "motor yacht exterior profile sea" — vue profil extérieur
+→ Photo 2 : "yacht stern swim platform sea" — poupe, plateforme bain
+→ Photo 3 : "yacht salon interior modern luxury" — salon intérieur
+→ Photo 4 : "yacht master cabin bed luxury" — cabine propriétaire
+→ Photo 5 : "yacht cockpit helm dashboard modern" — poste de pilotage
+
+### EXPERIENCES.HTML
+
+SUNSET EXPERIENCE :
+→ Chercher : "sunset boat mediterranean champagne golden"
+→ Ambiance dorée, festive, intime
+
+JOURNÉE EN MER :
+→ Chercher : "paddleboard yacht turquoise clear water"
+→ Action, eau cristalline, énergie, loisirs nautiques
+
+PÊCHE DE NUIT :
+→ Chercher : "night fishing boat sea moonlight deck"
+→ Nocturne, éclairage chaud du pont, lune sur l'eau
+
+### HISTOIRE.HTML
+
+GÉNÉRATION 1 (Grand-père, Concarneau, senneurs thoniers) :
+→ Chercher : "old fishing boat brittany harbor black white vintage"
+→ Port breton, bateaux de pêche traditionnels, noir et blanc ou très désaturé
+
+GÉNÉRATION 2 (Père, Roscoff, chalutiers hauturiers, Atlantique) :
+→ Chercher : "trawler atlantic rough sea storm dramatic"
+→ Chalutier en mer agitée, ciel gris dramatique, ambiance brute
+
+GÉNÉRATION 3 (Fondateur, Méditerranée, charter luxe) :
+→ Chercher : "captain yacht helm mediterranean back view"
+→ Homme de dos à la barre, mer turquoise, lumière dorée
+
+### YACHTCLUB.HTML
+
+HERO CLUB PRIVÉ :
+→ Chercher : "luxury marina twilight yacht lounge evening"
+→ Port de luxe au crépuscule, ambiance club privé, lumières chaudes
+
+SECTION AVANTAGES :
+→ Chercher : "champagne ice bucket yacht deck detail"
+→ Détail luxe, champagne, teck, accents dorés
+
+### TARIFS.HTML
+
+AMBIANCE HEADER :
+→ Chercher : "mediterranean coast aerial luxury blue"
+→ Côte d'Azur vue aérienne, bleu profond
+
+### RESERVATION.HTML
+
+AMBIANCE FOND :
+→ Chercher : "yacht stern sunset calm sea wide"
+→ Poupe de yacht, mer calme, coucher de soleil, format large, overlay sombre par-dessus
+
+### CONTACT.HTML
+
+AMBIANCE :
+→ Chercher : "saint jean cap ferrat port harbor aerial coast"
+→ Vue du port ou côte, Côte d'Azur, lumière méditerranéenne
+
+---
+
+## RÈGLES TECHNIQUES
+
+1. TOUTES les photos en <img> — JAMAIS en background-image CSS
+2. loading="lazy" sur toutes SAUF le hero de index.html
+3. alt="" descriptif et unique sur chaque image
+4. Conteneur : overflow:hidden, border-radius:12px
+5. Hover : transform scale(1.05), transition 0.6s ease
+6. object-fit:cover sur toutes les images
+7. URLs Unsplash : ?w=1200&q=80 pour grandes, ?w=800&q=80 moyennes, ?w=600&q=80 petites/carrées
+8. Supprimer TOUT le dossier images/ ancien et ses références
+
+## DA À RESPECTER
+- Palette : #070F1B (noir), #C9A84C (or), #F4F0EB (blanc cassé), #9A968E (gris)
+- Typo : Playfair Display titres, Inter corps
+- Style : ultra-premium, minimaliste, noir & or
+- Espacements généreux entre sections
+- Cohérence chromatique : toutes les photos doivent tendre vers des tons chauds dorés, bleu profond, turquoise
+
+## NE PAS TOUCHER
+- Textes, prix, offres, informations juridiques
+- Structure des pages (header, footer, nav, sections)
+- Fonctionnalités JS (lightbox, menu, scroll, formulaires)
+
+---
+
+## PROCESSUS
+
+Pour chaque page dans cet ordre :
+1. index.html (hero + toutes sections)
+2. yacht.html (galerie 5 photos)
+3. experiences.html (3 sections)
+4. histoire.html (3 générations)
+5. yachtclub.html
+6. tarifs.html
+7. reservation.html
+8. contact.html
+
+→ Trouve les URLs Unsplash correspondant au brief
+→ Remplace les <img> dans le HTML
+→ Adapte le CSS si nécessaire
+→ Vérifie mobile
+
+Commence par index.html complet avec toutes les nouvelles images.
+```
