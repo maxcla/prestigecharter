@@ -1,0 +1,141 @@
+
+
+# Prompt Replit — Refonte Visuelle Complète
+
+```
+Tu es le directeur artistique et développeur front-end du site prestigecharter.fr (charter yacht luxe, Côte d'Azur). Le site est déjà codé en HTML/CSS/JS statique.
+
+---
+
+## MISSION
+
+Refonte complète des visuels du site. Le site manque cruellement d'images. Tu dois :
+
+1. Sourcer des photos RÉELLES depuis Unsplash (utilise les URLs directes : https://images.unsplash.com/photo-XXXX?w=1200&q=80)
+2. Les intégrer dans chaque page HTML
+3. Adapter les layouts CSS pour les mettre en valeur
+4. Conserver les 6 photos originales du dossier images/ ET ajouter les nouvelles
+
+---
+
+## PHOTOS ORIGINALES À CONSERVER (dossier images/)
+images/hero.jpg
+images/Arrière%20V2.jpeg
+images/yacht-1.jpg
+images/yacht-2.webp
+images/yacht-3.webp
+images/yacht-4.pnj
+
+---
+
+## PHOTOS À SOURCER SUR UNSPLASH — Brief par emplacement
+
+### INDEX.HTML
+
+HERO (fullscreen, premier élément) :
+→ Chercher : "luxury yacht mediterranean aerial golden hour"
+→ Yacht blanc en mer turquoise, lumière dorée, vue aérienne ou semi-aérienne
+→ Utiliser en <img> plein écran avec object-fit:cover, PAS en background-image
+
+SECTION YACHT TEASER :
+→ Chercher : "yacht interior cockpit teak luxury"
+→ Intérieur yacht élégant, bois teck, cuir, lumière naturelle
+
+SECTION SUNSET EXPERIENCE :
+→ Chercher : "yacht sunset mediterranean silhouette"
+→ Yacht au coucher du soleil, silhouettes, ciel ambré
+
+SECTION INSTAGRAM (grille 4 photos carrées) :
+→ Chercher : "yacht drone turquoise", "champagne deck sea", "underwater swimming yacht", "nautical rope detail"
+→ 4 photos cohérentes, ambiance dorée/turquoise
+
+### EXPERIENCES.HTML
+
+SUNSET EXPERIENCE :
+→ Chercher : "sunset boat mediterranean champagne"
+→ Ambiance dorée, festive, intime
+
+JOURNÉE EN MER :
+→ Chercher : "seabob water sport turquoise" OU "snorkeling clear mediterranean"
+→ Action, eau cristalline, énergie
+
+PÊCHE DE NUIT :
+→ Chercher : "night fishing boat sea moonlight"
+→ Ambiance nocturne, éclairage chaud du pont, lune sur l'eau
+
+### HISTOIRE.HTML
+
+GÉNÉRATION 1 (Grand-père, Concarneau) :
+→ Chercher : "old fishing boat brittany harbor black white"
+→ Port breton, bateaux de pêche traditionnels, noir et blanc ou désaturé
+
+GÉNÉRATION 2 (Père, Roscoff, Atlantique) :
+→ Chercher : "trawler atlantic rough sea"
+→ Chalutier en mer agitée, ciel gris dramatique, ambiance brute
+
+GÉNÉRATION 3 (Fondateur, Méditerranée) :
+→ Chercher : "captain yacht helm mediterranean behind"
+→ Homme de dos à la barre, mer turquoise devant, lumière dorée
+
+### YACHTCLUB.HTML
+
+HERO CLUB :
+→ Chercher : "luxury marina twilight lounge"
+→ Port de luxe au crépuscule, ambiance club privé, lumières chaudes
+
+### RESERVATION.HTML
+
+BACKGROUND/AMBIANCE :
+→ Utiliser images/Arrière%20V2.jpeg existante + overlay sombre
+
+### CONTACT.HTML
+
+AMBIANCE :
+→ Chercher : "saint jean cap ferrat port aerial"
+→ Vue du port ou de la côte, Côte d'Azur
+
+---
+
+## RÈGLES TECHNIQUES
+
+1. TOUTES les photos en balise <img> — JAMAIS en background-image CSS
+2. loading="lazy" sur toutes sauf le hero de index.html
+3. alt="" descriptif sur chaque image
+4. Conteneur avec overflow:hidden, border-radius:12px
+5. Hover : transform scale(1.05), transition 0.6s ease
+6. object-fit:cover sur toutes les images dans leurs conteneurs
+7. Images Unsplash : utiliser le paramètre ?w=1200&q=80 pour les grandes, ?w=600&q=80 pour les petites
+
+## DA À RESPECTER
+- Palette : #070F1B (noir), #C9A84C (or), #F4F0EB (blanc cassé), #9A968E (gris)
+- Typo : Playfair Display titres, Inter corps
+- Style : ultra-premium, minimaliste, noir & or
+- Espacements généreux, respiration entre sections
+
+## NE PAS TOUCHER
+- Textes, prix, offres, infos juridiques
+- Structure des pages (header, footer, nav)
+- Fonctionnalités JS existantes (lightbox, menu, scroll)
+
+---
+
+## PROCESSUS
+
+1. Pour chaque page, trouve les URLs Unsplash qui correspondent au brief
+2. Intègre les <img> dans le HTML
+3. Adapte le CSS (grilles, espacements, overlays si nécessaire)
+4. Vérifie le rendu mobile
+
+Commence par index.html : montre-moi le hero + les 3 premières sections avec les nouvelles images intégrées.
+```
+
+---
+
+**Pourquoi ce prompt fonctionne mieux :**
+
+| Problème du premier prompt | Solution |
+|---|---|
+| Prompts Midjourney/DALL-E = inutiles sur Replit (l'IA ne génère pas d'images) | URLs Unsplash directes que l'IA peut chercher et intégrer |
+| Brief trop littéraire, pas actionnable | Mots-clés de recherche Unsplash concrets par emplacement |
+| Aucune instruction technique d'intégration | Règles `<img>`, `object-fit`, `loading`, hover |
+| Mission floue "carte blanche" | Processus page par page avec brief précis |
