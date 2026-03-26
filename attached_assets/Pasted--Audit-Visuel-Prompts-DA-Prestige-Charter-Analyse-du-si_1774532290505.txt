@@ -1,0 +1,240 @@
+
+
+# Audit Visuel & Prompts DA — Prestige Charter
+
+## Analyse du site actuel
+
+Le site a **3 images visibles** (hero.jpg, yacht-1.jpg, yacht-3.webp) sur la page d'accueil. Les placeholders Instagram sont vides (📸). L'ensemble manque de richesse visuelle pour un positionnement ultra-luxe. Les images existantes sont peu mises en valeur, le rythme visuel est monotone.
+
+---
+
+## Prompts de génération photo (Midjourney / DALL-E / Flux)
+
+Utilise ces prompts tels quels. Chaque photo a un nom de fichier, un emplacement page, et une direction artistique précise.
+
+---
+
+### 1. `images/hero.jpg` — HERO ACCUEIL (à remplacer)
+
+**Emplacement :** index.html — plein écran, premier élément visible
+
+```
+Cinematic aerial photograph of a sleek white 42-foot motor yacht cruising 
+through deep azure Mediterranean waters near Saint-Jean-Cap-Ferrat at golden 
+hour. Dramatic warm light, long golden reflections on calm sea. Rocky cape 
+with Mediterranean pines visible in background. Wake trail behind yacht. 
+Shot from 45-degree elevated angle, slight motion blur on water. 
+Color palette: deep navy blue water, warm gold sunlight, white hull. 
+Ultra high resolution, 21:9 cinematic aspect ratio. 
+Style: luxury travel editorial, Condé Nast Traveller aesthetic.
+```
+
+**Specs :** 1920×900px min, WebP, <300Ko, ratio 21:9
+
+---
+
+### 2. `images/yacht-exterior-sunset.webp` — NOUVELLE
+
+**Emplacement :** index.html section Sunset + experiences.html
+
+```
+Profile view of a modern Italian-style motor yacht (40-45 feet) anchored 
+in a calm Mediterranean bay at sunset. Warm amber and pink sky reflecting 
+on glassy water. Silhouettes of 4-5 guests on the aft deck holding 
+champagne glasses. Soft warm string lights on the yacht. Coastline with 
+luxury villas and cypress trees in far background. 
+Mood: intimate, celebratory, exclusive. 
+Color palette: burnt orange sky, deep teal water, warm gold accents. 
+Photography style: lifestyle luxury editorial, shallow depth of field on guests.
+Aspect ratio 16:9, photorealistic.
+```
+
+**Specs :** 1200×675px, WebP, <250Ko
+
+---
+
+### 3. `images/yacht-cockpit-lifestyle.webp` — NOUVELLE
+
+**Emplacement :** index.html section Yacht teaser + yacht.html
+
+```
+Interior photograph of a luxury motor yacht cockpit and aft lounge area. 
+Modern cream leather seating, teak deck flooring, stainless steel details. 
+A chilled bottle of champagne in an ice bucket on the teak table. 
+Mediterranean turquoise water visible through the open stern. 
+Bright natural daylight, airy atmosphere. No people. 
+Styling: minimal, curated, one folded navy linen towel, polarized sunglasses 
+resting on the table. 
+Color palette: warm cream, honey teak, turquoise water, chrome accents. 
+Photography style: interior design magazine, wide angle 24mm, 
+high dynamic range. Aspect ratio 3:2.
+```
+
+**Specs :** 1200×800px, WebP, <250Ko
+
+---
+
+### 4. `images/seabob-action.webp` — NOUVELLE
+
+**Emplacement :** experiences.html Journée en Mer + yacht.html équipements
+
+```
+Action photograph of a person riding a SeaBob underwater scooter in 
+crystal clear turquoise Mediterranean water. Seen from water level, 
+half above half below waterline (split shot). Above: white yacht hull 
+and blue sky. Below: rider in dark swimwear gliding with SeaBob, 
+sunlight rays penetrating the clear water, white sand bottom visible. 
+Dynamic, energetic, aspirational mood. 
+Color palette: electric turquoise, white, deep blue. 
+Photography style: GoPro-quality action sports meets luxury advertising. 
+Aspect ratio 4:3, photorealistic, sharp focus.
+```
+
+**Specs :** 1000×750px, WebP, <200Ko
+
+---
+
+### 5. `images/night-fishing.webp` — NOUVELLE
+
+**Emplacement :** experiences.html Pêche de Nuit
+
+```
+Nighttime photograph on the aft deck of a motor yacht. Two men fishing 
+from the stern under warm deck lighting. Fishing rods bent with tension. 
+Dark Mediterranean sea with moonlight reflection creating a silver path. 
+Stars visible in clear sky. Warm amber light from yacht interior 
+contrasting with cool blue moonlight. A small table with an aperitif 
+spread: olives, bread, wine glass. 
+Mood: masculine, serene, exclusive, adventurous. 
+Color palette: deep navy night sky, warm amber deck lights, silver moonlight. 
+Photography style: editorial lifestyle, available light, 
+slight grain for atmosphere. Aspect ratio 16:9.
+```
+
+**Specs :** 1200×675px, WebP, <250Ko
+
+---
+
+### 6. `images/histoire-bretagne.webp` — NOUVELLE
+
+**Emplacement :** histoire.html — Génération 1 (Grand-père)
+
+```
+Black and white fine art photograph of a traditional Breton fishing harbor 
+at dawn. Concarneau-style stone quay with heavy wooden fishing boats 
+(senneurs/tuna seiners). Thick mooring ropes, stacked fishing nets, 
+morning mist over the water. A single silhouette of an older fisherman 
+in oilskin jacket walking along the quay. 
+Mood: nostalgic, powerful, heritage, salt-worn authenticity. 
+Grain: medium film grain, high contrast black and white. 
+Photography style: Sebastião Salgado meets Robert Doisneau. 
+Aspect ratio 3:2.
+```
+
+**Specs :** 1200×800px, WebP, <200Ko
+
+---
+
+### 7. `images/histoire-atlantic.webp` — NOUVELLE
+
+**Emplacement :** histoire.html — Génération 2 (Père)
+
+```
+Dramatic photograph of a steel trawler (chalutier hauturier) heading out 
+to rough Atlantic seas from a Breton port. Grey-green heavy swells, 
+overcast sky with one break of golden light on the horizon. 
+The boat is sturdy, functional, painted dark blue and red. 
+Spray crashing over the bow. Shot from the quay looking out to sea. 
+Mood: raw, courageous, transitional. Desaturated color palette with 
+teal-grey ocean, muted rust red hull, cold steel sky. 
+Photography style: documentary maritime, slightly desaturated, 
+cinematic 2.39:1 aspect ratio.
+```
+
+**Specs :** 1400×586px, WebP, <250Ko
+
+---
+
+### 8. `images/histoire-fondateur.webp` — NOUVELLE
+
+**Emplacement :** histoire.html — Génération 3 (Fondateur)
+
+```
+Photograph from behind of a young captain standing at the helm of a 
+modern motor yacht, looking out at the Mediterranean coastline of 
+Saint-Jean-Cap-Ferrat. Golden hour light. He wears a clean white polo 
+shirt, hands on the wheel. Through the windshield: turquoise sea, 
+rocky coastline with luxury villas, parasol pines. 
+Face NOT visible (shot from behind/side). 
+Mood: confident, forward-looking, arrival, new chapter. 
+Color palette: warm gold light, white interior, turquoise sea. 
+Photography style: luxury brand campaign, 
+aspirational yet authentic. Aspect ratio 3:2.
+```
+
+**Specs :** 1200×800px, WebP, <200Ko
+
+---
+
+### 9. `images/yachtclub-lounge.webp` — NOUVELLE
+
+**Emplacement :** yachtclub.html — hero/ambiance
+
+```
+Intimate photograph of an exclusive dockside lounge setup at twilight. 
+A sleek yacht moored in background, out of focus. In foreground: 
+two low leather club chairs on a teak dock, small round brass table 
+with two crystal tumblers of amber whisky and a leather-bound 
+member's card folder embossed in gold. Warm string lights overhead. 
+Mediterranean harbor with soft blue twilight sky. 
+Mood: private, members-only, understated opulence. 
+Color palette: deep navy twilight, warm brass/gold, cognac leather, teak. 
+Photography style: luxury hospitality brand, Soho House aesthetic, 
+shallow depth of field. Aspect ratio 16:9.
+```
+
+**Specs :** 1200×675px, WebP, <250Ko
+
+---
+
+### 10. `images/instagram-1 à 4.webp` — 4 NOUVELLES (grille IG)
+
+**Emplacement :** index.html — section Instagram
+
+```
+Set of 4 square photographs for an Instagram grid, luxury yacht charter 
+Côte d'Azur. Cohesive color palette: navy, gold, turquoise, white. 
+All photorealistic, 1:1 square format.
+
+1/ Overhead drone shot of yacht anchored in turquoise cove, 
+   paddle board floating beside it.
+2/ Close-up of two champagne flutes clinking on teak deck rail, 
+   blurred sea and sunset behind.
+3/ Underwater split-shot: legs dangling from yacht swim platform 
+   above, fish and clear water below.  
+4/ Detail shot: coiled golden rope on white yacht bow, 
+   Mediterranean blue water background, minimal composition.
+
+Style: curated luxury Instagram feed, consistent warm-gold color grading.
+```
+
+**Specs :** 600×600px chacune, WebP, <150Ko chacune
+
+---
+
+## Résumé des fichiers
+
+| Fichier | Type | Page(s) |
+|---|---|---|
+| `hero.jpg` | Remplacer | index hero |
+| `yacht-exterior-sunset.webp` | Nouveau | index, experiences |
+| `yacht-cockpit-lifestyle.webp` | Nouveau | index, yacht |
+| `seabob-action.webp` | Nouveau | experiences, yacht |
+| `night-fishing.webp` | Nouveau | experiences |
+| `histoire-bretagne.webp` | Nouveau | histoire |
+| `histoire-atlantic.webp` | Nouveau | histoire |
+| `histoire-fondateur.webp` | Nouveau | histoire |
+| `yachtclub-lounge.webp` | Nouveau | yachtclub |
+| `instagram-1→4.webp` | Nouveau ×4 | index |
+
+**Total : 13 images (6 existantes conservées + remplacer hero + 9 nouvelles + 4 IG)**
