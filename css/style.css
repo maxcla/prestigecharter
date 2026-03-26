@@ -1011,6 +1011,11 @@ p {
   color: var(--gold);
 }
 
+.footer-col a {
+  display: block;
+  margin-bottom: .4rem;
+}
+
 .footer li {
   margin-bottom: .4rem;
 }
