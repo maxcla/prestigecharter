@@ -1,0 +1,157 @@
+Tu es le développeur front-end senior du site prestigecharter.fr (charter yacht ultra-luxe, Côte d'Azur). Site HTML/CSS/JS statique. Palette : #070F1B #050B14 #C9A84C #F4F0EB #9A968E. Typo : Playfair Display + Inter.
+
+---
+
+## 3 CHANTIERS — Dans cet ordre
+
+### CHANTIER 1 — AMÉLIORATION DU LOGO (toutes pages)
+
+Le logo actuel manque de prestance. Refais-le :
+
+- "PRESTIGE" : Playfair Display 400, lettres espacées (letter-spacing: 0.3em), couleur #F4F0EB
+- "CHARTER" : Playfair Display 700, lettres espacées (letter-spacing: 0.2em), couleur #C9A84C
+- Entre les deux mots (ou au-dessus) : une ancre SVG inline dorée (#C9A84C), fine et élégante, hauteur ~28px
+- L'ensemble doit respirer le luxe, pas être tassé
+- Appliquer sur le header ET le footer de TOUTES les pages
+- Ne pas casser la structure du header fixe opaque existant
+
+---
+
+### CHANTIER 2 — REFONTE COMPLÈTE yachtclub.html
+
+**Concept :** Cercle privé ultra-exclusif. Accès sur invitation après une première navigation.
+Ton : "Vous ne postulez pas. On vous invite."
+
+**HERO**
+- Photo : images/yacht-2.webp en <img> plein écran dans un conteneur avec overlay noir 60%
+- Emblème SVG doré centré : ancre stylisée entourée d'un cercle fin avec "YACHT CLUB" en arc au-dessus et "PRESTIGE CHARTER" en arc en dessous, le tout en Playfair Display doré. Diamètre ~200px. Créé 100% en SVG inline.
+- H1 : "Le Cercle" (data-fr) / "The Circle" (data-en)
+- Sous-titre : "Un privilège réservé à ceux qui ont navigué avec nous" / "A privilege reserved for those who have sailed with us"
+
+**SECTION CONCEPT**
+- Texte centré, max-width 700px, fond var(--darker)
+- Paragraphe immersif : "Le Yacht Club Prestige Charter n'est pas un programme de fidélité. C'est une reconnaissance. Après votre première navigation à nos côtés, vous recevez une invitation personnelle à rejoindre un cercle où chaque sortie en mer vous ouvre de nouveaux privilèges."
+- EN : "The Prestige Charter Yacht Club is not a loyalty program. It's a recognition. After your first voyage with us, you receive a personal invitation to join a circle where every voyage unlocks new privileges."
+- Séparateur : ligne SVG dorée fine (1px) avec petit losange doré au centre
+
+**3 NIVEAUX — Cards côte à côte (desktop) / empilées (mobile)**
+
+Card SILVER :
+- Badge SVG : ancre simple dans un cercle fin, couleur argent (#C0C0C0)
+- Titre : "Silver" en Playfair Display
+- Condition : "Dès votre 1ère navigation" / "From your 1st voyage"
+- Avantages :
+  · Priorité de réservation [À VALIDER]
+  · Newsletter spots secrets de la Côte d'Azur [À VALIDER]
+  · Accueil personnalisé à bord [À VALIDER]
+- Bordure : 1px solid rgba(192,192,192,.3)
+
+Card GOLD :
+- Badge SVG : ancre dans un cercle plus ornementé, couleur or (#C9A84C)
+- Titre : "Gold" en Playfair Display doré
+- Condition : "Après 3 navigations" / "After 3 voyages"
+- Avantages :
+  · Tous les avantages Silver
+  · -10% sur toutes les offres [À VALIDER]
+  · Invitation aux événements privés [À VALIDER]
+  · Accès prioritaire nouvelles expériences [À VALIDER]
+- Bordure : 1px solid rgba(201,168,76,.3)
+- Légèrement mis en avant (scale 1.03 ou ombre dorée)
+
+Card PLATINUM :
+- Badge SVG : ancre ornementée dans un double cercle avec rayons, couleur or brillant + reflet
+- Titre : "Platinum" en Playfair Display doré
+- Condition : "Après 6 navigations" / "After 6 voyages"
+- Avantages :
+  · Tous les avantages Gold
+  · -15% parrainage (parrain ET filleul) [À VALIDER]
+  · Upgrade anniversaire offert [À VALIDER]
+  · Conciergerie nautique dédiée [À VALIDER]
+- Bordure : 1px solid rgba(201,168,76,.5)
+- Background subtil : gradient radial doré très discret
+
+**SECTION PARRAINAGE**
+- Encart élégant centré
+- "Partagez l'excellence. Parrainez un proche et bénéficiez tous les deux de -15% sur votre prochaine navigation." [À VALIDER]
+- CTA doré → reservation.html
+
+**SECTION CTA FINAL**
+- Image : images/Arrière%20V2.jpeg en <img> avec overlay
+- Texte : "Votre première navigation est le début de tout" / "Your first voyage is where it all begins"
+- 2 boutons : Réserver → reservation.html · WhatsApp → https://wa.me/33652192414
+
+**RÈGLES yachtclub.html :**
+- Photos UNIQUEMENT : images/yacht-2.webp + images/Arrière%20V2.jpeg (en <img>, loading="lazy")
+- [À VALIDER] affiché en petit sous chaque avantage
+- Animations : scroll reveal sur chaque section, hover scale sur les cards, badges SVG avec léger glow au hover
+
+---
+
+### CHANTIER 3 — SECTION OPTIONS EXTRAS (tarifs.html + experiences.html + index.html)
+
+Ajouter une section "SUBLIMEZ VOTRE EXPÉRIENCE" / "ELEVATE YOUR EXPERIENCE" sur ces 3 pages, après les offres principales.
+
+**Layout :** 3 catégories, chacune avec un titre + icône SVG dorée + liste d'options
+
+**Catégorie 1 — 🥂 Gastronomie & Champagne**
+Icône SVG : verre à champagne doré
+
+| Option | Prix | Description courte FR | Description courte EN |
+|---|---|---|---|
+| Plateau apéritif premium | 200 € | Charcuterie fine, fromages, fruits de mer frais | Fine charcuterie, cheeses, fresh seafood |
+| Champagne Rosé Provence | 150 € | Sélection rosé premium de Provence | Premium Provence rosé selection |
+| Dom Pérignon | 350 € | L'excellence en bouteille | Excellence in a bottle |
+| Chef privé à bord | 500 € | Gastronomie sur-mesure servie en mer | Bespoke gastronomy served at sea |
+
+**Catégorie 2 — 📸 Souvenirs & Contenu**
+Icône SVG : appareil photo doré
+
+| Option | Prix | Description courte FR | Description courte EN |
+|---|---|---|---|
+| Photographe / Vidéaste | 800 € | Immortalisez chaque instant en haute qualité | Capture every moment in high quality |
+| Supplément drone aérien | 300 € | Votre yacht vu du ciel, en crique turquoise | Your yacht from above, in turquoise coves |
+
+**Catégorie 3 — 🎉 Événements & Ambiance**
+Icône SVG : étoile ou ancre festive dorée
+
+| Option | Prix | Description courte FR | Description courte EN |
+|---|---|---|---|
+| Pack Anniversaire | 250 € | Décoration, gâteau personnalisé, attention particulière | Decoration, custom cake, special attention |
+| Pack Demande en Mariage | 800 € | Pétales, champagne, mise en scène romantique | Petals, champagne, romantic setting |
+| Pack EVJF/EVG | 250 € | Décoration festive, Prosecco, ambiance garantie | Festive decoration, Prosecco, guaranteed fun |
+
+**Design de chaque option :**
+- Ligne horizontale : icône SVG à gauche (24px, doré) + nom en Inter 500 + prix en Playfair Display doré aligné à droite + description en Inter 300 gris (#9A968E) en dessous
+- Hover : légère surbrillance dorée (background rgba(201,168,76,.05))
+- Séparateur fin (1px solid rgba(201,168,76,.1)) entre chaque option
+
+**Mention en bas de section :**
+"Sur demande, nous composons votre expérience entièrement sur-mesure." (FR)
+"On request, we craft your entire experience bespoke." (EN)
+— En Inter 300 italic, couleur #9A968E, centré
+
+**Sur index.html :** version compacte — juste les 3 catégories avec titres + prix, sans descriptions. Avec un lien "Voir toutes les options →" vers tarifs.html#options
+
+**Sur experiences.html :** version complète identique à tarifs.html
+
+**Sur tarifs.html :** version complète + encart rappel carburant en dessous :
+"⛽ Le carburant est facturé au réel et n'est pas inclus dans nos tarifs. Estimation : 100-150 € (Sunset), 200-350 € (Journée), variable (Pêche de nuit). Saint-Tropez A/R : 400-600 € supplémentaires."
+
+---
+
+## RAPPELS ABSOLUS
+
+⛔ AUCUN prix, offre ou prestation inventée — utilise UNIQUEMENT les données ci-dessus
+⛔ Carburant = TOUJOURS non inclus, mentionné à chaque prix d'offre
+⛔ JAMAIS de nom/prénom du dirigeant
+⛔ Photos en <img> uniquement, JAMAIS en background-image (utiliser un conteneur avec img + overlay positionné en absolute)
+⛔ Ne pas casser les autres pages ou sections existantes
+✅ SVG inline créés par toi pour tous les badges, icônes, emblèmes
+✅ Animations : scroll reveal, hover, transitions douces
+✅ Responsive mobile-first
+✅ Bilingue FR/EN avec data-fr / data-en
+✅ Header fixe opaque inchangé dans sa structure
+
+---
+
+Commence. Montre chaque modification fichier par fichier.
