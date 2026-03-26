@@ -163,7 +163,10 @@
             <div class="separator" style="margin-left:0;"></div>
             <p data-fr="Le Yacht Club Prestige Charter n'est pas un programme de fidélité ordinaire. C'est un cercle privé, accessible uniquement sur invitation, après votre première navigation à bord de l'Artemis. Chaque membre partage la même passion pour la mer et la même exigence d'excellence. Bienvenue dans un monde à part." data-en="The Prestige Charter Yacht Club is not an ordinary loyalty programme. It is a private circle, accessible by invitation only, after your first voyage aboard the Artemis. Every member shares the same passion for the sea and the same demand for excellence. Welcome to a world apart.">Le Yacht Club Prestige Charter n'est pas un programme de fidélité ordinaire. C'est un cercle privé, accessible uniquement sur invitation, après votre première navigation à bord de l'Artemis. Chaque membre partage la même passion pour la mer et la même exigence d'excellence. Bienvenue dans un monde à part.</p>
           </div>
-          <div class="embleme-wrap">
+          <!-- MODIF: Photo marina-luxe.jpg avec emblème SVG en surimpression — plus impactant visuellement -->
+          <div class="embleme-wrap" style="position:relative;border-radius:16px;overflow:hidden;min-height:340px;background:var(--darker);">
+            <img src="images/marina-luxe.jpg" loading="lazy" alt="Marina de luxe — ambiance Yacht Club" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.35;display:block;" />
+            <div style="position:relative;z-index:2;display:flex;align-items:center;justify-content:center;height:100%;min-height:340px;">
             <!-- Emblème héraldique maritime -->
             <svg width="220" height="220" viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg">
               <!-- Cercles extérieurs -->
@@ -191,6 +194,7 @@
               <!-- Ligne décorative -->
               <line x1="70" y1="155" x2="150" y2="155" stroke="#C9A84C" stroke-width=".5" opacity=".4"/>
             </svg>
+            </div>
           </div>
         </div>
       </div>
@@ -313,8 +317,9 @@
     </div>
 
     <!-- QUOTE IMAGE -->
+    <!-- MODIF: sunset-mer.jpg — ambiance plus aspirationnelle que la vue arrière du yacht -->
     <section class="quote-img-section reveal">
-      <img src="images/Arrière%20V2.jpeg" loading="lazy" alt="Vue arrière du yacht Artemis — Yacht Club Prestige Charter" />
+      <img src="images/sunset-mer.jpg" loading="lazy" alt="Coucher de soleil sur la Méditerranée — Yacht Club Prestige Charter" />
       <div class="quote-img-overlay">
         <p class="quote-img-text" data-fr="« L'exclusivité n'est pas un privilège. C'est une reconnaissance. »" data-en=""Exclusivity is not a privilege. It is a recognition."">« L'exclusivité n'est pas un privilège. C'est une reconnaissance. »</p>
         <span class="quote-img-attr" data-fr="— Yacht Club Prestige Charter" data-en="— Prestige Charter Yacht Club">— Yacht Club Prestige Charter</span>

@@ -202,6 +202,31 @@
     }
     .offer-card .btn { margin-top: auto; }
 
+    /* MODIF: Photo atmosphérique en header de chaque offer card */
+    .offer-card-photo {
+      margin: -2.5rem -2rem 1.25rem;
+      height: 175px;
+      overflow: hidden;
+    }
+    .offer-card-photo img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform .6s ease;
+      filter: brightness(.8);
+    }
+    .offer-card:hover .offer-card-photo img {
+      transform: scale(1.06);
+      filter: brightness(.95);
+    }
+
+    /* MODIF: Étoiles témoignages */
+    .testimonial-stars {
+      color: var(--gold);
+      font-size: 1rem;
+      letter-spacing: 3px;
+      margin-bottom: .5rem;
+    }
+
     /* Hero waves */
     .hero-waves {
       position: absolute;
@@ -475,6 +500,10 @@
 
           <!-- Sunset -->
           <div class="offer-card">
+            <!-- MODIF: Photo sunset-mer.jpg en-tête de carte — évoque l'heure dorée -->
+            <div class="offer-card-photo">
+              <img src="images/sunset-mer.jpg" alt="Coucher de soleil Méditerranée" loading="lazy" />
+            </div>
             <svg class="offer-icon" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
               <circle cx="28" cy="22" r="10" stroke="#C9A84C" stroke-width="1.5"/>
               <line x1="28" y1="6" x2="28" y2="2" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round"/>
@@ -497,6 +526,10 @@
 
           <!-- Journée -->
           <div class="offer-card">
+            <!-- MODIF: crique-azur.jpg — turquoise méditerranéen évoque mouillage & baignade journée -->
+            <div class="offer-card-photo">
+              <img src="images/crique-azur.jpg" alt="Crique turquoise Côte d'Azur" loading="lazy" />
+            </div>
             <svg class="offer-icon" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
               <circle cx="28" cy="28" r="12" stroke="#C9A84C" stroke-width="1.5"/>
               <line x1="28" y1="8" x2="28" y2="4" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round"/>
@@ -518,6 +551,10 @@
 
           <!-- Pêche de Nuit -->
           <div class="offer-card">
+            <!-- MODIF: nuit-etoiles.jpg — ciel étoilé sur mer, cohérence totale avec expérience nocturne -->
+            <div class="offer-card-photo">
+              <img src="images/nuit-etoiles.jpg" alt="Ciel étoilé sur la Méditerranée — Pêche de Nuit" loading="lazy" />
+            </div>
             <svg class="offer-icon" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M38 18 C38 30 30 38 18 38 C18 26 26 18 38 18 Z" stroke="#C9A84C" stroke-width="1.5" stroke-linejoin="round" fill="none"/>
               <circle cx="40" cy="12" r="2" stroke="#C9A84C" stroke-width="1.2"/>
@@ -564,8 +601,9 @@
         </div>
 
         <div class="grid-2" style="align-items:center;gap:4rem;">
+          <!-- MODIF: port-breton.jpg — bateaux de pêche bretons cohérents avec "trois générations de marins" -->
           <div class="img-wrap" style="aspect-ratio:4/3;">
-            <img src="images/yacht-3.webp" alt="Héritage maritime - trois générations" loading="lazy" style="width:100%;height:100%;object-fit:cover;" />
+            <img src="images/port-breton.jpg" alt="Port de pêche breton — héritage trois générations" loading="lazy" style="width:100%;height:100%;object-fit:cover;" />
           </div>
           <div>
             <p data-fr="De Concarneau à Saint-Jean-Cap-Ferrat, notre famille navigue depuis trois générations. Du grand-père patron de senneurs thoniers en Bretagne au fondateur de Prestige Charter, chaque vague porte l'héritage d'une passion transmise." data-en="From Concarneau to Saint-Jean-Cap-Ferrat, our family has sailed for three generations. From grandfather, skipper of Breton tuna seiners, to the founder of Prestige Charter, every wave carries the legacy of a passion passed down.">De Concarneau à Saint-Jean-Cap-Ferrat, notre famille navigue depuis trois générations. Du grand-père patron de senneurs thoniers en Bretagne au fondateur de Prestige Charter, chaque vague porte l'héritage d'une passion transmise.</p>
@@ -587,17 +625,21 @@
 
         <div class="grid-3">
 
+          <!-- MODIF: Ajout étoiles de notation ★★★★★ pour chaque témoignage -->
           <div class="testimonial">
+            <div class="testimonial-stars" aria-label="5 étoiles sur 5">★★★★★</div>
             <p data-fr="Une expérience inoubliable. Le skipper connaît chaque crique, chaque secret de la côte. Le coucher de soleil depuis le large de Villefranche restera gravé." data-en="An unforgettable experience. The skipper knows every cove, every secret of the coast. The sunset from the waters off Villefranche will stay with us forever.">Une expérience inoubliable. Le skipper connaît chaque crique, chaque secret de la côte. Le coucher de soleil depuis le large de Villefranche restera gravé.</p>
             <p class="testimonial-author">Sophie &amp; Marc — <em>Sunset Experience</em></p>
           </div>
 
           <div class="testimonial">
+            <div class="testimonial-stars" aria-label="5 étoiles sur 5">★★★★★</div>
             <p data-fr="Journée parfaite entre amis. Le SeaBob est incroyable, le yacht est magnifique. Service impeccable du début à la fin." data-en="A perfect day with friends. The SeaBob is incredible, the yacht is magnificent. Impeccable service from start to finish.">Journée parfaite entre amis. Le SeaBob est incroyable, le yacht est magnifique. Service impeccable du début à la fin.</p>
             <p class="testimonial-author">Famille D. — <em data-fr="Journée en Mer" data-en="Full Day at Sea">Journée en Mer</em></p>
           </div>
 
           <div class="testimonial">
+            <div class="testimonial-stars" aria-label="5 étoiles sur 5">★★★★★</div>
             <p data-fr="La pêche de nuit est une expérience unique. L'ambiance, les étoiles, les prises... On a déjà rebooked pour cet été." data-en="Night fishing is a unique experience. The atmosphere, the stars, the catches… We've already rebooked for this summer.">La pêche de nuit est une expérience unique. L'ambiance, les étoiles, les prises... On a déjà rebooked pour cet été.</p>
             <p class="testimonial-author">Thomas R. — <em data-fr="Pêche de Nuit" data-en="Night Fishing">Pêche de Nuit</em></p>
           </div>
@@ -624,11 +666,24 @@
         <h2>@prestigecharter06</h2>
         <div class="separator"></div>
 
-        <div class="ig-grid" style="max-width:800px;margin:2rem auto;">
-          <div class="ig-placeholder">📸</div>
-          <div class="ig-placeholder">📸</div>
-          <div class="ig-placeholder">📸</div>
-          <div class="ig-placeholder">📸</div>
+        <!-- MODIF: Vraies photos au lieu des placeholders emoji 📸 — grille 4 colonnes desktop -->
+        <div class="ig-grid" style="max-width:840px;margin:2rem auto;">
+          <a href="https://instagram.com/prestigecharter06" target="_blank" rel="noopener" class="ig-item" aria-label="Instagram @prestigecharter06">
+            <img src="images/yacht-1.jpg" alt="Artemis en navigation — @prestigecharter06" loading="lazy" />
+            <div class="ig-overlay"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="#F4F0EB" stroke-width="1.5"/><circle cx="12" cy="12" r="4" stroke="#F4F0EB" stroke-width="1.5"/><circle cx="17.5" cy="6.5" r="1" fill="#F4F0EB"/></svg></div>
+          </a>
+          <a href="https://instagram.com/prestigecharter06" target="_blank" rel="noopener" class="ig-item" aria-label="Instagram @prestigecharter06">
+            <img src="images/sunset-mer.jpg" alt="Coucher de soleil Côte d'Azur — @prestigecharter06" loading="lazy" />
+            <div class="ig-overlay"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="#F4F0EB" stroke-width="1.5"/><circle cx="12" cy="12" r="4" stroke="#F4F0EB" stroke-width="1.5"/><circle cx="17.5" cy="6.5" r="1" fill="#F4F0EB"/></svg></div>
+          </a>
+          <a href="https://instagram.com/prestigecharter06" target="_blank" rel="noopener" class="ig-item" aria-label="Instagram @prestigecharter06">
+            <img src="images/crique-azur.jpg" alt="Crique turquoise Méditerranée — @prestigecharter06" loading="lazy" />
+            <div class="ig-overlay"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="#F4F0EB" stroke-width="1.5"/><circle cx="12" cy="12" r="4" stroke="#F4F0EB" stroke-width="1.5"/><circle cx="17.5" cy="6.5" r="1" fill="#F4F0EB"/></svg></div>
+          </a>
+          <a href="https://instagram.com/prestigecharter06" target="_blank" rel="noopener" class="ig-item" aria-label="Instagram @prestigecharter06">
+            <img src="images/marina-luxe.jpg" alt="Marina Saint-Jean-Cap-Ferrat — @prestigecharter06" loading="lazy" />
+            <div class="ig-overlay"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="#F4F0EB" stroke-width="1.5"/><circle cx="12" cy="12" r="4" stroke="#F4F0EB" stroke-width="1.5"/><circle cx="17.5" cy="6.5" r="1" fill="#F4F0EB"/></svg></div>
+          </a>
         </div>
 
         <a href="https://instagram.com/prestigecharter06" target="_blank" rel="noopener" class="btn btn-outline">Suivre sur Instagram</a>
