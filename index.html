@@ -165,58 +165,97 @@
   <style>
     /* Styles spécifiques index.html */
     .offer-card {
-      background: rgba(255,255,255,.03);
-      border: 1px solid rgba(201,168,76,.12);
-      padding: 2.5rem 2rem;
-      text-align: center;
-      transition: transform .3s, box-shadow .3s;
+      background: rgba(201,168,76,.03);
+      border: 1px solid rgba(201,168,76,.15);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: border-color .3s, box-shadow .3s, transform .3s;
       position: relative;
       display: flex;
       flex-direction: column;
-      gap: .75rem;
     }
     .offer-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 20px 50px rgba(201,168,76,.12);
+      transform: translateY(-4px);
+      border-color: var(--gold);
+      box-shadow: 0 0 30px rgba(201,168,76,.15);
+    }
+    .offer-card-body {
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: .55rem;
+      flex: 1;
     }
     .offer-card .offer-icon {
-      width: 56px;
-      height: 56px;
-      margin: 0 auto .5rem;
+      width: 48px; height: 48px;
+      margin: 0 auto .2rem;
+      display: block;
+    }
+    .offer-card .offer-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--gold);
+      margin: 0;
+      text-align: center;
+    }
+    .offer-card .offer-meta {
+      font-size: .8rem;
+      color: var(--gray);
+      text-align: center;
+      margin: 0;
     }
     .offer-card .price {
       font-family: 'Playfair Display', serif;
       font-size: 2rem;
       font-weight: 700;
       color: var(--gold);
-      margin: 0;
+      text-align: center;
+      margin: .1rem 0 0;
+      line-height: 1;
+    }
+    .offer-card .price-ttc {
+      font-family: 'Inter', sans-serif;
+      font-size: .7rem;
+      font-weight: 400;
+      color: var(--gray);
+      vertical-align: middle;
     }
     .offer-card .fuel-warning {
       background: rgba(201,168,76,.08);
       border-left: 3px solid var(--gold);
-      padding: .6rem 1rem;
-      font-size: .8rem;
+      padding: .5rem .75rem;
+      font-size: .78rem;
       color: var(--gray);
       text-align: left;
-      margin: .25rem 0;
+      margin: .1rem 0;
     }
-    .offer-card .btn { margin-top: auto; }
+    .offer-includes {
+      list-style: none; padding: 0; margin: .15rem 0;
+      display: flex; flex-direction: column; gap: .3rem;
+    }
+    .offer-includes li {
+      display: flex; align-items: center; gap: .5rem;
+      font-size: .82rem; color: var(--gray);
+    }
+    .offer-includes li svg { flex-shrink: 0; }
+    .offer-card .btn { margin-top: auto; width: 100%; text-align: center; }
 
-    /* MODIF: Photo atmosphérique en header de chaque offer card */
+    /* Photo 16:9 */
     .offer-card-photo {
-      margin: -2.5rem -2rem 1.25rem;
-      height: 175px;
+      aspect-ratio: 16/9;
       overflow: hidden;
+      flex-shrink: 0;
     }
     .offer-card-photo img {
       width: 100%; height: 100%;
       object-fit: cover;
       transition: transform .6s ease;
-      filter: brightness(.8);
+      filter: brightness(.85);
     }
     .offer-card:hover .offer-card-photo img {
-      transform: scale(1.06);
-      filter: brightness(.95);
+      transform: scale(1.05);
+      filter: brightness(1);
     }
 
     /* MODIF: Étoiles témoignages */
@@ -376,11 +415,13 @@
     <div class="header-inner">
 
       <a href="index.html" class="logo">
-        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="15" cy="7" r="3" stroke="#C9A84C" stroke-width="1.5"/>
-          <line x1="15" y1="10" x2="15" y2="26" stroke="#C9A84C" stroke-width="1.5"/>
-          <path d="M7 18 Q15 24 23 18" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" fill="none"/>
-          <line x1="5" y1="26" x2="25" y2="26" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round"/>
+        <svg class="logo-anchor" width="22" height="26" viewBox="0 0 22 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="11" cy="4" r="2.5" stroke="#C9A84C" stroke-width="1.3"/>
+          <line x1="11" y1="6.5" x2="11" y2="21" stroke="#C9A84C" stroke-width="1.3"/>
+          <line x1="2" y1="10" x2="20" y2="10" stroke="#C9A84C" stroke-width="1.3" stroke-linecap="round"/>
+          <path d="M3 19 Q3 25 11 25 Q19 25 19 19" stroke="#C9A84C" stroke-width="1.3" fill="none" stroke-linecap="round"/>
+          <line x1="3" y1="16" x2="3" y2="19" stroke="#C9A84C" stroke-width="1.3" stroke-linecap="round"/>
+          <line x1="19" y1="16" x2="19" y2="19" stroke="#C9A84C" stroke-width="1.3" stroke-linecap="round"/>
         </svg>
         <span class="logo-text">
           <span class="logo-prestige">PRESTIGE</span>
@@ -502,74 +543,92 @@
 
           <!-- Sunset -->
           <div class="offer-card">
-            <!-- MODIF: Photo sunset-mer.jpg en-tête de carte — évoque l'heure dorée -->
-            <!-- MODIF: yacht-exterior-sunset.png — yacht avec invités heure dorée, header card parfait -->
             <div class="offer-card-photo">
               <img src="images/exp-sunset.jpg" alt="Yacht au coucher de soleil Méditerranée" loading="lazy" />
             </div>
-            <svg class="offer-icon" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="28" cy="22" r="10" stroke="#C9A84C" stroke-width="1.5"/>
-              <line x1="28" y1="6" x2="28" y2="2" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round"/>
-              <line x1="44" y1="22" x2="48" y2="22" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round"/>
-              <line x1="12" y1="22" x2="8" y2="22" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round"/>
-              <line x1="39.3" y1="10.7" x2="42.1" y2="7.9" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round"/>
-              <line x1="13.9" y1="36.1" x2="11.1" y2="38.9" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round"/>
-              <line x1="42.1" y1="36.1" x2="44.9" y2="38.9" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round"/>
-              <line x1="8" y1="36" x2="48" y2="36" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round"/>
-              <path d="M16 44 Q28 38 40 44" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" fill="none"/>
-              <path d="M10 50 Q28 42 46 50" stroke="#C9A84C" stroke-width="1" stroke-linecap="round" fill="none" opacity=".5"/>
-            </svg>
-            <h3>Sunset Experience</h3>
-            <p data-fr="3h · 18h–21h" data-en="3h · 6PM–9PM">3h · 18h–21h</p>
-            <p class="price">1 300 €</p>
-            <p data-fr="Skipper, Paddle, SeaBob, Snorkeling, Bluetooth" data-en="Skipper, Paddle, SeaBob, Snorkeling, Bluetooth">Skipper, Paddle, SeaBob, Snorkeling, Bluetooth</p>
-            <p class="fuel-warning" data-fr="⛽ Carburant non inclus (~100-150€)" data-en="⛽ Fuel not included (~€100-150)">⛽ Carburant non inclus (~100-150€)</p>
-            <a href="reservation.html" class="btn btn-gold" data-fr="Réserver" data-en="Book">Réserver</a>
+            <div class="offer-card-body">
+              <!-- Icône soleil couchant sur horizon marin -->
+              <svg class="offer-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="24" cy="20" r="8" stroke="#C9A84C" stroke-width="1.4"/>
+                <line x1="24" y1="5" x2="24" y2="2" stroke="#C9A84C" stroke-width="1.4" stroke-linecap="round"/>
+                <line x1="36.5" y1="7.5" x2="38.6" y2="5.4" stroke="#C9A84C" stroke-width="1.4" stroke-linecap="round"/>
+                <line x1="43" y1="20" x2="46" y2="20" stroke="#C9A84C" stroke-width="1.4" stroke-linecap="round"/>
+                <line x1="11.5" y1="7.5" x2="9.4" y2="5.4" stroke="#C9A84C" stroke-width="1.4" stroke-linecap="round"/>
+                <line x1="5" y1="20" x2="2" y2="20" stroke="#C9A84C" stroke-width="1.4" stroke-linecap="round"/>
+                <line x1="2" y1="31" x2="46" y2="31" stroke="#C9A84C" stroke-width="1.4" stroke-linecap="round"/>
+                <path d="M8 38 Q24 32 40 38" stroke="#C9A84C" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+                <path d="M4 44 Q24 37 44 44" stroke="#C9A84C" stroke-width=".8" stroke-linecap="round" fill="none" opacity=".5"/>
+              </svg>
+              <p class="offer-title">Sunset Experience</p>
+              <p class="offer-meta" data-fr="3h · 18h–21h · 11 passagers max" data-en="3h · 6PM–9PM · 11 passengers max">3h · 18h–21h · 11 passagers max</p>
+              <p class="price">1 300 € <span class="price-ttc">TTC</span></p>
+              <p class="fuel-warning" data-fr="⛽ Carburant non inclus — estimé ~100–150 €" data-en="⛽ Fuel not included — est. ~€100–150">⛽ Carburant non inclus — estimé ~100–150 €</p>
+              <ul class="offer-includes">
+                <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" stroke="#C9A84C" stroke-width="1"/><path d="M4 7 L6 9 L10 5" stroke="#C9A84C" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-fr="Skipper professionnel" data-en="Professional skipper">Skipper professionnel</span></li>
+                <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" stroke="#C9A84C" stroke-width="1"/><path d="M4 7 L6 9 L10 5" stroke="#C9A84C" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Paddle · SeaBob · Snorkeling</span></li>
+                <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" stroke="#C9A84C" stroke-width="1"/><path d="M4 7 L6 9 L10 5" stroke="#C9A84C" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-fr="Son Bluetooth · Assurance RC" data-en="Bluetooth audio · RC insurance">Son Bluetooth · Assurance RC</span></li>
+              </ul>
+              <a href="reservation.html" class="btn btn-gold" data-fr="Réserver →" data-en="Book →">Réserver →</a>
+            </div>
           </div>
 
           <!-- Journée -->
           <div class="offer-card">
             <div class="offer-card-photo">
-              <img src="images/exp-journee.jpg" alt="Îles turquoise Côte d'Azur — Journée en Mer" loading="lazy" />
+              <img src="images/exp-journee.jpg" alt="Côte d'Azur vue aérienne — Journée en Mer" loading="lazy" />
             </div>
-            <svg class="offer-icon" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="28" cy="28" r="12" stroke="#C9A84C" stroke-width="1.5"/>
-              <line x1="28" y1="8" x2="28" y2="4" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round"/>
-              <line x1="28" y1="52" x2="28" y2="48" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round"/>
-              <line x1="48" y1="28" x2="52" y2="28" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round"/>
-              <line x1="8" y1="28" x2="4" y2="28" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round"/>
-              <line x1="42.1" y1="13.9" x2="45" y2="11" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round"/>
-              <line x1="11" y1="45" x2="13.9" y2="42.1" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round"/>
-              <line x1="42.1" y1="42.1" x2="45" y2="45" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round"/>
-              <line x1="11" y1="11" x2="13.9" y2="13.9" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round"/>
-            </svg>
-            <h3 data-fr="Journée en Mer" data-en="Full Day at Sea">Journée en Mer</h3>
-            <p data-fr="8h · 9h–17h" data-en="8h · 9AM–5PM">8h · 9h–17h</p>
-            <p class="price">2 700 €</p>
-            <p data-fr="Skipper, Paddle, SeaBob, Snorkeling, Bluetooth" data-en="Skipper, Paddle, SeaBob, Snorkeling, Bluetooth">Skipper, Paddle, SeaBob, Snorkeling, Bluetooth</p>
-            <p class="fuel-warning" data-fr="⛽ Carburant non inclus (~200-350€)" data-en="⛽ Fuel not included (~€200-350)">⛽ Carburant non inclus (~200-350€)</p>
-            <a href="reservation.html" class="btn btn-gold" data-fr="Réserver" data-en="Book">Réserver</a>
+            <div class="offer-card-body">
+              <!-- Icône boussole / rose des vents -->
+              <svg class="offer-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="24" cy="24" r="18" stroke="#C9A84C" stroke-width="1.4"/>
+                <circle cx="24" cy="24" r="3" fill="#C9A84C" opacity=".7"/>
+                <polygon points="24,6 26,22 24,20 22,22" fill="#C9A84C"/>
+                <polygon points="24,42 26,26 24,28 22,26" fill="#C9A84C" opacity=".4"/>
+                <polygon points="6,24 22,22 20,24 22,26" fill="#C9A84C" opacity=".4"/>
+                <polygon points="42,24 26,22 28,24 26,26" fill="#C9A84C" opacity=".4"/>
+                <line x1="24" y1="6" x2="24" y2="42" stroke="#C9A84C" stroke-width=".5" opacity=".3"/>
+                <line x1="6" y1="24" x2="42" y2="24" stroke="#C9A84C" stroke-width=".5" opacity=".3"/>
+              </svg>
+              <p class="offer-title" data-fr="Journée en Mer" data-en="Full Day at Sea">Journée en Mer</p>
+              <p class="offer-meta" data-fr="8h · 9h–17h · 11 passagers max" data-en="8h · 9AM–5PM · 11 passengers max">8h · 9h–17h · 11 passagers max</p>
+              <p class="price">2 700 € <span class="price-ttc">TTC</span></p>
+              <p class="fuel-warning" data-fr="⛽ Carburant non inclus — estimé ~200–350 €" data-en="⛽ Fuel not included — est. ~€200–350">⛽ Carburant non inclus — estimé ~200–350 €</p>
+              <ul class="offer-includes">
+                <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" stroke="#C9A84C" stroke-width="1"/><path d="M4 7 L6 9 L10 5" stroke="#C9A84C" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-fr="Skipper professionnel" data-en="Professional skipper">Skipper professionnel</span></li>
+                <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" stroke="#C9A84C" stroke-width="1"/><path d="M4 7 L6 9 L10 5" stroke="#C9A84C" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Paddle · SeaBob · Snorkeling</span></li>
+                <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" stroke="#C9A84C" stroke-width="1"/><path d="M4 7 L6 9 L10 5" stroke="#C9A84C" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-fr="Son Bluetooth · Assurance RC" data-en="Bluetooth audio · RC insurance">Son Bluetooth · Assurance RC</span></li>
+              </ul>
+              <a href="reservation.html" class="btn btn-gold" data-fr="Réserver →" data-en="Book →">Réserver →</a>
+            </div>
           </div>
 
           <!-- Pêche de Nuit -->
           <div class="offer-card">
             <div class="offer-card-photo">
-              <img src="images/exp-peche-nuit.jpg" alt="Barque de pêche nocturne sous les étoiles — Pêche de Nuit" loading="lazy" />
+              <img src="images/exp-peche-nuit.jpg" alt="Pêche de nuit sous les étoiles — Pêche de Nuit" loading="lazy" />
             </div>
-            <svg class="offer-icon" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M38 18 C38 30 30 38 18 38 C18 26 26 18 38 18 Z" stroke="#C9A84C" stroke-width="1.5" stroke-linejoin="round" fill="none"/>
-              <circle cx="40" cy="12" r="2" stroke="#C9A84C" stroke-width="1.2"/>
-              <circle cx="46" cy="18" r="1.5" stroke="#C9A84C" stroke-width="1.2"/>
-              <circle cx="44" cy="8" r="1" fill="#C9A84C"/>
-              <line x1="10" y1="44" x2="46" y2="44" stroke="#C9A84C" stroke-width="1.2" stroke-linecap="round" opacity=".4"/>
-              <path d="M8 48 Q28 42 48 48" stroke="#C9A84C" stroke-width="1.2" stroke-linecap="round" fill="none" opacity=".4"/>
-            </svg>
-            <h3 data-fr="Pêche de Nuit" data-en="Night Fishing">Pêche de Nuit</h3>
-            <p data-fr="6h · 23h–5h" data-en="6h · 11PM–5AM">6h · 23h–5h</p>
-            <p class="price">2 600 €</p>
-            <p data-fr="Skipper, Équipement pêche complet, Apéritif, Bluetooth" data-en="Skipper, Full fishing gear, Aperitif, Bluetooth">Skipper, Équipement pêche complet, Apéritif, Bluetooth</p>
-            <p class="fuel-warning" data-fr="⛽ Carburant non inclus (au réel)" data-en="⛽ Fuel not included (actual cost)">⛽ Carburant non inclus (au réel)</p>
-            <a href="reservation.html" class="btn btn-gold" data-fr="Réserver" data-en="Book">Réserver</a>
+            <div class="offer-card-body">
+              <!-- Icône lune + canne à pêche -->
+              <svg class="offer-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M32 8 C32 20 24 28 12 28 C12 16 20 8 32 8 Z" stroke="#C9A84C" stroke-width="1.4" fill="none" stroke-linejoin="round"/>
+                <circle cx="35" cy="8" r="2.5" stroke="#C9A84C" stroke-width="1.2"/>
+                <circle cx="42" cy="14" r="1.8" stroke="#C9A84C" stroke-width="1.2"/>
+                <circle cx="40" cy="5" r="1" fill="#C9A84C" opacity=".8"/>
+                <line x1="8" y1="38" x2="44" y2="38" stroke="#C9A84C" stroke-width="1.2" stroke-linecap="round" opacity=".4"/>
+                <path d="M4 43 Q24 37 44 43" stroke="#C9A84C" stroke-width="1" stroke-linecap="round" fill="none" opacity=".4"/>
+                <line x1="16" y1="32" x2="20" y2="38" stroke="#C9A84C" stroke-width="1.2" stroke-linecap="round" opacity=".6"/>
+              </svg>
+              <p class="offer-title" data-fr="Pêche de Nuit" data-en="Night Fishing">Pêche de Nuit</p>
+              <p class="offer-meta" data-fr="6h · 23h–5h · 11 passagers max" data-en="6h · 11PM–5AM · 11 passengers max">6h · 23h–5h · 11 passagers max</p>
+              <p class="price">2 600 € <span class="price-ttc">TTC</span></p>
+              <p class="fuel-warning" data-fr="⛽ Carburant non inclus — facturé au réel" data-en="⛽ Fuel not included — charged at cost">⛽ Carburant non inclus — facturé au réel</p>
+              <ul class="offer-includes">
+                <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" stroke="#C9A84C" stroke-width="1"/><path d="M4 7 L6 9 L10 5" stroke="#C9A84C" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-fr="Skipper professionnel" data-en="Professional skipper">Skipper professionnel</span></li>
+                <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" stroke="#C9A84C" stroke-width="1"/><path d="M4 7 L6 9 L10 5" stroke="#C9A84C" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-fr="Équipement pêche complet · Apéritif" data-en="Full fishing gear · Aperitif">Équipement pêche complet · Apéritif</span></li>
+                <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" stroke="#C9A84C" stroke-width="1"/><path d="M4 7 L6 9 L10 5" stroke="#C9A84C" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-fr="Son Bluetooth · Assurance RC" data-en="Bluetooth audio · RC insurance">Son Bluetooth · Assurance RC</span></li>
+              </ul>
+              <a href="reservation.html" class="btn btn-gold" data-fr="Réserver →" data-en="Book →">Réserver →</a>
+            </div>
           </div>
 
         </div>
@@ -712,16 +771,18 @@
 
         <!-- Col 1 : Logo + adresse -->
         <div>
-          <a href="index.html" class="logo" style="margin-bottom:1rem;display:inline-flex;">
-            <svg width="24" height="24" viewBox="0 0 30 30" fill="none">
-              <circle cx="15" cy="7" r="3" stroke="#C9A84C" stroke-width="1.5"/>
-              <line x1="15" y1="10" x2="15" y2="26" stroke="#C9A84C" stroke-width="1.5"/>
-              <path d="M7 18 Q15 24 23 18" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" fill="none"/>
-              <line x1="5" y1="26" x2="25" y2="26" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round"/>
-            </svg>
-            <span class="logo-text" style="margin-left:.6rem;">
-              <span class="logo-prestige" style="font-size:.85rem;">PRESTIGE</span>
-              <span class="logo-charter" style="font-size:.85rem;">CHARTER</span>
+          <a href="index.html" class="logo" style="margin-bottom:1rem;">
+            <svg class="logo-anchor" width="22" height="26" viewBox="0 0 22 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="11" cy="4" r="2.5" stroke="#C9A84C" stroke-width="1.3"/>
+          <line x1="11" y1="6.5" x2="11" y2="21" stroke="#C9A84C" stroke-width="1.3"/>
+          <line x1="2" y1="10" x2="20" y2="10" stroke="#C9A84C" stroke-width="1.3" stroke-linecap="round"/>
+          <path d="M3 19 Q3 25 11 25 Q19 25 19 19" stroke="#C9A84C" stroke-width="1.3" fill="none" stroke-linecap="round"/>
+          <line x1="3" y1="16" x2="3" y2="19" stroke="#C9A84C" stroke-width="1.3" stroke-linecap="round"/>
+          <line x1="19" y1="16" x2="19" y2="19" stroke="#C9A84C" stroke-width="1.3" stroke-linecap="round"/>
+        </svg>
+            <span class="logo-text">
+              <span class="logo-prestige">PRESTIGE</span>
+              <span class="logo-charter">CHARTER</span>
             </span>
           </a>
           <p>Prestige Charter AT</p>

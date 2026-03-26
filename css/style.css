@@ -216,33 +216,72 @@ p {
 /* Logo */
 .logo {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 10px;
+  gap: 5px;
   text-decoration: none;
+}
+
+.logo-anchor {
+  transition: transform .3s ease;
+  transform-origin: 50% 62%;
+  display: block;
+}
+
+.logo:hover .logo-anchor {
+  transform: rotate(10deg);
 }
 
 .logo-text {
   display: flex;
   flex-direction: column;
-  line-height: 1.1;
+  align-items: center;
+  line-height: 1.05;
+  gap: 1px;
 }
 
 .logo-text .logo-prestige {
   font-family: 'Playfair Display', serif;
-  font-size: 1.1rem;
+  font-size: 0.72rem;
   font-weight: 400;
   color: var(--white);
-  letter-spacing: 3px;
+  letter-spacing: 0.25em;
   text-transform: uppercase;
 }
 
 .logo-text .logo-charter {
   font-family: 'Playfair Display', serif;
-  font-size: 1.1rem;
+  font-size: 0.58rem;
   font-weight: 700;
   color: var(--gold);
-  letter-spacing: 3px;
+  letter-spacing: 0.35em;
   text-transform: uppercase;
+}
+
+/* Footer logo larger + gold underline */
+.footer .logo {
+  gap: 6px;
+}
+
+.footer .logo .logo-anchor {
+  width: 32px;
+  height: 38px;
+}
+
+.footer .logo .logo-prestige {
+  font-size: 0.85rem;
+}
+
+.footer .logo .logo-charter {
+  font-size: 0.72rem;
+}
+
+.footer-logo-line {
+  width: 60px;
+  height: 1px;
+  background: var(--gold);
+  opacity: .5;
+  margin: 0.75rem auto 0;
 }
 
 /* ============================================

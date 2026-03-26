@@ -1,0 +1,216 @@
+
+
+# Prompt Replit — Refonte Page Yacht Club + Logo + Offres
+
+```
+Tu es le directeur artistique et développeur front-end senior du site prestigecharter.fr (charter yacht ultra-luxe, Côte d'Azur). Le site est en HTML/CSS/JS statique.
+
+---
+
+## MISSION
+
+3 chantiers prioritaires :
+
+### 1. REFONTE COMPLÈTE — yachtclub.html
+### 2. AMÉLIORATION DU LOGO (toutes pages)
+### 3. AMÉLIORATION DES CARDS OFFRES (index.html + experiences.html + tarifs.html)
+
+---
+
+## 1. YACHT CLUB — REFONTE TOTALE DE yachtclub.html
+
+### Concept
+Cercle privé ultra-exclusif. Accès sur invitation après une première navigation. 
+Ton : "Vous ne postulez pas. On vous invite." Pas un programme de fidélité banal — un cercle de privilégiés.
+
+### Structure de la page
+
+**HERO**
+- Image plein écran (Unsplash : "luxury marina night yacht golden lights")
+- Overlay noir 60%
+- Emblème SVG doré centré : ancre stylisée entourée d'un cercle avec "YACHT CLUB" en arc de cercle au-dessus et "PRESTIGE CHARTER" en dessous, tout en Playfair Display
+- Titre H1 : "Le Cercle" (FR) / "The Circle" (EN)
+- Sous-titre : "Un privilège réservé à ceux qui ont navigué avec nous"
+
+**SECTION CONCEPT** (après le hero)
+- Layout : texte centré, largeur max 700px
+- Texte immersif : expliquer que le Yacht Club n'est pas un abonnement mais une reconnaissance. Après votre première sortie, vous recevez une invitation personnelle. Chaque membre accède à un monde d'avantages croissants.
+- Séparateur SVG : ligne dorée fine avec petit losange central
+
+**SECTION 3 NIVEAUX** (le cœur de la page)
+Layout : 3 cards verticales côte à côte (desktop), empilées (mobile)
+
+Chaque card :
+- Badge SVG unique en haut (voir détail ci-dessous)
+- Nom du niveau en Playfair Display
+- Condition d'accès
+- Liste des avantages avec icônes check dorées
+- Bordure : fine ligne dorée, hover → glow doré subtil
+- Background : dégradé vertical du noir vers très légèrement doré
+
+SILVER — "Membre" :
+- Badge SVG : ancre simple dans un cercle fin
+- Condition : "Dès votre première navigation"
+- Avantages :
+  • Priorité de réservation haute saison
+  • Newsletter spots secrets du skipper
+  • Accès groupe privé WhatsApp
+- Mention : [À VALIDER] sur chaque avantage
+
+GOLD — "Ambassadeur" :
+- Badge SVG : ancre avec deux étoiles, cercle double
+- Condition : "Après 3 navigations"
+- Avantages :
+  • -10% sur toutes les offres
+  • Invitations événements privés
+  • Surclassement options (selon dispo)
+  • Tout Silver inclus
+- Mention : [À VALIDER]
+
+PLATINUM — "Cercle Intérieur" :
+- Badge SVG : ancre ornée, couronne de laurier, triple cercle
+- Condition : "Après 6 navigations"  
+- Avantages :
+  • -15% permanent
+  • Parrainage : -10% pour parrain ET filleul
+  • Upgrade anniversaire offert
+  • Accès prioritaire nouveaux yachts
+  • Conciergerie dédiée
+  • Tout Gold inclus
+- Mention : [À VALIDER]
+
+**SECTION PARRAINAGE**
+- Encart élégant, bordure dorée, fond --gold-dim
+- "Chaque membre peut parrainer un proche. Parrain et filleul bénéficient d'un avantage exclusif dès la première navigation du filleul."
+- Icône SVG : deux ancres liées
+
+**CTA FINAL**
+- Texte : "Votre première navigation est votre invitation"
+- 2 boutons : Réserver → reservation.html | WhatsApp → lien direct
+- Fond légèrement plus clair, séparé par vagues SVG dorées animées
+
+---
+
+## 2. LOGO — AMÉLIORATION (header + footer, toutes pages)
+
+Le logo actuel manque de présence et de raffinement.
+
+### Nouveau logo à coder en HTML/CSS/SVG :
+
+Structure verticale compacte :
+```
+      ⚓ (ancre SVG dorée, fine, élégante, ~24px)
+   PRESTIGE
+   CHARTER
+```
+
+- "PRESTIGE" : Playfair Display 400 (regular), letter-spacing: 0.25em, couleur #F4F0EB (blanc cassé), font-size ~18px
+- "CHARTER" : Playfair Display 700 (bold), letter-spacing: 0.35em, couleur #C9A84C (or), font-size ~14px  
+- Ancre SVG : trait fin (stroke-width:1.5), pas de fill, stroke #C9A84C, style minimaliste géométrique
+- L'ensemble doit tenir dans ~50px de hauteur pour le header
+- Au hover : l'ancre fait une rotation subtile de 10deg, transition 0.3s
+
+### Pour le footer :
+- Même logo mais plus grand (~80px hauteur)
+- Sous le logo : fine ligne dorée horizontale de 60px
+
+### Ancre SVG (à créer) :
+Dessine une ancre minimaliste : tige verticale, barre horizontale, demi-cercle en bas, anneau en haut. Traits fins, géométriques, modernes. Pas de détails superflus.
+
+---
+
+## 3. OFFRES — AMÉLIORATION DES CARDS
+
+Les cards d'offres actuelles manquent d'impact et de clarté. Refonte visuelle sur index.html, experiences.html et tarifs.html.
+
+### Design de chaque card offre :
+
+```
+┌─────────────────────────────────┐
+│  [IMAGE — 16:9, bords arrondis] │
+│                                  │
+│  ─── icône SVG dorée ───        │
+│                                  │
+│  SUNSET EXPERIENCE              │ ← Playfair Display, or
+│  3h · 11 passagers max          │ ← Inter, gris
+│                                  │
+│  1 300 € TTC                    │ ← Playfair Display, grand, or
+│  ⚠ Carburant non inclus ~100-150€│ ← Inter 12px, gris
+│                                  │
+│  ✓ Skipper                      │
+│  ✓ Paddle · SeaBob · Snorkeling │
+│  ✓ Son Bluetooth · Assurance RC │
+│                                  │
+│  [ RÉSERVER →  ]                │ ← bouton gradient doré
+└─────────────────────────────────┘
+```
+
+### Icônes SVG par offre (à créer en inline) :
+- Sunset : soleil couchant sur horizon marin
+- Journée : boussole / rose des vents
+- Pêche de nuit : lune + canne à pêche stylisée
+
+### Effets :
+- Card : background rgba(201,168,76,.03), border 1px solid rgba(201,168,76,.15)
+- Hover : border-color var(--gold), box-shadow 0 0 30px rgba(201,168,76,.15), transform translateY(-4px)
+- Image dans card : overflow hidden, hover scale(1.05)
+- Prix : font-size 2rem, font-weight 700
+- Bouton : gradient linéaire doré, effet shine au hover (pseudo-element qui glisse)
+- Le "⚠ Carburant non inclus" doit TOUJOURS être visible, jamais masqué
+
+### Infos strictes par offre (NE RIEN INVENTER) :
+
+SUNSET EXPERIENCE :
+- 3h (18h–21h) · 11 pax max · 1 300 € TTC
+- Carburant NON INCLUS ~100-150€
+- Inclus : Skipper, Paddle, SeaBob, Snorkeling, Bluetooth, Assurance RC
+- Image Unsplash : "yacht sunset golden hour mediterranean"
+
+JOURNÉE EN MER :
+- 8h (9h–17h) · 11 pax max · 2 700 € TTC  
+- Carburant NON INCLUS ~200-350€
+- Inclus : Skipper, Paddle, SeaBob, Snorkeling, Bluetooth, Assurance RC
+- Image Unsplash : "yacht anchored turquoise bay drone"
+
+PÊCHE DE NUIT :
+- 6h (23h–5h) · 11 pax max · 2 600 € TTC
+- Carburant NON INCLUS au réel
+- Inclus : Skipper, Équipement pêche complet, Apéritif, Bluetooth, Assurance RC
+- Image Unsplash : "fishing boat night sea dark moonlight"
+
+### Section OPTIONS EXTRAS (sous les 3 cards, sur tarifs.html et experiences.html) :
+Encart élégant, 3 colonnes :
+- Chef privé à bord · 500 € — icône SVG toque
+- Dom Pérignon · 350 € — icône SVG bouteille champagne
+- Photographe / Vidéaste · 800 € — icône SVG appareil photo
+
+---
+
+## RÈGLES ABSOLUES
+
+⛔ AUCUN prix, offre ou prestation inventée
+⛔ Carburant = TOUJOURS non inclus, affiché à chaque prix
+⛔ JAMAIS de nom/prénom du dirigeant
+⛔ Photos en <img> uniquement, jamais background-image
+⛔ [À VALIDER] sur chaque avantage Yacht Club
+✅ SVG inline créés par toi (badges, icônes, emblème)
+✅ Animations subtiles (hover, scroll reveal)
+✅ Mobile-first responsive
+✅ Ne pas casser le reste du site
+
+## DA
+- Palette : #070F1B #050B14 #C9A84C #F4F0EB #9A968E
+- Typo : Playfair Display + Inter
+- Header fixe opaque, ne pas modifier sa structure
+
+---
+
+## PROCESSUS
+
+1. Commence par le LOGO : nouveau SVG ancre + refonte HTML/CSS dans header et footer (style.css + tous les HTML)
+2. Puis yachtclub.html complet
+3. Puis les cards offres sur index.html, experiences.html, tarifs.html
+4. Montre chaque modification
+
+Go.
+```
