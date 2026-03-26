@@ -176,7 +176,8 @@ p {
 /* ============================================
    SCROLL PROGRESS BAR
    ============================================ */
-#scroll-progress {
+#scroll-progress,
+#scrollProgress {
   position: fixed;
   top: 0;
   left: 0;

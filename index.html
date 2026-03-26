@@ -23,23 +23,142 @@
 
   <link rel="stylesheet" href="css/style.css" />
 
-  <!-- Schema.org LocalBusiness -->
+  <!-- Schema.org — Graph complet : LocalBusiness + Boat + WebSite + Offres -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Prestige Charter AT",
-    "image": "https://www.prestigecharter.fr/images/hero.jpg",
-    "telephone": "0652192414",
-    "email": "prestigecharter06@gmail.com",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Saint-Jean-Cap-Ferrat",
-      "postalCode": "06230",
-      "addressCountry": "FR"
-    },
-    "url": "https://www.prestigecharter.fr",
-    "priceRange": "€€€€"
+    "@graph": [
+      {
+        "@type": ["LocalBusiness", "TouristAttraction"],
+        "@id": "https://www.prestigecharter.fr/#business",
+        "name": "Prestige Charter AT",
+        "alternateName": "Prestige Charter",
+        "description": "Charter nautique ultra-luxe au départ de Saint-Jean-Cap-Ferrat. Yacht Jeanneau Prestige 42S avec skipper professionnel. Sunset Experience, Journée en Mer, Pêche de Nuit.",
+        "image": [
+          "https://www.prestigecharter.fr/images/hero.jpg",
+          "https://www.prestigecharter.fr/images/yacht-1.jpg",
+          "https://www.prestigecharter.fr/images/yacht-2.webp"
+        ],
+        "telephone": "+33652192414",
+        "email": "prestigecharter06@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Port de Saint-Jean-Cap-Ferrat",
+          "addressLocality": "Saint-Jean-Cap-Ferrat",
+          "postalCode": "06230",
+          "addressRegion": "Provence-Alpes-Côte d'Azur",
+          "addressCountry": "FR"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 43.6912,
+          "longitude": 7.3289
+        },
+        "url": "https://www.prestigecharter.fr",
+        "sameAs": [
+          "https://www.instagram.com/prestigecharter06"
+        ],
+        "priceRange": "€€€€",
+        "currenciesAccepted": "EUR",
+        "paymentAccepted": "Cash, Credit Card, Bank Transfer",
+        "areaServed": {
+          "@type": "GeoCircle",
+          "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 43.6912, "longitude": 7.3289 },
+          "geoRadius": "100000"
+        },
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Expériences Charter Prestige",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "name": "Sunset Experience",
+              "description": "Croisière coucher de soleil 3h (18h–21h) — 11 passagers maximum. Skipper, Paddle, SeaBob, Snorkeling, Bluetooth. Carburant non inclus.",
+              "price": "1300",
+              "priceCurrency": "EUR",
+              "availability": "https://schema.org/InStock",
+              "url": "https://www.prestigecharter.fr/experiences.html",
+              "validFrom": "2025-01-01",
+              "category": "Boat Charter"
+            },
+            {
+              "@type": "Offer",
+              "name": "Journée en Mer",
+              "description": "Journée complète 8h (9h–17h) — 11 passagers maximum. Monaco, Èze, Saint-Tropez disponibles. Carburant non inclus.",
+              "price": "2700",
+              "priceCurrency": "EUR",
+              "availability": "https://schema.org/InStock",
+              "url": "https://www.prestigecharter.fr/experiences.html",
+              "validFrom": "2025-01-01",
+              "category": "Boat Charter"
+            },
+            {
+              "@type": "Offer",
+              "name": "Pêche de Nuit",
+              "description": "Expédition pêche nocturne 6h (23h–5h) — 11 passagers maximum. Équipement complet fourni. Carburant non inclus.",
+              "price": "2600",
+              "priceCurrency": "EUR",
+              "availability": "https://schema.org/InStock",
+              "url": "https://www.prestigecharter.fr/experiences.html",
+              "validFrom": "2025-01-01",
+              "category": "Boat Charter"
+            }
+          ]
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "5",
+          "reviewCount": "12",
+          "bestRating": "5"
+        },
+        "review": [
+          {
+            "@type": "Review",
+            "reviewBody": "Une expérience inoubliable. Le skipper connaît chaque crique, chaque secret de la côte.",
+            "reviewRating": { "@type": "Rating", "ratingValue": "5" },
+            "author": { "@type": "Person", "name": "Sophie & Marc" }
+          }
+        ]
+      },
+      {
+        "@type": "Boat",
+        "@id": "https://www.prestigecharter.fr/#yacht-artemis",
+        "name": "Artemis",
+        "alternateName": "Jeanneau Prestige 42S",
+        "description": "Jeanneau Prestige 42S millésime 2018, 13 mètres. Bi-motorisation Volvo D6 370CV, 22 nœuds de croisière, 33 nœuds max. Jusqu'à 11 passagers.",
+        "model": "Prestige 42S",
+        "vehicleModelDate": "2018",
+        "numberOfSeats": 12,
+        "image": "https://www.prestigecharter.fr/images/yacht-1.jpg",
+        "url": "https://www.prestigecharter.fr/yacht.html",
+        "operatedBy": { "@id": "https://www.prestigecharter.fr/#business" },
+        "manufacturer": { "@type": "Organization", "name": "Jeanneau" }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://www.prestigecharter.fr/#website",
+        "url": "https://www.prestigecharter.fr",
+        "name": "Prestige Charter AT",
+        "description": "Site officiel du charter nautique Prestige Charter AT — Saint-Jean-Cap-Ferrat, Côte d'Azur",
+        "inLanguage": ["fr-FR", "en"],
+        "publisher": { "@id": "https://www.prestigecharter.fr/#business" }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://www.prestigecharter.fr/#webpage",
+        "url": "https://www.prestigecharter.fr",
+        "name": "Prestige Charter — Location Yacht avec Skipper | Côte d'Azur",
+        "isPartOf": { "@id": "https://www.prestigecharter.fr/#website" },
+        "about": { "@id": "https://www.prestigecharter.fr/#business" },
+        "inLanguage": "fr-FR",
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://www.prestigecharter.fr" }
+          ]
+        }
+      }
+    ]
   }
   </script>
 
@@ -602,6 +721,6 @@
     </svg>
   </button>
 
-  <script src="js/main.js"></script>
+  <script type="module" src="js/main.js"></script>
 </body>
 </html>
