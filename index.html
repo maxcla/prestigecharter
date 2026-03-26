@@ -374,6 +374,19 @@
     /* Section alternée fond */
     .section-alt { background: var(--darker); }
 
+    /* ---- Options compactes (index) ---- */
+    .opts-compact { display: grid; grid-template-columns: 1fr; gap: 2rem; }
+    @media(min-width: 800px) { .opts-compact { grid-template-columns: repeat(3, 1fr); } }
+    .opts-col { background: rgba(255,255,255,.02); border: 1px solid rgba(201,168,76,.12); border-radius: 14px; overflow: hidden; }
+    .opts-col-header { display: flex; align-items: center; gap: .75rem; padding: 1.1rem 1.4rem; background: rgba(201,168,76,.04); border-bottom: 1px solid rgba(201,168,76,.1); }
+    .opts-col-header svg { flex-shrink: 0; }
+    .opts-col-header span { font-family: 'Playfair Display', serif; font-weight: 600; color: var(--white); font-size: .92rem; }
+    .opts-list { list-style: none; padding: .25rem 1.25rem; margin: 0; }
+    .opts-list li { display: flex; justify-content: space-between; align-items: baseline; gap: .5rem; padding: .6rem 0; border-bottom: 1px solid rgba(201,168,76,.07); font-size: .82rem; }
+    .opts-list li:last-child { border-bottom: none; }
+    .opts-list li span:first-child { color: var(--gray); font-weight: 300; }
+    .opts-list li span:last-child { font-family: 'Playfair Display', serif; color: var(--gold); font-size: .9rem; font-weight: 700; white-space: nowrap; }
+
     /* Specs rapides yacht */
     .yacht-specs-quick {
       display: flex;
@@ -749,6 +762,92 @@
         <a href="https://instagram.com/prestigecharter06" target="_blank" rel="noopener" class="btn btn-outline">Suivre sur Instagram</a>
       </div>
     </section>
+
+    <!-- WAVE -->
+    <div class="wave-sep">
+      <svg viewBox="0 0 1440 40" preserveAspectRatio="none" height="40">
+        <path d="M0,20 C360,40 720,0 1080,20 C1260,30 1380,15 1440,20 L1440,40 L0,40 Z" fill="var(--darker)"/>
+      </svg>
+    </div>
+
+    <!-- OPTIONS COMPACTES -->
+    <section class="section section-alt reveal">
+      <div class="container">
+        <div class="text-center" style="margin-bottom:2.5rem;">
+          <p class="section-sub" data-fr="À la carte" data-en="À la carte">À la carte</p>
+          <h2 data-fr="Sublimez votre expérience" data-en="Elevate your experience">Sublimez votre expérience</h2>
+          <div class="separator"></div>
+        </div>
+
+        <div class="opts-compact">
+
+          <!-- Col 1 — Gastronomie -->
+          <div class="opts-col">
+            <div class="opts-col-header">
+              <svg width="22" height="22" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M11 28 L10 18 Q9 11 11 8 L21 8 Q23 11 22 18 L21 28 Z" stroke="#C9A84C" stroke-width="1.4" fill="none" stroke-linejoin="round"/>
+                <line x1="10" y1="16" x2="22" y2="16" stroke="#C9A84C" stroke-width="1" stroke-linecap="round"/>
+                <path d="M14 8 Q16 4 18 8" stroke="#C9A84C" stroke-width="1.4" stroke-linecap="round" fill="none"/>
+                <line x1="16" y1="4" x2="16" y2="2" stroke="#C9A84C" stroke-width="1.4" stroke-linecap="round"/>
+                <ellipse cx="20" cy="6" rx="2.5" ry="1.2" stroke="#C9A84C" stroke-width="1" transform="rotate(-30 20 6)" fill="none"/>
+              </svg>
+              <span data-fr="Gastronomie &amp; Champagne" data-en="Gastronomy &amp; Champagne">Gastronomie &amp; Champagne</span>
+            </div>
+            <ul class="opts-list">
+              <li><span data-fr="Plateau apéritif premium" data-en="Premium aperitif platter">Plateau apéritif premium</span><span>200 €</span></li>
+              <li><span data-fr="Champagne Rosé Provence" data-en="Provence Rosé Champagne">Champagne Rosé Provence</span><span>150 €</span></li>
+              <li><span>Dom Pérignon</span><span>350 €</span></li>
+              <li><span data-fr="Chef privé à bord" data-en="Private chef on board">Chef privé à bord</span><span>500 €</span></li>
+            </ul>
+          </div>
+
+          <!-- Col 2 — Souvenirs -->
+          <div class="opts-col">
+            <div class="opts-col-header">
+              <svg width="22" height="22" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="4" y="10" width="24" height="16" rx="3" stroke="#C9A84C" stroke-width="1.4"/>
+                <circle cx="16" cy="18" r="4.5" stroke="#C9A84C" stroke-width="1.4"/>
+                <circle cx="16" cy="18" r="1.8" fill="#C9A84C" opacity=".5"/>
+                <path d="M11 10 L12.5 7 L19.5 7 L21 10" stroke="#C9A84C" stroke-width="1.4" stroke-linejoin="round" fill="none"/>
+                <circle cx="24" cy="14" r="1.2" fill="#C9A84C"/>
+              </svg>
+              <span data-fr="Souvenirs &amp; Contenu" data-en="Memories &amp; Content">Souvenirs &amp; Contenu</span>
+            </div>
+            <ul class="opts-list">
+              <li><span data-fr="Photographe / Vidéaste" data-en="Photographer / Videographer">Photographe / Vidéaste</span><span>800 €</span></li>
+              <li><span data-fr="Supplément drone aérien" data-en="Aerial drone supplement">Supplément drone aérien</span><span>300 €</span></li>
+            </ul>
+          </div>
+
+          <!-- Col 3 — Événements -->
+          <div class="opts-col">
+            <div class="opts-col-header">
+              <svg width="22" height="22" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <polygon points="16,3 18.8,11.2 27.4,11.2 20.6,16.5 23.1,24.7 16,19.4 8.9,24.7 11.4,16.5 4.6,11.2 13.2,11.2" stroke="#C9A84C" stroke-width="1.4" fill="none" stroke-linejoin="round"/>
+              </svg>
+              <span data-fr="Événements &amp; Ambiance" data-en="Events &amp; Atmosphere">Événements &amp; Ambiance</span>
+            </div>
+            <ul class="opts-list">
+              <li><span data-fr="Pack Anniversaire" data-en="Birthday Pack">Pack Anniversaire</span><span>250 €</span></li>
+              <li><span data-fr="Pack Demande en Mariage" data-en="Proposal Pack">Pack Demande en Mariage</span><span>800 €</span></li>
+              <li><span data-fr="Pack EVJF / EVG" data-en="Hen / Stag Party Pack">Pack EVJF / EVG</span><span>250 €</span></li>
+            </ul>
+          </div>
+
+        </div>
+
+        <div class="text-center" style="margin-top:2.5rem;">
+          <a href="tarifs.html#options" class="btn btn-outline" data-fr="Voir toutes les options →" data-en="View all options →">Voir toutes les options →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- WAVE -->
+    <div class="wave-sep">
+      <svg viewBox="0 0 1440 40" preserveAspectRatio="none" height="40">
+        <path d="M0,20 C360,0 720,40 1080,20 C1260,10 1380,25 1440,20 L1440,0 L0,0 Z" fill="var(--darker)"/>
+      </svg>
+    </div>
 
     <!-- SECTION CTA FINAL -->
     <section class="section cta-section reveal">
