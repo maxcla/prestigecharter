@@ -189,11 +189,10 @@
       <path d="M30 10 L30 50 M20 20 Q30 26 40 20 M20 40 Q30 34 40 40" stroke="#C9A84C" stroke-width="2" stroke-linecap="round"/>
     </svg>
   </div>
-  <div id="scroll-progress"></div>
-
-  <header class="header">
-    <div class="header-inner">
-      <a href="index.html" class="logo">
+  <div id="scroll-progress"></div>  <!-- HEADER -->
+  <header id="header" class="header">
+    <div class="header-inner container">
+      <a href="index.html" class="logo" aria-label="Prestige Charter - Accueil">
         <svg class="logo-anchor" width="22" height="26" viewBox="0 0 22 26" fill="none" xmlns="http://www.w3.org/2000/svg">
           <circle cx="11" cy="4" r="2.5" stroke="#C9A84C" stroke-width="1.3"/>
           <line x1="11" y1="6.5" x2="11" y2="21" stroke="#C9A84C" stroke-width="1.3"/>
@@ -202,35 +201,48 @@
           <line x1="3" y1="16" x2="3" y2="19" stroke="#C9A84C" stroke-width="1.3" stroke-linecap="round"/>
           <line x1="19" y1="16" x2="19" y2="19" stroke="#C9A84C" stroke-width="1.3" stroke-linecap="round"/>
         </svg>
-        <span class="logo-text"><span class="logo-prestige">PRESTIGE</span><span class="logo-charter">CHARTER</span></span>
+        <div class="logo-text">
+          <span class="logo-prestige">PRESTIGE</span>
+          <span class="logo-charter">CHARTER</span>
+        </div>
       </a>
-      <nav class="nav">
-        <a href="index.html" data-fr="Accueil" data-en="Home">Accueil</a>
-        <a href="yacht.html" data-fr="Le Yacht" data-en="The Yacht">Le Yacht</a>
-        <a href="experiences.html" data-fr="Expériences" data-en="Experiences">Expériences</a>
-        <a href="histoire.html" class="active" data-fr="Notre Histoire" data-en="Our Story">Notre Histoire</a>
-        <a href="yachtclub.html" data-fr="Yacht Club" data-en="Yacht Club">Yacht Club</a>
-        <a href="tarifs.html" data-fr="Tarifs" data-en="Rates">Tarifs</a>
-        <a href="reservation.html" data-fr="Réservation" data-en="Booking">Réservation</a>
-        <a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a>
+      <nav class="main-nav" aria-label="Navigation principale">
+        <a href="index.html" class="nav-link" data-fr="Accueil" data-en="Home">Accueil</a>
+        <a href="yacht.html" class="nav-link" data-fr="Le Yacht" data-en="The Yacht">Le Yacht</a>
+        <a href="experiences.html" class="nav-link" data-fr="Expériences" data-en="Experiences">Expériences</a>
+        <a href="histoire.html" class="nav-link active" data-fr="Notre Histoire" data-en="Our Story">Notre Histoire</a>
+        <a href="yachtclub.html" class="nav-link" data-fr="Yacht Club" data-en="Yacht Club">Yacht Club</a>
+        <a href="tarifs.html" class="nav-link" data-fr="Tarifs" data-en="Rates">Tarifs</a>
+        <a href="reservation.html" class="nav-link" data-fr="Réservation" data-en="Booking">Réservation</a>
+        <a href="contact.html" class="nav-link" data-fr="Contact" data-en="Contact">Contact</a>
       </nav>
-      <div style="display:flex;align-items:center;gap:1rem;">
-        <button class="lang-toggle">EN</button>
-        <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+      <div class="header-actions">
+        <button id="lang-toggle" class="lang-toggle" aria-label="Toggle language">EN</button>
+        <button id="nav-burger" class="nav-burger" aria-label="Menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </div>
   </header>
 
-  <div class="mobile-menu">
-    <a href="index.html" data-fr="Accueil" data-en="Home">Accueil</a>
-    <a href="yacht.html" data-fr="Le Yacht" data-en="The Yacht">Le Yacht</a>
-    <a href="experiences.html" data-fr="Expériences" data-en="Experiences">Expériences</a>
-    <a href="histoire.html" data-fr="Notre Histoire" data-en="Our Story">Notre Histoire</a>
-    <a href="yachtclub.html" data-fr="Yacht Club" data-en="Yacht Club">Yacht Club</a>
-    <a href="tarifs.html" data-fr="Tarifs" data-en="Rates">Tarifs</a>
-    <a href="reservation.html" data-fr="Réservation" data-en="Booking">Réservation</a>
-    <a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a>
-    <button class="lang-toggle" style="margin-top:1.5rem;">EN</button>
+  <!-- MOBILE MENU -->
+  <div id="mobile-menu" class="mobile-menu" aria-hidden="true">
+    <div class="mobile-menu-inner">
+      <nav class="mobile-menu-nav">
+        <a href="index.html" class="mobile-link" data-fr="Accueil" data-en="Home">Accueil</a>
+        <a href="yacht.html" class="mobile-link" data-fr="Le Yacht" data-en="The Yacht">Le Yacht</a>
+        <a href="experiences.html" class="mobile-link" data-fr="Expériences" data-en="Experiences">Expériences</a>
+        <a href="histoire.html" class="mobile-link active" data-fr="Notre Histoire" data-en="Our Story">Notre Histoire</a>
+        <a href="yachtclub.html" class="mobile-link" data-fr="Yacht Club" data-en="Yacht Club">Yacht Club</a>
+        <a href="tarifs.html" class="mobile-link" data-fr="Tarifs" data-en="Rates">Tarifs</a>
+        <a href="reservation.html" class="mobile-link" data-fr="Réservation" data-en="Booking">Réservation</a>
+        <a href="contact.html" class="mobile-link" data-fr="Contact" data-en="Contact">Contact</a>
+      </nav>
+      <div class="mobile-menu-footer">
+        <a href="tel:+33652192414" class="mobile-phone">+33 6 52 19 24 14</a>
+        <a href="https://wa.me/33652192414" class="btn btn-primary" data-fr="WhatsApp" data-en="WhatsApp">WhatsApp</a>
+      </div>
+    </div>
   </div>
 
   <main>
@@ -510,3 +522,4 @@
   <script type="module" src="js/main.js"></script>
 </body>
 </html>
+

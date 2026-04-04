@@ -29,7 +29,10 @@
   /* ---------------------------------------------------------
      1. HEADER — Opaque on scroll
      --------------------------------------------------------- */
-  const header = document.getElementById('site-header');
+  const header = document.getElementById('site-header')
+    || document.getElementById('header')
+    || document.querySelector('.site-header')
+    || document.querySelector('.header');
   let lastScroll = 0;
 
   function handleHeaderScroll() {
@@ -48,27 +51,47 @@
   /* ---------------------------------------------------------
      2. MOBILE MENU
      --------------------------------------------------------- */
-  const burger = document.getElementById('nav-burger');
-  const mobileMenu = document.getElementById('mobile-menu');
-  const mobileClose = document.getElementById('mobile-menu-close');
+  const burger = document.getElementById('nav-burger')
+    || document.querySelector('.hamburger')
+    || document.querySelector('.menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu')
+    || document.querySelector('.mobile-menu')
+    || document.querySelector('.mobile-nav');
+  const mobileClose = document.getElementById('mobile-menu-close')
+    || document.querySelector('.mobile-menu-close');
   const mobileLinks = mobileMenu ? mobileMenu.querySelectorAll('a') : [];
 
   function openMobile() {
     if (!mobileMenu) return;
-    mobileMenu.classList.add('is-open');
+    mobileMenu.classList.add('is-open', 'active');
+    mobileMenu.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
-    burger && burger.setAttribute('aria-expanded', 'true');
+    if (burger) {
+      burger.setAttribute('aria-expanded', 'true');
+      burger.classList.add('is-open');
+    }
   }
   function closeMobile() {
     if (!mobileMenu) return;
-    mobileMenu.classList.remove('is-open');
+    mobileMenu.classList.remove('is-open', 'active');
+    mobileMenu.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
-    burger && burger.setAttribute('aria-expanded', 'false');
+    if (burger) {
+      burger.setAttribute('aria-expanded', 'false');
+      burger.classList.remove('is-open');
+    }
   }
 
-  burger && burger.addEventListener('click', function () {
-    mobileMenu.classList.contains('is-open') ? closeMobile() : openMobile();
-  });
+  if (burger) {
+    burger.addEventListener('click', function () {
+      if (!mobileMenu) return;
+      if (mobileMenu.classList.contains('is-open') || mobileMenu.classList.contains('active')) {
+        closeMobile();
+      } else {
+        openMobile();
+      }
+    });
+  }
   mobileClose && mobileClose.addEventListener('click', closeMobile);
   mobileLinks.forEach(function (link) {
     link.addEventListener('click', closeMobile);
@@ -239,8 +262,7 @@
   /* ---------------------------------------------------------
      7. LANGUAGE TOGGLE (FR / EN)
      --------------------------------------------------------- */
-  var langToggle = document.getElementById('lang-toggle');
-  var langToggleMobile = document.getElementById('lang-toggle-mobile');
+  var langToggles = document.querySelectorAll('.lang-toggle');
   var currentLang = localStorage.getItem('pc-lang') || 'fr';
 
   function setLang(lang) {
@@ -248,13 +270,11 @@
     localStorage.setItem('pc-lang', lang);
     document.documentElement.setAttribute('lang', lang);
 
-    document.querySelectorAll('[data-fr]').forEach(function (el) {
+    document.querySelectorAll('[data-fr][data-en]').forEach(function (el) {
       el.textContent = lang === 'fr' ? el.getAttribute('data-fr') : el.getAttribute('data-en');
     });
 
-    // Update toggle buttons
-    [langToggle, langToggleMobile].forEach(function (btn) {
-      if (!btn) return;
+    langToggles.forEach(function (btn) {
       btn.textContent = lang === 'fr' ? 'EN' : 'FR';
       btn.setAttribute('aria-label', lang === 'fr' ? 'Switch to English' : 'Passer en français');
     });
@@ -264,8 +284,9 @@
     setLang(currentLang === 'fr' ? 'en' : 'fr');
   }
 
-  langToggle && langToggle.addEventListener('click', toggleLang);
-  langToggleMobile && langToggleMobile.addEventListener('click', toggleLang);
+  langToggles.forEach(function (btn) {
+    btn.addEventListener('click', toggleLang);
+  });
 
   // Init lang
   setLang(currentLang);
@@ -274,17 +295,19 @@
      8. ACTIVE NAV LINK
      --------------------------------------------------------- */
   var currentPath = window.location.pathname.split('/').pop() || 'index.html';
-  document.querySelectorAll('.nav-link').forEach(function (link) {
+  document.querySelectorAll('.nav-link, .site-nav a, .nav a, .nav-desktop a, .main-nav a').forEach(function (link) {
     var href = link.getAttribute('href');
     if (href === currentPath || (currentPath === '' && href === 'index.html')) {
       link.classList.add('is-active');
+      link.classList.add('active');
+      link.setAttribute('aria-current', 'page');
     }
   });
 
   /* ---------------------------------------------------------
      9. FORM VALIDATION & SUBMISSION
      --------------------------------------------------------- */
-  var forms = document.querySelectorAll('form[data-validate]');
+  var forms = document.querySelectorAll('form[data-validate], form#reservationForm, form#contactForm');
   forms.forEach(function (form) {
     form.addEventListener('submit', function (e) {
       var valid = true;

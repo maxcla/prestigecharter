@@ -275,22 +275,36 @@ p:last-child{margin-bottom:0}
 .header-actions{display:flex;align-items:center;gap:var(--space-sm)}
 
 /* Nav — hidden mobile, shown desktop */
-.site-nav{display:none}
-.site-nav ul{display:flex;align-items:center;gap:4px}
-.site-nav a{
+.site-nav,
+.main-nav,
+.nav-desktop{display:flex;align-items:center;gap:4px}
+
+.site-nav ul,
+.main-nav,
+.nav-desktop{display:flex;align-items:center;gap:4px}
+
+.site-nav a,
+.main-nav a,
+.nav-desktop a{
   display:inline-flex;align-items:center;
   padding:8px 14px;font-size:var(--text-sm);font-weight:500;
   color:var(--gray-soft);letter-spacing:.04em;
   border-radius:var(--radius-sm);position:relative;
   transition:color var(--transition),background var(--transition);
 }
-.site-nav a::after{
+.site-nav a::after,
+.main-nav a::after,
+.nav-desktop a::after{
   content:"";position:absolute;inset:auto 14px -1px 14px;height:1px;
   background:var(--gold);transform:scaleX(0);transform-origin:left;
   transition:transform var(--transition);
 }
-.site-nav a:hover,.site-nav a.is-active{color:var(--white)}
-.site-nav a:hover::after,.site-nav a.is-active::after{transform:scaleX(1)}
+.site-nav a:hover,.site-nav a.is-active,
+.main-nav a:hover,.main-nav a.active,
+.nav-desktop a:hover,.nav-desktop a.active{color:var(--white)}
+.site-nav a:hover::after,.site-nav a.is-active::after,
+.main-nav a:hover::after,.main-nav a.active::after,
+.nav-desktop a:hover::after,.nav-desktop a.active::after{transform:scaleX(1)}
 
 /* Language toggle */
 .lang-switch{
@@ -345,7 +359,9 @@ p:last-child{margin-bottom:0}
   font-size:var(--text-md);background:rgba(255,255,255,.025);
   transition:background var(--transition),border-color var(--transition),transform var(--transition);
 }
-.mobile-menu-nav a:hover,.mobile-menu-nav a.is-active{
+.mobile-menu-nav a:hover,.mobile-menu-nav a.is-active,
+.mobile-menu-nav a.active,
+.mobile-link.active{
   background:var(--gold-dim-soft);border-color:var(--gold-border);
   transform:translateX(4px);color:var(--white);
 }
@@ -1650,7 +1666,8 @@ textarea.form-control{
   }
 
   /* Nav desktop hidden — burger visible */
-  .nav-desktop{display:none}
+  .nav-desktop,
+  .main-nav{display:none}
   .nav-burger{display:flex}
 
   /* Hero */
