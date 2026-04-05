@@ -4,6 +4,7 @@
         "/^cmd /c cd /d \"c:\\\\Users\\\\trist\\\\OneDrive\\\\Documents\\\\prestigecharter\\.worktrees\\\\copilot-worktree-2026-04-04T15-51-37\" ; git add \\. ; git commit -m \"Fix: Corriger type=\\\\\"module\\\\\" sur main\\.js pour toutes les pages\" ; git log --oneline -3$/": {
             "approve": true,
             "matchCommandLine": true
-        }
+        },
+        "ForEach-Object": true
     }
 }
