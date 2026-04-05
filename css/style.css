@@ -194,6 +194,52 @@ p:last-child{margin-bottom:0}
   font-weight:700;
 }
 
+/* ═════════════ TRUST MINI SECTION ═════════════ */
+.section-trust-mini{
+  padding-block:clamp(40px,6vw,80px);
+  background:linear-gradient(135deg,
+    rgba(201,168,76,.08) 0%,
+    rgba(201,168,76,.04) 100%);
+  border-bottom:1px solid var(--gold-border);
+}
+
+.trust-content{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:var(--space-md);
+  max-width:600px;
+  margin:0 auto;
+}
+
+.trust-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:var(--space-sm);
+  padding:12px 28px;
+  background:rgba(201,168,76,.06);
+  border:1.5px solid var(--gold-border);
+  border-radius:var(--radius-pill);
+  font-size:var(--text-base);
+  font-weight:600;
+  letter-spacing:.08em;
+  color:var(--gold-strong);
+  text-transform:uppercase;
+}
+
+.trust-icon{
+  font-size:1.5em;
+  display:inline-block;
+}
+
+.trust-desc{
+  font-size:var(--text-base);
+  color:var(--gray-soft);
+  text-align:center;
+  line-height:1.75;
+  letter-spacing:.02em;
+}
+
 
 /* =========================================================
    04. UTILITIES & LAYOUT
