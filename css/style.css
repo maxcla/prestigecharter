@@ -336,6 +336,115 @@ p:last-child{margin-bottom:0}
 .brand-prestige{font-size:1.05rem;font-weight:400;color:var(--white);letter-spacing:.12em;text-transform:uppercase}
 .brand-charter{font-size:.98rem;font-weight:700;color:var(--gold);letter-spacing:.20em;text-transform:uppercase}
 
+/* --- Logo (classes utilisées dans les pages) --- */
+/* Hover rotation ancre */
+a.logo:hover .logo-anchor{
+  transform:rotate(10deg);
+  filter:drop-shadow(0 0 12px rgba(201,168,76,.55));
+}
+.logo-anchor{
+  transition:transform .3s ease, filter .35s ease;
+}
+/* Section Options Extras (index.html) */
+.extras-cards-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:1.5rem;
+}
+@media(min-width:640px){
+  .extras-cards-grid{grid-template-columns:repeat(3,1fr)}
+}
+.extra-card{
+  display:flex;
+  align-items:center;
+  gap:1.5rem;
+  background:rgba(201,168,76,.03);
+  border:1px solid rgba(201,168,76,.15);
+  border-radius:16px;
+  padding:1.75rem;
+  transition:border-color .3s, box-shadow .3s, transform .3s;
+}
+.extra-card:hover{
+  border-color:var(--gold);
+  box-shadow:0 0 30px rgba(201,168,76,.12);
+  transform:translateY(-3px);
+}
+@media(min-width:640px){
+  .extra-card{
+    flex-direction:column;
+    text-align:center;
+    align-items:center;
+  }
+}
+.extra-card-icon{
+  flex-shrink:0;
+  width:56px;height:56px;
+  background:rgba(201,168,76,.06);
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+}
+.extra-card-body{display:flex;flex-direction:column;gap:.3rem;}
+.extra-card-title{
+  font-family:'Playfair Display',serif;
+  font-size:1rem;font-weight:600;
+  color:var(--white);margin:0;
+}
+.extra-card-desc{
+  font-size:.82rem;color:var(--gray-muted);margin:0;
+}
+.extra-card-price{
+  font-family:'Playfair Display',serif;
+  font-size:1.3rem;font-weight:700;
+  color:var(--gold);
+  margin-top:.25rem;
+}
+
+/* Badge [À VALIDER] */
+.a-valider{
+  display:inline-block;
+  font-size:.62rem;font-weight:600;
+  letter-spacing:.08em;text-transform:uppercase;
+  color:rgba(201,168,76,.55);
+  border:1px solid rgba(201,168,76,.25);
+  border-radius:3px;
+  padding:1px 5px;
+  margin-left:4px;
+  vertical-align:middle;
+  white-space:nowrap;
+}
+a.logo{
+  display:inline-flex;align-items:center;gap:14px;
+  text-decoration:none;flex-shrink:0;
+}
+a.logo:hover .logo-anchor{
+  filter:drop-shadow(0 0 12px rgba(201,168,76,.55));
+}
+.logo-anchor{
+  flex:0 0 auto;
+  color:var(--gold);
+  filter:drop-shadow(0 0 6px rgba(201,168,76,.25));
+}
+.logo-text{
+  display:flex;flex-direction:column;
+  line-height:1;gap:3px;
+}
+.logo-prestige{
+  font-family:'Playfair Display',serif;
+  font-size:1.05rem;font-weight:400;
+  color:#F4F0EB;
+  letter-spacing:.30em;
+  text-transform:uppercase;
+  white-space:nowrap;
+}
+.logo-charter{
+  font-family:'Playfair Display',serif;
+  font-size:.92rem;font-weight:700;
+  color:#C9A84C;
+  letter-spacing:.20em;
+  text-transform:uppercase;
+  white-space:nowrap;
+}
+
 
 /* =========================================================
    07. HEADER & NAVIGATION
@@ -2143,3 +2252,36 @@ textarea.form-control{
   a{text-decoration:underline}
   img{max-width:100% !important;page-break-inside:avoid}
   h2,h3{page-break-after:avoid}
+
+/* =========================================================
+   31. SCROLL-TO-TOP & SCROLL-PROGRESS (global)
+   ========================================================= */
+/* Barre de progression de lecture */
+#scroll-progress{
+  position:fixed;top:0;left:0;
+  height:3px;width:0%;
+  background:linear-gradient(90deg,var(--gold),rgba(201,168,76,.6));
+  z-index:9999;
+  transition:width .1s linear;
+  pointer-events:none;
+}
+
+/* Bouton retour en haut */
+.scroll-top{
+  position:fixed;bottom:24px;right:24px;
+  width:48px;height:48px;
+  background:var(--gold);color:var(--dark);
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;z-index:8000;border:none;
+  box-shadow:0 4px 20px rgba(201,168,76,.4);
+  transition:transform .3s,box-shadow .3s,opacity .3s,visibility .3s;
+  opacity:0;visibility:hidden;
+}
+.scroll-top.is-visible{
+  opacity:1;visibility:visible;
+}
+.scroll-top:hover{
+  transform:translateY(-3px);
+  box-shadow:0 8px 30px rgba(201,168,76,.5);
+}

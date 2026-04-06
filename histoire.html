@@ -193,13 +193,21 @@
   <header id="header" class="site-header">
     <div class="header-inner container">
       <a href="index.html" class="logo" aria-label="Prestige Charter - Accueil">
-        <svg class="logo-anchor" width="22" height="26" viewBox="0 0 22 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="11" cy="4" r="2.5" stroke="#C9A84C" stroke-width="1.3"/>
-          <line x1="11" y1="6.5" x2="11" y2="21" stroke="#C9A84C" stroke-width="1.3"/>
-          <line x1="2" y1="10" x2="20" y2="10" stroke="#C9A84C" stroke-width="1.3" stroke-linecap="round"/>
-          <path d="M3 19 Q3 25 11 25 Q19 25 19 19" stroke="#C9A84C" stroke-width="1.3" fill="none" stroke-linecap="round"/>
-          <line x1="3" y1="16" x2="3" y2="19" stroke="#C9A84C" stroke-width="1.3" stroke-linecap="round"/>
-          <line x1="19" y1="16" x2="19" y2="19" stroke="#C9A84C" stroke-width="1.3" stroke-linecap="round"/>
+        <svg class="logo-anchor" width="28" height="34" viewBox="0 0 28 34" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <!-- Anneau supérieur -->
+          <circle cx="14" cy="5" r="3.2" stroke="#C9A84C" stroke-width="1.4" fill="none"/>
+          <!-- Tige verticale -->
+          <line x1="14" y1="8.2" x2="14" y2="26" stroke="#C9A84C" stroke-width="1.4" stroke-linecap="round"/>
+          <!-- Barre horizontale -->
+          <line x1="4" y1="13" x2="24" y2="13" stroke="#C9A84C" stroke-width="1.4" stroke-linecap="round"/>
+          <!-- Petites boules aux extrémités de la barre -->
+          <circle cx="4" cy="13" r="1.2" fill="#C9A84C"/>
+          <circle cx="24" cy="13" r="1.2" fill="#C9A84C"/>
+          <!-- Arc du bas (jas) -->
+          <path d="M5 24 Q5 32 14 32 Q23 32 23 24" stroke="#C9A84C" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+          <!-- Pattes de l'ancre -->
+          <line x1="5" y1="20" x2="5" y2="24" stroke="#C9A84C" stroke-width="1.4" stroke-linecap="round"/>
+          <line x1="23" y1="20" x2="23" y2="24" stroke="#C9A84C" stroke-width="1.4" stroke-linecap="round"/>
         </svg>
         <div class="logo-text">
           <span class="logo-prestige">PRESTIGE</span>
@@ -469,14 +477,22 @@
       <div class="footer-grid">
         <div class="footer-col">
           <a href="index.html" class="logo footer-logo" style="margin-bottom:1rem;">
-            <svg class="logo-anchor" width="22" height="26" viewBox="0 0 22 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="11" cy="4" r="2.5" stroke="#C9A84C" stroke-width="1.3"/>
-          <line x1="11" y1="6.5" x2="11" y2="21" stroke="#C9A84C" stroke-width="1.3"/>
-          <line x1="2" y1="10" x2="20" y2="10" stroke="#C9A84C" stroke-width="1.3" stroke-linecap="round"/>
-          <path d="M3 19 Q3 25 11 25 Q19 25 19 19" stroke="#C9A84C" stroke-width="1.3" fill="none" stroke-linecap="round"/>
-          <line x1="3" y1="16" x2="3" y2="19" stroke="#C9A84C" stroke-width="1.3" stroke-linecap="round"/>
-          <line x1="19" y1="16" x2="19" y2="19" stroke="#C9A84C" stroke-width="1.3" stroke-linecap="round"/>
-        </svg>
+            <svg class="logo-anchor" width="28" height="34" viewBox="0 0 28 34" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <!-- Anneau supérieur -->
+            <circle cx="14" cy="5" r="3.2" stroke="#C9A84C" stroke-width="1.4" fill="none"/>
+            <!-- Tige verticale -->
+            <line x1="14" y1="8.2" x2="14" y2="26" stroke="#C9A84C" stroke-width="1.4" stroke-linecap="round"/>
+            <!-- Barre horizontale -->
+            <line x1="4" y1="13" x2="24" y2="13" stroke="#C9A84C" stroke-width="1.4" stroke-linecap="round"/>
+            <!-- Petites boules aux extrémités de la barre -->
+            <circle cx="4" cy="13" r="1.2" fill="#C9A84C"/>
+            <circle cx="24" cy="13" r="1.2" fill="#C9A84C"/>
+            <!-- Arc du bas (jas) -->
+            <path d="M5 24 Q5 32 14 32 Q23 32 23 24" stroke="#C9A84C" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+            <!-- Pattes de l'ancre -->
+            <line x1="5" y1="20" x2="5" y2="24" stroke="#C9A84C" stroke-width="1.4" stroke-linecap="round"/>
+            <line x1="23" y1="20" x2="23" y2="24" stroke="#C9A84C" stroke-width="1.4" stroke-linecap="round"/>
+          </svg>
             <div class="logo-text"><span class="logo-prestige">PRESTIGE</span><span class="logo-charter">CHARTER</span></div>
           </a>
           <p class="footer-desc" data-fr="L'excellence nautique sur la Côte d'Azur. Trois générations de passion maritime." data-en="Nautical excellence on the French Riviera. Three generations of maritime passion.">L'excellence nautique sur la Côte d'Azur. Trois générations de passion maritime.</p>
@@ -514,7 +530,7 @@
     </div>
   </footer>
 
-  <button class="scroll-top" aria-label="Retour en haut">
+  <button class="scroll-top" id="scroll-top" aria-label="Retour en haut">
     <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
       <path d="M10 16 L10 4 M5 9 L10 4 L15 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>
