@@ -271,7 +271,13 @@
     document.documentElement.setAttribute('lang', lang);
 
     document.querySelectorAll('[data-fr][data-en]').forEach(function (el) {
-      el.textContent = lang === 'fr' ? el.getAttribute('data-fr') : el.getAttribute('data-en');
+      var val = lang === 'fr' ? el.getAttribute('data-fr') : el.getAttribute('data-en');
+      // Use innerHTML if value contains HTML tags, otherwise textContent (safer)
+      if (val && /<[a-z][\s\S]*>/i.test(val)) {
+        el.innerHTML = val;
+      } else {
+        el.textContent = val;
+      }
     });
 
     langToggles.forEach(function (btn) {
