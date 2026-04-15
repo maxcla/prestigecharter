@@ -325,85 +325,52 @@
       <div class="yc-hero-overlay"></div>
       <div class="yc-hero-content">
 
-        <!-- Emblème SVG redessiné : plus grand, plus lisible, plus élégant -->
-        <svg class="embleme-hero" viewBox="0 0 340 340" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Emblème SVG Yacht Club - Design Épuré & Luxueux -->
+        <svg class="embleme-hero" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
           <defs>
-            <!-- Fond circulaire pour lisibilité sur photo -->
-            <radialGradient id="emblemBg" cx="50%" cy="50%" r="50%">
-              <stop offset="0%" stop-color="#030812" stop-opacity="0.78"/>
-              <stop offset="85%" stop-color="#030812" stop-opacity="0.55"/>
-              <stop offset="100%" stop-color="#030812" stop-opacity="0"/>
-            </radialGradient>
-            <!-- Filtre glow doré -->
-            <filter id="goldGlow" x="-20%" y="-20%" width="140%" height="140%">
-              <feGaussianBlur stdDeviation="2.5" result="blur"/>
-              <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-            </filter>
+            <!-- Chemins pour le texte circulaire -->
+            <path id="topArcPath" d="M 44.75,111.69 A 112,112 0 0,1 255.25,111.69"/>
+            <path id="botArcPath" d="M 44.75,188.31 A 112,112 0 0,0 255.25,188.31"/>
           </defs>
-
-          <!-- Fond circulaire doux -->
-          <circle cx="170" cy="170" r="162" fill="url(#emblemBg)"/>
-
-          <!-- Cercle extérieur décoratif fin -->
-          <circle cx="170" cy="170" r="158" stroke="#C9A84C" stroke-width="0.8" opacity=".2"/>
-          <!-- Cercle principal (bord de l'emblème) -->
-          <circle cx="170" cy="170" r="148" stroke="#C9A84C" stroke-width="2.2" opacity=".9" filter="url(#goldGlow)"/>
-          <!-- Cercle intérieur fin -->
-          <circle cx="170" cy="170" r="136" stroke="#C9A84C" stroke-width="0.7" opacity=".25"/>
-
-          <!-- ★ Étoile principale au sommet ★ -->
-          <polygon
-            points="170,24 174.5,38 189,38 178,47 182.5,61 170,52 157.5,61 162,47 151,38 165.5,38"
-            fill="#C9A84C" filter="url(#goldGlow)"/>
-
-          <!-- Petites étoiles latérales -->
-          <polygon points="42,128 44.5,136 52,136 46,141 48.5,149 42,144 35.5,149 38,141 32,136 39.5,136"
-            fill="#C9A84C" opacity=".6"/>
-          <polygon points="298,128 300.5,136 308,136 302,141 304.5,149 298,144 291.5,149 294,141 288,136 295.5,136"
-            fill="#C9A84C" opacity=".6"/>
-
-          <!-- Tirets horizontaux latéraux -->
-          <line x1="22" y1="170" x2="58" y2="170" stroke="#C9A84C" stroke-width="1" opacity=".35"/>
-          <line x1="282" y1="170" x2="318" y2="170" stroke="#C9A84C" stroke-width="1" opacity=".35"/>
-
-          <!-- ═══ ANCRE CENTRALE REDESSINÉE ═══ -->
-          <!-- Anneau supérieur de l'ancre -->
-          <circle cx="170" cy="116" r="13" stroke="#C9A84C" stroke-width="2.2" fill="none"/>
-          <!-- Tige verticale -->
-          <line x1="170" y1="129" x2="170" y2="186" stroke="#C9A84C" stroke-width="2.5" stroke-linecap="round"/>
-          <!-- Barre horizontale (traverse) -->
-          <line x1="130" y1="144" x2="210" y2="144" stroke="#C9A84C" stroke-width="2.2" stroke-linecap="round"/>
-          <!-- Boules aux extrémités de la traverse -->
-          <circle cx="130" cy="144" r="3.5" fill="#C9A84C"/>
-          <circle cx="210" cy="144" r="3.5" fill="#C9A84C"/>
-          <!-- Arc du bas (patte d'ancre) -->
-          <path d="M 132 180 Q 132 200 170 200 Q 208 200 208 180"
-            stroke="#C9A84C" stroke-width="2.2" fill="none" stroke-linecap="round"/>
-          <!-- Crochets aux extrémités de l'arc -->
-          <line x1="132" y1="172" x2="132" y2="180" stroke="#C9A84C" stroke-width="2" stroke-linecap="round"/>
-          <line x1="208" y1="172" x2="208" y2="180" stroke="#C9A84C" stroke-width="2" stroke-linecap="round"/>
-
-          <!-- Losange décoratif sous l'ancre -->
-          <rect x="167" y="202" width="6" height="6" transform="rotate(45 170 205)" fill="#C9A84C" opacity=".75"/>
-
-          <!-- ═══ TEXTE CIRCULAIRE ═══ -->
-          <!-- Arc supérieur pour "YACHT CLUB" -->
-          <path id="topArcYC" d="M 34,170 A 136,136 0 0,1 306,170" fill="none"/>
-          <text font-size="15" fill="#C9A84C" letter-spacing="9"
-            font-family="Playfair Display, serif" font-weight="400">
-            <textPath href="#topArcYC" startOffset="13%">YACHT CLUB</textPath>
+          <!-- ── Cercles concentriques ── -->
+          <circle cx="150" cy="150" r="138" stroke="#C9A84C" stroke-width="0.6" opacity="0.35"/>
+          <circle cx="150" cy="150" r="130" stroke="#C9A84C" stroke-width="1.8" opacity="0.9"/>
+          <circle cx="150" cy="150" r="120" stroke="#C9A84C" stroke-width="0.5" opacity="0.4"/>
+          
+          <!-- ── Étoile au sommet ── -->
+          <polygon points="150,65 152.9,73.6 162,73.6 154.5,79 157.4,87.6 150,82.2 142.6,87.6 145.5,79 138,73.6 147.1,73.6" fill="#C9A84C" opacity="0.95"/>
+          
+          <!-- ── Petites étoiles latérales ── -->
+          <polygon points="26,148 27.8,153.5 33.5,153.5 29,157 30.8,162.5 26,159 21.2,162.5 23,157 18.5,153.5 24.2,153.5" fill="#C9A84C" opacity="0.55"/>
+          <polygon points="274,148 275.8,153.5 281.5,153.5 277,157 278.8,162.5 274,159 269.2,162.5 271,157 266.5,153.5 272.2,153.5" fill="#C9A84C" opacity="0.55"/>
+          
+          <!-- ── Tirets latéraux ── -->
+          <line x1="38" y1="150" x2="20" y2="150" stroke="#C9A84C" stroke-width="0.7" opacity="0.35"/>
+          <line x1="262" y1="150" x2="280" y2="150" stroke="#C9A84C" stroke-width="0.7" opacity="0.35"/>
+          
+          <!-- ── Ancre centrale ── -->
+          <circle cx="150" cy="123" r="10" stroke="#C9A84C" stroke-width="1.8" fill="none"/>
+          <line x1="150" y1="133" x2="150" y2="175" stroke="#C9A84C" stroke-width="2" stroke-linecap="round"/>
+          <line x1="122" y1="141" x2="178" y2="141" stroke="#C9A84C" stroke-width="1.8" stroke-linecap="round"/>
+          <circle cx="122" cy="141" r="2.8" fill="#C9A84C"/>
+          <circle cx="178" cy="141" r="2.8" fill="#C9A84C"/>
+          <path d="M 128,167 Q 128,183 150,183 Q 172,183 172,167" stroke="#C9A84C" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+          <line x1="128" y1="161" x2="128" y2="167" stroke="#C9A84C" stroke-width="1.8" stroke-linecap="round"/>
+          <line x1="172" y1="161" x2="172" y2="167" stroke="#C9A84C" stroke-width="1.8" stroke-linecap="round"/>
+          <rect x="147" y="185" width="6" height="6" transform="rotate(45 150 188)" fill="#C9A84C" opacity="0.7"/>
+          
+          <!-- ── Séparateurs horizontaux ── -->
+          <line x1="50" y1="115" x2="118" y2="115" stroke="#C9A84C" stroke-width="0.7" opacity="0.4"/>
+          <rect x="147" y="112" width="6" height="6" transform="rotate(45 150 115)" fill="#C9A84C" opacity="0.5"/>
+          <line x1="182" y1="115" x2="250" y2="115" stroke="#C9A84C" stroke-width="0.7" opacity="0.4"/>
+          
+          <!-- ── TEXTE CIRCULAIRE ── -->
+          <text font-size="11.5" fill="#C9A84C" letter-spacing="5.5" font-family="Playfair Display, serif" font-weight="400" opacity="0.95">
+            <textPath href="#topArcPath" startOffset="50%" text-anchor="middle">YACHT  CLUB</textPath>
           </text>
-
-          <!-- Arc inférieur pour "PRESTIGE CHARTER" -->
-          <path id="botArcYC" d="M 50,194 A 136,136 0 0,0 290,194" fill="none"/>
-          <text font-size="11" fill="#C9A84C" letter-spacing="5"
-            font-family="Playfair Display, serif" font-weight="400" opacity=".9">
-            <textPath href="#botArcYC" startOffset="7%">PRESTIGE CHARTER</textPath>
+          <text font-size="9" fill="#C9A84C" letter-spacing="3.5" font-family="Playfair Display, serif" font-weight="400" opacity="0.85">
+            <textPath href="#botArcPath" startOffset="50%" text-anchor="middle">· PRESTIGE CHARTER ·</textPath>
           </text>
-
-          <!-- Petits tirets décoratifs entre étoile et texte -->
-          <line x1="112" y1="74" x2="126" y2="74" stroke="#C9A84C" stroke-width="0.8" opacity=".45"/>
-          <line x1="214" y1="74" x2="228" y2="74" stroke="#C9A84C" stroke-width="0.8" opacity=".45"/>
         </svg>
 
         <div>
