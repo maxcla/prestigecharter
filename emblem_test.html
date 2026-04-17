@@ -1,0 +1,84 @@
+<!DOCTYPE html><html><body style="background:#0a1628;display:flex;justify-content:center;align-items:center;height:100vh;"><svg class="embleme-hero" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Chemins pour le texte circulaire -->
+    <path id="topArcPath" d="M 44.75,111.69 A 112,112 0 0,1 255.25,111.69"/>
+    <path id="botArcPath" d="M 44.75,188.31 A 112,112 0 0,0 255.25,188.31"/>
+  </defs>
+
+  <!-- ── Cercles concentriques ── -->
+  <!-- Cercle extérieur très fin -->
+  <circle cx="150" cy="150" r="138" stroke="#C9A84C" stroke-width="0.6" opacity="0.35"/>
+  <!-- Cercle principal -->
+  <circle cx="150" cy="150" r="130" stroke="#C9A84C" stroke-width="1.8" opacity="0.9"/>
+  <!-- Cercle intérieur fin -->
+  <circle cx="150" cy="150" r="120" stroke="#C9A84C" stroke-width="0.5" opacity="0.4"/>
+
+  <!-- ── Étoile au sommet (5 branches) ── -->
+  <!-- Centrée en (150, 65), taille modérée - descendue pour ne pas être coupée -->
+  <polygon
+    points="150,55 152.9,63.6 162,63.6 154.5,69 157.4,77.6 150,72.2 142.6,77.6 145.5,69 138,63.6 147.1,63.6"
+    fill="#C9A84C" opacity="0.95"/>
+
+  <!-- ── Petites étoiles latérales ── -->
+  <!-- Gauche -->
+  <polygon
+    points="26,148 27.8,153.5 33.5,153.5 29,157 30.8,162.5 26,159 21.2,162.5 23,157 18.5,153.5 24.2,153.5"
+    fill="#C9A84C" opacity="0.55"/>
+  <!-- Droite -->
+  <polygon
+    points="274,148 275.8,153.5 281.5,153.5 277,157 278.8,162.5 274,159 269.2,162.5 271,157 266.5,153.5 272.2,153.5"
+    fill="#C9A84C" opacity="0.55"/>
+
+  <!-- ── Tirets latéraux entre étoiles et cercle ── -->
+  <line x1="38" y1="150" x2="20" y2="150" stroke="#C9A84C" stroke-width="0.7" opacity="0.35"/>
+  <line x1="262" y1="150" x2="280" y2="150" stroke="#C9A84C" stroke-width="0.7" opacity="0.35"/>
+
+  <!-- ── Ancre centrale ── -->
+  <!-- Anneau supérieur -->
+  <circle cx="150" cy="123" r="10" stroke="#C9A84C" stroke-width="1.8" fill="none"/>
+  <!-- Tige verticale -->
+  <line x1="150" y1="133" x2="150" y2="175"
+    stroke="#C9A84C" stroke-width="2" stroke-linecap="round"/>
+  <!-- Barre horizontale -->
+  <line x1="122" y1="141" x2="178" y2="141"
+    stroke="#C9A84C" stroke-width="1.8" stroke-linecap="round"/>
+  <!-- Petits ronds aux extrémités de la barre -->
+  <circle cx="122" cy="141" r="2.8" fill="#C9A84C"/>
+  <circle cx="178" cy="141" r="2.8" fill="#C9A84C"/>
+  <!-- Arc du bas de l'ancre -->
+  <path d="M 128,167 Q 128,183 150,183 Q 172,183 172,167"
+    stroke="#C9A84C" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+  <!-- Crochets aux extrémités de l'arc -->
+  <line x1="128" y1="161" x2="128" y2="167"
+    stroke="#C9A84C" stroke-width="1.8" stroke-linecap="round"/>
+  <line x1="172" y1="161" x2="172" y2="167"
+    stroke="#C9A84C" stroke-width="1.8" stroke-linecap="round"/>
+
+  <!-- Losange décoratif sous l'ancre -->
+  <rect x="147" y="185" width="6" height="6"
+    transform="rotate(45 150 188)" fill="#C9A84C" opacity="0.7"/>
+
+  <!-- ── Séparateurs horizontaux (lignes + losange) ── -->
+  <!-- Ligne gauche + losange + ligne droite (au-dessus de l'ancre) -->
+  <line x1="50" y1="115" x2="118" y2="115"
+    stroke="#C9A84C" stroke-width="0.7" opacity="0.4"/>
+  <rect x="147" y="112" width="6" height="6"
+    transform="rotate(45 150 115)" fill="#C9A84C" opacity="0.5"/>
+  <line x1="182" y1="115" x2="250" y2="115"
+    stroke="#C9A84C" stroke-width="0.7" opacity="0.4"/>
+
+  <!-- ── TEXTE CIRCULAIRE ── -->
+  <!-- "YACHT CLUB" sur l'arc supérieur -->
+  <text font-size="11.5" fill="#C9A84C" letter-spacing="5.5"
+    font-family="Playfair Display, serif" font-weight="400" opacity="0.95">
+    <textPath href="#topArcPath" startOffset="50%" text-anchor="middle">YACHT  CLUB</textPath>
+  </text>
+
+  <!-- Points séparateurs sur l'arc inférieur -->
+  <!-- "PRESTIGE CHARTER" sur l'arc inférieur -->
+  <text font-size="9" fill="#C9A84C" letter-spacing="3.5"
+    font-family="Playfair Display, serif" font-weight="400" opacity="0.85">
+    <textPath href="#botArcPath" startOffset="50%" text-anchor="middle">· PRESTIGE CHARTER ·</textPath>
+  </text>
+
+</svg></body></html>
