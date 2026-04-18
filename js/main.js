@@ -94,7 +94,9 @@
   }
   mobileClose && mobileClose.addEventListener('click', closeMobile);
   mobileLinks.forEach(function (link) {
-    link.addEventListener('click', closeMobile);
+    if (!link.getAttribute('data-toggle')) {
+      link.addEventListener('click', closeMobile);
+    }
   });
 
   // Close on ESC
@@ -102,8 +104,18 @@
     if (e.key === 'Escape') {
       closeMobile();
       closeLightbox();
+      document.querySelectorAll('.dropdown-menu.is-open').forEach(function (menu) {
+        menu.classList.remove('is-open');
+      });
     }
   });
+
+  // Close dropdowns on scroll
+  window.addEventListener('scroll', function () {
+    document.querySelectorAll('.dropdown-menu.is-open').forEach(function (menu) {
+      menu.classList.remove('is-open');
+    });
+  }, { passive: true });
 
   /* ---------------------------------------------------------
      3. SMOOTH SCROLL
@@ -301,7 +313,7 @@
      8. ACTIVE NAV LINK
      --------------------------------------------------------- */
   var currentPath = window.location.pathname.split('/').pop() || 'index.html';
-  document.querySelectorAll('.nav-link, .site-nav a, .nav a, .nav-desktop a, .main-nav a').forEach(function (link) {
+  document.querySelectorAll('.nav-link, .site-nav a, .nav a, .nav-desktop a, .main-nav a, .mobile-link').forEach(function (link) {
     var href = link.getAttribute('href');
     if (href === currentPath || (currentPath === '' && href === 'index.html')) {
       link.classList.add('is-active');
