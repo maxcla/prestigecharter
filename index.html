@@ -176,104 +176,118 @@
 
     /* ── OFFER CARDS ── */
     .offer-card {
-      background: rgba(255,255,255,.03);
-      border: 1px solid rgba(201,168,76,.12);
-      border-radius: 6px;
+      background: transparent;
+      border: none;
+      border-radius: 16px;
       overflow: hidden;
       display: flex;
       flex-direction: column;
-      transition: border-color .3s, transform .3s;
+      transition: transform .35s var(--ease-out), box-shadow .35s var(--ease-out);
+      cursor: pointer;
     }
     .offer-card:hover {
-      border-color: rgba(201,168,76,.4);
-      transform: translateY(-4px);
+      transform: translateY(-8px);
+      box-shadow: 0 24px 64px rgba(0,0,0,.4);
     }
     .offer-card-photo {
       aspect-ratio: 16/9;
       overflow: hidden;
       flex-shrink: 0;
+      border-radius: 16px;
+      position: relative;
     }
     .offer-card-photo img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform .6s ease;
-      filter: brightness(.85);
+      transition: transform .6s var(--ease-out);
+      filter: brightness(.95);
     }
     .offer-card:hover .offer-card-photo img {
-      transform: scale(1.05);
+      transform: scale(1.08);
       filter: brightness(1);
     }
     .offer-card-body {
-      padding: 1.6rem 1.4rem;
+      padding: 1.8rem 0;
       display: flex;
       flex-direction: column;
-      gap: .5rem;
+      gap: .6rem;
       flex: 1;
     }
     .offer-icon {
       width: 48px;
       height: 48px;
-      margin: 0 auto .4rem;
+      margin: 0 auto .6rem;
       display: block;
+      opacity: 0.9;
+      transition: opacity .35s var(--ease-out);
+    }
+    .offer-card:hover .offer-icon {
+      opacity: 1;
     }
     .offer-title {
       font-family: 'Playfair Display', serif;
-      font-size: 1.3rem;
-      font-weight: 600;
+      font-size: 1.45rem;
+      font-weight: 700;
       color: #F4F0EB;
       text-align: center;
       margin: 0;
+      letter-spacing: -0.01em;
     }
     .offer-meta {
-      font-size: .8rem;
-      color: rgba(244,240,235,.5);
+      font-size: .85rem;
+      color: rgba(244,240,235,.6);
       text-align: center;
       margin: 0;
+      letter-spacing: .02em;
     }
     .offer-price-big {
       font-family: 'Playfair Display', serif;
-      font-size: 2rem;
+      font-size: 2.2rem;
       font-weight: 700;
       color: var(--gold, #C9A84C);
       text-align: center;
-      margin: .2rem 0 0;
+      margin: .4rem 0 0;
       line-height: 1;
+      letter-spacing: -0.02em;
     }
     .offer-price-big .price-ttc {
       font-family: 'Inter', sans-serif;
-      font-size: .7rem;
-      font-weight: 400;
-      color: rgba(244,240,235,.4);
+      font-size: .75rem;
+      font-weight: 500;
+      color: rgba(244,240,235,.5);
       vertical-align: middle;
+      margin-left: .3rem;
     }
     .fuel-warning {
-      background: rgba(201,168,76,.07);
-      border-left: 3px solid rgba(201,168,76,.4);
-      padding: .45rem .75rem;
-      font-size: .78rem;
-      color: rgba(244,240,235,.55);
+      background: rgba(201,168,76,.08);
+      border-left: 3px solid var(--gold-border);
+      padding: .6rem .9rem;
+      font-size: .8rem;
+      color: rgba(244,240,235,.65);
       text-align: left;
-      margin: .2rem 0;
-      border-radius: 0 3px 3px 0;
+      margin: .3rem 0;
+      border-radius: 4px;
+      line-height: 1.5;
     }
     .offer-includes {
       list-style: none;
       padding: 0;
-      margin: .2rem 0;
+      margin: .4rem 0;
       display: flex;
       flex-direction: column;
-      gap: .35rem;
+      gap: .45rem;
     }
     .offer-includes li {
       display: flex;
       align-items: center;
-      gap: .5rem;
-      font-size: .82rem;
-      color: rgba(244,240,235,.65);
+      gap: .6rem;
+      font-size: .85rem;
+      color: rgba(244,240,235,.7);
+      line-height: 1.4;
     }
     .offer-includes li svg { flex-shrink: 0; }
-    .offer-card .btn { margin-top: auto; width: 100%; text-align: center; }
+    .offer-card .btn { margin-top: 1.2rem; width: 100%; text-align: center; }
 
     /* ── HISTOIRE SECTION ── */
     .histoire-section { position: relative; overflow: hidden; }
@@ -338,34 +352,41 @@
     .ig-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: .6rem;
-      max-width: 840px;
-      margin: 2rem auto;
+      gap: 1rem;
+      max-width: 900px;
+      margin: 2.5rem auto;
     }
     .ig-item {
       position: relative;
       aspect-ratio: 1;
       overflow: hidden;
-      border-radius: 4px;
+      border-radius: 14px;
       display: block;
+      transition: transform .35s var(--ease-out), box-shadow .35s var(--ease-out);
+      cursor: pointer;
+    }
+    .ig-item:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 48px rgba(0,0,0,.35);
     }
     .ig-item img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform .5s ease, filter .5s ease;
-      filter: brightness(.85);
+      transition: transform .6s var(--ease-out), filter .6s var(--ease-out);
+      filter: brightness(.92);
     }
-    .ig-item:hover img { transform: scale(1.06); filter: brightness(1); }
+    .ig-item:hover img { transform: scale(1.1); filter: brightness(1); }
     .ig-overlay {
       position: absolute;
       inset: 0;
-      background: rgba(7,15,27,.4);
+      background: rgba(7,15,27,.5);
       display: flex;
       align-items: center;
       justify-content: center;
       opacity: 0;
-      transition: opacity .3s;
+      transition: opacity .35s var(--ease-out);
+      backdrop-filter: blur(2px);
     }
     .ig-item:hover .ig-overlay { opacity: 1; }
 
@@ -636,13 +657,14 @@
     <!-- ═══════════ 3 OFFRES ═══════════ -->
     <section class="section section-alt reveal" id="experiences">
       <div class="container">
-        <div class="text-center" style="margin-bottom:3rem;">
+        <div class="text-center" style="margin-bottom:4rem;">
           <span class="section-sub" data-fr="Nos Expériences" data-en="Our Experiences">Nos Expériences</span>
           <h2 data-fr="Trois façons de vivre la mer" data-en="Three ways to experience the sea">Trois façons de vivre la mer</h2>
+          <p style="font-size: 1.05rem; color: rgba(244,240,235,.65); max-width: 600px; margin: 1.5rem auto 0; line-height: 1.7;" data-fr="Découvrez nos trois expériences signature, conçues pour les moments inoubliables sur la Côte d'Azur." data-en="Discover our three signature experiences, designed for unforgettable moments on the Côte d'Azur.">Découvrez nos trois expériences signature, conçues pour les moments inoubliables sur la Côte d'Azur.</p>
           <div class="separator"></div>
         </div>
 
-        <div class="grid-3">
+        <div class="grid-3" style="gap: 2.5rem;">
 
           <!-- SUNSET -->
           <div class="offer-card">
@@ -730,8 +752,9 @@
 
         </div>
 
-        <div class="text-center" style="margin-top:2.5rem;">
-          <a href="tarifs.html" class="btn btn-outline" data-fr="Voir tous les tarifs" data-en="View all rates">Voir tous les tarifs</a>
+        <div class="text-center" style="margin-top:3.5rem;">
+          <a href="experiences.html" class="btn btn-primary" data-fr="Voir toutes les expériences" data-en="View all experiences">Voir toutes les expériences</a>
+          <a href="tarifs.html" class="btn btn-outline" style="margin-left: 1rem;" data-fr="Voir les tarifs" data-en="View rates">Voir les tarifs</a>
         </div>
       </div>
     </section>
@@ -905,12 +928,15 @@
       </div>
     </section>
 
-    <!-- ═══════════ INSTAGRAM ═══════════ -->
+    <!-- Ø══════════ INSTAGRAM Ø══════════ -->
     <section class="section section-alt reveal" id="instagram" style="text-align:center;">
       <div class="container">
-        <span class="section-sub">Instagram</span>
-        <h2>@prestigecharter06</h2>
-        <div class="separator"></div>
+        <div style="margin-bottom: 3rem;">
+          <span class="section-sub">Instagram</span>
+          <h2>@prestigecharter06</h2>
+          <p style="font-size: 1.05rem; color: rgba(244,240,235,.65); max-width: 600px; margin: 1.5rem auto 0; line-height: 1.7;" data-fr="Suivez nos derniers moments sur la Côte d'Azur." data-en="Follow our latest moments on the Côte d'Azur.">Suivez nos derniers moments sur la Côte d'Azur.</p>
+          <div class="separator"></div>
+        </div>
         <div class="ig-grid">
           <a href="https://www.instagram.com/prestigecharter06/" target="_blank" rel="noopener" class="ig-item" aria-label="Vue aérienne yacht crique — @prestigecharter06">
             <img src="images/instagram-1.webp" alt="Vue drone yacht ancré crique turquoise" loading="lazy">
@@ -929,7 +955,9 @@
             <div class="ig-overlay"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="#F4F0EB" stroke-width="1.5"/><circle cx="12" cy="12" r="4" stroke="#F4F0EB" stroke-width="1.5"/><circle cx="17.5" cy="6.5" r="1" fill="#F4F0EB"/></svg></div>
           </a>
         </div>
-        <a href="https://www.instagram.com/prestigecharter06/" target="_blank" rel="noopener" class="btn btn-outline" data-fr="Suivre sur Instagram" data-en="Follow on Instagram">Suivre sur Instagram</a>
+        <div style="margin-top: 2.5rem;">
+          <a href="https://www.instagram.com/prestigecharter06/" target="_blank" rel="noopener" class="btn btn-primary" data-fr="Suivre sur Instagram" data-en="Follow on Instagram">Suivre sur Instagram</a>
+        </div>
       </div>
     </section>
 
